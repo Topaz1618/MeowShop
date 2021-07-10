@@ -1,0 +1,841 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title> Shop </title>
+
+    <link href="static/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="static/css/modern-business.css" rel="stylesheet">
+
+    <style type="text/css">
+        li:hover {
+            color: cornflowerblue;
+        }
+
+    </style>
+
+</head>
+{#background-image: url('static/images/a.png'); background-size: 100% 100%;#}
+<body style="">
+
+
+<div style="margin-top: -56px; height: 70px; position: fixed; z-index: 199; width: 100%;">
+    <div class="card-header" style="height: 70px; background-color: white;  ">
+        <div class="collapse navbar-collapse" id="navbarResponsive">
+        </div>
+
+        <ul class="navbar-nav ml-auto">
+            <li class="breadcrumb-item active" style="width: 300px; display: inline; margin-top: 5px;">
+                <h1 class="mt-4 mb-3" style="display: inline; "> Shop</h1>
+                <small style="display: inline; font-size: 22px;">后台管理</small>
+            </li>
+
+            <li class="nav-item dropdown" id="process_bar_main" style="width: 50px; margin-left: 280px; display: none; width: 200px; margin-top: -28px; color: #6c757d">
+                上传进度:
+
+             <span id="process_bar"> cdcdcd</span>
+            </li>
+
+
+            <span id="info"  style="display:none; margin-top:2%; font-size: 26px; color: red; height: 30px; width: 200px" > waiting .... </span>
+
+
+            <li class="nav-item dropdown" style="width: 50px; margin-left: 90%; display: inline; margin-top: -35px; color: #6c757d">
+
+                <a class="nav-link dropdown-toggle" style="color: #6c757d" href="#" id="navbarDropdownPages"
+                   data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    文件管理
+                </a>
+
+                <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownPages">
+                    <a class="dropdown-item" style="color: #6c757d;" href="menu_items">类型管理</a>
+                    <a class="dropdown-item" style="color: #6c757d;" href="create_goods">增加商品</a>
+                    <a class="dropdown-item" style="color: #6c757d;" href="manager_resources">删除资源</a>
+                    <a class="dropdown-item" style="color: #6c757d;" href="manager_view_videos">观看文件</a>
+                </div>
+
+
+            </li>
+            <li class="nav-item dropdown" style="width: 50px; margin-left: 86%; display: inline; margin-top: -31px; color: #6c757d">
+               <a style="display: inline-block; color: #6c757d" href="/logout">登出</a>
+            </li>
+        </ul>
+    </div>
+
+</div>
+
+
+<div class="container">
+
+    <div id="page0" class="row" style="margin-top: 50px;">
+        <div class="col-lg-4 mb-4">
+            <div class="card h-100" style="width: 1110px; height: 270px">
+                <h4 class="card-header" style="background-color: white; color: #4285f4;"> 新增观看文件 </h4>
+                <div class="card-body" style="height: 280px">
+                    <div class="panel panel-success" style="width:900px; height:80px; color: #545454;">
+
+                        <span style="margin-left: 20px; display: inline-block; width: 86px;">标题: </span>
+                        <input style="margin-left: 14px; width: 405px; height: 30px; color: #545454" type="text"
+                               id="view_title" value=""/>
+                        <p></p>
+                        <span style="margin-left: 20px; display: inline-block; width: 86px;" >版本: </span>
+                        <input style="margin-left: 14px; width: 105px; height: 30px; color: #545454" placeholder="1.0" type="text"
+                               id="view_version" value=""/>
+                        <p></p>
+
+                        <span style="margin-left: 20px; display: inline-block; width: 86px;"> 选择文件: </span>
+                        <input style="background-color: white; border: double; border-color: #54545440; margin-left: 12px; margin-top: 10px;"
+                               type='file' id="view_file0" name="viewfile" onclick="DoNothing()"/>
+                        <p></p>
+
+                        <span style="margin-left: 20px; display: inline-block; width: 86px;"> 缩略图文件: </span>
+                        <input style="background-color: white; border: double; border-color: #54545440; margin-left: 12px; margin-top: 10px;"
+                               type='file' id="view_img1" name="viewfile" onclick="DoNothing()"/>
+                        <p></p>
+
+                        <span style="margin-left: 20px; display: inline-block; width: 86px;">描述: </span>
+                        <input style="margin-left: 14px; width: 505px; height: 30px; color: #545454" type="text"
+                               id="view_desc" value=""/>
+
+                        <p></p>
+                        <div style="padding-left: 15px;">
+
+                        </div>
+
+                    </div>
+                </div>
+                <div class="card-footer"
+                     style="height: 60px; line-height: normal; background-color: white;  font-size: 12px; color: #006621;">
+                    <input class="btn btn-primary" style="margin-left: 92%; background-color: white;  color: #4285f4; "
+                           id="zip_upload"
+                           type='submit' value='Upload' onclick="UploadViewFile()"/>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="page1" class="row" style="margin-top: 50px;">
+        <div class="col-lg-4 mb-4">
+            <div class="card h-100" style="width: 1110px; height: 300px">
+                <h4 class="card-header" style="background-color: white; color: #4285f4;"> 新增压缩包 </h4>
+                <div class="card-body" style="height: 468px">
+                    <div class="panel panel-success" style="width:900px; height:0px; color: #545454;">
+
+                        <span style="margin-left: 20px; display: inline-block; width: 86px;"> 压缩包文件: </span>
+                        <input style="background-color: white; border: double; border-color: #54545440; margin-left: 12px; margin-top: 10px;"
+                               type='file' id="file1" name="zipfile" onclick="DoNothing()"/>
+                        <p></p>
+
+                        <span style="margin-left: 20px; display: inline-block; width: 86px;"> 缩略图文件: </span>
+                        <input style="background-color: white; border: double; border-color: #54545440; margin-left: 12px; margin-top: 10px;"
+                               type='file' id="file2" name="zipfile" onclick="DoNothing()"/>
+                        <p></p>
+
+                        <span style="margin-left: 20px; display: inline-block; width: 86px;"> 所属类型: </span>
+                        <label onclick="GetType('1', true, false)" style="margin-left: 12px"> <input type="radio"
+                                                                                                     name="MainType"
+                                                                                                     value="1">角色</label>
+                        <label onclick="GetType('2', true, false)" style="margin-left: 10px"> <input type="radio"
+                                                                                                     name="MainType"
+                                                                                                     value="2">场景</label>
+                        <label onclick="GetType('3', true, false)" style="margin-left: 12px"> <input type="radio"
+                                                                                                     name="MainType"
+                                                                                                     value="3">动作</label>
+                        <label onclick="GetType('4', true, false)" style="margin-left: 10px"> <input type="radio"
+                                                                                                     name="MainType"
+                                                                                                     value="4">镜头</label>
+                        <label onclick="GetType('5', true, false)" style="margin-left: 10px"> <input type="radio"
+                                                                                                     name="MainType"
+                                                                                                     value="5">衣服</label>
+                        <label onclick="GetType('6', true, false)" style="margin-left: 10px"> <input type="radio"
+                                                                                                     name="MainType"
+                                                                                                     value="6">其它</label>
+                        <div style="white-space: nowrap; max-height: 140px; overflow-x:scroll; overflow-y: auto; margin-left: 122px; height: 140px; width: 500px; outline: auto; outline-color: darkgray;">
+
+                            <ul id="zip" style="list-style: none;">
+                                {#
+                                    <li style="margin-top: 10px; margin-bottom: -5px;" >
+                                        <label style="">
+                                            <input type="radio" style="margin-left: -25px; " name="applicationSystem" value="1">
+                                            <span style="margin-left: 6px">123123123123123</span>
+                                        </label>
+                                    </li>
+                                    #}
+                            </ul>
+                        </div>
+
+                        <p></p>
+                        <span style="margin-left: 20px; display: inline-block; width: 86px;">是否付费: </span>
+                        <label style="margin-left: 12px">是 <input type="radio" name="is_zip_common" value="1" ></label>
+                        <label style="margin-left: 10px">否 <input type="radio" name="is_zip_common" value="2"></label>
+                        <label style="margin-left: 10px">会员免费 <input type="radio" name="is_zip_common" value="3"></label>
+
+                        <p></p>
+                        <span style="margin-left: 20px; display: inline-block; width: 86px;">组件类型: </span>
+                        <label style="margin-left: 12px">是 <input type="radio" name="is_component" value="1" checked="checked"></label>
+                        <label style="margin-left: 10px">否 <input type="radio" name="is_component" value="0"></label>
+
+                        <p></p>
+                        <span style="margin-left: 20px; display: inline-block; width: 86px;">详情描述: </span>
+                        <input style="margin-left: 11px; width: 505px; height: 30px; color: #545454" type="text"
+                               id="zip_desc" value=""/>
+
+                        <p></p>
+                        <div style="padding-left: 15px;">
+
+                        </div>
+
+                    </div>
+                </div>
+                <div class="card-footer"
+                     style="height: 60px; line-height: normal; background-color: white;  font-size: 12px; color: #006621;">
+                    <input class="btn btn-primary" style="margin-left: 92%; background-color: white;  color: #4285f4; "
+                           id="zip_upload"
+                           type='submit' value='Upload' onclick="UploadZipFile()"/>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <div id="page2" class="row" style=" margin-top: 20px; margin-bottom: 30px;">
+        <div class="col-lg-4 mb-4">
+            <div class="card h-100" style="width: 1110px; height: 280px">
+                <h4 class="card-header" style="background-color: white; color: #4285f4;"> 新增功能
+                    <a name="reload" href="/backend"
+                       style="text-decoration: underline;font-size: 16px; color: #006621; display: inline-block">
+                        刷新 </a>
+                </h4>
+                <div class="card-body" style="height: 320px">
+                    <div class="panel panel-success" style="width:900px; height:80px; color: #545454;">
+
+                        <span style="margin-left: 20px; display: inline-block; width: 86px;">功能名称: </span>
+                        <input id="feature_name" style="margin-left: 11px; width: 502px; height: 30px; color: #545454"
+                               type="text" name="min_value" value=""/>
+
+                        <p></p>
+                        <span style="margin-left: 20px; display: inline-block; width: 86px;">所属角色: </span>
+                        <div style="margin-bottom: 10px; margin-top: -22px; white-space: nowrap; max-height: 140px; overflow-x:scroll; overflow-y: auto; margin-left: 122px; height: 140px; width: 500px; outline: auto; outline-color: darkgray;">
+                            <ul id="feature" style="list-style: none;">
+
+                            </ul>
+                        </div>
+
+                        <p></p>
+                        <span style="margin-left: 20px; display: inline-block; width: 86px;">是否付费: </span>
+                        <label style="margin-left: 10px">是 <input type="radio" name="is_feature_common"
+                                                                  value="2"></label>
+
+                        <label style="margin-left: 12px">否 <input type="radio" name="is_feature_common"
+                                                                  value="1"></label>
+
+                        <label style="margin-left: 10px">会员免费 <input type="radio" name="is_feature_common"
+                                                                  value="3"></label>
+
+
+
+
+                        <p></p>
+                        <span style="margin-left: 20px; display: inline-block; width: 86px;">详情描述: </span>
+                        <input id="feature_desc" style="margin-left: 11px; width: 505px; height: 30px; color: #545454"
+                               type="text" name="min_value" value=""/>
+
+                        <p></p>
+                        <div style="padding-left: 15px;">
+
+                        </div>
+
+                    </div>
+                </div>
+                <div class="card-footer"
+                     style="height: 60px; line-height: normal; background-color: white;  font-size: 12px; color: #006621;">
+                    <input class="btn btn-primary" style="margin-left: 92%; background-color: white;  color: #4285f4; "
+                           id="upload"
+                           type='submit' value='Upload' onclick="AddFeatureMain()"/>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+{#<input class="btn btn-primary" style="display: inline-block; margin-left: 42%; background-color: white;  color: #4285f4; " id="pre" type='submit' value='上一页' onclick="UploadZipFileMain()"/>#}
+{#<input class="btn btn-primary" style="display: inline-block; margin-left: 52%; margin-top: -63px; background-color: white;  color: #4285f4; " id="next" type='submit' value='下一页' onclick="UploadZipFileMain()"/>#}
+{##}
+{#<div id="upload_sch" style=" font-size:22px; width: 260px; height: 50px; background-color: #545454a6; color: #ea4335; position: fixed; bottom: -2px">cdcd </div>#}
+
+<footer class="py-5 bg-dark"
+        style="width: 100%; background-color: #6c757d; height: 30px; color: white; line-height: 0;">
+    <div class="container">
+        <p class="m-0 text-center text-white">Copyright &copy; Website 2020</p>
+    </div>
+</footer>
+
+<script src='static/js/jquery.min.js' type="text/javascript"></script>
+<script src="static/vendor/jquery/jquery.min.js"></script>
+<script src="static/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+<script type="text/javascript">
+
+    function DoNothing(box, c_id) {
+        console.log("do nothing");
+    }
+
+    function TurnPage() {
+
+    }
+
+    function S4() {
+        return (((1+Math.random())*0x10000)|0).toString(16).substring(1);
+    }
+    function guid() {
+        return (S4()+S4()+"-"+S4()+"-"+S4()+"-"+S4()+"-"+S4()+S4()+S4());
+    }
+
+    function toPercent(num, total) {
+        return (Math.round(num / total * 10000) / 100.00 + "%");// 小数点后两位百分比
+    }
+
+
+    function GetType(main_id, is_zip, is_feature) {
+        $.ajax({
+            type: 'post',
+            url: '/get_resource',
+            dataType: 'json',
+            data: {
+                resource_type: 1,
+                menu_id: main_id,
+            },
+
+            beforeSend: function () {
+                // Do nothing
+            },
+            success: function (res) {
+                console.log("error_code", res['error_code'], is_zip, is_feature);
+                if (res['error_code'] != 1000) {
+                    console.log(">>", res["error_code"], res['msg']);
+                } else {
+                    console.log(">>", res["error_code"], res['msg']);
+                    if (is_zip) {
+                        create_main(res['msg']["zip_list"], 0);
+                    }
+                    if (is_feature) {
+                        create_main(res['msg']["feature_list"], 1);
+                    }
+                }
+
+            },
+            complete: function () {
+                // Do nothing
+            },
+            error: function () {
+                console.log('请求失败~');
+            }
+        });
+    }
+
+
+    function CheckIfParentClicked(check_id, name) {
+        console.log("name", name);
+        if (name == "zip") {
+            var main_type_list = document.getElementsByName("MainType");
+            var l = [];
+            for (let i = 0; i < main_type_list.length; i++) {
+                var is_checked = main_type_list[i].checked;
+                if (is_checked == true) {
+                    l.push(main_type_list[i].value);
+                }
+            }
+            console.log("l: ", l);
+            if (l.length == 0) {
+                alert("请选择所属类型");
+                document.getElementById(check_id).checked = false;
+            }
+        }
+    }
+
+    function create_type_list(ul_el, data, prefix) {
+        for (let i = 0; i < data.length; i++) {
+            console.log("Data: ", data[i][0], data[i][1]);
+
+            var li_el = document.createElement("li");
+            var label_el = document.createElement("label");
+            var input_el = document.createElement("input");
+            var span_el = document.createElement("span");
+
+            li_el.style.marginTop = "10px";
+            li_el.style.marginBottom = "-5px";
+            input_el.style.marginLeft = "-25px";
+            input_el.type = "radio";
+            input_el.name = prefix;
+            input_el.id = "type_" + data[i][1];
+            input_el.value = data[i][1];
+            input_el.addEventListener('click', CheckIfParentClicked.bind(null, "type_" + data[i][1], prefix));
+
+            span_el.style.marginLeft = "6px";
+            if (prefix=="feature"){
+                span_el.innerText = data[i][0].split(".zip")[0];
+
+            }else{
+                span_el.innerText = data[i][0];
+
+            }
+            span_el.value = data[i][1];
+
+            label_el.appendChild(input_el);
+            label_el.appendChild(span_el);
+            li_el.appendChild(label_el);
+
+            ul_el.appendChild(li_el);
+
+        }
+    }
+
+
+    function create_main(data, v) {
+        console.log(">>>.", data);
+        if (v == 0) {
+            var ul_el = document.getElementById("zip");
+            ul_el.innerText = "";
+            create_type_list(ul_el, data, "zip")
+        }
+        else if (v == 1) {
+            var ul_el1 = document.getElementById("feature");
+            ul_el1.innerText = "";
+            create_type_list(ul_el1, data, "feature")
+        }
+
+    }
+
+
+    function CheckParams(num) {
+        if (num == 0 || num == 2) {
+
+            var file1;
+            var file2;
+            var file1_exists;
+            var file2_exists;
+
+            if (num == 0){
+                file1 = document.getElementById("file1");
+                file2 = document.getElementById("file2");
+            }
+            else if(num == 2) {
+                file1 = document.getElementById("view_file0");
+                file2 = document.getElementById("view_img1");
+            }
+
+            file1_exists  = file1.files.length;
+            file2_exists = file2.files.length;
+
+            if (file1_exists != 1 || file2_exists != 1) {
+                alert("文件未选择 ");
+                return 1;
+
+            } else {
+                var file1_name = file1.files[0].name;
+                var file2_name = file2.files[0].name;
+
+                if (num == 0){
+                    if (file1_name.endsWith("zip") == false) {
+                        alert("压缩包类型错误");
+                        return 1;
+                    }
+                }
+
+                if (file2_name.endsWith("jpg") == false && file2_name.endsWith("png") == false) {
+                    alert("图片格式错误");
+                    return 1;
+                }
+            }
+
+            if (num == 0){
+                {#file1 = document.getElementById("file1");#}
+                {#file2 = document.getElementById("file2");#}
+
+                var zip = document.getElementsByName("zip");
+                var is_common = document.getElementsByName("is_zip_common");
+                var zip_list = [];
+
+                for (let i = 0; i < zip.length; i++) {
+                    if (zip[i].checked == true) {
+                        zip_list.push(zip[i].value)
+                    }
+                }
+
+                if (zip_list.length == 0) {
+                    alert("未选择所属类型");
+                    return 1
+                }
+
+
+                if (is_common[0].checked == false && is_common[1].checked == false && is_common[2].checked == false) {
+                    alert("未选择是否公用类型 ");
+                    return 1;
+                }
+            }
+            else if(num == 2){
+                var view_title = document.getElementById("view_title").value;
+                var view_version = document.getElementById("view_version").value;
+                if (view_title == ""){
+                    alert("标题为空");
+                    return 1;
+                }
+                if (view_version == ""){
+                    alert("版本号为空");
+                    return 1;
+                }
+                var re = /^[0-9]+(\.[0-9]{1,3})?$/;
+                if (re.test(view_version) == false){
+                    alert("版本号格式错误");
+                    return 1;
+
+                }
+            }
+
+            return 0;
+        }
+        else if (num == 1) {
+            console.log(">>>");
+            var feature_name = document.getElementById("feature_name");
+            if (feature_name.value == "") {
+                alert("功能名称为空");
+                return 1;
+            }
+
+            var l = [];
+            var feature = document.getElementsByName("feature");
+            for (let i = 0; i < feature.length; i++) {
+                if (feature[i].checked == true) {
+                    l.push(feature[i].value)
+                }
+            }
+
+            if (l.length == 0) {
+                alert("未选择所属角色");
+                return 1
+            }
+
+            var is_common = document.getElementsByName("is_feature_common");
+            if (is_common[0].checked == false && is_common[1].checked == false && is_common[2].checked == false) {
+                alert("未选择是否公用类型 ");
+                return 1;
+            }
+
+            return 0;
+        }
+    }
+
+    function UploadFile(file, num, media_type) {
+        var blockSize = 1024 * 1024 * 10;
+        var filename = file.name;
+        var count = 0;
+        var total_chunk = Math.ceil(file.size / blockSize);
+        var file_uuid = guid();
+
+
+        for (let start = 0; start < file.size; start += blockSize) {
+            count += 1;
+            var end;
+            if ( start + blockSize > file.size){
+                end = file.size;
+            }else{
+                end = start + blockSize;
+
+            }
+            const chunk = file.slice(start, end);
+            console.log(chunk);
+            console.log(count, '/', total_chunk, start, end);
+
+            const formData = new FormData();
+            formData.append("file", chunk);
+            formData.append("filesize", file.size);
+            formData.append("filename",filename);
+            formData.append("media_type", media_type);
+            formData.append("count", count);
+            formData.append("total_chunk", total_chunk);
+            formData.append("uuid", file_uuid);
+
+            $.ajax({
+                url: "/upload_file",
+                type: "POST",
+                data: formData,
+                async: false,
+                processData: false,
+                contentType: false,
+                success: function (response) {
+                    if (response == "success"){
+                        return;
+                    }
+                }
+            });
+        }
+
+        if (total_chunk > 1) {
+            console.log("I am here!! ");
+            if (total_chunk == count) {
+                console.log("win");
+                notify_merge = function Merge() {
+                    const formData = new FormData();
+                    formData.append("merge", true);
+                    formData.append("filename", filename);
+                    formData.append("total_chunk", total_chunk);
+                    formData.append("uuid", file_uuid);
+                    $.ajax({
+                        url: "/merge_file",
+                        type: "POST",
+                        data: formData,
+                        async: false,
+                        processData: false,
+                        contentType: false,
+                        success: function (response) {
+                            if (response == "false") {
+                                return setTimeout("notify_merge();", 500);
+                            }
+                            else {
+                                return true
+                            }
+                        }
+                    });
+                };
+                notify_merge();
+
+            }
+        }
+
+        return true;
+    };
+
+    function UploadParams(zip_obj, img_obj, num) {
+
+        var formData = new FormData();
+
+        var zip_name = zip_obj.name;
+        var img_name = img_obj.name;
+        formData.append("username", "15600803270");
+        formData.append("zip_name", zip_name);
+        formData.append("img_name", img_name);
+
+
+        if (num == 0){
+
+            var package_type_list = document.getElementsByName("zip");
+            var is_common = document.getElementsByName("is_zip_common");
+            var is_component = document.getElementsByName("is_component");
+            var desc = document.getElementById("zip_desc");
+
+            if (is_common[0].checked == true) {
+                formData.append("is_common", "0");
+
+            } else if (is_common[1].checked == true) {
+                formData.append("is_common", "1");
+
+            } else if (is_common[2].checked == true) {
+                formData.append("is_common", "2");
+            }
+
+            if (is_component[0].checked == true){
+                formData.append("is_component", 1);
+            }else{
+                formData.append("is_component", 0);
+            }
+
+            formData.append("description", desc.value);
+            formData.append("create_type", "1");
+
+            for (let i = 0; i < package_type_list.length; i++) {
+                if (package_type_list[i].checked == true) {
+                    formData.append("parent_id", package_type_list[i].value);
+                }
+            }
+        }
+        else if(num == 1){
+            var view_version = document.getElementById("view_version").value;
+            var view_title = document.getElementById("view_title").value;
+            var view_desc = document.getElementById("view_desc").value;
+            formData.append("create_type", "4");
+            formData.append("view_version", view_version);
+            formData.append("view_title", view_title);
+            formData.append("view_desc", view_desc);
+        }
+
+        $.ajax({
+            type: 'post',
+            url: '/backend',
+            data: formData,
+            cache: false,
+            contentType: false,
+            processData: false,
+            timeout: 60000,
+
+            success: function (res) {
+                console.log("error_code", res['error_code']);
+                if (res['error_code'] != "1000") {
+                    alert(res['msg']);
+                    document.getElementById("file1").disabled = false;
+                    document.getElementById("file2").disabled = false;
+                    document.getElementById("info").style.display = "none";
+
+                }
+                else {
+                    CallUploadMain(zip_obj, img_obj, num);
+                }
+            },
+        });
+
+    }
+
+    function CallUploadMain(zip_file, img_file, num) {
+
+        UploadFile(img_file, 1, 0);
+
+        function checkOver(item) {
+            let check = false;
+            let promise = new Promise(function(resolve, reject) {
+              setTimeout(() => {
+                check = UploadFile(zip_file, 1, 1);
+                resolve(check);
+              }, 500);
+            });
+            return promise;
+        }
+
+        var item = "1";
+        checkOver(item).then((check) => {
+          console.log("!!!! true", check); // --> true/false
+
+            if (check){
+                document.getElementById("info").style.display = "none";
+                confirm("上传成功");
+                setTimeout("window.location.reload(window.location.href)", 1000);
+
+                }
+            });
+    }
+
+    function UploadZipFile() {
+        var check_res = CheckParams(0);
+        console.log("Check Result: ", check_res);
+        if (check_res == 0) {
+            document.getElementById("info").style.display = "block";
+
+            document.getElementById("zip_upload").disabled = "disabled";
+
+            var zip_file_obj = document.getElementById("file1");
+            var img_file_obj = document.getElementById("file2");
+
+            zip_file_obj.disabled = "disabled";
+            img_file_obj.disabled = "disabled";
+
+            var zip_file = zip_file_obj.files[0];
+            var img_file = img_file_obj.files[0];
+            UploadParams(zip_file, img_file, 0);
+            {#CallUploadMain(zip_file, img_file, 0);#}
+
+        }
+    }
+
+    function AddFeatureMain() {
+        var check_res = CheckParams(1);
+        console.log("Check Result: ", check_res);
+        if (check_res == 0) {
+            var formData = new FormData();
+            var feature = document.getElementsByName("feature");
+            var is_common = document.getElementsByName("is_feature_common");
+            var feature_name = document.getElementById("feature_name").value;
+            var feature_desc = document.getElementById("feature_desc").value;
+            formData.append("username", "15600803270");
+            formData.append("create_type", "2");
+            formData.append("feature_name", feature_name);
+            formData.append("description", feature_desc);
+
+            for (let i = 0; i < feature.length; i++) {
+                if (feature[i].checked == true) {
+                    formData.append("character_id", feature[i].value);
+                }
+            }
+
+            if (is_common[0].checked == true) {
+                formData.append("is_common", "0");
+
+            } else if (is_common[1].checked == true) {
+                formData.append("is_common", "1");
+
+            } else if (is_common[2].checked == true) {
+                formData.append("is_common", "2");
+            }
+
+            console.log("Comm", feature_name, feature_desc);
+            $.ajax({
+                type: "POST",
+                url: "/backend",
+                data: formData,
+                async: true,
+                cache: false,
+                contentType: false,
+                processData: false,
+                timeout: 60000,
+                success: function (data) {
+                    console.log("data", data);
+
+                    if (data["error_code"] == "1000"){
+                        alert("新功能添加成功");
+                    }else {
+                        alert("添加失败:", data["msg"]);
+                    }
+
+                    console.log("successful")
+                },
+                error: function (error) {
+                    console.log("error", error)
+                },
+            });
+            window.location.reload();
+        }
+    }
+
+    function UploadViewFile() {
+        console.log("Hello! ");
+        var check_res = CheckParams(2);
+        console.log("Check Result: ", check_res);
+        if (check_res == 0) {
+            document.getElementById("info").style.display = "block";
+            {#alert("!!##3");#}
+            var zip_file_obj = document.getElementById("view_file0");
+            var img_file_obj = document.getElementById("view_img1");
+            var zip_file = zip_file_obj.files[0];
+            var img_file = img_file_obj.files[0];
+            {#CallUploadMain(zip_file, img_file, 1);#}
+            UploadParams(zip_file, img_file, 1);
+        }
+    }
+
+
+    document.getElementsByName("MainType")[0].checked = true;
+    GetType("1", true, true);
+
+
+    window.onbeforeunload=function(e){
+        var  e = e || window.event;
+        if (e) {
+            if( document.getElementById("info").style.display== "block"){
+                e.returnValue = "您是否确认离开此页面-您输入的数据可能不会被保存";
+
+            }
+        }
+    }
+
+</script>
+<script type="text/javascript" opacity='0.7' zIndex="-2" count="80" src="static/js/canvas-nest.js"></script>
+
+</body>
+
+</html>

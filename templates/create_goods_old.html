@@ -1,0 +1,427 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title> Shop </title>
+
+    <link href="static/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="static/css/modern-business.css" rel="stylesheet">
+
+    <style type="text/css">
+        li:hover{
+            color: cornflowerblue;
+        }
+
+    </style>
+
+</head>
+{#background-image: url('static/images/a.png'); background-size: 100% 100%;#}
+<body style="">
+
+
+<div style="margin-top: -56px; height: 70px; position: fixed; z-index: 199; width: 100%;">
+    <div class="card-header" style="height: 70px; background-color: white;  ">
+        <div class="collapse navbar-collapse" id="navbarResponsive">
+        </div>
+
+        <ul class="navbar-nav ml-auto">
+            <li class="breadcrumb-item active" style="width: 300px; display: inline; margin-top: 5px;">
+                <h1 class="mt-4 mb-3" style="display: inline; "> Shop</h1>
+                <small style="display: inline; font-size: 22px;">后台管理</small>
+            </li>
+
+            <li class="nav-item dropdown"
+                style="width: 50px; margin-left: 90%; display: inline; margin-top: -35px; color: #6c757d">
+
+                <a class="dropdown-item" style="background: none; width: 150px; color: #6c757d; font-size: 20px; text-decoration: underline" href="/backend">回到上级</a>
+
+            </li>
+        </ul>
+    </div>
+
+</div>
+
+
+    <div class="container">
+
+        <div class="row" style="margin-top: 50px;">
+            <div class="col-lg-4 mb-4">
+                <div class="card h-100" style="width: 1110px; height: 280px">
+                    <h4 class="card-header" style="background-color: white; color: #4285f4;"> 新增商品 </h4>
+                    <div class="card-body" style="height: 680px">
+                        <div class="panel panel-success" style="width:900px; height:80px; color: #545454;">
+
+                            <span style="margin-left: 20px; display: inline-block; width: 86px;"> 商品名称: </span>
+                            <input id="goods_name" style="margin-left: 11px; width: 505px; height: 30px; color: #545454" type="text" name="min_value" value="" placeholder="Shop 商品 "/>
+                            <p></p>
+
+                            <span style="margin-left: 20px; display: inline-block; width: 86px;"> 商品价格: </span>
+                            <input id="goods_price" style="margin-left: 11px; width: 55px; height: 30px; color: #545454" type="text" name="min_value" value="" placeholder="999"/> 元
+                            <p></p>
+
+
+                            <span style="margin-left: 20px; display: inline-block; width: 86px;">商品打折: </span>
+                            <label style="margin-left: 12px">是 <input type="radio" name="is_discount" value="1"></label>
+                            <label style="margin-left: 10px; margin-right: 10px">否 <input type="radio" name="is_discount" value="2" checked="true"> </label>
+
+                            打折: <input id="discount" style="margin-left: 11px; width: 55px; height: 30px; color: #545454" type="text" name="min_value" value="100" /> %
+                            <p></p>
+
+                            <span style="margin-left: 20px; display: inline-block; width: 86px;">商品类型: </span>
+                            {# Todo: 单选框 (角色, 场景, 动作, 镜头), 选择某一类型后 , 后面单选框显示对应的类型 #}
+                            <label onclick="GetType('0', true, false)" style="margin-left: 12px"> <input type="radio" name="goods_type" value="1">压缩包</label>
+                            <label onclick="GetType('1', false, true)" style="margin-left: 10px"> <input type="radio" name="goods_type" value="2">功能</label>
+
+                            <div style="white-space: nowrap; max-height: 180px; overflow-x:scroll; overflow-y: auto; margin-left: 122px; height: 180px; width: 500px; outline: auto; outline-color: darkgray;">
+                                <div id="zip_title" style="display: block">
+                                    <span style="margin-left: 34px;">压缩包名称</span>
+                                    <span style="margin-left: 50%;">所属类型</span>
+                                </div>
+
+                                <div id="feature_title" style="display: none">
+                                    <span style="margin-left: 34px;">功能名称</span>
+                                    <span style="margin-left: 53%;">所属角色</span>
+                                </div>
+
+
+                                <ul id="goods_list" style="list-style: none;">
+
+                                </ul>
+                            </div>
+
+                            <p></p>
+
+                            <span style="margin-left: 20px; display: inline-block; width: 86px; max-width: 86px; ">简短描述: </span>
+                            <input id="short_desc" style="overflow-y: auto; max-height: 30px;display: inline-block; margin-left: 11px; width: 505px; max-width: 505px; height: 30px; color: #545454 ; overflow:hidden;  word-wrap: break-word" type="text" name="short_desc" value="" placeholder="(10-50字)"/>
+{#                            <textarea id="short_desc" rows="20" cols="30" style="margin-left: 11px; width: 505px; height: 50px; color: #545454" name="short_desc" value="" placeholder="(10-50字)">#}
+
+
+                            <p></p>
+                            <span style="margin-left: 20px; display: inline-block; width: 86px;">详情描述: </span>
+{#                            <input id="desc" style="margin-left: 11px; width: 505px; height: 30px; color: #545454" type="text" name="min_value" value=""/>#}
+                            <br>
+                            <textarea id="desc" rows="20" cols="30" style="margin-top: -19px;margin-left: 118px; width: 505px; height: 200px; color: #545454" name="min_value" placeholder="(50-500字)">
+
+                            </textarea>
+
+                            <p></p>
+                            <div style="padding-left: 15px;">
+
+                            </div>
+
+                        </div>
+                    </div>
+                    <div class="card-footer" style="height: 60px; line-height: normal; background-color: white;  font-size: 12px; color: #006621;">
+                            <input class="btn btn-primary" style="margin-left: 92%; background-color: white;  color: #4285f4; " id="upload"
+                                   type='submit' value='确认新增' onclick="AddNewProduct()"/>
+                    </div>
+                    </div>
+                </div>
+         </div>
+
+
+</div>
+
+<footer class="py-5 bg-dark" style="position: fixed; margin-top:12%; width: 100%;background-color: #6c757d; height: 30px; color: white; line-height: 0;">
+    <div class="container">
+        <p class="m-0 text-center text-white">Copyright &copy; Website 2020</p>
+    </div>
+</footer>
+
+<script src='static/js/jquery.min.js' type="text/javascript"></script>
+<script src="static/vendor/jquery/jquery.min.js"></script>
+<script src="static/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+<script type="text/javascript">
+
+
+    function CheckIfParentClicked(check_id) {
+        console.log("checkid ", check_id);
+        var goods_type_list = document.getElementsByName("goods_type");
+        if (goods_type_list[0].checked == false && goods_type_list[1].checked == false){
+            alert("请选择类型");
+            document.getElementById(check_id).checked = false;
+        }
+    }
+
+
+    function CheckParams() {
+            var goods_name = document.getElementById("goods_name").value;
+            var goods_price = document.getElementById("goods_price").value;
+            var is_discount = document.getElementsByName("is_discount");
+            var discount = document.getElementById("discount").value;
+            var short_desc = document.getElementById("short_desc").value;
+            var desc = document.getElementById("desc").value;
+            var goods_type = document.getElementsByName("goods_type");
+
+
+            if (goods_name == ""){
+                alert("功能名称为空");
+                return 1;
+            }
+
+            if (goods_price == ""){
+                alert("价格为空");
+                return 1;
+            }else {
+                var reg = /^[1-9]{1}[0-9]{0,10}[.]{0,1}[0-9]{0,2}$/;
+                if (reg.test(goods_price) == false){
+                    alert("价格格式错误");
+                    return 1;
+                }
+            }
+
+            if (is_discount[0].checked == false && is_discount[1].checked == false){
+                alert("未选择是否打折");
+                return 1;
+            }else{
+
+                var reg = /^[1-9]{1}[0-9]{0,10}[.]{0,1}[0-9]{0,2}$/;
+                if (reg.test(discount) == false){
+                    alert("打折比格式错误");
+                    return 1;
+                }
+
+                if (discount > 100){
+                    alert("打折比错误");
+                    return 1;
+                }
+                if (is_discount[0].checked == true){
+                    if (discount == 100){
+                        alert("请输入打折商品折扣 ");
+                        return 1;
+                    }
+                }
+
+
+            }
+            if (short_desc == ""){
+                alert("简短介绍为空");
+                return 1;
+            }else {
+                if (short_desc.length < 10){
+                    alert("简短介绍字数过少");
+                    return 1;
+                }
+                if (short_desc.length > 50){
+                    alert("简短介绍超过字数");
+                    return 1;
+                }
+            }
+
+
+            if (desc == ""){
+                alert("详情描述为空");
+                return 1;
+            }else{
+                if (desc.length < 50){
+                    alert("详情描述字数过少");
+                    return 1;
+                }
+                if (desc.length > 500){
+                    alert("详情描述超过字数 ");
+                    return 1;
+                }
+
+            }
+
+
+            var type_name;
+            if (goods_type[0].checked == true){
+                type_name = "zip";
+            }
+            else if(goods_type[1].checked == true){
+                type_name = "feature";
+            }
+            var type_name_list = document.getElementsByName(type_name);
+
+            var l = [];
+            for (let i=0; i<type_name_list.length; i++){
+                if(type_name_list[i].checked == true){
+                    l.push([i].value)
+                }
+            }
+
+            if (l.length == 0){
+                alert("未选择所属类型");
+                return 1
+            }
+
+            return 0;
+    }
+
+
+    function AddNewProduct() {
+        var res = CheckParams();
+        var goods_name = document.getElementById("goods_name").value;
+        var goods_price = document.getElementById("goods_price").value;
+        var is_discount = document.getElementsByName("is_discount");
+        var discount = document.getElementById("discount").value;
+        var goods_type = document.getElementsByName("goods_type");
+        var short_desc = document.getElementById("short_desc").value;
+        var desc = document.getElementById("desc").value;
+
+        var formData = new FormData();
+        formData.append("username", "15600803270");
+        formData.append("create_type", "3");
+        formData.append("goods_name", goods_name);
+        formData.append("goods_price", goods_price);
+        formData.append("discount", discount);
+        formData.append("short_desc", short_desc);
+        formData.append("description", desc);
+
+
+        if (is_discount[0].checked == true){
+            formData.append("is_discount", "1");
+        }
+        else if (is_discount[1].checked == true){
+            formData.append("is_discount", "0");
+        }
+
+        var type_name;
+        var id_name;
+
+        if (goods_type[0].checked == true){
+            formData.append("goods_type", "0");
+            type_name = "zip";
+            id_name = "zip_id";
+        }
+        else if(goods_type[1].checked == true){
+            formData.append("goods_type", "1");
+            type_name = "feature";
+            id_name = "feature_id";
+        }
+
+        var type_name_list = document.getElementsByName(type_name);
+        for (let i=0; i<type_name_list.length; i++){
+            if(type_name_list[i].checked == true){
+                formData.append(id_name, type_name_list[i].value);
+            }
+        }
+
+        if (res == 0){
+            $.ajax({
+                type: "POST",
+                url: "/backend",
+                data: formData,
+                async: true,
+                cache: false,
+                contentType: false,
+                processData: false,
+                timeout: 60000,
+            success: function (data) {
+                if (data["error_code"] != "1000"){
+                    alert(data["msg"])
+                }else{
+                    confirm("创建商品成功")
+                }
+
+            },
+            error: function (error) {
+                console.log("error", error)
+            },
+            });
+            window.location.reload();
+        }
+    }
+
+
+
+    function create_main(data, name) {
+        var ul_el = document.getElementById("goods_list");
+        ul_el.innerText = "";
+
+        for (let i = 0; i < data.length; i++) {
+            console.log("Data: ", data[i][0], data[i][1]);
+
+            var li_el = document.createElement("li");
+            var label_el = document.createElement("label");
+            var input_el = document.createElement("input");
+            var span_el = document.createElement("span");
+            var desc = document.createElement("span");
+
+            li_el.style.marginTop = "10px";
+            li_el.style.marginBottom = "-5px";
+            input_el.style.marginLeft = "-25px";
+            input_el.type = "radio";
+            input_el.name = name;
+            input_el.value = data[i][1];
+            input_el.id = "type_" + data[i][1];
+            input_el.addEventListener('click', CheckIfParentClicked.bind(null, "type_" + data[i][1]));
+            span_el.style.marginLeft = "6px";
+            span_el.innerText = data[i][0];
+            span_el.style.width = '190px';
+            span_el.style.display = 'inline-block';
+            desc.innerText = data[i][2];
+            desc.style.marginLeft = '145px';
+            {#span_el.value = data[i][1];#}
+
+            label_el.appendChild(input_el);
+            label_el.appendChild(span_el);
+            label_el.appendChild(desc);
+            li_el.appendChild(label_el);
+
+            ul_el.appendChild(li_el);
+
+        }
+
+    }
+
+     function GetType(resource_id, is_zip, is_feature) {
+        $.ajax({
+            type: 'post',
+            url: '/get_resource',
+            dataType: 'json',
+            data:{
+                resource_type: 2,
+                secondary_menu_id: resource_id,
+            },
+
+            beforeSend: function() {
+                // Do nothing
+            },
+            success: function(res) {
+                console.log("error_code", res['error_code'], is_zip, is_feature);
+                if(res['error_code'] != 1000){
+                    console.log(">>", res["error_code"], res['msg']);
+                    {#window.location.reload();#}
+                }else{
+                    if (is_zip){
+                        var zip_list = res['msg']['zip_list'];
+                        document.getElementById("zip_title").style.display = "block";
+                        document.getElementById("feature_title").style.display = "none";
+                        create_main(zip_list, "zip");
+                    }
+                    if (is_feature){
+                        var feature_list = res['msg']['feature_list'];
+                        document.getElementById("zip_title").style.display = "none";
+                        document.getElementById("feature_title").style.display = "block";
+                        create_main(feature_list, "feature");
+                    }
+                }
+            },
+            complete: function() {
+                // Do nothing
+            },
+            error: function() {
+                console.log('请求失败~');
+            }
+        });
+    }
+
+    document.getElementsByName("goods_type")[0].checked = true;
+
+
+    GetType(0, true, false);
+
+</script>
+<script type="text/javascript" opacity='0.7' zIndex="-2" count="80" src="static/js/canvas-nest.js"></script>
+
+</body>
+
+</html>

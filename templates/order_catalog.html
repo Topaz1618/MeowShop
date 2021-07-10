@@ -1,0 +1,641 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Meow Shop</title>
+{#    <meta charset="utf-8">#}
+      <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta property="og:title" content="Template Monster Admin Template">
+    <meta property="og:description" content="brevis, barbatus clabulares aliquando convertam de dexter, peritus capio. devatio clemens habitio est.">
+    <link rel="stylesheet" href="/static/components/base/base.css">
+    <style>
+        .btn.topaz {
+            {#border-top-left-radius: 20px !important;#}
+            border-top-right-radius: 60px;
+            border-bottom-right-radius: 60px;
+            border-bottom-left-radius: 60px;
+        }
+        .btn.topaz:hover {
+            {#background-color: #264555;#}
+            {#color: #1c54e2;#}
+        }
+
+      .test-5::-webkit-scrollbar {
+        /*滚动条整体样式*/
+        width : 10px;  /*高宽分别对应横竖滚动条的尺寸*/
+        height: 1px;
+      }
+      .test-5::-webkit-scrollbar-thumb {
+        /*滚动条里面小方块*/
+        border-radius   : 10px;
+        background-color: white;
+        background-image: -webkit-linear-gradient(
+                45deg,
+                rgba(255, 255, 255, 0.2) 25%,
+                transparent 25%,
+                transparent 50%,
+                rgba(255, 255, 255, 0.2) 50%,
+                rgba(255, 255, 255, 0.2) 75%,
+                transparent 75%, transparent);
+      }
+      .test-5::-webkit-scrollbar-track {
+        /*滚动条里面轨道*/
+        box-shadow   : inset 0 0 5px rgba(0, 0, 0, 0.16);
+        background   : white;
+        border-radius: 10px;
+      }
+
+    </style>
+  </head>
+  <body style="">
+    <div class="page" style="">
+      <!--RD Navbar-->
+
+    <header class="section rd-navbar-wrap rd-navbar-wrap-transparent">
+        <nav id="shop_header" class="rd-navbar rd-navbar-solid rd-navbar-transparent"
+             data-rd-navbar='{"responsive":{"1200":{"stickUpOffset":"164px"}}}'>
+            <div class="navbar-section navbar-non-stuck">
+                <div class="navbar-panel">
+                    <button class="navbar-switch mdi-menu novi-icon" data-multi-switch='{"targets":".rd-navbar","scope":".rd-navbar","isolate":"[data-multi-switch]"}'></button>
+                    <div class="navbar-logo">
+                        <a class="navbar-navigation-root-link" href="/" style="width: 160%; font-size: 128%; font-weight: 500; margin-top: -4%;"> Meow Shop </a>
+                    </div>
+                </div>
+                <div class="navbar-container">
+                    <div class="navbar-cell flex-grow-1">
+                        <div class="navbar-info">
+                            <div class="list list-icons-2">
+                                <div class="list-item">
+                                    <li class="navbar-navigation-root-item">
+                                        <a id="shop_title" class="navbar-navigation-root-link" href="/"
+                                           style="font-size: 28px; font-weight: 500;"> Meow Shop </a>
+                                    </li>
+
+                                </div>
+                            </div>
+                            <div class="navbar-logo navbar-fullwidth-logo">
+                                <a class="navbar-logo-link" href="index.html">
+                                </a>
+                            </div>
+                            <div class="text-block text-block-2 d-md-flex align-items-center justify-content-center">
+                                <div class="list list-icons-2" >
+                                    <div id="shop_phone" class="list-item" style="display: none">
+                                        <div class="list-icon icon onclinic-phone"></div>
+                                        <span class="h5"><a class="link" href="tel:#">+8615600803270</a></span>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                    <div class="navbar-cell">
+                        <div class="navbar-subpanel">
+                            <div class="navbar-subpanel-item">
+                                <button class="navbar-button navbar-info-button mdi-dots-vertical novi-icon"
+                                        data-multi-switch='{"targets":".rd-navbar","scope":".rd-navbar","class":"navbar-info-active","isolate":"[data-multi-switch]"}'></button>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="navbar-section">
+                <div class="navbar-container navbar-sidebar" style="margin-top: 1%">
+                    <div class="navbar-cell flex-grow-1" style="border-bottom: 1px solid #dde0e9;">
+                        <ul class="navbar-navigation rd-navbar-nav" style="margin-left: 58px">
+                            <li class="navbar-navigation-root-item active" style="margin-left: -58px">
+                                <a class="navbar-navigation-root-link" style="display: inline-block; " href="/">
+                                    <span class="product-btn btn topaz btn-icon mdi-home"
+                                          style="display: inline-block; border: 1px solid white;"> Home </span>
+                                </a>
+                            </li>
+                            <li class="navbar-navigation-root-item active" style="margin-left: -58px">
+                                <a class="navbar-navigation-root-link" style="display: inline-block; " href="/store_catalog">
+                                    <span class="product-btn btn topaz btn-icon mdi-shopping"
+                                          style="display: inline-block; border: 1px solid white;">
+                                        Store
+                                    </span>
+                                </a>
+                            </li>
+
+                            <li class="navbar-navigation-root-item" style="margin-left: -58px;">
+                                <a class="navbar-navigation-root-link" style="display: inline-block; "
+                                   href="/package_list">
+                                    <span class="product-btn btn topaz btn-icon mdi-cake "
+                                          style="display: inline-block; border: 1px solid white;"> Membership </span>
+                                </a>
+                            </li>
+                            <li class="navbar-navigation-root-item" style="margin-left: -58px;">
+                                <a class="navbar-navigation-root-link" style="display: inline-block; "
+                                   href="/order_list">
+                                    <span class="product-btn btn topaz btn-icon mdi-book"
+                                          style="display: inline-block; border: 1px solid white;"> Order List </span>
+                                </a>
+                            </li>
+                            <li class="navbar-navigation-root-item" style="margin-left: -58px;">
+                                <a class="navbar-navigation-root-link" style="display: inline-block; "
+                                   href="/user_info">
+                                    <span class="product-btn btn topaz btn-icon mdi-account"
+                                          style="display: inline-block; border: 1px solid white;"> My Account </span>
+                                </a>
+                            </li>
+                            <li class="navbar-navigation-root-item rd-navbar--has-dropdown rd-navbar-submenu"
+                                style="margin-left: -58px;">
+                                <a class="navbar-navigation-root-link" style="display: inline-block; " href="/about_us">
+                                    <span class="product-btn btn topaz btn-icon mdi-note-outline"
+                                          style="display: inline-block; border: 1px solid white;"> About </span>
+                                </a><span class="rd-navbar-submenu-toggle"></span>
+                                <ul class="navbar-navigation-dropdown rd-navbar-dropdown">
+                                    <li class="navbar-navigation-back">
+                                        <button class="navbar-navigation-back-btn">Back</button>
+                                    </li>
+                                    <li class="navbar-navigation-dropdown-item">
+                                        <a class="navbar-navigation-dropdown-link" href="/about_us">About Us</a>
+                                    </li>
+                                    <li class="navbar-navigation-dropdown-item">
+                                        <a class="navbar-navigation-dropdown-link" href="/feedback">Github</a>
+                                    </li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </div>
+
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <section class="section section-md " style="margin-top: -3%; min-width: 300px; overflow-x: auto; overflow-y: hidden;">
+        <div class="container" style=" width: 80%; max-width: 90%; min-width: 700px;">
+            <div class="product-search" style="max-width: 103%; margin-left: 0%">
+                <div class="product-search-inner">
+                    <div class="product-search-results">
+                       <span>当前订单 </span>
+                        <span id="start_product_num">{{ page_info["start"] + 1}}</span>
+                        <span>-</span>
+                        <span id="end_product_num">{{ page_info["end"] }}</span>
+                        <span>of</span>
+                        <span id="total_results">{{ page_info["total_data"] }}</span>
+                        <span>results</span>
+                    </div>
+                </div>
+              </div>
+            <div  class="row row-30 row-lg-50 row-content" style="width: 100%;  margin-left: 0.05%; margin-top: 4.2%;">
+                <div class="accordion accordion-line" style="width: 100%">
+                    <div class="table-container table-responsive" style="margin-bottom: 16px; width: 100%;">
+                        <table class="table table-separate">
+                            <thead>
+                              <tr style="box-sizing: content-box;">
+{#                                  <th style="width: 270px;">订单号</th>#}
+{#                                  <th style="width: 180px;">商品名称</th>#}
+{#                                  <th style="width: 100px;">付款金额</th>#}
+{#                                  <th style="width: 80px; ">付款方式</th>#}
+{#                                  <th style="width: 180px;">订单状态</th>#}
+
+                                  <th style="width: 32%;">Order ID</th>
+                                  <th style="width: 22%;">Product Name</th>
+                                  <th style="width: 12%;">Amount</th>
+                                  <th style="width: 12.8%; ">Method</th>
+                                  <th style="width: 21%;">Order Status</th>
+                              </tr>
+                            </thead>
+                        </table>
+                    </div>
+
+                    {% for i in data %}    <!-- 循环开始，注意写法类似python中的for，但是最后没有冒号 -->
+                      <div class="accordion-item" style="width: 100%; ">
+
+                        <div class="accordion-head h5 " style="font-size: 1.12rem;">
+                            <span class="test-5" style=" display: inline-block; width: 31%; max-width: 380px; min-width: 128px; overflow-x: auto">{{ i }}</span>
+                            <span style="font-size:1.02rem; display: inline-block; width: 20%; max-width: 20%; word-break: break-all">{{ data[i]["product_name"] }}</span>
+                            {# <span style="display: inline-block; width: 100px">{{ data[i]["amount"] }}</span> #}
+                            <span style="display: inline-block; width: 12%; overflow: hidden !important;text-overflow: ellipsis !important;">¥ {{ data[i]["pay_amount"] }}</span>
+
+                            {% if data[i]["channel"] == 0 %}
+                                <span style="display: inline-block; width: 10%">Wxpay</span>
+                            {% end %}
+                            {% if data[i]["channel"] == 1 %}
+                                <span style="display: inline-block; width: 10%">Alipay</span>
+                            {% end %}
+                            {% if data[i]["channel"] == 2 %}
+                                <span style="display: inline-block; width: 10%">Free Gift</span>
+                            {% end %}
+                            <span style="display: inline-block; width: 160px">{{ data[i]["trade_state"] }}</span>
+                        </div>
+
+                        <div class="accordion-body" style="height: 160px;">
+                            <div style="margin-left: 28px; color: #1c54e2; font-size: 16px; ">
+                                <span class="icon blurb-icon linearicons-text-align-left"></span>
+                                订单详情
+                            </div>
+                            <div style="margin-left: 50px;">
+                                <ul class="list list-marked" style=" margin-top: 2px;">
+                                    <li class="list-item">
+                                        Order creation time
+                                            <span class="icon mdi-clock"></span>:
+                                        {{ data[i]["create_time"] }}
+                                    </li>
+
+                                    {% if data[i]["trade_state"] == "TRADE_SUCCESS" %}
+                                        <li class="list-item">
+
+                                                Order payment time
+                                                <span class="icon mdi-clock"></span>:
+                                            {{ data[i]["end_time"] }}
+                                        </li>
+                                        <li class="list-item">
+
+                                                Order close time
+                                                <span class="icon mdi-clock"></span>:
+
+                                            {{ data[i]["close_time"] }}
+                                        </li>
+
+                                    {% elif data[i]["trade_state"] == "WaitPayment" %}
+{#                                        <li class="list-item">#}
+{#                                            <span style="min-width: 158px; display: inline-block; ">#}
+{#                                                Order end time#}
+{#                                                <span class="icon mdi-clock"></span>:#}
+{#                                            </span>#}
+{#                                            None#}
+{#                                        </li>#}
+                                        <li class="list-item">
+                                            <span style="min-width: 158px; display: inline-block; ">
+                                                Order close time  <span class="icon mdi-clock"></span>:
+                                            </span>
+                                            None
+                                        </li>
+
+                                    {% else %}
+{#                                        <li class="list-item">#}
+{#                                            <span style="min-width: 158px; display: inline-block; ">#}
+{#                                                Order end time  <span class="icon mdi-clock"></span>:#}
+{#                                            </span>#}
+{#                                                {{ data[i]["end_time"] }}#}
+{#                                        </li>#}
+                                        <li class="list-item">
+
+
+                                                Order close time <span class="icon mdi-clock"></span>:
+
+                                                {{ data[i]["close_time"] }}
+                                        </li>
+                                    {% end %}
+
+
+
+                                    {% if data[i]["channel"] != 2 %}
+                                        <li class="list-item">
+                                            {#  icon mdi-book #}
+                                            Third party trade number<span class="icon "></span>:  {{ data[i]["out_trade_no"] }}
+                                        </li>
+                                    {% else %}
+                                        <li class="" style="height: 28px "><span class=" "></span></li>
+
+                                    {% end %}
+
+
+                                </ul>
+
+                            </div>
+
+                            <div style="margin-top: 18px; overflow: hidden; text-overflow:ellipsis; white-space:nowrap; ">
+                                <div style="display: inline-block; margin-left: 31px">
+                                    <span class="icon mdi-wallet" >Total price: ¥ {{ data[i]["amount"] }}</span>
+                                    <span class="icon mdi-sale" style="margin-left: 16px;">Discounted price: ¥ {{  data[i]["discounted_amount"] }}</span>
+                                    <span class="icon mdi-wallet" style="margin-left: 16px;">Real payment: ¥ {{ data[i]["pay_amount"] }}</span>
+
+                                </div>
+
+                                <div style="display: inline-block; float: right; margin-right: 14px; ">
+                                {% if data[i]["trade_state"] == "TRADE_EXPIRED" %}
+                                    <a class="link h6" href="/query_order?out_trade_no={{ data[i]["out_trade_no"] }}&page={{ page_info["current_page"] }}" style="display: inline-block; margin-left: 6px">
+                                        <span class="icon mdi-refresh" ></span>Refresh
+                                    </a>
+
+                                    <a class="link h6" href="/close_order?order_no={{ i }}&page={{ page_info["current_page"] }}" style="display: inline-block; margin-left: 6px">
+                                        <span class="icon mdi-close-circle" ></span>Close
+                                    </a>
+
+                                    <a class="link h6" href="/delete_order?order_no={{ i }}&page={{ page_info["current_page"] }}" style="display: inline-block; margin-left: 6px">
+                                        <span class="icon mdi-delete" ></span>
+                                    </a>
+
+
+                                {% elif data[i]["trade_state"] == "WaitPayment" %}
+{#                                    <a class="link h6" href="#" style="display: inline-block;">#}
+{#                                        <span class="icon mdi-refresh"></span>刷新#}
+{#                                    </a>#}
+                                    <a class="link h6" href="/pay_again?trade_no={{ data[i]["out_trade_no"] }}&product_name={{ data[i]["product_name"] }}&is_recharge={{ data[i]["is_recharge"] }}" style="display: inline-block; margin-left: 6px">
+                                        <span class="icon mdi-wallet" ></span>Pay again
+                                    </a>
+
+                                    <a class="link h6" href="/close_order?order_no={{ i }}&page={{ page_info["current_page"] }}" style="display: inline-block; margin-left: 6px">
+                                        <span class="icon mdi-close-circle" ></span>Close
+                                    </a>
+
+                                    <a class="link h6" href="/delete_order?order_no={{ i }}&page={{ page_info["current_page"] }}" style="display: inline-block; margin-left: 6px">
+                                        <span class="icon mdi-delete" ></span>
+                                    </a>
+
+
+                                {% elif data[i]["trade_state"] == "TRADE_CLOSED" %}
+{#                                    <a class="link h6" href="#" style="display: inline-block;">#}
+{#                                        <span class="icon mdi-refresh"></span>刷新#}
+{#                                    </a>#}
+
+                                    <a class="link h6" href="/delete_order?order_no={{ i }}&page={{ page_info["current_page"] }}" style="display: inline-block; margin-left: 6px">
+                                        <span class="icon mdi-delete" ></span>
+                                    </a>
+
+                                    <span class="list-icon linearicons-sad" style="color: #1c54e2; margin-left: 12px; font-weight: bolder; font-size: 16px"></span>
+                                    <span class="link h5 " style="color: #1c54e2; ">Closed</span>
+
+
+                                {% elif data[i]["trade_state"] == "TRADE_SUCCESS" %}
+
+{#                                    <a class="link h6" href="#" style="display: inline-block;">#}
+{#                                        <span class="icon mdi-refresh" ></span>刷新#}
+{#                                    </a>#}
+
+                                    <a class="link h6" href="/delete_order?order_no={{ i }}&page={{ page_info["current_page"] }}" style="display: inline-block; margin-left: 6px">
+                                        <span class="icon mdi-delete" ></span>
+                                    </a>
+                                    {# <span class="list-icon icon navbar-info-icon onclinic-heart novi-icon" style="color: #1c54e2; margin-left: 12px"></span>#}
+                                    <span class="list-icon linearicons-gift" style="color: #1c54e2; margin-left: 12px; font-weight: bolder; font-size: 16px"></span>
+                                    <span class="link h5 " style="color: #1c54e2; ">Completed</span>
+
+                                {% end %}
+                            </div>
+                            </div>
+                        </div>
+                      </div>
+
+                    {% end %}
+                </div>
+            </div>
+
+
+            <ul class="pag pag-light justify-content-center">
+
+                {# 第一页 #}
+{#                {% if  page_info["current_page"] > 5%}#}
+{#                    {% if page_info["current_page"] == 1 %}#}
+{#                        <li class="pag-item disabled">#}
+{#                    {% else %}#}
+{#                          <li class="pag-item">#}
+{#                            <a class="pag-link pag-link-start" href="/order_list?page=1">#}
+{#                                <span class="pag-icon mdi-chevron-double-left novi-icon"></span>#}
+{#                                <span>First</span>#}
+{#                            </a>#}
+{#                        </li>#}
+{#                    {% end %}#}
+{#                {% end %}#}
+
+                {# 上一页 #}
+                {% if page_info["current_page"] - 1 > 0 %}
+                    <li class="pag-item ">
+                       <a class="pag-link pag-link-prev" href="/order_list?page={{ subtract(page_info["current_page"], 1) }}">
+                           <span class="pag-icon mdi-chevron-left novi-icon"></span>
+                           <span>Prev</span>
+                       </a>
+                    </li>
+                {% elif page_info["current_page"] - 1 == 0 %}
+                    <li class="pag-item disabled">
+                       <a class="pag-link pag-link-prev" href="/order_list?page={{ subtract(page_info["current_page"], 1) }}">
+                           <span class="pag-icon mdi-chevron-left novi-icon"></span>
+                           <span>Prev</span>
+                       </a>
+                    </li>
+                {% end %}
+
+
+                {#  Page part #}
+{#                {% if page_info["total_page"] > 5 %}#}
+                    {% if page_info["current_page"] - 2 >= 0 %}
+                        {% if page_info["current_page"] + 1  == page_info["total_page"]  %}
+                            {% if subtract(page_info["current_page"], 3) > 0 %}
+                                <li class="pag-item ">
+                                   <a class="pag-link" href="/order_list?page={{ subtract(page_info["current_page"], 3) }}">
+                                       {{ subtract(page_info["current_page"], 3) }}
+                                   </a>
+                                </li>
+                            {% end %}
+
+                        {% elif page_info["current_page"]  == page_info["total_page"] %}
+                            {% if subtract(page_info["current_page"], 4) > 0 %}
+                                <li class="pag-item ">
+                                   <a class="pag-link" href="/order_list?page={{ subtract(page_info["current_page"], 4) }}">
+                                       {{ subtract(page_info["current_page"], 4) }}
+                                   </a>
+                                </li>
+                            {% end %}
+                            {% if subtract(page_info["current_page"], 3) > 0 %}
+                                <li class="pag-item ">
+                                    <a class="pag-link" href="/order_list?page={{ subtract(page_info["current_page"], 3) }}">
+                                        {{ subtract(page_info["current_page"], 3) }}
+                                    </a>
+                                 </li>
+                            {% end %}
+
+                        {% end %}
+
+                        {% if page_info["current_page"] > 2 %}
+                            <li class="pag-item ">
+                               <a class="pag-link" href="/order_list?page={{ subtract(page_info["current_page"], 2) }}">
+                                   {{ subtract(page_info["current_page"], 2) }}
+                               </a>
+                            </li>
+                        {% end %}
+
+                        <li class="pag-item ">
+                           <a class="pag-link" href="/order_list?page={{ subtract(page_info["current_page"], 1) }}">
+                               {{ subtract(page_info["current_page"], 1) }}
+                           </a>
+                        </li>
+
+                    {% end %}
+
+                    <li class="pag-item active">
+                        <a class="pag-link" href="/order_list?page={{ page_info["current_page"] }}">{{ page_info["current_page"] }}</a>
+                    </li>
+
+                    {% if page_info["current_page"] + 2  <= page_info["total_page"] %}
+                        <li class="pag-item ">
+                            <a class="pag-link" href="/order_list?page={{ add(page_info["current_page"], 1) }}">
+                                {{ add(page_info["current_page"], 1) }}
+                            </a>
+                        </li>
+
+                        <li class="pag-item ">
+                            <a class="pag-link" href="/order_list?page={{ add(page_info["current_page"], 2) }}">
+                                {{ add(page_info["current_page"], 2) }}
+                            </a>
+                        </li>
+
+                    {% elif page_info["current_page"] + 1  <= page_info["total_page"] %}
+                        <li class="pag-item ">
+                            <a class="pag-link" href="/order_list?page={{ add(page_info["current_page"], 1) }}">
+                                {{ add(page_info["current_page"], 1) }}
+                            </a>
+                        </li>
+
+
+                    {% end %}
+
+                    {#  前面没有页数可显示, 所以用大的页数 #}
+                    {% if page_info["current_page"] < 3 %}
+                        {% if page_info["total_page"] >=  add(page_info["current_page"], 3)  %}
+                            <li class="pag-item ">
+                                <a class="pag-link" href="/order_list?page={{ add(page_info["current_page"], 3) }}">
+                                    {{ add(page_info["current_page"], 3) }}
+                                </a>
+                            </li>
+                        {% end %}
+
+                        {% if page_info["current_page"] < 2 %}
+                            {% if page_info["total_page"] >=  add(page_info["current_page"], 4)  %}
+                                <li class="pag-item ">
+                                    <a class="pag-link" href="/order_list?page={{ add(page_info["current_page"], 4) }}">
+                                        {{ add(page_info["current_page"], 4) }}
+                                    </a>
+                                </li>
+                            {% end %}
+                        {% end %}
+
+                    {% end %}
+
+{#                {% end %}#}
+
+                {# 下一页 #}
+                {% if page_info["total_page"] - page_info["current_page"] > 0 %}
+                    <li class="pag-item">
+                        <a class="pag-link pag-link-next" href="/order_list?page={{ add(page_info["current_page"], 1) }}">
+                            <span>Next</span>
+                            <span class="pag-icon mdi-chevron-right novi-icon"></span>
+                        </a>
+                    </li>
+                {% elif page_info["total_page"] - page_info["current_page"] == 0 %}
+                    <li class="pag-item disabled">
+                        <a class="pag-link pag-link-next" href="/order_list?page={{ add(page_info["current_page"], 1) }}">
+                            <span>Next</span>
+                            <span class="pag-icon mdi-chevron-right novi-icon"></span>
+                        </a>
+                    </li>
+
+                {% end %}
+
+{#                最后一页#}
+                {% if  page_info["total_page"]  > 5%}
+                    {% if page_info["total_page"] == page_info["current_page"]  %}
+                        <li class="pag-item disabled">
+                    {% else %}
+                         <li class="pag-item">
+                            <a class="pag-link pag-link-end" href="/order_list?page={{ page_info["total_page"] }}">
+                                <span>Last</span>
+                                <span class="pag-icon mdi-chevron-double-right novi-icon"></span>
+                            </a>
+                        </li>
+                    {% end %}
+                {% end %}
+
+                </ul>
+        </div>
+
+    </section>
+    <section class="footer footer-dark context-dark bg-800" style="margin-top: 10%">
+        <div class="container">
+            <div class="row row-30">
+                <div class="col-sm-6 col-lg-3">
+                    <!-- Logo-->
+                    <div class="logo">
+                        <a class="logo-link" href="/">
+{#                            <img class="logo-image-default" src="/static/images/meowfile.png" alt="Airy" width="146" height="36">#}
+                            <img class="logo-image-inverse" src="/static/images/meowshop.png" alt="Meow Shop" width="146" height="36">
+                        </a>
+                    </div>
+                    <p>Meow Shop is a full-featured mall, including background management, payment, order viewing, etc. </p>
+                    <div class="social group-20">
+{#                        <a class="social-icon icon icon-md icon-link onclinic-instagram" href="#"></a>#}
+                    </div>
+            </div>
+
+                <div class="col-sm-6 col-lg-3">
+                    <h5 class="footer-title">Contacts</h5>
+                    <ul class="list list-icons">
+                        <li class="list-item">
+                            <div class="list-icon onclinic-map-marker"></div>
+                            ChaoYang, Beijing
+                        </li>
+                        <li class="list-item">
+                            <div class="list-icon onclinic-phone"></div>
+                            +8615600803270
+                        </li>
+                        <li class="list-item">
+                            <div class="list-icon onclinic-email-open"></div>
+                            topaz1668@gmail.com
+                        </li>
+
+                    </ul>
+
+                </div>
+
+                <div class="col-sm-6 col-lg-3">
+                    <h5 class="footer-title">Useful Links</h5>
+                    <ul class="list list-sm">
+                      <li class="list-item"><a href="https://topaz1618.github.io/about/">About</a></li>
+                      <li class="list-item"><a href="https://topaz1618.github.io/projects/">Projects</a></li>
+                      <li class="list-item"><a href="https://topaz1618.github.io/blog/">Blog</a></li>
+                    </ul>
+                </div>
+
+
+
+            </div>
+        </div>
+    </section>
+    <footer class="footer footer-minimal context-dark bg-900">
+        <div class="container">
+        </div>
+    </footer>
+</div>
+<!-- Preloader-->
+<div class="preloader">
+    <div class="preloader-inner">
+        <div class="preloader-dot"></div>
+        <div class="preloader-dot"></div>
+        <div class="preloader-dot"></div>
+        <div class="preloader-dot"></div>
+    </div>
+</div>
+
+<div class="to-top mdi-chevron-up "></div>
+</body>
+</html>
+
+{#<script src='/static/js/jquery.min.js' type="text/javascript"></script>#}
+{#<script src="/static/js/core.min.js"></script>#}
+{#<script src="/static/js/script.js"></script>#}
+<script src="/static/components/base/core.min.js"></script>
+<script src="/static/components/base/script.js"></script>
+<script type="text/javascript">
+    var shop_header = document.getElementById("shop_header");
+    var shop_title = document.getElementById("shop_title");
+
+    var option = {
+        attributes: true,
+        attributeFilter: ['class']
+    };
+
+    var mutationObserver = new MutationObserver(function (mutations) {
+        if (shop_header.className.indexOf('rd-navbar-fixed') != -1){
+            shop_title.style.display = "None";
+        }else{
+            shop_title.style.display = "Block";
+        }
+    });
+
+    mutationObserver.observe(shop_header, option)
+
+</script>

@@ -1,0 +1,418 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Meow Shop</title>
+    {#    <meta charset="utf-8">#}
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta property="og:title" content="Template Monster Admin Template">
+    <meta property="og:description"
+          content="brevis, barbatus clabulares aliquando convertam de dexter, peritus capio. devatio clemens habitio est.">
+    <link rel="stylesheet" href="/static/components/base/base.css">
+    <style>
+        .btn.topaz {
+        {#border-top-left-radius: 16px !important;#} border-top-right-radius: 60px;
+            border-bottom-right-radius: 60px;
+            border-bottom-left-radius: 60px;
+        }
+
+        .btn.topaz:hover {
+        {#background-color: #264555;#}{#color: #1c54e2;#}
+        }
+
+    </style>
+
+</head>
+<body>
+<div class="page">
+    <!--RD Navbar-->
+
+    <header class="section rd-navbar-wrap rd-navbar-wrap-transparent">
+        <nav id="shop_header" class="rd-navbar rd-navbar-solid rd-navbar-transparent"
+             data-rd-navbar='{"responsive":{"1200":{"stickUpOffset":"164px"}}}'>
+            <div class="navbar-section navbar-non-stuck">
+                <div class="navbar-panel">
+                    <button class="navbar-switch mdi-menu novi-icon" data-multi-switch='{"targets":".rd-navbar","scope":".rd-navbar","isolate":"[data-multi-switch]"}'></button>
+                    <div class="navbar-logo">
+                        <a class="navbar-navigation-root-link" href="/" style="width: 160%; font-size: 128%; font-weight: 500; margin-top: -4%;"> Meow Shop </a>
+                    </div>
+                </div>
+                <div class="navbar-container">
+                    <div class="navbar-cell flex-grow-1">
+                        <div class="navbar-info">
+                            <div class="list list-icons-2">
+                                <div class="list-item">
+                                    <li class="navbar-navigation-root-item">
+                                        <a id="shop_title" class="navbar-navigation-root-link" href="/"
+                                           style="font-size: 28px; font-weight: 500;"> Meow Shop </a>
+                                    </li>
+
+                                </div>
+                            </div>
+                            <div class="navbar-logo navbar-fullwidth-logo">
+                                <a class="navbar-logo-link" href="index.html">
+                                </a>
+                            </div>
+                            <div class="text-block text-block-2 d-md-flex align-items-center justify-content-center">
+                                <div class="list list-icons-2" >
+                                    <div id="shop_phone" class="list-item" style="display: none">
+                                        <div class="list-icon icon onclinic-phone"></div>
+                                        <span class="h5"><a class="link" href="tel:#">+8615600803270</a></span>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                    <div class="navbar-cell">
+                        <div class="navbar-subpanel">
+                            <div class="navbar-subpanel-item">
+                                <button class="navbar-button navbar-info-button mdi-dots-vertical novi-icon"
+                                        data-multi-switch='{"targets":".rd-navbar","scope":".rd-navbar","class":"navbar-info-active","isolate":"[data-multi-switch]"}'></button>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="navbar-section">
+                <div class="navbar-container navbar-sidebar" style="margin-top: 1%">
+                    <div class="navbar-cell flex-grow-1" style="border-bottom: 1px solid #dde0e9;">
+                        <ul class="navbar-navigation rd-navbar-nav" style="margin-left: 58px">
+                            <li class="navbar-navigation-root-item active" style="margin-left: -58px">
+                                <a class="navbar-navigation-root-link" style="display: inline-block; " href="/">
+                                    <span class="product-btn btn topaz btn-icon mdi-home"
+                                          style="display: inline-block; border: 1px solid white;"> Home </span>
+                                </a>
+                            </li>
+                            <li class="navbar-navigation-root-item active" style="margin-left: -58px">
+                                <a class="navbar-navigation-root-link" style="display: inline-block; " href="/store_catalog">
+                                    <span class="product-btn btn topaz btn-icon mdi-shopping"
+                                          style="display: inline-block; border: 1px solid white;">
+                                        Store
+                                    </span>
+                                </a>
+                            </li>
+
+                            <li class="navbar-navigation-root-item" style="margin-left: -58px;">
+                                <a class="navbar-navigation-root-link" style="display: inline-block; "
+                                   href="/package_list">
+                                    <span class="product-btn btn topaz btn-icon mdi-cake "
+                                          style="display: inline-block; border: 1px solid white;"> Membership package </span>
+                                </a>
+                            </li>
+                            <li class="navbar-navigation-root-item" style="margin-left: -58px;">
+                                <a class="navbar-navigation-root-link" style="display: inline-block; "
+                                   href="/order_list">
+                                    <span class="product-btn btn topaz btn-icon mdi-book"
+                                          style="display: inline-block; border: 1px solid white;"> Order List </span>
+                                </a>
+                            </li>
+                            <li class="navbar-navigation-root-item" style="margin-left: -58px;">
+                                <a class="navbar-navigation-root-link" style="display: inline-block; "
+                                   href="/user_info">
+                                    <span class="product-btn btn topaz btn-icon mdi-account"
+                                          style="display: inline-block; border: 1px solid white;"> 会员信息 </span>
+                                </a>
+                            </li>
+                            <li class="navbar-navigation-root-item rd-navbar--has-dropdown rd-navbar-submenu"
+                                style="margin-left: -58px;">
+                                <a class="navbar-navigation-root-link" style="display: inline-block; " href="/about_us">
+                                    <span class="product-btn btn topaz btn-icon mdi-note-outline"
+                                          style="display: inline-block; border: 1px solid white;"> 关于 </span>
+                                </a><span class="rd-navbar-submenu-toggle"></span>
+                                <ul class="navbar-navigation-dropdown rd-navbar-dropdown">
+                                    <li class="navbar-navigation-back">
+                                        <button class="navbar-navigation-back-btn">Back</button>
+                                    </li>
+                                    <li class="navbar-navigation-dropdown-item">
+                                        <a class="navbar-navigation-dropdown-link" href="/about_us">About Me</a>
+                                    </li>
+                                    <li class="navbar-navigation-dropdown-item">
+                                        <a class="navbar-navigation-dropdown-link" href="/feedback">Github</a>
+                                    </li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </div>
+
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    {#   主体轮播框   #}
+        <section class="section swiper-container swiper-primary swiper-container-fade swiper-container-initialized swiper-container-horizontal" style="border-bottom: 1px solid #26455547; height: 700px" data-swiper="{&quot;effect&quot;:&quot;fade&quot;}">
+          <!-- Additional required wrapper-->
+          <div class="swiper-wrapper" style="transition-duration: 0ms;">
+              <div class="swiper-slide swiper-slide-duplicate swiper-slide-duplicate-active" style="background-image: url(/static/images/shop/title2.jpg); height: 500px; width: 1300px; transition-duration: 0ms; opacity: 1; transform: translate3d(0px, 0px, 0px);" data-swiper-slide-index="1">
+              <div class="container">
+                <div class="row">
+                  <div class="col-md-10 col-xl-8">
+{#                    <h1 class="swiper-title">Meow Shop</h1>#}
+                      <h1 class="swiper-title" style="color: black; margin-left: 20px"> AI 动画制作</h1>
+                    <img src="/static/images/shop/banner_text_en.png" style="margin-top: 2%; display: inline-block;">
+                    <div class="btn-group-1">
+                        <a class="btn btn-lg btn-primary" href="/package_list">Explore</a>
+                        <a class="icon icon-btn mdi-play lightgallery-item" data-lightgallery="{&quot;selector&quot;:&quot;this&quot;}" href="#"></a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- Slides-->
+            <div class="swiper-slide text-center swiper-slide-prev swiper-slide-duplicate-next" style="background-image: url(/static/images/shop/title2.jpg); width: 1300px; height: 600px; transition-duration: 0ms; opacity: 1; transform: translate3d(-1300px, 0px, 0px);" data-swiper-slide-index="0">
+              <div class="container">
+                <div class="row justify-content-center">
+                  <div class="col-md-9 col-xl-7">
+                      <img src="/static/images/shop/banner_text.png">
+
+                    <div class="btn-group-1">
+                        <a class="btn btn-lg btn-primary" href="/package_list">Explore</a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="swiper-slide swiper-slide-active" style="background-image: url(/static/images/shop/title2.jpg); height: 600px; width: 1300px; transition-duration: 0ms; opacity: 1; transform: translate3d(-2600px, 0px, 0px);" data-swiper-slide-index="1">
+              <div class="container">
+                <div class="row">
+                  <div class="col-md-10 col-xl-8">
+                      <h1 class="swiper-title" style="color: black; margin-left: 20px"> AI 动画制作</h1>
+                    <img src="/static/images/shop/banner_text_en.png" style="margin-top: 2%; display: inline-block;">
+                    <div class="btn-group-1">
+                        <a class="btn btn-lg btn-primary" href="/package_list">Explore</a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          <div class="swiper-slide text-center swiper-slide-duplicate swiper-slide-next swiper-slide-duplicate-prev" style="background-image: url(/static/images/shop/title2.jpg); height:600px; width: 1300px; transition-duration: 0ms; opacity: 0; transform: translate3d(-3900px, 0px, 0px);" data-swiper-slide-index="0">
+              <div class="container">
+                <div class="row justify-content-center">
+                  <div class="col-md-9 col-xl-7">
+{#                    <h1 class="swiper-title">AI 动画制作</h1>#}
+                      <img src="/static/images/shop/banner_text.png">
+                    <div class="btn-group-1">
+                        <a class="btn btn-lg btn-primary" href="/package_list">Explore</a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div></div>
+          <div class="swiper-pagination-wrap">
+            <div class="container">
+              <div class="swiper-pagination swiper-pagination-clickable swiper-pagination-bullets">
+                  <span class="swiper-pagination-bullet" tabindex="0" role="button" aria-label="Go to slide 1"></span>
+                  <span class="swiper-pagination-bullet swiper-pagination-bullet-active" tabindex="0" role="button" aria-label="Go to slide 2"></span>
+              </div>
+            </div>
+          </div>
+        <span class="swiper-notification" aria-live="assertive" aria-atomic="true"></span></section>
+
+
+    <section class="section section-md bg-primary-lightest" style="margin-top: 1%; height: 20%;">
+        <div class="container">
+
+            <div class="row justify-content-center text-center" style="height: 20%; margin-top: -2%;  margin-bottom: 8%">
+                <div class="col-6 col-sm-4 col-md-3">
+                    <div class="icon text-primary icon-xl linearicons-bag"></div>
+                    <p></p>
+                    <div class="btn-group-1"  >
+                        <a class="btn btn-lg btn-primary" href="/package_list" style="max-height: 56px; padding: 0.75rem 1.40625rem; font-size: 1.125rem; line-height: 1.25;">访问商城</a>
+                    </div>
+                </div>
+
+                <div class="col-6 col-sm-4 col-md-3">
+{#                book2#}
+                    <div class="icon text-primary icon-xl linearicons-laptop" style="margin-left: 0px;"></div>
+                    <p></p>
+                    <div class="btn-group-1" >
+                        <a class="btn btn-lg btn-primary" style="max-height: 56px;  padding: 0.75rem 1.40625rem; font-size: 1.125rem; line-height: 1.25;" href="/about_us">了解更多</a>
+                    </div>
+                </div>
+
+                <div class="col-6 col-sm-4 col-md-3">
+                    <div class="icon text-primary icon-xl linearicons-bubble-question" style="margin-left: 0px;"></div>
+                    <p></p>
+                    <div class="btn-group-1" >
+                        <a class="btn btn-lg btn-primary" style="max-height: 56px;  padding: 0.75rem 1.40625rem; font-size: 1.125rem; line-height: 1.25;" href="/feedback">问题反馈</a>
+                    </div>
+                </div>
+
+              </div>
+
+
+
+
+            <div id="why_choose_us" class="row row-20 row-lg-40 row-content" style="">
+            <div class="col-xs-6 col-md-4 d-flex">
+                    <!-- Blurb-->
+                    <article class="blurb blurb-boxed-simple">
+                      <div class="blurb-item">
+{#                          linearicons-shield-check#}
+                        <div class="icon blurb-icon linearicons-shield-check"></div>
+                        <div class="blurb-title h4">高精度拟人角色库</div>
+                      </div><a class="blurb-link-overlay" href="#why_choose_us"></a>
+                    </article>
+            </div>
+            <div class="col-xs-6 col-md-4 d-flex">
+                    <!-- Blurb-->
+                    <article class="blurb blurb-boxed-simple">
+                      <div class="blurb-item">
+{#                          linearicons-box#}
+                        <div class="icon blurb-icon linearicons-box"></div>
+                        <div class="blurb-title h4">高清 3D 场景库</div>
+                      </div><a class="blurb-link-overlay" href="#why_choose_us"></a>
+                    </article>
+            </div>
+            <div class="col-xs-6 col-md-4 d-flex">
+                    <!-- Blurb-->
+                    <article class="blurb blurb-boxed-simple">
+                      <div class="blurb-item">
+                        <div class="icon blurb-icon linearicons-camera"></div>
+                        <div class="blurb-title h4">全能镜头库</div>
+                      </div><a class="blurb-link-overlay" href="#why_choose_us"></a>
+                    </article>
+            </div>
+            <div class="col-xs-6 col-md-4 d-flex">
+                    <!-- Blurb-->
+                    <article class="blurb blurb-boxed-simple">
+                      <div class="blurb-item">
+{#                          linearicons-map2#}
+                        <div class="icon blurb-icon linearicons-hammer-wrench"></div>
+                        <div class="blurb-title h4">精准面部调节</div>
+                      </div><a class="blurb-link-overlay" href="#why_choose_us"></a>
+                    </article>
+            </div>
+            <div class="col-xs-6 col-md-4 d-flex">
+                    <!-- Blurb-->
+                    <article class="blurb blurb-boxed-simple">
+                      <div class="blurb-item">
+                        {# linearicons-mic2 #}
+                        <div class="icon blurb-icon linearicons-run"></div>
+                        <div class="blurb-title h4">精准动作捕捉</div>
+                      </div><a class="blurb-link-overlay" href="#why_choose_us"></a>
+                    </article>
+            </div>
+            <div class="col-xs-6 col-md-4 d-flex">
+                    <!-- Blurb-->
+                    <article class="blurb blurb-boxed-simple">
+                      <div class="blurb-item">
+                        <div class="icon blurb-icon linearicons-face-detection"></div>
+                        <div class="blurb-title h4">写实级面部捕捉</div>
+                      </div><a class="blurb-link-overlay" href="#why_choose_us"></a>
+                    </article>
+            </div>
+          </div>
+
+            <p></p>
+            <p></p>
+
+
+{#             轮播框 #}
+
+        </div>
+
+        <p></p>
+    </section>
+
+
+    <section class="footer footer-dark context-dark bg-800" style="margin-top: 10%">
+        <div class="container">
+            <div class="row row-30">
+                <div class="col-sm-6 col-lg-3">
+                    <!-- Logo-->
+                    <div class="logo">
+                        <a class="logo-link" href="/">
+{#                            <img class="logo-image-default" src="/static/images/meowfile.png" alt="Airy" width="146" height="36">#}
+                            <img class="logo-image-inverse" src="/static/images/meowfile.png" alt="Meow Shop" width="146" height="36">
+                        </a>
+                    </div>
+                    <p>Meow Shop is a full-featured mall, including background management, payment, order viewing, etc. </p>
+                    <div class="social group-20">
+{#                        <a class="social-icon icon icon-md icon-link onclinic-instagram" href="#"></a>#}
+                    </div>
+            </div>
+
+                <div class="col-sm-6 col-lg-3">
+                    <h5 class="footer-title">Contacts</h5>
+                    <ul class="list list-icons">
+                        <li class="list-item">
+                            <div class="list-icon onclinic-map-marker"></div>
+                            ChaoYang, Beijing
+                        </li>
+                        <li class="list-item">
+                            <div class="list-icon onclinic-phone"></div>
+                            +8615600803270
+                        </li>
+                        <li class="list-item">
+                            <div class="list-icon onclinic-email-open"></div>
+                            topaz1668@gmail.com
+                        </li>
+
+                    </ul>
+
+                </div>
+
+                <div class="col-sm-6 col-lg-3">
+                    <h5 class="footer-title">Useful Links</h5>
+                    <ul class="list list-sm">
+                      <li class="list-item"><a href="https://topaz1618.github.io/about/">About</a></li>
+                      <li class="list-item"><a href="https://topaz1618.github.io/projects/">Projects</a></li>
+                      <li class="list-item"><a href="https://topaz1618.github.io/blog/">Blog</a></li>
+                    </ul>
+                </div>
+
+
+
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer footer-minimal context-dark bg-900">
+        <div class="container">
+        </div>
+    </footer>
+</div>
+<!-- Preloader-->
+<div class="preloader">
+    <div class="preloader-inner">
+        <div class="preloader-dot"></div>
+        <div class="preloader-dot"></div>
+        <div class="preloader-dot"></div>
+        <div class="preloader-dot"></div>
+    </div>
+</div>
+
+<div class="to-top mdi-chevron-up "></div>
+</body>
+</html>
+<script src="/static/components/base/core.min.js"></script>
+<script src="/static/components/base/script.js"></script>
+
+<script type="text/javascript">
+    var shop_header = document.getElementById("shop_header");
+    var shop_title = document.getElementById("shop_title");
+    var shop_phone = document.getElementById("shop_phone");
+    var option = {
+        attributes: true,
+        attributeFilter: ['class']
+    };
+
+    var mutationObserver = new MutationObserver(function (mutations) {
+        if (shop_header.className.indexOf('rd-navbar-fixed') != -1){
+            shop_title.style.display = "None";
+            shop_phone.style.display = "Block";
+        }else{
+            shop_title.style.display = "Block";
+            shop_phone.style.display = "None";
+
+        }
+    });
+
+    mutationObserver.observe(shop_header, option)
+
+</script>
+

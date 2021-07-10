@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Meow Shop</title>
+{#    <meta charset="utf-8">#}
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta property="og:title" content="Template Monster Admin Template">
+    <meta property="og:description"
+          content="brevis, barbatus clabulares aliquando convertam de dexter, peritus capio. devatio clemens habitio est.">
+    <link rel="stylesheet" href="/static/components/base/base.css">
+
+    <style>
+        .btn.topaz {
+            border-top-left-radius: 32px !important;
+            border-top-right-radius: 60px;
+            border-bottom-right-radius: 60px;
+            border-bottom-left-radius: 60px;
+        }
+        .btn.topaz:hover {
+            background-color: #1c54e2;
+            {#color: #1c54e2;#}
+        }
+       .rd-navbar-fullwidth .navbar-navigation-root-item.focus > .rd-navbar-submenu-toggle{
+           color: white;
+       }
+       .rd-navbar-fullwidth .navbar-navigation-root-item.active > .rd-navbar-submenu-toggle{
+            color: white;
+        }
+
+    </style>
+
+</head>
+<body>
+<div class="page">
+    <!--RD Navbar-->
+
+    <header class="section rd-navbar-wrap rd-navbar-wrap-transparent">
+        <nav id="shop_header" class="rd-navbar rd-navbar-solid rd-navbar-transparent"
+             data-rd-navbar='{"responsive":{"1200":{"stickUpOffset":"164px"}}}'>
+            <div class="navbar-section navbar-non-stuck">
+                <div class="navbar-panel">
+                    <button class="navbar-switch mdi-menu novi-icon"
+                            data-multi-switch='{"targets":".rd-navbar","scope":".rd-navbar","isolate":"[data-multi-switch]"}'></button>
+                    <div class="navbar-logo">
+                        <a class="navbar-navigation-root-link" href="/"
+                           style="width: 160%; font-size: 22px; font-weight: 500; margin-top: -4%;"> Meow Shop </a>
+                    </div>
+                </div>
+                <div class="navbar-container">
+                    <div class="navbar-cell flex-grow-1">
+                        <div class="navbar-info">
+                            <div class="list list-icons-2">
+                                <div class="list-item">
+                                    <li class="navbar-navigation-root-item">
+                                        <a id="shop_title" class="navbar-navigation-root-link" href="/"
+                                           style="font-size: 28px; font-weight: 500;"> Meow Shop </a>
+                                    </li>
+
+                                </div>
+                            </div>
+                            <div class="navbar-logo navbar-fullwidth-logo">
+                                <a class="navbar-logo-link" href="index.html">
+                                </a>
+                            </div>
+                            <div class="text-block text-block-2 d-md-flex align-items-center justify-content-center">
+                                <div class="list list-icons-2">
+                                    <div class="list-item">
+                                        <div id="shop_phone" class="list-item" style="display: none">
+                                             <div class="list-icon icon onclinic-phone"></div>
+                                             <span class="h5"><a class="link" href="tel:#">010-85717789</a></span>
+                                         </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                    <div class="navbar-cell">
+                        <div class="navbar-subpanel">
+                            <div class="navbar-subpanel-item">
+                                <button class="navbar-button navbar-info-button mdi-dots-vertical novi-icon"
+                                        data-multi-switch='{"targets":".rd-navbar","scope":".rd-navbar","class":"navbar-info-active","isolate":"[data-multi-switch]"}'></button>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="navbar-section">
+                <div class="navbar-container navbar-sidebar" style="margin-top: 1%">
+                    <div class="navbar-cell flex-grow-1" style="border-bottom: 1px solid #dde0e9;">
+                        <ul class="navbar-navigation rd-navbar-nav" style="margin-left: 60px">
+                            <li class="navbar-navigation-root-item active" style="margin-left: -60px">
+                                <a class="navbar-navigation-root-link" style="display: inline-block; " href="/">
+                                    <span class="product-btn btn topaz btn-icon mdi-shopping"
+                                          style="display: inline-block; border: 1px solid white;"> Home </span>
+                                </a>
+                            </li>
+                            <li class="navbar-navigation-root-item" style="margin-left: -60px;">
+                                <a class="navbar-navigation-root-link" style="display: inline-block; "
+                                   href="/package_list">
+                                    <span class="product-btn btn topaz btn-icon mdi-cake "
+                                          style="display: inline-block; border: 1px solid white;"> 会员套餐 </span>
+                                </a>
+                            </li>
+                            <li class="navbar-navigation-root-item" style="margin-left: -60px;">
+                                <a class="navbar-navigation-root-link" style="display: inline-block; "
+                                   href="/order_list">
+                                    <span class="product-btn btn topaz btn-icon mdi-book"
+                                          style="display: inline-block; border: 1px solid white;"> 订单列表 </span>
+                                </a>
+                            </li>
+                            <li class="navbar-navigation-root-item" style="margin-left: -60px;">
+                                <a class="navbar-navigation-root-link" style="display: inline-block; "
+                                   href="/user_info">
+                                    <span class="product-btn btn topaz btn-icon mdi-account"
+                                          style="display: inline-block; border: 1px solid white;"> 会员信息 </span>
+                                </a>
+                            </li>
+                            <li class="navbar-navigation-root-item rd-navbar--has-dropdown rd-navbar-submenu"
+                                style="margin-left: -60px;">
+                                <a class="navbar-navigation-root-link" style="display: inline-block; " href="/about_us">
+                                    <span class="product-btn btn topaz btn-icon mdi-note-outline"
+                                          style="display: inline-block; border: 1px solid white;"> 关于我们 </span>
+                                </a><span class="rd-navbar-submenu-toggle"></span>
+                                <ul class="navbar-navigation-dropdown rd-navbar-dropdown">
+                                    <li class="navbar-navigation-back">
+                                        <button class="navbar-navigation-back-btn">Back</button>
+                                    </li>
+                                    <li class="navbar-navigation-dropdown-item">
+                                        <a class="navbar-navigation-dropdown-link" href="/about_us">产品介绍</a>
+                                    </li>
+                                    <li class="navbar-navigation-dropdown-item">
+                                        <a class="navbar-navigation-dropdown-link" href="/feedback">问题反馈</a>
+                                    </li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </div>
+
+                </div>
+            </div>
+        </nav>
+    </header>
+
+
+    <section class="section section-md bg-primary-lightest">
+        <div class="container">
+            <div class="row justify-content-center text-center">
+                <div class="col-xl-11" style="margin-top:2%">
+                    <h2> 赛博化身 Shop 介绍 <span class="icon text-primary icon-xl linearicons-blog"
+                                               style="margin-left: 20px"></span></h2>
+                    <span style="margin-top: 2.23125rem; display: inline-block">
+                            &nbsp; &nbsp;&nbsp; &nbsp;  聚力维度打造的人工智能动画制作软件赛博化身 Shop，是一款应用人工智能数字人技术的动画制作软件。
+                        </span>
+                    <p></p>
+                    <span>
+                            &nbsp; &nbsp;&nbsp; &nbsp;  Shop 1.0 版本包括写实级别面部捕捉技术和精准动作捕捉技术：仅使用普通摄像头，无需贴光学捕捉点即可实现精准面部表情捕捉；
+                            无需昂贵的光学捕捉即可捕捉到目标角色每一个细致关节的移动。具备直播、录播、开拍、角色更换、场景更替、镜头切换、角色调节等功能，
+                            可应用于直播、动画制作、形象代言、在线教育、虚拟主持人等领域，让每个人都可以成为视频作家，用 UGC 的场景实现 PGC 的质量，加速数字时代进程。
+                        </span>
+                    <p></p>
+
+                    <span>
+                            &nbsp; &nbsp;&nbsp; &nbsp;   未来版本将增加预设动作库、个人化动作库，个性化捏脸、智能捏脸、服装切换、游戏式操控、实时剪辑等新功能；
+                            同时新增海量素材库可供选择，动物人物多样角色库、高清 3D 场景库、复杂丰富的动作库、多重玩法，任意组合，满足你的个性化需求。
+                        </span>
+
+                    <p></p>
+                    <img class="person-img" src="/static/images/shop/ShopQRCode.png"
+                         style="margin-top: 8%; max-width: 160px; max-height: 160px">
+
+                    <p></p>
+                    <div class="person-text">欢迎扫码</div>
+                    <div class="person-text" style="margin-top: 0%">(立即加入产品内测群)</div>
+                    {#                        <a class="link link-privacy" href="mailto:#">market@12dms.com</a>#}
+                </div>
+
+            </div>
+
+            {#        <div class="container tab">#}
+            {#          <ul class="nav nav-line justify-content-center active" role="tablist">#}
+            {#            <li class="nav-item"><a class="nav-link h6 active" data-toggle="tab" href="#navLine3-1" role="tab" aria-selected="true">Who are we</a></li>#}
+            {#            <li class="nav-item"><a class="nav-link h6" data-toggle="tab" href="#navLine3-2" role="tab" aria-selected="false">Advantages</a></li>#}
+            {#          </ul>#}
+            {#          <div class="tab-content">#}
+            {#            <div class="tab-pane fade active show" id="navLine3-1" role="tabpanel">#}
+            {#              <div class="row row-20 row-lg-40 flex-sm-row-reverse">#}
+            {#                <div class="col-md-6 ml-auto">#}
+            {#                  <div class="title-1">About Shop</div>#}
+            {#                  <h2>We help you<br class="d-none d-xl-inline">embrace the future</h2>#}
+            {#                  <p> &nbsp; &nbsp;&nbsp; &nbsp;  Shop 具备直播、录播、开拍、角色更换、场景更替、镜头切换、角色调节等功能，#}
+            {#                      可应用于直播、动画制作、形象代言、在线教育、虚拟主持人等领域，让每个人都可以成为视频作家，用 UGC 的场景实现 PGC 的质量，加速数字时代进程。</p>#}
+            {#                  <p> &nbsp; &nbsp;&nbsp; &nbsp;  未来版本将增加预设动作库、个人化动作库，个性化捏脸、智能捏脸、服装切换、游戏式操控、实时剪辑等新功能； 同时新增海量素材库可供选择，动物人物多样角色库、高清 3D 场景库、复杂丰富的动作库、多重玩法，任意组合，满足你的个性化需求。</p>#}
+            {#                    <div class="btn-group-1"><a class="btn btn-lg" href="/package_list">购买会员</a></div>#}
+            {#                </div>#}
+            {#                <div class="col-md-5 d-none d-md-block">#}
+            {#                    <img class="image" src="/static/images/shop/ShopQRCode.png" style="width: 328px; height: 328px; margin-left: 6%" alt="">#}
+            {#                    <div class="person-text" style=" margin-left: 29%;">欢迎扫码</div>#}
+            {#                    <div class="person-text" style="margin-left: 19%;">(立即加入产品内测群)</div>#}
+            {#                </div>#}
+            {#              </div>#}
+            {#            </div>#}
+            {#            <div class="tab-pane fade" id="navLine3-2" role="tabpanel">#}
+            {#              <div class="row row-30">#}
+            {#                <div class="col-md-6">#}
+            {#                  <div class="title-1">Why Choose Us</div>#}
+            {#                  <h2>We provide top-notch<br class="d-none d-xl-inline">service</h2>#}
+            {#                  <p>写实级别面部捕捉技术和精准动作捕捉技术.</p>#}
+            {#                  <p>无需贴光学捕捉点即可实现精准面部表情捕捉, 无需昂贵的光学捕捉即可捕捉到目标角色每一个细致关节的移动.</p>#}
+            {#                                      <div class="btn-group-1"><a class="btn btn-lg" href="/package_list">购买会员</a></div>#}
+            {##}
+            {#                </div>#}
+            {#                <div class="col-md-6">#}
+            {#                        <!-- Blurb-->#}
+            {##}
+            {#                        <article class="blurb blurb-simple">#}
+            {#                          <div class="blurb-item">#}
+            {#                            <div class="icon blurb-icon onclinic-check"></div>#}
+            {#                            <div class="blurb-title">高仿真高精度拟人版角色库，现有角色库可进行性别选择. </div>#}
+            {#                          </div>#}
+            {#                        </article>#}
+            {#                        <!-- Blurb-->#}
+            {#                        <article class="blurb blurb-simple">#}
+            {#                          <div class="blurb-item">#}
+            {#                            <div class="icon blurb-icon onclinic-check"></div>#}
+            {#                            <div class="blurb-title">高清3D场景库，有室内室外多场景可供选择，前景背景均可随意组合.</div>#}
+            {#                          </div>#}
+            {#                        </article>#}
+            {#                        <!-- Blurb-->#}
+            {#                        <article class="blurb blurb-simple">#}
+            {#                          <div class="blurb-item">#}
+            {#                            <div class="icon blurb-icon onclinic-check"></div>#}
+            {#                            <div class="blurb-title">准面部调节，支持针对眼睛大小、歪头、抬头、低头、转头等调节.</div>#}
+            {#                          </div>#}
+            {#                        </article>#}
+            {##}
+            {##}
+            {#                </div>#}
+            {#              </div>#}
+            {#            </div>#}
+            {#          </div>#}
+            {#        </div>#}
+
+        </div>
+    </section>
+
+
+    <section class="footer footer-dark context-dark bg-800" style="margin-top: 10%">
+        <div class="container">
+            <div class="row row-30">
+
+                <div class="col-sm-6 col-lg-3">
+                    <h5 class="footer-title">联系方式</h5>
+                    <ul class="list list-icons">
+                        <li class="list-item">
+                            <div class="list-icon onclinic-map-marker"></div>
+                            北京市朝阳区五里桥一街1号非中心5号楼四层十二维度
+                        </li>
+                        <li class="list-item">
+                            <div class="list-icon onclinic-phone"></div>
+                            010-85717789
+                        </li>
+                        <li class="list-item">
+                            <div class="list-icon onclinic-email-open"></div>
+                            market@12dms.com
+                        </li>
+
+                    </ul>
+
+                </div>
+
+            </div>
+        </div>
+    </section>
+    <footer class="footer footer-minimal context-dark bg-900">
+        <div class="container">
+        </div>
+    </footer>
+</div>
+<!-- Preloader-->
+<div class="preloader">
+    <div class="preloader-inner">
+        <div class="preloader-dot"></div>
+        <div class="preloader-dot"></div>
+        <div class="preloader-dot"></div>
+        <div class="preloader-dot"></div>
+    </div>
+</div>
+
+<div class="to-top mdi-chevron-up "></div>
+</body>
+</html>
+<script src="/static/components/base/core.min.js"></script>
+<script src="/static/components/base/script.js"></script>
+<script type="text/javascript">
+    var shop_header = document.getElementById("shop_header");
+    var shop_title = document.getElementById("shop_title");
+    var shop_phone = document.getElementById("shop_phone");
+    var option = {
+        attributes: true,
+        attributeFilter: ['class']
+    };
+
+    var mutationObserver = new MutationObserver(function (mutations) {
+        if (shop_header.className.indexOf('rd-navbar-fixed') != -1){
+            shop_title.style.display = "None";
+            shop_phone.style.display = "Block";
+        }else{
+            shop_title.style.display = "Block";
+            shop_phone.style.display = "None";
+
+        }
+    });
+
+    mutationObserver.observe(shop_header, option)
+
+</script>

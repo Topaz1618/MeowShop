@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+
+
+<div id="uploader" class="wu-example">
+    <!--用来存放文件信息-->
+
+    <div class="btns">
+       测试 zip 上传: <input style="background-color: white; border: double; border-color: #54545440; margin-left: 12px; margin-top: 10px;"
+                               type='file' id="zip" />
+        <button id="ctlBtn" class="btn btn-default" onclick="UploadZipFileMain()">上传</button>
+    </div>
+
+</div>
+<div id="info" style="display: none; color: red; height: 30px; width: 100px" > waiting .... </div>
+</body>
+</html>
+
+<script src='static/js/jquery.min.js' type="text/javascript"></script>
+<script src="static/vendor/jquery/jquery.min.js"></script>
+<script src="static/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+<script type="text/javascript">
+    function UploadZipFileFunc(file, num, media_type) {
+        console.log("file", file,);
+
+        var blockSize = 1024 * 1024 * 20;
+        {#var blockSize = 100;#}
+        var filename = file.name;
+        var count = 0;
+        var total_chunk = Math.ceil(file.size / blockSize);
+
+        for (let start = 0; start < file.size; start += blockSize) {
+            count += 1;
+            var end;
+            if ( start + blockSize > file.size){
+                end = file.size;
+            }else{
+                end = start + blockSize;
+
+            }
+            const chunk = file.slice(start, end);
+            console.log(chunk);
+            console.log(count, '/', total_chunk, start, end);
+
+            const formData = new FormData();
+            formData.append("file", chunk);
+            formData.append("filesize", file.size);
+            formData.append("filename",filename);
+            formData.append("media_type", media_type);
+            formData.append("count", count);
+            formData.append("total_chunk", total_chunk);
+
+            $.ajax({
+                url: "/upload",
+                type: "POST",
+                data: formData,
+                processData: false,
+                contentType: false,
+                success: function (response) {
+                    if (response == "successful"){
+                        return response;
+                    }
+                }
+            });
+        }
+
+        console.log("I am here!! ");
+        return true;
+    };
+
+    function UploadZipFileMain() {
+        var zip_file_obj = document.getElementById("zip");
+        var zip_file = zip_file_obj.files[0];
+        var res = UploadZipFileFunc(zip_file, 1, 1);
+        if (res == true) {
+            document.getElementById("info").style.display = "block";
+            var msg = setTimeout("confirm(\"上传成功\");", 3000);
+
+            if (msg == true) {
+                setTimeout("document.getElementById(\"info\").style.display = \"none\"", 3000);
+                setTimeout("window.location.reload(window.location.href)", 3000);
+            } else {
+                setTimeout("document.getElementById(\"info\").style.display = \"none\"", 3000);
+                setTimeout("window.location.reload(window.location.href)", 3000);
+            }
+        }
+
+    }
+
+
+</script>

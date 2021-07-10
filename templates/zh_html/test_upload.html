@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+
+
+<div id="uploader" class="wu-example">
+    <!--用来存放文件信息-->
+
+    <div class="btns">
+       测试小文件上传: <input style="background-color: white; border: double; border-color: #54545440; margin-left: 12px; margin-top: 10px;"
+                               type='file' id="sfile" />
+        <button id="ctlBtn" class="btn btn-default" onclick="UploadFileMain()">上传</button>
+    </div>
+
+
+    <div class="btns">
+       测试 zip 上传: <input style="background-color: white; border: double; border-color: #54545440; margin-left: 12px; margin-top: 10px;"
+                               type='file' id="zip" />
+        <button id="ctlBtn" class="btn btn-default" onclick="UploadZipFileMain()">上传</button>
+    </div>
+
+</div>
+<div id="info" style="display: none; color: red; height: 30px; width: 100px" > waiting .... </div>
+</body>
+</html>
+
+<script src='static/js/jquery.min.js' type="text/javascript"></script>
+<script src="static/vendor/jquery/jquery.min.js"></script>
+<script src="static/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+<script type="text/javascript">
+
+    function S4() {
+        return (((1+Math.random())*0x10000)|0).toString(16).substring(1);
+    }
+
+    function guid() {
+        return (S4()+S4()+"-"+S4()+"-"+S4()+"-"+S4()+"-"+S4()+S4()+S4());
+    }
+
+    function UploadZipFileFunc(file, num, media_type) {
+        {#var blockSize = 1024 * 1024 * 10;#}
+        alert("num", file, num, media_type);
+        console.log("aaa", file, num, media_type);
+        var blockSize = 1024 * 1024 * 10;
+        var filename = file.name;
+        var count = 0;
+        var total_chunk = Math.ceil(file.size / blockSize);
+        var file_uuid = guid();
+
+        {#info_el.style.display = "block";#}
+
+        for (let start = 0; start < file.size; start += blockSize) {
+
+            count += 1;
+            var end;
+            if ( start + blockSize > file.size){
+                end = file.size;
+            }else{
+                end = start + blockSize;
+
+            }
+            const chunk = file.slice(start, end);
+            console.log('当前帧数: ' + count + '/' + total_chunk, 'size: ' + start + '/' + end);
+
+            const formData = new FormData();
+            formData.append("file", chunk);
+            formData.append("filesize", file.size);
+            formData.append("filename",filename);
+            formData.append("media_type", media_type);
+            formData.append("count", count);
+            formData.append("total_chunk", total_chunk);
+            formData.append("uuid", file_uuid);
+
+            $.ajax({
+                url: "/upload_file",
+                type: "POST",
+                data: formData,
+                async: false,
+                processData: false,
+                contentType: false,
+
+                success: function (response) {
+                    if (response == "success"){
+                        console.log("!!!!!!", response);
+                        return;
+                    }
+                }
+            });
+        }
+
+        console.log("I am here!! ");
+        if (total_chunk > 2) {
+            if (total_chunk == count) {
+                console.log("win");
+                notify_merge = function Merge() {
+                    const formData = new FormData();
+                    formData.append("merge", true);
+                    formData.append("filename", filename);
+                    formData.append("total_chunk", total_chunk);
+                    formData.append("uuid", file_uuid);
+                    $.ajax({
+                        url: "/merge_file",
+                        type: "POST",
+                        data: formData,
+                        async: false,
+                        processData: false,
+                        contentType: false,
+                        success: function (response) {
+                            if (response == "false") {
+                                return setTimeout("notify_merge();", 500);
+                            }
+                            else {
+                                return
+                            }
+                        }
+                    });
+                };
+
+                notify_merge();
+
+            }
+        }
+
+        return true;
+    };
+
+
+    function UploadZipFileMain() {
+        document.getElementById("info").style.display = "block";
+        var file = document.getElementById('zip').files[0];
+        function checkOver(item) {
+            let check = false;
+            let promise = new Promise(function(resolve, reject) {
+              setTimeout(() => {
+                check = UploadZipFileFunc(file, 1, 1);
+                resolve(check);
+              }, 500);
+            });
+            return promise;
+        }
+
+        var item = "1";
+        checkOver(item).then((check) => {
+          console.log("!!!! true", check); // --> true/false
+
+            if (check){
+                document.getElementById("info").style.display = "none";
+                confirm("上传成功");
+                setTimeout("window.location.reload(window.location.href)", 1000);
+
+                }
+            });
+
+        {#var res = setTimeout("UploadZipFileFunc(document.getElementById('zip').files[0], 1, 1)", 500);#}
+        {#console.log("!!!!res", res);#}
+    }
+
+
+
+    function UploadFileMain() {
+        var sfile_file_obj = document.getElementById("sfile");
+        var file = sfile_file_obj.files[0];
+
+        console.log("file", file);
+
+        var filename = file.name;
+
+        const formData = new FormData();
+        formData.append("file", file);
+        formData.append("filename",filename);
+        $.ajax({
+            url: "/test_upload",
+            type: "POST",
+            data: formData,
+            processData: false,
+            contentType: false,
+            success: function (response) {
+                if (response == "success"){
+                    return;
+                }
+            }
+        });
+
+        console.log("Good")
+
+    }
+
+</script>

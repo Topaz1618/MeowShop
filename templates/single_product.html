@@ -1,0 +1,449 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Meow Shop</title>
+{#    <meta charset="utf-8">#}
+
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta property="og:title" content="Template Monster Admin Template">
+    <meta property="og:description" content="brevis, barbatus clabulares aliquando convertam de dexter, peritus capio. devatio clemens habitio est.">
+    <link rel="stylesheet" href="/static/components/base/base.css">
+      <style>
+        .btn.topaz {
+            {#border-top-left-radius: 20px !important;#}
+            border-top-right-radius: 60px;
+            border-bottom-right-radius: 60px;
+            border-bottom-left-radius: 60px;
+        }
+        .btn.topaz:hover {
+            {#background-color: #264555;#}
+            {#color: #1c54e2;#}
+        }
+
+        {#.link-inherit.topaz_link {#}
+        {#    color: #6c757d;#}
+        {#}#}
+
+        .link-inherit.topaz_link:hover {
+            color:  #6c757d;
+        }
+    </style>
+  </head>
+
+  <body>
+    <div class="page">
+      <!--RD Navbar-->
+        <header class="section rd-navbar-wrap rd-navbar-wrap-transparent">
+        <nav id="shop_header" class="rd-navbar rd-navbar-solid rd-navbar-transparent" data-rd-navbar='{"responsive":{"1200":{"stickUpOffset":"164px"}}}'>
+          <div class="navbar-section navbar-non-stuck">
+            <div class="navbar-panel">
+              <button class="navbar-switch mdi-menu novi-icon" data-multi-switch='{"targets":".rd-navbar","scope":".rd-navbar","isolate":"[data-multi-switch]"}'></button>
+              <div class="navbar-logo">
+                    <a class="navbar-navigation-root-link" href="/" style="width: 160%; font-size: 22px; font-weight: 500; margin-top: -4%;"> Meow Shop </a>
+              </div>
+            </div>
+            <div class="navbar-container">
+              <div class="navbar-cell flex-grow-1">
+                <div class="navbar-info">
+                  <div class="list list-icons-2">
+                    <div class="list-item">
+                        <li class="navbar-navigation-root-item">
+                            <a id="shop_title" class="navbar-navigation-root-link" href="/" style="font-size: 28px; font-weight: 500;"> Meow Shop </a>
+                        </li>
+
+                    </div>
+                  </div>
+                  <div class="navbar-logo navbar-fullwidth-logo">
+                      <a class="navbar-logo-link" href="index.html">
+                      </a>
+                  </div>
+                  <div class="text-block text-block-2 d-md-flex align-items-center justify-content-center">
+                    <div class="list list-icons-2">
+                      <div class="list-item">
+                          <a class="navbar-navigation-root-link" style="display: inline-block; " href="/user_info">
+                              <span class="mdi-account" style="display: inline-block"> {{ username }}  </span>
+                          </a>
+                    </div>
+                  </div>
+                </div>
+
+                </div>
+              </div>
+              <div class="navbar-cell">
+                <div class="navbar-subpanel">
+                  <div class="navbar-subpanel-item">
+                    <button class="navbar-button navbar-info-button mdi-dots-vertical novi-icon" data-multi-switch='{"targets":".rd-navbar","scope":".rd-navbar","class":"navbar-info-active","isolate":"[data-multi-switch]"}'></button>
+                  </div>
+
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="navbar-section">
+            <div class="navbar-container navbar-sidebar" style="margin-top: 1%">
+              <div class="navbar-cell flex-grow-1">
+                  <ul class="navbar-navigation rd-navbar-nav" style="margin-left: 58px">
+
+                    <li class="navbar-navigation-root-item" style="margin-left: -58px;">
+                        <a class="navbar-navigation-root-link" style="display: inline-block; " href="/">
+                            <span class="product-btn btn topaz btn-icon mdi-home " style="display: inline-block; border: 1px solid white;"> Home </span>
+                        </a>
+                    </li>
+
+                      <li class="navbar-navigation-root-item" style="margin-left: -58px;">
+                        <a class="navbar-navigation-root-link" style="display: inline-block; " href="/store_catalog">
+                            <span class="product-btn btn topaz btn-icon mdi-shopping" style="display: inline-block; border: 1px solid white;"> &nbsp;Shop 商店&nbsp;&nbsp; &nbsp;</span>
+                        </a>
+                    </li>
+
+
+
+                    <li class="navbar-navigation-root-item" style="margin-left: -58px;">
+                        <a class="navbar-navigation-root-link" style="display: inline-block; " href="/package_list">
+                            <span class="product-btn btn topaz btn-icon mdi-cake " style="display: inline-block; border: 1px solid white;"> 会员套餐 </span>
+                        </a>
+                    </li>
+
+
+                      <li class="navbar-navigation-root-item" style="margin-left: -58px;">
+                          <a class="navbar-navigation-root-link" style="display: inline-block; " href="/user_info">
+                            <span class="product-btn btn topaz btn-icon mdi-account" style="display: inline-block; border: 1px solid white;"> 会员信息 </span>
+                            </a>
+                    </li>
+
+                     <li class="navbar-navigation-root-item" style="margin-left: -58px;">
+                            <a class="navbar-navigation-root-link" style="display: inline-block; " href="/my_heart">
+                                <span class="product-btn btn topaz btn-icon mdi-account-plus" style="display: inline-block; border: 1px solid white;"> 我的账户 </span>
+                            </a>
+
+                        <ul class="navbar-navigation-dropdown rd-navbar-dropdown">
+                        <li class="navbar-navigation-back">
+                          <button class="navbar-navigation-back-btn">Back</button>
+                        </li>
+                         <li class="navbar-navigation-dropdown-item">
+                             <a class="navbar-navigation-dropdown-link" href="/order_list">我的订单</a>
+                         </li>
+                        <li class="navbar-navigation-dropdown-item">
+                            <a class="navbar-navigation-dropdown-link" href="/my_items">我的购买</a>
+                        </li>
+{#                         <li class="navbar-navigation-dropdown-item">#}
+{#                             <a class="navbar-navigation-dropdown-link" href="/my_heart">我的收藏</a>#}
+{#                         </li>#}
+
+                      </ul>
+
+                    </li>
+
+                    <li class="navbar-navigation-root-item" style="margin-left: -58px;">
+                            <a class="navbar-navigation-root-link" style="display: inline-block; " href="/about_us">
+                                <span class="product-btn btn topaz btn-icon mdi-note-outline" style="display: inline-block; border: 1px solid white;"> 关于我们 </span>
+                            </a>
+
+                        <ul class="navbar-navigation-dropdown rd-navbar-dropdown">
+                        <li class="navbar-navigation-back">
+                          <button class="navbar-navigation-back-btn">Back</button>
+                        </li>
+                        <li class="navbar-navigation-dropdown-item">
+                            <a class="navbar-navigation-dropdown-link" href="/about_us">产品介绍</a>
+                        </li>
+                         <li class="navbar-navigation-dropdown-item">
+                             <a class="navbar-navigation-dropdown-link" href="/feedback">问题反馈</a>
+                         </li>
+                      </ul>
+
+                    </li>
+                </ul>
+              </div>
+
+            </div>
+          </div>
+        </nav>
+      </header>
+
+
+
+      <!-- Single product-->
+      <section class="section section-md ">
+        <div class="container">
+          <div class="row row-30">
+            <div class="col-sm-6 d-flex">
+              <div class="slick-product-container">
+                <div class="slick-slider slick-product slider-for" data-slick='{"arrows":false,"asNavFor":".slider-nav","autoplay":true,"autoplaySpeed":5000,"fade":true}'>
+                  <div class="slick-content">
+                      <img id="{{ data["goods_id"] }}_img" src="{{ data["image_path"] }}" style="max-height: 510px; max-width: 510px; min-width: 510px; min-height: 510px" alt="" width="510" height="510"/>
+                  </div>
+                  <div class="slick-content">
+                      <img src="{{ data["image_path"] }}" style="max-height: 510px; max-width: 510px; min-width: 510px; min-height: 510px" alt="" width="510" height="510"/>
+                  </div>
+                </div>
+                <div class="slick-slider slick-product-nav slider-nav" data-slick='{"slidesToShow":3,"arrows":false,"asNavFor":".slider-for","focusOnSelect":true,"variableWidth":true}'>
+                  <div class="slick-content"><img src="{{ data["image_path"] }}" style="max-height: 55px; max-width: 55px; min-width: 55px; min-height: 55px" alt="" width="55" height="55"/>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-sm-6">
+              <div class="product product-overview">
+                  {% if data["is_discount"] and data["discount"] !="100" %}
+                    <div class="tag tag-sm tag-tertiary">Sale</div>
+                  {% end %}
+                  {% if data["is_new"] %}
+                    <div class="tag tag-sm">New</div>
+                  {% end %}
+
+                <h3 class="product-title">{{ data["goods_name"] }}</h3>
+
+                <div class="product-meta">
+                  <div>
+                          <div class="rating product-rating">
+                            <div class="rating-item mdi-star"></div>
+                            <div class="rating-item mdi-star"></div>
+                            <div class="rating-item mdi-star"></div>
+                            <div class="rating-item mdi-star"></div>
+                            <div class="rating-item mdi-star"></div>
+{#                            <div class="rating-item rating-item-disabled mdi-star"></div>#}
+                          </div>
+                  </div>
+                  <div>
+                    <div class="product-meta-link">Recommand</div>
+                  </div>
+                </div>
+                  {% if data["is_discount"] and data["discount"] !="100" %}
+                    <div class="product-price h4" style="height: 28px; margin-top: 2%;" >
+                        <span  style="color: #264555; text-decoration-line: line-through; font-size: 28px;"> ¥ {{ data["price"] }}</span>
+                        <span name="price" style="margin-left: 3%; font-size: 22px"> ¥ {{ get_discount_price(data["price"], data["discount"]) }}</span>
+                    </div>
+                  {% else %}
+                        <div name="price" class="product-price h4" style=" margin-top: 2%;"> ¥ {{ data["price"] }}</div>
+                  {% end %}
+
+                <div class="product-text">{{ data["short_desc"] }}</div>
+
+                <div class="product-check">
+                  <div class="spinner-form-wrap">
+                    <label class="form-label" for="product-spinner">QTY:</label>
+                      <span class="ui-spinner ui-corner-all ui-widget ui-widget-content" style="pointer-events: none;">
+                          <input id="product-spinner" type="number" value="1" name="qty" disabled="disabled" data-spinner="" style="/* pointer-events: none; */" aria-valuemin="0" aria-valuenow="1" autocomplete="off" class="ui-spinner-input" role="spinbutton">
+                          <a tabindex="-1" aria-hidden="true" class="ui-button ui-widget ui-spinner-button ui-spinner-up ui-corner-tr ui-button-icon-only" role="button">
+                              <span class="ui-button-icon ui-icon ui-icon-triangle-1-n"></span>
+                              <span class="ui-button-icon-space"> </span>
+                          </a>
+                          <a tabindex="-1" aria-hidden="true" class="ui-button ui-widget ui-spinner-button ui-spinner-down ui-corner-br ui-button-icon-only" role="button">
+                              <span class="ui-button-icon ui-icon ui-icon-triangle-1-s"></span>
+                              <span class="ui-button-icon-space"> </span>
+                          </a>
+                      </span>
+
+                  </div>
+                    <a class="btn btn-lg btn-dark" href="/pay?goods_name={{ data["goods_name"] }}&goods_id={{ data["goods_id"] }}&goods_price={{ data["price"] }}"
+                    onclick="return CheckIsBought({{ data["goods_id"] }})">
+                        <span class="btn-icon onclinic-cart"></span>
+                        <span>购买</span>
+                    </a>
+                </div>
+                <div class="product-term">
+                  <div class="product-term-item">
+                      <span class="product-term-title">SKU: </span>
+                      <span class="product-term-description">00{{ data["goods_id"] }}</span>
+                  </div>
+                  <div class="product-term-item">
+                      <span class="product-term-title">商品分类: </span>
+                      <span class="product-term-description">
+                          <a href="/store_catalog?filter={{ data["main_menu"] }}">{{ data["main_menu"] }}</a>
+                      </span>
+                  </div>
+                  <div class="product-term-item">
+                      <span class="product-term-title">Tag: </span>
+                      <span class="product-term-description">
+                          <a href="#"> {{ data["secondary_menu"] }}</a>
+                      </span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- Single product review-->
+      <section class="section section-md ">
+        <div class="container">
+          <div class="tab">
+            <ul class="nav nav-line" role="tablist">
+              <li class="nav-item">
+                  <a class="nav-link h6 active" data-toggle="tab" href="#navLine2-1" role="tab" aria-selected="true">详情描述</a>
+              </li>
+              <li class="nav-item">
+                  <a class="nav-link h6" data-toggle="tab" href="#navLine2-2" role="tab" aria-selected="false">更多信息</a>
+              </li>
+{#              <li class="nav-item"><a class="nav-link h6" data-toggle="tab" href="#navLine2-3" role="tab" aria-selected="false">Reviews 0</a></li>#}
+            </ul>
+            <div class="tab-content">
+              <div class="tab-pane fade show active" id="navLine2-1" role="tabpanel">
+                <div class="row row-30 row-content flex-sm-row-reverse">
+                  <div class="col-sm-6">
+                      <img src="{{ data["image_path"] }}" style="max-width: 560px; min-width: 560px; max-height: 388px; min-height: 388px" alt="" width="560" height="420"/>
+                  </div>
+                  <div class="col-sm-6">
+                    <h3>{{ data["goods_name"] }}</h3>
+                    <p>{{ data["short_desc"] }}</p>
+                    <p>{{ data["desc"] }}</p>
+
+{#                    <p>Ut etiam sit amet nisl purus. Egestas egestas fringilla phasellus faucibus scelerisque eleifend. Aliquet lectus proin nibh nisl condimentum id venenatis a condimentum. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>#}
+                  </div>
+                </div>
+                <div class="row row-30 row-content align-items-center justify-content-between">
+                  <div class="col-sm-6">
+                      <img src="{{ data["image_path"] }}" style="max-width: 560px; min-width: 560px; max-height: 388px; min-height: 388px" alt="" width="560" height="420"/>
+                  </div>
+                  <div class="col-sm-6 col-xl-5">
+                    <p>{{ data["short_desc"] }}</p>
+                    <ul class="list list-marked">
+                        <li class="list-item">商品名称: {{ data["goods_name"] }}</li>
+                        <li class="list-item">商品类别: {{ data["main_menu"] }}</li>
+                        <li class="list-item">价格: ¥ {{ data["price"] }}</li>
+                    </ul>
+                    <p> <a class="link link-inherit topaz_link" href="/about_us">@ Shop 赛博化身制作</a>  </p>
+
+                  </div>
+                </div>
+              </div>
+              <div class="tab-pane fade" id="navLine2-2" role="tabpanel">
+                <h3>商品规格</h3>
+                <div class="table-container table-responsive">
+                  <table class="table table-separate">
+                    <tbody>
+                        <tr>
+                        <td class="font-weight-medium">SKU</td>
+                        <td>00{{ data["goods_id"] }}</td>
+                      </tr>
+
+
+                      <tr>
+                        <td class="font-weight-medium">商品类别</td>
+                        <td>{{ data["main_menu"] }}</td>
+                      </tr>
+                      <tr>
+                        <td class="font-weight-medium">商品标签</td>
+                        <td>{{ data["secondary_menu"] }}</td>
+                      </tr>
+
+                        <tr>
+                        <td class="font-weight-medium">商品名称</td>
+                        <td>{{ data["goods_name"] }}</td>
+                      </tr>
+
+                      <tr>
+                        <td class="font-weight-medium">商品价格</td>
+                        <td>{{ data["price"] }}</td>
+                      </tr>
+
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- Product simple-->
+
+        <section class="footer footer-dark context-dark bg-800" style="margin-top: 10%">
+        <div class="container">
+            <div class="row row-30">
+
+                <div class="col-sm-6 col-lg-3">
+                    <h5 class="footer-title">联系方式</h5>
+                    <ul class="list list-icons">
+                        <li class="list-item">
+                            <div class="list-icon onclinic-map-marker"></div>
+                            北京市朝阳区五里桥一街1号非中心5号楼四层十二维度
+                        </li>
+                        <li class="list-item">
+                            <div class="list-icon onclinic-phone"></div>
+                            010-85717789
+                        </li>
+                        <li class="list-item">
+                            <div class="list-icon onclinic-email-open"></div>
+                            market@12dms.com
+                        </li>
+
+                    </ul>
+
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+      <footer class="footer footer-minimal context-dark bg-900">
+        <div class="container">
+                <!-- Copyright-->
+                <p class="rights">Copyright &copy; 2020.Company name All rights reserved.<a target="_blank" href="http://sc.chinaz.com/moban/">&#x7F51;&#x9875;&#x6A21;&#x677F;</a></p>
+        </div>
+      </footer>
+    </div>
+    <!-- Preloader-->
+    <div class="preloader">
+      <div class="preloader-inner">
+        <div class="preloader-dot"></div>
+        <div class="preloader-dot"></div>
+        <div class="preloader-dot"></div>
+        <div class="preloader-dot"></div>
+      </div>
+    </div>
+  </body>
+</html>
+<script src="/static/components/base/core.min.js"></script>
+<script src="/static/components/base/script.js"></script>
+
+<script type="text/javascript">
+    var shop_header = document.getElementById("shop_header");
+    var shop_title = document.getElementById("shop_title");
+
+    function CheckIsBought(goods_id) {
+        console.log("product id", goods_id);
+        const formData = new FormData();
+        formData.append("goods_id", goods_id);
+
+        $.ajax({
+            url: "/check_is_bought",
+            type: "POST",
+            data: formData,
+            processData: false,
+            contentType: false,
+            success: function (response) {
+                var msg = response["msg"];
+                if (msg != true){
+                    return true;
+                }
+                {#var img_el = document.getElementById(goods_id+"_img");#}
+                {#var img_path = img_el.src.split(window.location.origin)[1];#}
+                var uri = "/notify_purchased?info=商品已购买&btn=store&goods_id=" + goods_id;
+                var protocol = window.location.href.split(window.location.host)[0];
+                window.location.href = protocol + window.location.host +  uri;
+                return false;
+            }
+        });
+
+    }
+
+
+    var option = {
+        attributes: true,
+        attributeFilter: ['class']
+    };
+
+    var mutationObserver = new MutationObserver(function (mutations) {
+        if (shop_header.className.indexOf('rd-navbar-fixed') != -1){
+            shop_title.style.display = "None";
+        }else{
+            shop_title.style.display = "Block";
+        }
+    });
+
+    mutationObserver.observe(shop_header, option)
+
+</script>

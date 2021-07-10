@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Meow Shop</title>
+{#    <meta charset="utf-8">#}
+
+      <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta property="og:title" content="Template Monster Admin Template">
+    <meta property="og:description" content="brevis, barbatus clabulares aliquando convertam de dexter, peritus capio. devatio clemens habitio est.">
+    <link rel="stylesheet" href="/static/components/base/base.css">
+      <style>
+        .btn.topaz {
+            {#border-top-left-radius: 20px !important;#}
+            border-top-right-radius: 60px;
+            border-bottom-right-radius: 60px;
+            border-bottom-left-radius: 60px;
+        }
+        .btn.topaz:hover {
+            {#background-color: #264555;#}
+            {#color: #1c54e2;#}
+        }
+
+
+
+
+    </style>
+  </head>
+  <body>
+    <div class="page">
+      <!--RD Navbar-->
+
+        <header class="section rd-navbar-wrap rd-navbar-wrap-transparent">
+        <nav id="shop_header" class="rd-navbar rd-navbar-solid rd-navbar-transparent" data-rd-navbar='{"responsive":{"1200":{"stickUpOffset":"164px"}}}'>
+          <div class="navbar-section navbar-non-stuck">
+            <div class="navbar-panel">
+              <button class="navbar-switch mdi-menu novi-icon" data-multi-switch='{"targets":".rd-navbar","scope":".rd-navbar","isolate":"[data-multi-switch]"}'></button>
+              <div class="navbar-logo">
+                    <a class="navbar-navigation-root-link" href="/" style="font-size: 22px; font-weight: 500; margin-top: -4%;"> Meow Shop </a>
+              </div>
+            </div>
+            <div class="navbar-container">
+              <div class="navbar-cell flex-grow-1">
+                <div class="navbar-info">
+                  <div class="list list-icons-2">
+                    <div class="list-item">
+                        <li class="navbar-navigation-root-item">
+                            <a id="shop_title" class="navbar-navigation-root-link" href="/" style="font-size: 28px; font-weight: 500;"> Meow Shop </a>
+                        </li>
+
+                    </div>
+                  </div>
+                  <div class="navbar-logo navbar-fullwidth-logo">
+                      <a class="navbar-logo-link" href="index.html">
+                      </a>
+                  </div>
+                  <div class="text-block text-block-2 d-md-flex align-items-center justify-content-center">
+                    <div class="list list-icons-2">
+                      <div class="list-item">
+                          <a class="navbar-navigation-root-link" style="display: inline-block; " href="/user_info">
+                              <span class="mdi-account" style="display: inline-block"> {{ username }}  </span>
+                          </a>
+                    </div>
+                  </div>
+                </div>
+
+                </div>
+              </div>
+              <div class="navbar-cell">
+                <div class="navbar-subpanel">
+                  <div class="navbar-subpanel-item">
+                    <button class="navbar-button navbar-info-button mdi-dots-vertical novi-icon" data-multi-switch='{"targets":".rd-navbar","scope":".rd-navbar","class":"navbar-info-active","isolate":"[data-multi-switch]"}'></button>
+                  </div>
+
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="navbar-section">
+            <div class="navbar-container navbar-sidebar" style="margin-top: 1%">
+              <div class="navbar-cell flex-grow-1">
+                  <ul class="navbar-navigation rd-navbar-nav" style="margin-left: 58px">
+
+                    <li class="navbar-navigation-root-item" style="margin-left: -58px;">
+                        <a class="navbar-navigation-root-link" style="display: inline-block; " href="/">
+                            <span class="product-btn btn topaz btn-icon mdi-shopping " style="display: inline-block; border: 1px solid white;"> Home </span>
+                        </a>
+                    </li>
+
+
+                    <li class="navbar-navigation-root-item" style="margin-left: -58px;">
+                        <a class="navbar-navigation-root-link" style="display: inline-block; " href="/package_list">
+                            <span class="product-btn btn topaz btn-icon mdi-cake " style="display: inline-block; border: 1px solid white;"> 会员套餐 </span>
+                        </a>
+                    </li>
+
+
+                    <li class="navbar-navigation-root-item" style="margin-left: -58px;">
+                        <a class="navbar-navigation-root-link" style="display: inline-block; " href="/order_list">
+                            <span class="product-btn btn topaz btn-icon mdi-book" style="display: inline-block; border: 1px solid white;"> 订单列表  </span>
+                        </a>
+                    </li>
+
+                      <li class="navbar-navigation-root-item" style="margin-left: -58px;">
+                          <a class="navbar-navigation-root-link" style="display: inline-block; " href="/user_info">
+                            <span class="product-btn btn topaz btn-icon mdi-account" style="display: inline-block; border: 1px solid white;"> 会员信息 </span>
+                            </a>
+                    </li>
+
+                    <li class="navbar-navigation-root-item" style="margin-left: -58px;">
+                            <a class="navbar-navigation-root-link" style="display: inline-block; " href="/about_us">
+                                <span class="product-btn btn topaz btn-icon mdi-note-outline" style="display: inline-block; border: 1px solid white;"> 关于我们 </span>
+                            </a>
+
+                        <ul class="navbar-navigation-dropdown rd-navbar-dropdown">
+                        <li class="navbar-navigation-back">
+                          <button class="navbar-navigation-back-btn">Back</button>
+                        </li>
+                        <li class="navbar-navigation-dropdown-item">
+                            <a class="navbar-navigation-dropdown-link" href="/about_us">产品介绍</a>
+                        </li>
+                         <li class="navbar-navigation-dropdown-item">
+                             <a class="navbar-navigation-dropdown-link" href="/feedback">问题反馈</a>
+                         </li>
+                      </ul>
+
+                    </li>
+                </ul>
+              </div>
+
+            </div>
+          </div>
+        </nav>
+      </header>
+
+
+   <section class="section section-md ">
+        <div class="container" style="">
+
+{#            <div class="row row-40 row-content flex-md-row-reverse" style="width: 1200px">#}
+            <div class="row row-40 row-content flex-md-row-reverse" style="width: 103.2%">
+                <div class="col-md-8 col-lg-9" style="width: 100%; min-width: 100%;">
+
+                    <div class="product-search">
+                        <div class="product-search-inner">
+                            <div class="product-search-results">
+                                <span>当前所有套餐 </span>
+                                <span id="start_product_num">1</span>
+                                <span>-</span>
+                                <span id="end_product_num">3</span>
+                                <span>of</span>
+                                <span id="total_results">3</span>
+                                <span>results</span>
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <div class="row row-20 row-lg-40 row-content-2">
+                        {% for i in data %}    <!-- 循环开始，注意写法类似python中的for，但是最后没有冒号 -->
+                        {% if data[i]["is_free"] != True %}            <!-- 增加了一个判断语句 -->
+
+                        <div class="col-sm-6 col-lg-4 d-flex">
+                            <!-- Box-->
+                            <div class="box box-pricing" style="">
+                                <div class="box-inner" style="border: 2px solid white; border-bottom-right-radius: 60px;">
+                                    <div class="box-item">
+                                        <h4 class="box-title">
+                                            <div class="tag  tag-tertiary" style="display: inline-block; border-radius: 100%; ">
+                                                Sale
+                                            </div>
+                                            <span class="list-icon linearicons-" style="color: #1c54e2; margin-left: 12px; font-weight: bolder; font-size: 16px">
+
+                                            </span>
+
+                                            <a href="#">
+                                                {{ i }}
+                                            </a>
+                                        </h4>
+                                        <ul class="list list-marked box-list">
+                                            <li class="list-item">{{ data[i]["Days"] }} days</li>
+                                            {% if data[i]["member_grade"] == 2 %}
+                                            <li class="list-item">解锁角色: 所有角色</li>
+                                            {% else %}
+                                            <li class="list-item">解锁角色: 2 个</li>
+                                            {% end %}
+                                            {% if data[i]["Discount"] != 100  %}
+                                                <li class="list-item">套餐折扣:  {{ get_discount(data[i]["Discount"]) }} 折
+                                                </li>
+                                            {% end %}
+                                        </ul>
+                                    </div>
+                                    <div class="box-item">
+                                        {% if data[i]["Discount"] != 100  %}
+                                            <div class="box-price-text h6">套餐优惠价:</div>
+                                            <div class="box-price h3">
+                                                <span style="margin-left: 10px;color:#264555;font-size: 1.365rem; text-decoration: line-through;"> ¥ {{ data[i]["Money"] }} </span>
+                                                <span style="margin-left:15px;"> ¥ {{ get_discount_price(data[i]["Money"], data[i]["Discount"]) }}  </span>
+{#                                                ¥ {{ data[i]["Money"] }}#}
+                                            </div>
+                                        {% else %}
+                                        <div class="box-price-text h6">价格:</div>
+                                            <div class="box-price h3">
+                                                <span style=""> ¥ {{ data[i]["Money"] }} </span>
+
+{#                                                ¥ {{ data[i]["Money"] }}#}
+                                            </div>
+
+                                        {% end %}
+
+
+
+                                    </div>
+                                    {% if data[i]["is_free"] == False %}            <!-- 增加了一个判断语句 -->
+                                        {% if data[i]["Discount"] == 100  %}
+                                            <a class="product-btn btn btn-block btn-dark" href="/pay?goods_name={{ i }}&goods_price={{ data[i]["Money"] }}&is_recharge=True" style="color: wheat;">
+                                                <span class="btn-icon mdi-cart"></span>
+                                                <span>购买</span>
+                                            </a>
+                                        {% else %}
+                                            <a class="product-btn btn btn-block btn-dark" href="/pay?goods_name={{ i }}&goods_price={{ get_discount_price(data[i]["Money"], data[i]["Discount"]) }}&is_recharge=True" style="color: wheat;">
+                                                <span class="btn-icon mdi-cart"></span>
+                                                <span>购买</span>
+                                            </a>
+                                        {% end %}
+                                    {% end %}
+                                    {% if data[i]["is_free"] == True %}            <!-- 增加了一个判断语句 -->
+                                    <a class="product-btn btn btn-block btn-dark " href="#"
+                                       style="color: wheat;">
+                                        <span class="btn-icon mdi-duck" style="color: #838998; font-weight: 800;">已领取</span>
+                                    </a>
+                                    {% end %}
+
+                                </div>
+                            </div>
+                        </div>
+                        {% else %}
+                        <div class="col-sm-6 col-lg-4 d-flex">
+                            <!-- Box-->
+                            <!-- style: pointer-events: none-->
+                            <div class="box box-pricing topaz" style="">
+                                <div class="box-inner " style="border: 2px solid white; border-bottom-right-radius: 60px;">
+                                    <div class="box-item">
+                                        <h4 class="box-title">
+                                            <div class="tag  tag-tertiary " style="display: inline-block; border-radius: 100%; height: 32px; width: 54px;">
+                                                <span class="list-icon icon navbar-info-icon onclinic-heart novi-icon"></span>
+                                            </div>
+                                            <a href="#">
+                                                {{ i }}
+                                            </a>
+                                        </h4>
+                                        <ul class="list list-marked box-list">
+                                            <li class="list-item">{{ data[i]["Days"] }} days</li>
+                                            <li class="list-item">解锁角色: 2 个</li>
+                                        </ul>
+                                    </div>
+                                    <div class="box-item">
+                                        <div class="box-price-text h6">套餐优惠价:</div>
+                                        <div class="box-price h3">
+                                            <span style="margin-left: 10px;color:#264555;font-size: 1.365rem; text-decoration: line-through;"> ¥ {{ data[i]["Money"] }} </span>
+                                            <span style="margin-left:15px;"> ¥ 0 </span>
+
+                                        </div>
+                                    </div>
+
+
+                                    <a class="product-btn btn btn-block btn-dark " href="#" style="color: wheat;">
+                                        <span class="btn-icon mdi-duck mdi-check"  style=" font-weight: 800;"></span>
+                                        <span style="font-weight: 100;  margin-top: -1px;">已 </span>
+                                        <span style="font-weight: 100; margin-left: 2px; margin-top: -1px;">领 </span>
+                                        <span style="font-weight: 100; margin-left: 2px; margin-top: -1px;">取</span>
+                                    </a>
+
+                                </div>
+                            </div>
+
+                        </div>
+
+                        {% end %}
+
+
+
+                        {% end %}
+                    </div>
+
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+
+
+    <section class="footer footer-dark context-dark bg-800" style="margin-top: 10%">
+        <div class="container">
+            <div class="row row-30">
+
+                <div class="col-sm-6 col-lg-3">
+                    <h5 class="footer-title">联系方式</h5>
+                    <ul class="list list-icons">
+                        <li class="list-item">
+                            <div class="list-icon onclinic-map-marker"></div>
+                            北京市朝阳区五里桥一街1号非中心5号楼四层十二维度
+                        </li>
+                        <li class="list-item">
+                            <div class="list-icon onclinic-phone"></div>
+                            010-85717789
+                        </li>
+                        <li class="list-item">
+                            <div class="list-icon onclinic-email-open"></div>
+                            market@12dms.com
+                        </li>
+
+                    </ul>
+
+                </div>
+
+            </div>
+        </div>
+    </section>
+    <footer class="footer footer-minimal context-dark bg-900">
+        <div class="container">
+        </div>
+    </footer>
+</div>
+<!-- Preloader-->
+<div class="preloader">
+    <div class="preloader-inner">
+        <div class="preloader-dot"></div>
+        <div class="preloader-dot"></div>
+        <div class="preloader-dot"></div>
+        <div class="preloader-dot"></div>
+    </div>
+</div>
+
+<div class="to-top mdi-chevron-up "></div>
+</body>
+</html>
+<script src="/static/components/base/core.min.js"></script>
+<script src="/static/components/base/script.js"></script>
+
+<script type="text/javascript">
+    var shop_header = document.getElementById("shop_header");
+    var shop_title = document.getElementById("shop_title");
+
+    var option = {
+        attributes: true,
+        attributeFilter: ['class']
+    };
+
+    var mutationObserver = new MutationObserver(function (mutations) {
+        if (shop_header.className.indexOf('rd-navbar-fixed') != -1){
+            shop_title.style.display = "None";
+        }else{
+            shop_title.style.display = "Block";
+        }
+    });
+
+    mutationObserver.observe(shop_header, option)
+
+</script>

@@ -1,0 +1,447 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Meow Shop</title>
+{#    <meta charset="utf-8">#}
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta property="og:title" content="Template Monster Admin Template">
+    <meta property="og:description"
+          content="brevis, barbatus clabulares aliquando convertam de dexter, peritus capio. devatio clemens habitio est.">
+    <link rel="stylesheet" href="/static/components/base/base.css">
+    <style>
+        .btn.topaz {
+            {#border-top-left-radius: 32px !important;#}
+            border-top-right-radius: 60px;
+            border-bottom-right-radius: 60px;
+            border-bottom-left-radius: 60px;
+        }
+        .btn.topaz:hover {
+            {#background-color: #1c54e2;#}
+            {#color: #1c54e2;#}
+        }
+        .topaz_title1{
+            font-weight: 600;
+            margin-left: 18px;
+            font-size: 20px;
+        }
+
+        .form-label.topaz_title2{
+            font-size: 0.98rem;
+            font-weight: 600;
+            padding: 0;
+        }
+
+    </style>
+
+
+</head>
+<body>
+<div class="page">
+    <!--RD Navbar-->
+
+    <header class="section rd-navbar-wrap rd-navbar-wrap-transparent">
+        <nav id="shop_header" class="rd-navbar rd-navbar-solid rd-navbar-transparent"
+             data-rd-navbar='{"responsive":{"1200":{"stickUpOffset":"164px"}}}'>
+            <div class="navbar-section navbar-non-stuck">
+                <div class="navbar-panel">
+                    <button class="navbar-switch mdi-menu novi-icon"
+                            data-multi-switch='{"targets":".rd-navbar","scope":".rd-navbar","isolate":"[data-multi-switch]"}'></button>
+                    <div class="navbar-logo">
+                        <a class="navbar-navigation-root-link" href="/backend"
+                           style="width: 160%; font-size: 22px; font-weight: 500; margin-top: -4%;"> Shop 后台管理 </a>
+                    </div>
+                </div>
+                <div class="navbar-container">
+                    <div class="navbar-cell flex-grow-1">
+                        <div class="navbar-info">
+                            <div class="list list-icons-2">
+                                <div class="list-item">
+                                    <li class="navbar-navigation-root-item">
+                                        <a id="shop_title" class="navbar-navigation-root-link" href="/backend"
+                                           style="font-size: 28px; font-weight: 500;"> Shop 后台管理 </a>
+                                    </li>
+                                </div>
+                            </div>
+                            <div class="navbar-logo navbar-fullwidth-logo">
+                                <a class="navbar-logo-link" href="index.html">
+                                </a>
+                            </div>
+                            <div class="text-block text-block-2 d-md-flex align-items-center justify-content-center">
+                                <div class="list list-icons-2">
+                                    <div class="list-item">
+                                        <a class="navbar-navigation-root-link" style="display: inline-block; " href="/user_info">
+                                            <span id="username" class="mdi-account" style="display: inline-block"> {{ username }} </span>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                    <div class="navbar-cell">
+                        <div class="navbar-subpanel">
+                            <div class="navbar-subpanel-item">
+                                <button class="navbar-button navbar-info-button mdi-dots-vertical novi-icon"
+                                        data-multi-switch='{"targets":".rd-navbar","scope":".rd-navbar","class":"navbar-info-active","isolate":"[data-multi-switch]"}'></button>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="navbar-section">
+                <div class="navbar-container navbar-sidebar" style="margin-top: 1%">
+                    <div class="navbar-cell flex-grow-1" style="border-bottom: 1px solid #dde0e9;">
+                        <ul class="navbar-navigation rd-navbar-nav" style="margin-left: 58px">
+                            <li class="navbar-navigation-root-item active" style="margin-left: -58px;">
+                                <a class="navbar-navigation-root-link" style="display: inline-block; " href="/backend">
+                                    <span class="product-btn btn topaz btn-icon mdi-shopping"
+                                          style="display: inline-block; border: 1px solid white;"> Home </span>
+                                </a>
+                            </li>
+                            <li class="navbar-navigation-root-item" style="margin-left: -58px;">
+                                <a class="navbar-navigation-root-link" style="display: inline-block; "
+                                   href="/menu_items">
+                                    <span class="product-btn btn topaz btn-icon mdi-menu"
+                                          style="display: inline-block; border: 1px solid white;">  目录管理</span>
+                                </a>
+                            </li>
+
+                            <li class="navbar-navigation-root-item rd-navbar--has-dropdown rd-navbar-submenu" style="margin-left: -58px;">
+                                <a class="navbar-navigation-root-link" style="display: inline-block; " href="/status">
+                                    <span class="product-btn btn topaz btn-icon mdi-account-box"  style="display: inline-block; border: 1px solid white;"> 用户管理 </span>
+                                </a><span class="rd-navbar-submenu-toggle"></span>
+                                <ul class="navbar-navigation-dropdown rd-navbar-dropdown">
+                                    <li class="navbar-navigation-back">
+                                        <button class="navbar-navigation-back-btn">Back</button>
+                                    </li>
+                                    <li class="navbar-navigation-dropdown-item">
+                                        <a class="navbar-navigation-dropdown-link" href="/renewal_member">
+                                            <span class=" mdi-cake" style="display: inline-block; "> Shop 高级会员申请  </span>
+                                        </a>
+
+                                    </li>
+
+                                    <li class="navbar-navigation-dropdown-item">
+                                        <a class="navbar-navigation-dropdown-link" href="/status">
+                                            <span class=" mdi-account-star" style="display: inline-block; "> 用户注册 & 访问状态  </span>
+                                        </a>
+                                    </li>
+
+                                    <li class="navbar-navigation-dropdown-item">
+                                        <a class="navbar-navigation-dropdown-link" href="/add_internal_user">
+                                            <span class=" mdi-account-plus" style="display: inline-block; "> 新增内部测试账号  </span>
+                                        </a>
+                                    </li>
+                                    <li class="navbar-navigation-dropdown-item">
+                                        <a class="navbar-navigation-dropdown-link" href="/internal_users">
+                                            <span class="mdi-clipboard-account" style="display: inline-block; "> 测试账号列表  </span>
+                                        </a>
+{#                                        <a class="navbar-navigation-dropdown-link" href="/manager_resources">内部测试用户查看</a>#}
+                                    </li>
+                                </ul>
+                            </li>
+
+                            <li class="navbar-navigation-root-item rd-navbar--has-dropdown rd-navbar-submenu" style="margin-left: -58px;">
+                                <a class="navbar-navigation-root-link" style="display: inline-block; " href="/goods_list">
+                                    <span class="product-btn btn topaz btn-icon mdi-cart"  style="display: inline-block; border: 1px solid white;"> 商品管理 </span>
+                                </a><span class="rd-navbar-submenu-toggle"></span>
+                                <ul class="navbar-navigation-dropdown rd-navbar-dropdown">
+                                    <li class="navbar-navigation-back">
+                                        <button class="navbar-navigation-back-btn">Back</button>
+                                    </li>
+
+
+                                    <li class="navbar-navigation-dropdown-item">
+                                        <a class="navbar-navigation-dropdown-link" href="/create_goods">
+                                            <span class="mdi-playlist-plus" style="display: inline-block; "> Shop 商品新建  </span>
+                                        </a>
+
+                                    </li>
+
+                                    <li class="navbar-navigation-dropdown-item">
+                                        <a class="navbar-navigation-dropdown-link" href="/update_goods">
+                                            <span class="mdi-auto-upload" style="display: inline-block; "> 修改商品信息 </span>
+                                        </a>
+                                    </li>
+
+                                    <li class="navbar-navigation-dropdown-item">
+                                        <a class="navbar-navigation-dropdown-link" href="/goods_list">
+                                            <span class="mdi-cart-outline" style="display: inline-block; "> 所有商品列表 </span>
+                                        </a>
+                                    </li>
+
+                                </ul>
+                            </li>
+
+
+                            <li class="navbar-navigation-root-item" style="margin-left: -58px;">
+                                <a class="navbar-navigation-root-link" style="display: inline-block; "
+                                   href="/view_orders">
+                                    <span class="product-btn btn topaz btn-icon mdi-book"
+                                          style="display: inline-block;  border: 1px solid white;"> 所有订单 </span>
+                                </a>
+                            </li>
+
+                            <li class="navbar-navigation-root-item rd-navbar--has-dropdown rd-navbar-submenu"
+                                style="margin-left: -58px;">
+                                <a class="navbar-navigation-root-link" style="display: inline-block; " href="/backend">
+                                    <span class="product-btn btn topaz btn-icon mdi-note-outline"
+                                          style="display: inline-block; border: 1px solid white;"> 资源管理 </span>
+                                </a><span class="rd-navbar-submenu-toggle"></span>
+                                <ul class="navbar-navigation-dropdown rd-navbar-dropdown">
+                                    <li class="navbar-navigation-back">
+                                        <button class="navbar-navigation-back-btn">Back</button>
+                                    </li>
+                                    <li class="navbar-navigation-dropdown-item">
+                                        <a class="navbar-navigation-dropdown-link" href="/create_guide">新建资源</a>
+                                    </li>
+
+                                    <li class="navbar-navigation-dropdown-item">
+                                        <a class="navbar-navigation-dropdown-link" href="/modify_resources">修改资源</a>
+                                    </li>
+
+                                    <li class="navbar-navigation-dropdown-item">
+                                        <a class="navbar-navigation-dropdown-link" href="/manager_resources">资源批量管理</a>
+                                    </li>
+                                    <li class="navbar-navigation-dropdown-item">
+                                        <a class="navbar-navigation-dropdown-link" href="/zip_list">压缩包资源列表</a>
+                                    </li>
+                                    <li class="navbar-navigation-dropdown-item">
+                                        <a class="navbar-navigation-dropdown-link" href="/feature_list">功能资源列表</a>
+                                    </li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </div>
+
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <section class="section section-md bg-primary-lightest" style="">
+        <div class="container">
+            <div class="row justify-content-center text-center" style="margin-top: 2%;">
+            <div class="col-md-8">
+              <div class="box box-form-1 section-offset-item">
+                <div class="box-header">
+                  <h3 class="box-title"> Shop 录播/直播权限修改 </h3>
+                </div>
+                <div class="box-body">
+                  <div class="rd-form rd-mailform" data-form-output="contact-form-1" data-form-type="contact"  novalidate="novalidate">
+
+                    <div class="form-group">
+                      <label class="form-label topaz_title2" for="contact-1-phone">* Phone number</label>
+                      <div class="form-control-wrap">
+                        <input oninput="phonenumListen(this)" class="form-control form-control-has-validation form-control-last-child" id="contact-1-phone" type="text" name="phone" placeholder="15612345678" data-constraints="@Numeric @Required"><span class="form-validation"></span>
+                      </div>
+                    </div>
+                        <div class="form-group">
+                            <label class="form-label topaz_title2" for="contact-1-message" style="margin-top: 1%">* User Permission</label>
+
+
+                            <div class="custom-control custom-checkbox" style="margin-top: 1%;">
+                                <input class="custom-control-input" type="radio" id="1" name="cartFilter1" checked="checked" value="0">
+                                <label class="custom-control-label" for="1">
+                                    <span class="custom-control-text topaz_text" style="  font-size: 0.98rem;font-weight: 500;" > 录播 </span>
+                                </label>
+                            </div>
+
+                            <div class="custom-control custom-checkbox" >
+                                <input class="custom-control-input" type="radio" id="2" name="cartFilter1" value="1">
+                                <label class="custom-control-label" for="2">
+                                    <span class="custom-control-text" style="font-size: 0.98rem;font-weight: 500;"> 直播  </span>
+                                </label>
+                            </div>
+
+                            <div class="custom-control custom-checkbox" >
+                                <input class="custom-control-input" type="radio" id="3" name="cartFilter1" value="2">
+                                <label class="custom-control-label" for="3">
+                                    <span class="custom-control-text" style="font-size: 0.98rem;font-weight: 500;">
+                                        录播+直播
+{#                                        <span class="link " href="mailto:#" style="font-size: 0.88rem;">(可查看所有商品)</span>#}
+                                    </span>
+                                </label>
+                            </div>
+
+
+
+                    </div>
+                    <div class="rd-form-btn text-left" style="margin-top: 6%">
+                      <button class="btn btn-lg btn-primary" onclick="SubmitRenewalMember()">提交</button>
+                                                <a class="btn btn-lg btn-primary" href="/backend"><span>返回</span></a>
+
+                    </div>
+                    <div class="rd-form-meta small">
+                     <p style="color: #26455561; font-size: 0.88rem;">
+                        <span style="display: inline-block; ">任意问题可咨询: </span>
+                        <a class="link " href="mailto:#" style="font-size: 0.98rem;">Shop@12dms.com</a>
+                        或 <a class="link " href="/feedback" style="font-size: 0.88rem;">扫码进群</a> 反馈
+                     </p>
+                    </div>
+                  </div>
+
+
+                  <div class="form-output snackbar snackbar-primary" id="contact-form-1"></div>
+                </div>
+              </div>
+            </div>
+
+            </div>
+        </div>
+    </section>
+
+
+    <section class="footer footer-dark context-dark bg-800" style="margin-top: 10%">
+        <div class="container">
+            <div class="row row-30">
+
+                <div class="col-sm-6 col-lg-3">
+                    <h5 class="footer-title">联系方式</h5>
+                    <ul class="list list-icons">
+                        <li class="list-item">
+                            <div class="list-icon onclinic-map-marker"></div>
+                            北京市朝阳区五里桥一街1号非中心5号楼四层十二维度
+                        </li>
+                        <li class="list-item">
+                            <div class="list-icon onclinic-phone"></div>
+                            010-85717789
+                        </li>
+                        <li class="list-item">
+                            <div class="list-icon onclinic-email-open"></div>
+                            market@12dms.com
+                        </li>
+
+                    </ul>
+
+                </div>
+
+            </div>
+        </div>
+    </section>
+    <footer class="footer footer-minimal context-dark bg-900">
+        <div class="container">
+        </div>
+    </footer>
+</div>
+<!-- Preloader-->
+<div class="preloader">
+    <div class="preloader-inner">
+        <div class="preloader-dot"></div>
+        <div class="preloader-dot"></div>
+        <div class="preloader-dot"></div>
+        <div class="preloader-dot"></div>
+    </div>
+</div>
+
+<div class="to-top mdi-chevron-up "></div>
+</body>
+</html>
+<script src="/static/components/base/core.min.js"></script>
+<script src="/static/components/base/script.js"></script>
+<script type="text/javascript">
+    var shop_header = document.getElementById("shop_header");
+    var shop_title = document.getElementById("shop_title");
+
+
+    function phonenumListen(obj) {
+        var val = obj.value;
+        var re = /^1\d{10}$/;
+        if (re.test(val)) {
+            $('.form-validation').html("<a>success</a>");
+        } else {
+            $('.form-validation').html("<a>请输入正确手机号</a>");
+        }
+    }
+    function SubmitRenewalMember() {
+        var per;
+        var username = document.getElementById("contact-1-phone").value;
+        if (username == ""){
+            alert("请填写用户手机号");
+            return 1;
+        }
+        var all_typ_list = document.getElementsByName("cartFilter1");
+
+        for (let i=0; i in all_typ_list; i++){
+            if (all_typ_list[i].checked){
+                per  = all_typ_list[i].value;
+            }
+        }
+        console.log("!!!!! ", username, per);
+
+        const formData = new FormData();
+        formData.append("username", username);
+        formData.append("permission", per);
+
+
+        $.ajax({
+            url: "/modify_record_permission",
+            type: "POST",
+            data: formData,
+            processData: false,
+            contentType: false,
+            success: function (response) {
+                var error_code = response["error_code"];
+                var current_permission;
+                var prev_per;
+                if (error_code == "1000"){
+                    console.log("1000", response["msg"]);
+                    var username = response["msg"]["username"];
+                    var permission = response["msg"]["permission"];
+                    var prev_permission = response["msg"]["prev_permission"];
+
+                    if (permission == 0){
+                        current_permission = "录播";
+                    }else if(permission == 1){
+                        current_permission = "直播";
+                    }else if(permission == 2){
+                        current_permission = "录播+直播";
+                    }
+
+                    if (prev_permission == 2){
+                        prev_per = "VIP 用户";
+                    }else if(prev_permission == 3){
+                        prev_per = "定制用户";
+                    }
+
+                    console.log(prev_permission, current_permission);
+
+                    var is_ok = confirm("Success! New permission:  [" + current_permission + "]"  );
+                    if (is_ok){
+                        window.location.reload();
+                    }else {
+                        window.location.reload();
+                    }
+                } else{
+                  alert(response["msg"]);
+                }
+
+            }
+        });
+
+    }
+
+
+    {#var shop_phone = document.getElementById("shop_phone");#}
+    var option = {
+        attributes: true,
+        attributeFilter: ['class']
+    };
+
+    var mutationObserver = new MutationObserver(function (mutations) {
+        if (shop_header.className.indexOf('rd-navbar-fixed') != -1){
+            shop_title.style.display = "None";
+            {#shop_phone.style.display = "Block";#}
+        }else{
+            shop_title.style.display = "Block";
+            {#shop_phone.style.display = "None";#}
+
+        }
+    });
+
+    mutationObserver.observe(shop_header, option)
+
+</script>

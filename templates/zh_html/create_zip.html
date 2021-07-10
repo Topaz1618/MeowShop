@@ -1,0 +1,1104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Meow Shop</title>
+    {#    <meta charset="utf-8">#}
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta property="og:title" content="Template Monster Admin Template">
+    <meta property="og:description"
+          content="brevis, barbatus clabulares aliquando convertam de dexter, peritus capio. devatio clemens habitio est.">
+    <link rel="stylesheet" href="/static/components/base/base.css">
+    <style>
+        .btn.topaz {
+        {#border-top-left-radius: 32px !important;#}
+            border-top-right-radius: 60px;
+            border-bottom-right-radius: 60px;
+            border-bottom-left-radius: 60px;
+        }
+
+        .btn.topaz:hover {
+        {#background-color: #1c54e2;#}{#color: #1c54e2;#}
+        }
+
+        .topaz_title1{
+            font-weight: 600;
+            margin-left: 18px;
+            font-size: 20px;
+        }
+
+        .form-label.topaz_title2{
+            font-size: 0.98rem;
+            font-weight: 600;
+            padding: 0;
+        }
+
+        .custom-control-text.topaz_text {
+            color: #6c757d;
+        }
+
+        ::-webkit-scrollbar-thumb:horizontal { /*水平滚动条的样式*/
+        	width: 5px;
+        	background-color: #CCCCCC;
+            {#background-color: #a4bbf9;#}
+        	-webkit-border-radius: 6px;
+        }
+        ::-webkit-scrollbar-track-piece {
+        	background-color: #fff; /*滚动条的背景颜色*/
+        	-webkit-border-radius: 0; /*滚动条的圆角宽度*/
+        }
+        ::-webkit-scrollbar {
+        	width: 10px; /*滚动条的宽度*/
+        	height: 8px; /*滚动条的高度*/
+        }
+        ::-webkit-scrollbar-thumb:vertical { /*垂直滚动条的样式*/
+        	height: 50px;
+        	background-color: #999;
+        	-webkit-border-radius: 4px;
+        	outline: 2px solid #fff;
+        	outline-offset: -2px;
+        	border: 2px solid #fff;
+        }
+
+        ::-webkit-scrollbar-thumb:hover { /*滚动条的hover样式*/
+        	height: 50px;
+        	{#background-color: #9f9f9f;#}
+            background-color:  #a4bbf9;
+        	-webkit-border-radius: 4px;
+        }
+
+
+    #cover{
+        position:absolute;left:0px;top:0px;
+        background:rgba(0, 0, 0, 0.4);
+        width:100%;  /*宽度设置为100%，这样才能使隐藏背景层覆盖原页面*/
+        height:100%;
+        filter:alpha(opacity=60);  /*设置透明度为60%*/
+        opacity:0.6;  /*非IE浏览器下设置透明度为60%*/
+        display:none;
+        z-Index:999;
+    }
+    #modal{
+        position:absolute;
+        width:500px;
+        height:100px;
+        top:26%;
+        left:32%;
+        background-color:#fff;
+        display:none;
+        cursor:pointer;
+        z-Index:9999;
+        color: #264555;
+        font-size: 26px;
+        box-shadow: 0px 34px 40px rgba(38, 69, 85, 0.06);
+        padding: 1.18125rem 1.75rem;
+    }
+
+    </style>
+</head>
+
+<body>
+    <div id="modal"  style=" ">
+        <div class="title-1 text-md-center" style="font-size: 20px; margin-top: 18px ">
+{#            <span class="icon blurb-icon linearicons-folder-upload" style="font-size: 1.8rem;">#}
+            <span class="mdi-cloud-upload" style="font-size: 1.8rem;">
+            </span>
+            <span id="upload_info" style="margin-left: 2%;margin-top: -1%"> 压缩包上传中, 请勿刷新或关闭页面 ......</span>
+        </div>
+{#        <span id="close" onclick="HideShadow()">关闭弹框</span>#}
+    </div>
+
+
+<div class="page">
+
+{#    <div id="open" onclick="ShowShadow()">打开弹框</div>#}
+    <div id="cover"></div>
+
+
+{# Header  #}
+    <header class="section rd-navbar-wrap rd-navbar-wrap-transparent">
+        <nav id="shop_header" class="rd-navbar rd-navbar-solid rd-navbar-transparent"
+             data-rd-navbar='{"responsive":{"1200":{"stickUpOffset":"164px"}}}'>
+            <div class="navbar-section navbar-non-stuck">
+                <div class="navbar-panel">
+                    <button class="navbar-switch mdi-menu novi-icon"
+                            data-multi-switch='{"targets":".rd-navbar","scope":".rd-navbar","isolate":"[data-multi-switch]"}'></button>
+                    <div class="navbar-logo">
+                        <a class="navbar-navigation-root-link" href="/backend"
+                           style="width: 160%; font-size: 22px; font-weight: 500; margin-top: -4%;"> Shop 后台管理 </a>
+                    </div>
+                </div>
+                <div class="navbar-container">
+                    <div class="navbar-cell flex-grow-1">
+                        <div class="navbar-info">
+                            <div class="list list-icons-2">
+                                <div class="list-item">
+                                    <li class="navbar-navigation-root-item">
+                                        <a id="shop_title" class="navbar-navigation-root-link" href="/backend"
+                                           style="font-size: 28px; font-weight: 500;"> Shop 后台管理 </a>
+                                    </li>
+                                </div>
+                            </div>
+                            <div class="navbar-logo navbar-fullwidth-logo">
+                                <a class="navbar-logo-link" href="index.html">
+                                </a>
+                            </div>
+                            <div class="text-block text-block-2 d-md-flex align-items-center justify-content-center">
+                                <div class="list list-icons-2">
+                                    <div class="list-item">
+                                        <a class="navbar-navigation-root-link" style="display: inline-block; " href="/user_info">
+                                            <span id="username" class="mdi-account" style="display: inline-block"> {{ username }} </span>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                    <div class="navbar-cell">
+                        <div class="navbar-subpanel">
+                            <div class="navbar-subpanel-item">
+                                <button class="navbar-button navbar-info-button mdi-dots-vertical novi-icon"
+                                        data-multi-switch='{"targets":".rd-navbar","scope":".rd-navbar","class":"navbar-info-active","isolate":"[data-multi-switch]"}'></button>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="navbar-section">
+                <div class="navbar-container navbar-sidebar" style="margin-top: 1%">
+                    <div class="navbar-cell flex-grow-1" style="border-bottom: 1px solid #dde0e9;">
+                        <ul class="navbar-navigation rd-navbar-nav" style="margin-left: 58px">
+                            <li class="navbar-navigation-root-item active" style="margin-left: -58px;">
+                                <a class="navbar-navigation-root-link" style="display: inline-block; " href="/backend">
+                                    <span class="product-btn btn topaz btn-icon mdi-shopping"
+                                          style="display: inline-block; border: 1px solid white;"> Home </span>
+                                </a>
+                            </li>
+                            <li class="navbar-navigation-root-item" style="margin-left: -58px;">
+                                <a class="navbar-navigation-root-link" style="display: inline-block; "
+                                   href="/menu_items">
+                                    <span class="product-btn btn topaz btn-icon mdi-menu"
+                                          style="display: inline-block; border: 1px solid white;">  目录管理</span>
+                                </a>
+                            </li>
+
+                            <li class="navbar-navigation-root-item rd-navbar--has-dropdown rd-navbar-submenu" style="margin-left: -58px;">
+                                <a class="navbar-navigation-root-link" style="display: inline-block; " href="/status">
+                                    <span class="product-btn btn topaz btn-icon mdi-account-box"  style="display: inline-block; border: 1px solid white;"> 用户管理 </span>
+                                </a><span class="rd-navbar-submenu-toggle"></span>
+                                <ul class="navbar-navigation-dropdown rd-navbar-dropdown">
+                                    <li class="navbar-navigation-back">
+                                        <button class="navbar-navigation-back-btn">Back</button>
+                                    </li>
+                                    <li class="navbar-navigation-dropdown-item">
+                                        <a class="navbar-navigation-dropdown-link" href="/renewal_member">
+                                            <span class=" mdi-cake" style="display: inline-block; "> Shop 高级会员申请  </span>
+                                        </a>
+
+                                    </li>
+
+                                    <li class="navbar-navigation-dropdown-item">
+                                        <a class="navbar-navigation-dropdown-link" href="/status">
+                                            <span class=" mdi-account-star" style="display: inline-block; "> 用户注册 & 访问状态  </span>
+                                        </a>
+                                    </li>
+
+                                    <li class="navbar-navigation-dropdown-item">
+                                        <a class="navbar-navigation-dropdown-link" href="/add_internal_user">
+                                            <span class=" mdi-account-plus" style="display: inline-block; "> 新增内部测试账号  </span>
+                                        </a>
+                                    </li>
+                                    <li class="navbar-navigation-dropdown-item">
+                                        <a class="navbar-navigation-dropdown-link" href="/internal_users">
+                                            <span class="mdi-clipboard-account" style="display: inline-block; "> 测试账号列表  </span>
+                                        </a>
+{#                                        <a class="navbar-navigation-dropdown-link" href="/manager_resources">内部测试用户查看</a>#}
+                                    </li>
+                                </ul>
+                            </li>
+
+                            <li class="navbar-navigation-root-item rd-navbar--has-dropdown rd-navbar-submenu" style="margin-left: -58px;">
+                                <a class="navbar-navigation-root-link" style="display: inline-block; " href="/goods_list">
+                                    <span class="product-btn btn topaz btn-icon mdi-cart"  style="display: inline-block; border: 1px solid white;"> 商品管理 </span>
+                                </a><span class="rd-navbar-submenu-toggle"></span>
+                                <ul class="navbar-navigation-dropdown rd-navbar-dropdown">
+                                    <li class="navbar-navigation-back">
+                                        <button class="navbar-navigation-back-btn">Back</button>
+                                    </li>
+
+
+                                    <li class="navbar-navigation-dropdown-item">
+                                        <a class="navbar-navigation-dropdown-link" href="/create_goods">
+                                            <span class="mdi-playlist-plus" style="display: inline-block; "> Shop 商品新建  </span>
+                                        </a>
+
+                                    </li>
+
+                                    <li class="navbar-navigation-dropdown-item">
+                                        <a class="navbar-navigation-dropdown-link" href="/update_goods">
+                                            <span class="mdi-auto-upload" style="display: inline-block; "> 修改商品信息 </span>
+                                        </a>
+                                    </li>
+
+                                    <li class="navbar-navigation-dropdown-item">
+                                        <a class="navbar-navigation-dropdown-link" href="/goods_list">
+                                            <span class="mdi-cart-outline" style="display: inline-block; "> 所有商品列表 </span>
+                                        </a>
+                                    </li>
+
+                                </ul>
+                            </li>
+
+
+                            <li class="navbar-navigation-root-item" style="margin-left: -58px;">
+                                <a class="navbar-navigation-root-link" style="display: inline-block; "
+                                   href="/view_orders">
+                                    <span class="product-btn btn topaz btn-icon mdi-book"
+                                          style="display: inline-block;  border: 1px solid white;"> 所有订单 </span>
+                                </a>
+                            </li>
+
+                            <li class="navbar-navigation-root-item rd-navbar--has-dropdown rd-navbar-submenu"
+                                style="margin-left: -58px;">
+                                <a class="navbar-navigation-root-link" style="display: inline-block; " href="/backend">
+                                    <span class="product-btn btn topaz btn-icon mdi-note-outline"
+                                          style="display: inline-block; border: 1px solid white;"> 资源管理 </span>
+                                </a><span class="rd-navbar-submenu-toggle"></span>
+                                <ul class="navbar-navigation-dropdown rd-navbar-dropdown">
+                                    <li class="navbar-navigation-back">
+                                        <button class="navbar-navigation-back-btn">Back</button>
+                                    </li>
+                                    <li class="navbar-navigation-dropdown-item">
+                                        <a class="navbar-navigation-dropdown-link" href="/create_guide">新建资源</a>
+                                    </li>
+
+                                    <li class="navbar-navigation-dropdown-item">
+                                        <a class="navbar-navigation-dropdown-link" href="/modify_resources">修改资源</a>
+                                    </li>
+
+                                    <li class="navbar-navigation-dropdown-item">
+                                        <a class="navbar-navigation-dropdown-link" href="/manager_resources">资源批量管理</a>
+                                    </li>
+                                    <li class="navbar-navigation-dropdown-item">
+                                        <a class="navbar-navigation-dropdown-link" href="/zip_list">压缩包资源列表</a>
+                                    </li>
+                                    <li class="navbar-navigation-dropdown-item">
+                                        <a class="navbar-navigation-dropdown-link" href="/feature_list">功能资源列表</a>
+                                    </li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </div>
+
+                </div>
+            </div>
+        </nav>
+    </header>
+
+{# Body  #}
+
+
+    <section class="section section-md bg-primary-lightest" style="">
+
+
+        <div class="container">
+            <div class="row row-40 row-content justify-content-center text-center">
+
+
+            <div class="col-md-8 col-lg-9">
+                <div id="f1" class="row justify-content-center text-center" style="margin-top: 6%;">
+                <div class="col-md-6" style="min-width: 96%;">
+                    <div class="box box-form-1 section-offset-item">
+                        <div class="box-header">
+                            <h3 class="box-title "> Shop 新建压缩包 </h3>
+                        </div>
+                        <div class="box-body">
+                            <div id="form1" class="rd-form rd-mailform" data-form-output="contact-form-1" data-form-type="contact" novalidate="novalidate">
+                                <div class="row row-20 align-items-center">
+
+
+                                    <h5 class="topaz_title1">STEP1: 选择文件 </h5>
+                                    <div class="col-12">
+                                        <div class="form-group">
+                                            <div class="form-control-wrap">
+                                                <div class="form-label topaz_title2" style=""> *选择压缩包: </div>
+
+                                                <input id="file1" name="zipfile" type="file" class="form-control form-control-has-validation form-control-last-child "
+                                                       placeholder="e.g. 飞天小女警.zip" style="display: inline-block;">
+                                                <span class="form-validation"></span>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-12">
+                                        <div class="form-group">
+                                            <div class="form-control-wrap">
+                                                <div class="form-label topaz_title2" style=""> *选择缩略图: </div>
+
+                                                 <input id="file2" name="zipfile" type="file" class="form-control form-control-has-validation form-control-last-child"
+                                                        placeholder="e.g. 飞天小女警.jpg"  style="display: inline-block;">
+                                                <span class="form-validation"></span>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                     <h5 class="topaz_title1" style="">Step2: 输入压缩包信息 </h5>
+                                    <div class="col-12">
+                                        <div class="form-group">
+
+                                            <div class="form-control-wrap">
+                                               <label class="form-label" for="product_name">
+                                                   <div class="form-label topaz_title2" style=""> *资源名称 </div>
+                                                </label>
+                                                    <input id="zip_name" name="product_name" class="form-control form-control-has-validation form-control-last-child"
+                                                           type="text" placeholder="e.g. 飞天小女警" data-constraints="@Required" style=" display: inline-block;">
+                                                <span class="form-validation"></span>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-12" style="margin-top: 1%;">
+                                        <div class="form-group" style="margin-top: 1%;">
+                                           <div class="form-label topaz_title2" style=""> *详情描述</div>
+                                        <div class="form-control-wrap">
+                                                    <input id="zip_desc" name="product_name" class="form-control form-control-has-validation form-control-last-child"
+                                                           type="text" placeholder="e.g. 飞天小女警" data-constraints="@Required" style=" display: inline-block;">
+                                                <span class="form-validation"></span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-12" >
+                                        <div class="form-group">
+                                            <label class="form-label topaz_title2" for="is_component" style="min-width: 196px; display: block; margin-top: 5px;">*是否为组件类型 </label>
+                                            <div class="custom-control custom-checkbox" style="height: 3.29rem; display: inline-block;">
+                                                <input class="custom-control-input" type="radio" id="is_component1" name="is_component" checked="checked">
+                                                <label class="custom-control-label" for="is_component1" style="margin-top: 0.8rem; margin-left: 2.22rem;">
+                                                    <span class="custom-control-text topaz_text" style=" font-size: 1.08rem;font-weight: 500;"> 是 </span>
+                                                </label>
+                                            </div>
+                                            <div class="custom-control custom-checkbox" style="height: 3.29rem; display: inline-block">
+                                                <input class="custom-control-input" type="radio" id="is_component2" name="is_component">
+                                                <label class="custom-control-label" for="is_component2" style="margin-top: 0.8rem; margin-left: 2.22rem;">
+                                                    <span class="custom-control-text topaz_text" style=" font-size: 1.08rem;font-weight: 500;"> 否 </span>
+                                                </label>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-12" style="margin-top: 1%;">
+                                        <div class="form-group">
+                                            <label class="form-label topaz_title2" for="resource_authority" style="min-width: 196px; display: block; margin-top: 5px;">* 资源类型 </label>
+
+                                            <div class="custom-control custom-checkbox" style="height: 3.29rem; display: inline-block">
+                                                <input onclick="BanBindUser()" class="custom-control-input" type="radio" id="checked_3" name="resource_authority" checked="checked" value="2">
+                                                <label class="custom-control-label" for="checked_3" style="margin-top: 0.8rem; margin-left: 2.22rem;">
+                                                    {#  原会员免费 #}
+                                                    <span class="custom-control-text topaz_text" style=" font-size: 1.08rem;font-weight: 500;"> VIP 资源  </span>
+                                                </label>
+                                            </div>
+
+                                            <div class="custom-control custom-checkbox" style="height: 3.29rem; display: inline-block; ">
+                                                <input onclick="AllowBindUser()" class="custom-control-input" type="radio" id="checked_1" name="resource_authority"  value="0">
+                                                <label class="custom-control-label" for="checked_1" style="margin-top: 0.8rem; margin-left: 2.22rem;">
+                                                    {#  原付费 #}
+                                                    <span class="custom-control-text topaz_text" style="font-size: 1.08rem;font-weight: 500;">  定制资源 </span>
+                                                </label>
+                                            </div>
+
+                                            <div class="custom-control custom-checkbox" style="height: 3.29rem; display: inline-block">
+                                                <input onclick="BanBindUser()" class="custom-control-input" type="radio" id="checked_4" name="resource_authority" value="3">
+                                                <label class="custom-control-label" for="checked_4" style="margin-top: 0.8rem; margin-left: 2.22rem;">
+                                                    <span class="custom-control-text topaz_text" style=" font-size: 1.08rem;font-weight: 500;"> 内部定制资源  </span>
+                                                </label>
+                                            </div>
+
+                                            <div class="custom-control custom-checkbox" style="height: 3.29rem; display: inline-block">
+                                                <input onclick="BanBindUser()" class="custom-control-input" type="radio" id="checked_2" name="resource_authority" value="1">
+                                                <label class="custom-control-label" for="checked_2" style="margin-top: 0.8rem; margin-left: 2.22rem;">
+                                                    <span class="custom-control-text topaz_text" style=" font-size: 1.08rem;font-weight: 500;"> 公共资源(登录即可见) </span>
+                                                </label>
+                                            </div>
+
+                                        </div>
+                                    </div>
+
+                                    <div class="col-12" style="margin-top: 1%;">
+                                        <div class="form-group" style="margin-top: 1%;">
+                                           <div class="form-label topaz_title2" style=""> 关联定制用户
+                                               <span class="icon blurb-icon linearicons-question-circle" onmousedown="ShowTag()"></span>
+                                               <span id="question_tag" style="display:none; margin-top: 11px; box-shadow: #1c54e226 0px 14px 14px; position: absolute; background-color: rgb(255, 255, 255); font-size: 12px; ">
+{#                                                    1. 输入需绑定用户名; 2. 点击【确认】按钮#}
+                                                   <span id="bind_info" style="font-size: 0.82rem; font-weight: 500; color: #a4bbf9; display: none; margin-left: 0px">（此功能仅限资源类型:【定制资源】使用）</span>
+
+                                               </span>
+{#                                               <span id="bind_info" style="font-size: 0.82rem; font-weight: 500; color: #a4bbf9; display: none; margin-left: 0px">（此功能仅限资源类型:【定制资源】、【内部定制资源】使用）</span>#}
+
+                                           </div>
+
+                                            <div class="tag-container">
+                                                <div id="users" class="tag-container">
+
+                                                </div>
+                                                <div id="utag_model" style="display: none" >
+                                                    <a class="tag tag-light" href="#"></a>
+                                                    <button class="mdi-close" style="color: #6c757d;"  onclick="RemoveUser(this)"></button>
+                                                </div>
+
+                                            </div>
+
+                                            <div class="form-control-wrap" id="bind_user">
+                                                <input  id="user_id" name="user_id" class="form-control form-control-has-validation form-control-last-child"
+                                                           type="text" placeholder="18900000000" data-constraints="@Numeric @Required" style="margin-left: 2.22rem; width: 26%; display: inline-block; ">
+                                                <span id="user_phone" class="form-validation"></span>
+
+                                                <button id="confirm_button" onclick="CheckIfUserExists(0)" class="btn btn-lg btn-primary" style="min-width: 10%; max-height: 3.1844rem; padding: 18px;font-size: 12px; margin-left: 2.8%">确认</button>
+{#                                                <span id="bind_info" style="font-size: 0.88rem; font-weight: 500; color: #a4bbf9; display: none; margin-left: 10px">（此功能仅限资源类型:【定制资源】、【内部定制资源】使用）</span>#}
+                                            </div>
+                                        </div>
+                                    </div>
+
+
+
+                                <h5 class="topaz_title1" style=" ">Step3: 选择资源所属类型 </h5>
+                                    <div class="col-12" style="min-width: 98%; ">
+                                        <div class="form-group">
+
+                                            <div class="form-label topaz_title2"  style=""> *选择所属主目录</div>
+                                            <div id="goods_body" class="accordion-body ">
+                                                    <div class="col-12">
+                                                        <div class="form-group">
+                                                            <div class="col-12" style="margin-top: 1%;">
+                                                                <div class="form-group" onchange="CheckIfRelatedProduct()">
+                                                                <label class="form-label" for="is_discount" style="min-width: 196px; display: block; margin-top: 5px;"></label>
+                                                                <div class="custom-control custom-checkbox" style="height: 3.29rem; display: inline-block; margin-left: -1.2rem;">
+                                                                    <input class="custom-control-input" type="radio" id="menu21" value="1" name="main_menu2" checked="checked">
+                                                                    <label onclick="GetType('1', 0 )" class="custom-control-label" for="menu21" style="margin-top: 0.8rem; margin-left: 0.92rem;">
+                                                                        <span class="custom-control-text topaz_text" style=" font-size: 0.88rem; color: #264555"> 角色 </span>
+                                                                    </label>
+                                                                </div>
+                                                                <div class="custom-control custom-checkbox" style="height: 3.29rem; display: inline-block; margin-left: -1.2rem;">
+                                                                    <input class="custom-control-input" type="radio" id="menu22" value="2" name="main_menu2" >
+                                                                    <label onclick="GetType('2', 0 )" class="custom-control-label" for="menu22" style="margin-top: 0.8rem; margin-left: 2.22rem;">
+                                                                        <span class="custom-control-text topaz_text" style="font-size: 0.88rem; color: #264555"> 场景 </span>
+                                                                    </label>
+                                                                </div>
+                                                                <div class="custom-control custom-checkbox" style="height: 3.29rem; display: inline-block; margin-left: -1.2rem;">
+                                                                    <input class="custom-control-input" type="radio" id="menu23" value="3" name="main_menu2" >
+                                                                    <label onclick="GetType('3', 0 )" class="custom-control-label" for="menu23" style="margin-top: 0.8rem; margin-left: 2.22rem;">
+                                                                        <span class="custom-control-text topaz_text" style=" font-size: 0.88rem;color: #264555"> 动作 </span>
+                                                                    </label>
+                                                                </div>
+                                                                <div class="custom-control custom-checkbox" style="height: 3.29rem; display: inline-block; margin-left: -1.2rem;">
+                                                                    <input class="custom-control-input" type="radio" id="menu24" value="4" name="main_menu2" >
+                                                                    <label onclick="GetType('4', 0 )" class="custom-control-label" for="menu24" style="margin-top: 0.8rem; margin-left: 2.22rem;">
+                                                                        <span class="custom-control-text topaz_text" style="font-size: 0.88rem; color: #264555"> 镜头 </span>
+                                                                    </label>
+                                                                </div>
+                                                                <div class="custom-control custom-checkbox" style="height: 3.29rem; display: inline-block; margin-left: -1.2rem;">
+                                                                    <input class="custom-control-input" type="radio" id="menu25" value="5" name="main_menu2" >
+                                                                    <label onclick="GetType('5', 0 )" class="custom-control-label" for="menu25" style="margin-top: 0.8rem; margin-left: 2.22rem;">
+                                                                        <span class="custom-control-text topaz_text" style=" font-size: 0.88rem; color: #264555"> 衣服 </span>
+                                                                    </label>
+                                                                </div>
+                                                                <div class="custom-control custom-checkbox" style="height: 3.29rem; display: inline-block; margin-left:-1.2rem;">
+                                                                    <input class="custom-control-input" type="radio" id="menu26" value="6" name="main_menu2" >
+                                                                    <label onclick="GetType('6', 0 )" class="custom-control-label" for="menu26" style="margin-top: 0.8rem; margin-left: 2.22rem;">
+                                                                        <span class="custom-control-text topaz_text" style=" font-size: 0.88rem; color: #264555"> 其它 </span>
+                                                                    </label>
+                                                                </div>
+                                                            </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                            </div>
+
+                                            <div class="form-label topaz_title2" style=""> *选择所属二级目录</div>
+
+                                            <div class="col-12 " style="margin-top: 2%; max-height: 22.68rem; overflow-y: auto; ">
+                                                <div class="widget">
+                                                    <div class="widget-body">
+                                                        <div class="table-responsive">
+                                                            <table id="resource_table" class="table table-1">
+                                                                <tbody id="resource_body" style="">
+                                                                <tr id="td_model"  style=" text-align: left; border: 1px solid white; border-bottom: 1px solid white; padding: 0.8rem 1.0rem;">
+                                                                    <td style="text-align: left; border: 1px solid white; padding: 0.8rem 1rem; font-size: 0.8rem;">
+                                                                        <div class="custom-control custom-checkbox" style="">
+                                                                            <input class="custom-control-input" type="radio" id="Feature" name="cartFilter1" >
+                                                                            <label class="custom-control-label" for="Feature" style="font-size: 0.88rem" >
+                                                                                <a class="link link-inherit" href="/single_product?goods_name=测试专用商品&amp;goods_id=10&amp;goods_price=1">测试专用商品</a>
+                                                                            </label>
+                                                                        </div>
+                                                                    </td>
+                                                                </tr>
+                                                                </tbody>
+                                                            </table>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                    </div>
+
+                                    <div class="rd-form-btn text-left">
+                                        <button  class="btn btn-lg btn-primary" type="submit" onclick="AddNewZip()">Submit</button>
+                                        <a class="btn btn-lg btn-primary" href="/create_guide"><span>Back</span></a>
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-output snackbar snackbar-primary" id="contact-form-1"></div>
+                    </div>
+                </div>
+                </div>
+            </div>
+
+            </div>
+        </div>
+    </section>
+
+
+    <section class="footer footer-dark context-dark bg-800" style="margin-top: 10%">
+        <div class="container">
+            <div class="row row-30">
+
+                <div class="col-sm-6 col-lg-3">
+                    <h5 class="footer-title">联系方式</h5>
+                    <ul class="list list-icons">
+                        <li class="list-item">
+                            <div class="list-icon onclinic-map-marker"></div>
+                            北京市朝阳区五里桥一街1号非中心5号楼四层十二维度
+                        </li>
+                        <li class="list-item">
+                            <div class="list-icon onclinic-phone"></div>
+                            010-85717789
+                        </li>
+                        <li class="list-item">
+                            <div class="list-icon onclinic-email-open"></div>
+                            market@12dms.com
+                        </li>
+
+                    </ul>
+
+                </div>
+
+            </div>
+        </div>
+    </section>
+    <footer class="footer footer-minimal context-dark bg-900">
+        <div class="container">
+        </div>
+    </footer>
+</div>
+<!-- Preloader-->
+<div class="preloader">
+    <div class="preloader-inner">
+        <div class="preloader-dot"></div>
+        <div class="preloader-dot"></div>
+        <div class="preloader-dot"></div>
+        <div class="preloader-dot"></div>
+    </div>
+</div>
+
+<div class="to-top mdi-chevron-up "></div>
+</body>
+</html>
+<script src="/static/components/base/core.min.js"></script>
+<script src="/static/components/base/script.js"></script>
+<script src='static/js/jquery.min.js' type="text/javascript"></script>
+<script src="static/vendor/jquery/jquery.min.js"></script>
+<script src="static/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+<script type="text/javascript">
+
+    var shop_header = document.getElementById("shop_header");
+    var shop_title = document.getElementById("shop_title");
+
+    var zip_name;
+    var admin_user = "15600803270";
+
+    function S4() {
+        return (((1+Math.random())*0x10000)|0).toString(16).substring(1);
+    }
+
+    function guid() {
+        return (S4()+S4()+"-"+S4()+"-"+S4()+"-"+S4()+"-"+S4()+S4()+S4());
+    }
+
+    function CheckIfRelatedProduct() {
+        console.log("请勿修改类型");
+    }
+
+    function ShowTag() {
+        var tag_el = document.getElementById("question_tag");
+        tag_el.style.display =  "";
+
+        setTimeout(function () {
+            tag_el.style.display =  "none";
+        }, 1800);
+
+    }
+
+    function BanBindUser() {
+        document.getElementById("users").innerHTML = "";
+        document.getElementById("confirm_button").disabled = "disabled";
+        document.getElementById("user_id").readOnly="true";
+        {#document.getElementById("bind_info").style.display = "inline-block";#}
+
+    }
+
+    function AllowBindUser() {
+        document.getElementById("confirm_button").disabled = "";
+        document.getElementById("user_id").readOnly="";
+        {#document.getElementById("bind_info").style.display = "none";#}
+
+    }
+
+    function ShowShadow(){
+        document.getElementById("modal").style.display = "block";
+        document.getElementById("cover").style.display = "block";
+    }
+
+    function HideShadow(){
+        document.getElementById("modal").style.display = "";
+        document.getElementById("cover").style.display = "";
+    }
+
+    function RemoveUser(element) {
+        element.parentNode.remove();
+
+    }
+
+    function AutoConfirm(element) {
+        if (element.value != ""){
+            document.getElementById("confirm_button").click();
+        }
+    }
+
+    function CheckIfUserExists() {
+        var username = document.getElementById("user_id").value;
+        if (username == ""){
+            alert("请输入用户名");
+            return;
+        }
+
+        var user_list = document.getElementsByName("userlist");
+        for (let i = 0; i < user_list.length; i++) {
+            if (user_list[i].innerText == username) {
+                alert("请勿重复添加");
+                return;
+            }
+        }
+
+
+        const formData = new FormData();
+        formData.append("username", username);
+        $.ajax({
+            url: "/check_user_exists",
+            type: "POST",
+            data: formData,
+            async: false,
+            processData: false,
+            contentType: false,
+            success: function (response) {
+                if (response["error_code"] != "1000"){
+                    {#document.getElementById("user_id").value = "";#}
+                    alert(response["msg"]);
+                }else{
+                    var parent_el = document.getElementById("users");
+                    var utag_model = document.getElementById("utag_model");
+                    var new_tag = utag_model.cloneNode(true);
+                    new_tag.style.display = "inline-block";
+                    new_tag.id = username + "_tag";
+                    new_tag.children[0].name = "userlist";
+                    new_tag.children[0].innerText = response["msg"];
+                    parent_el.appendChild(new_tag);
+
+                    document.getElementById("user_id").value = "";
+                }
+            }
+        });
+
+
+    }
+
+    function phonenumListen(obj) {
+        var val = obj.value;
+        var re = /^1\d{10}$/;
+        if (re.test(val)) {
+            document.getElementById('user_phone').innerHTML = "<a>success</a>";
+        } else {
+            document.getElementById('user_phone').innerHTML = "<a>请输入正确手机号</a>";
+        }
+    }
+
+
+    function CheckParams() {
+        var file1 = document.getElementById("file1");
+        var file2 = document.getElementById("file2");
+
+        var file1_exists  = file1.files.length;
+        var file2_exists = file2.files.length;
+        if (file1_exists != 1 ) {
+            alert("压缩包文件未选择 ");
+            return 1;
+        } else if(file2_exists != 1){
+            alert("缩略图未选择 ");
+            return 1;
+        }else {
+            var file2_name = file2.files[0].name;
+            if (file2_name.endsWith("jpg") == false && file2_name.endsWith("png") == false) {
+                alert("图片格式错误");
+                return 1;
+            }
+        }
+
+        var user_id =  document.getElementById("user_id");
+        if (user_id.innerText != "" ){
+            var re = /^1\d{10}$/;
+            if (re.test(val)){
+                console.log("good");
+            }else{
+                alert("手机号格式错误");
+                return 1;
+            }
+        }
+
+        // 压缩包检查
+        zip_name = document.getElementById("zip_name");
+        if (zip_name.value == "") {
+            alert("资源名称为空");
+            return 1;
+        }
+        var zip = document.getElementsByName("menus");
+        var zip_list = [];
+        for (let i = 0; i < zip.length; i++) {
+            if (zip[i].checked == true) {
+                zip_list.push(zip[i].value)
+            }
+        }
+        if (zip_list.length == 0) {
+            alert("未选择所属二级类型");
+            return 1;
+        }
+
+
+        var resource_authority = document.getElementsByName("resource_authority");
+        if (resource_authority[0].checked == false && resource_authority[1].checked == false && resource_authority[2].checked == false && resource_authority[3].checked == false) {
+            alert("未选择是否公用类型 ");
+            return 1;
+        }
+
+        return 0;
+
+    }
+
+    function UploadFile(file, media_type) {
+        var blockSize = 1024 * 1024 * 10;
+        var filename = file.name;
+        var count = 0;
+
+        var total_chunk = Math.ceil(file.size / blockSize);
+        var file_uuid = guid();
+
+        for (let start = 0; start < file.size; start += blockSize) {
+            count += 1;
+            var end;
+            if ( start + blockSize > file.size){
+                end = file.size;
+            }else{
+                end = start + blockSize;
+
+            }
+            const chunk = file.slice(start, end);
+            console.log(chunk);
+            console.log(count, '/', total_chunk, start, end);
+
+            const formData = new FormData();
+            formData.append("file", chunk);
+            formData.append("filesize", file.size);
+            formData.append("filename",filename);
+            formData.append("media_type", media_type);
+            formData.append("count", count);
+            formData.append("total_chunk", total_chunk);
+            formData.append("uuid", file_uuid);
+
+            $.ajax({
+                url: "/upload_file",
+                type: "POST",
+                data: formData,
+                async: false,
+                processData: false,
+                contentType: false,
+                success: function (response) {
+                    if (response == "success"){
+                        return;
+                    }
+                }
+            });
+        }
+
+        if (total_chunk > 1) {
+            console.log("I am here!! ");
+            if (total_chunk == count) {
+                console.log("win");
+                notify_merge = function Merge() {
+                    const formData = new FormData();
+                    formData.append("merge", true);
+                    formData.append("filename", filename);
+                    formData.append("total_chunk", total_chunk);
+                    formData.append("uuid", file_uuid);
+                    $.ajax({
+                        url: "/merge_file",
+                        type: "POST",
+                        data: formData,
+                        async: false,
+                        processData: false,
+                        contentType: false,
+                        success: function (response) {
+                            if (response == "false") {
+                                return setTimeout("notify_merge();", 500);
+                            }
+                            else {
+                                return true
+                            }
+                        }
+                    });
+                };
+                notify_merge();
+            }
+        }
+
+        return true;
+    };
+
+    function  CallUploadMain(zip_file, img_file) {
+        document.body.scrollTop = document.documentElement.scrollTop = 0;
+        UploadFile(img_file, 0);
+
+        ShowShadow();
+        function checkOver(item) {
+            let check = false;
+            let promise = new Promise(function(resolve, reject) {
+              setTimeout(() => {
+                check = UploadFile(zip_file, 1);
+                resolve(check);
+              }, 500);
+            });
+            return promise;
+        }
+
+        var item = "1";
+        checkOver(item).then((check) => {
+          console.log("!!!! true", check); // --> true/false
+
+            if (check){
+                document.getElementById("upload_info").innerText = "上传成功!";
+                setTimeout("window.location.reload(window.location.href)", 1000);
+
+                }
+            });
+    }
+
+    function UploadParams() {
+        var username;
+        var user_id;
+        var parent_id;
+        var authority;
+        var is_component;
+        var user_list = [];
+
+        var file1 = document.getElementById("file1");
+        var file2 = document.getElementById("file2");
+        var customize_user_list =  document.getElementsByName("userlist");
+        var package_list = document.getElementsByName("menus");
+        var resource_authority = document.getElementsByName("resource_authority"); // 权限
+        var is_component_ele = document.getElementsByName("is_component"); // 组件
+        var desc = document.getElementById("zip_desc");
+        var resource_name = document.getElementById("zip_name").value;
+        var zip_file = file1.files[0];
+        var img_file = file2.files[0];
+
+        var zip_name = zip_file.name;
+        var img_name = img_file.name;
+
+
+        for (let i = 0; i < customize_user_list.length; i++) {
+            var user = customize_user_list[i].innerText;
+            console.log(user);
+            user_list.push(user);
+        }
+
+        for (let i = 0; i < resource_authority.length; i++) {
+            if (resource_authority[i].checked == true) {
+                authority = resource_authority[i].value;
+            }
+        }
+
+        // 是否组件类型
+        if (is_component_ele[0].checked == true){
+            is_component = 1;
+        }else{
+            is_component = 0;
+        }
+
+        // 选择所属类型
+        for (let i = 0; i < package_list.length; i++) {
+            if (package_list[i].checked == true) {
+                parent_id = package_list[i].value;
+            }
+        }
+
+        var formData = new FormData();
+        formData.append("username", admin_user);
+        formData.append("userlist", user_list);
+        formData.append("zip_name", zip_name);
+        formData.append("resource_name", resource_name);
+        formData.append("img_name", img_name);
+        formData.append("is_component", is_component);
+        formData.append("is_common", authority);
+        formData.append("description", desc.value);
+        formData.append("create_type", "1");
+        formData.append("parent_id", parent_id );
+
+        $.ajax({
+            type: 'post',
+            url: '/create_zip',
+            data: formData,
+            cache: false,
+            contentType: false,
+            processData: false,
+            timeout: 60000,
+
+            success: function (res) {
+                console.log("error_code", res['error_code']);
+                if (res['error_code'] != "1000") {
+                    alert(res['msg']);
+                    document.getElementById("file1").disabled = false;
+                    document.getElementById("file2").disabled = false;
+                    {#document.getElementById("info").style.display = "none";#}
+
+                }
+                else {
+                    CallUploadMain(zip_file, img_file);
+                }
+            },
+        });
+
+    }
+
+
+    function AddNewZip() {
+        var res = CheckParams();
+        if (res == 0) {
+            UploadParams();
+        }
+
+    }
+
+    function CreateItems(data, func_num){
+        // func_num 0: zip; 1: feature
+        var resource_body;
+        var td_model;
+        var pre;
+        var input_name;
+
+        if (func_num == 0){
+            td_model = document.getElementById("td_model");
+            resource_body = document.getElementById("resource_body");
+            pre = "type_";
+            input_name = "menus"
+        }
+
+        if (data.length < 1){
+            resource_body.innerText = "";
+            var t = td_model.cloneNode(true);
+            var input_ele = t.getElementsByClassName("custom-control-input")[0];
+            var name_label = t.getElementsByClassName("custom-control-label")[0];
+
+            input_ele.name = input_name;
+            input_ele.value = "无";
+            input_ele.id = "none";
+            input_ele.checked = "";
+            name_label.innerText = "无";
+            name_label.htmlFor = "none";
+            resource_body.appendChild(t);
+        }
+        else{
+            resource_body.innerText = "";
+
+            for (let i = 0; i < data.length; i++) {
+                var t = td_model.cloneNode(true);
+                var input_ele = t.getElementsByClassName("custom-control-input")[0];
+                var name_label = t.getElementsByClassName("custom-control-label")[0];
+                input_ele.name = input_name;
+                input_ele.value = data[i][1];
+                input_ele.id = pre + data[i][1];
+                name_label.innerText = data[i][0];
+                name_label.htmlFor = pre + data[i][1];
+
+                if (i == 0){
+                    input_ele.checked = "checked";
+                    console.log("first one", data[i][0]);
+                }else {
+                    input_ele.checked = "";
+                }
+                resource_body.appendChild(t);
+            }
+        }
+    }
+
+    function GetType(menu_id, func_num) {
+        const formData = new FormData();
+        formData.append("username", "15600803270");
+        formData.append("resource_type", 1);
+        formData.append("menu_id", menu_id);
+
+        $.ajax({
+            url: '/get_resource',
+            type: 'POST',
+            data: formData,
+            processData: false,
+            contentType: false,
+            success: function(res) {
+                if (res["error_code"] == "1000"){
+                    console.log("!!!", res['msg']['zip_list']);
+                    if (func_num == 0){
+                        CreateItems(res['msg']['zip_list'], func_num);
+                    }
+                }else {
+                    alert(res["msg"]);
+                }
+            },
+        });
+    }
+
+    GetType(1, 0);
+    BanBindUser();
+    {#GetType(1, 1);#}
+
+    {#var shop_phone = document.getElementById("shop_phone");#}
+
+    var option = {
+        attributes: true,
+        attributeFilter: ['class']
+    };
+
+
+    var mutationObserver = new MutationObserver(function (mutations) {
+        if (shop_header.className.indexOf('rd-navbar-fixed') != -1) {
+            shop_title.style.display = "None";
+            {#shop_phone.style.display = "Block";#}
+        } else {
+            shop_title.style.display = "Block";
+            {#shop_phone.style.display = "None";#}
+
+        }
+    });
+
+    mutationObserver.observe(shop_header, option)
+
+</script>

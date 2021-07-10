@@ -1,0 +1,854 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Meow Shop</title>
+{#    <meta charset="utf-8">#}
+
+      <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta property="og:title" content="Template Monster Admin Template">
+    <meta property="og:description" content="brevis, barbatus clabulares aliquando convertam de dexter, peritus capio. devatio clemens habitio est.">
+    <link rel="stylesheet" href="/static/components/base/base.css">
+      <style>
+          .btn.topaz {
+            {#border-top-left-radius: 20px !important;#}
+              border-top-right-radius: 60px;
+              border-bottom-right-radius: 60px;
+              border-bottom-left-radius: 60px;
+          }
+          .btn.topaz:hover {
+            {#background-color: #264555;#}
+            {#color: #1c54e2;#}
+          }
+
+          .custom-control-text.topaz_text{
+              color: #264555
+          }
+
+        .link-inherit.topaz_link:hover {
+            color: #6c757d;
+        }
+
+
+    </style>
+  </head>
+    <body>
+    <div class="page">
+      <!--RD Navbar-->
+
+    <header class="section rd-navbar-wrap rd-navbar-wrap-transparent">
+        <nav id="shop_header" class="rd-navbar rd-navbar-solid rd-navbar-transparent"
+             data-rd-navbar='{"responsive":{"1200":{"stickUpOffset":"164px"}}}'>
+            <div class="navbar-section navbar-non-stuck">
+                <div class="navbar-panel">
+                    <button class="navbar-switch mdi-menu novi-icon" data-multi-switch='{"targets":".rd-navbar","scope":".rd-navbar","isolate":"[data-multi-switch]"}'></button>
+                    <div class="navbar-logo">
+                        <a class="navbar-navigation-root-link" href="/" style="width: 160%; font-size: 128%; font-weight: 500; margin-top: -4%;"> Meow Shop </a>
+                    </div>
+                </div>
+                <div class="navbar-container">
+                    <div class="navbar-cell flex-grow-1">
+                        <div class="navbar-info">
+                            <div class="list list-icons-2">
+                                <div class="list-item">
+                                    <li class="navbar-navigation-root-item">
+                                        <a id="shop_title" class="navbar-navigation-root-link" href="/"
+                                           style="font-size: 28px; font-weight: 500;"> Meow Shop </a>
+                                    </li>
+
+                                </div>
+                            </div>
+                            <div class="navbar-logo navbar-fullwidth-logo">
+                                <a class="navbar-logo-link" href="index.html">
+                                </a>
+                            </div>
+                            <div class="text-block text-block-2 d-md-flex align-items-center justify-content-center">
+                                <div class="list list-icons-2" >
+                                    <div id="shop_phone" class="list-item" style="display: none">
+                                        <div class="list-icon icon onclinic-phone"></div>
+                                        <span class="h5"><a class="link" href="tel:#">+8615600803270</a></span>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                    <div class="navbar-cell">
+                        <div class="navbar-subpanel">
+                            <div class="navbar-subpanel-item">
+                                <button class="navbar-button navbar-info-button mdi-dots-vertical novi-icon"
+                                        data-multi-switch='{"targets":".rd-navbar","scope":".rd-navbar","class":"navbar-info-active","isolate":"[data-multi-switch]"}'></button>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="navbar-section">
+                <div class="navbar-container navbar-sidebar" style="margin-top: 1%">
+                    <div class="navbar-cell flex-grow-1" style="border-bottom: 1px solid #dde0e9;">
+                        <ul class="navbar-navigation rd-navbar-nav" style="margin-left: 58px">
+                            <li class="navbar-navigation-root-item active" style="margin-left: -58px">
+                                <a class="navbar-navigation-root-link" style="display: inline-block; " href="/">
+                                    <span class="product-btn btn topaz btn-icon mdi-home"
+                                          style="display: inline-block; border: 1px solid white;"> Home </span>
+                                </a>
+                            </li>
+                            <li class="navbar-navigation-root-item active" style="margin-left: -58px">
+                                <a class="navbar-navigation-root-link" style="display: inline-block; " href="/store_catalog">
+                                    <span class="product-btn btn topaz btn-icon mdi-shopping"
+                                          style="display: inline-block; border: 1px solid white;">
+                                        Store
+                                    </span>
+                                </a>
+                            </li>
+
+                            <li class="navbar-navigation-root-item" style="margin-left: -58px;">
+                                <a class="navbar-navigation-root-link" style="display: inline-block; "
+                                   href="/package_list">
+                                    <span class="product-btn btn topaz btn-icon mdi-cake "
+                                          style="display: inline-block; border: 1px solid white;"> Membership </span>
+                                </a>
+                            </li>
+                            <li class="navbar-navigation-root-item" style="margin-left: -58px;">
+                                <a class="navbar-navigation-root-link" style="display: inline-block; "
+                                   href="/order_list">
+                                    <span class="product-btn btn topaz btn-icon mdi-book"
+                                          style="display: inline-block; border: 1px solid white;"> Order List </span>
+                                </a>
+                            </li>
+                            <li class="navbar-navigation-root-item" style="margin-left: -58px;">
+                                <a class="navbar-navigation-root-link" style="display: inline-block; "
+                                   href="/user_info">
+                                    <span class="product-btn btn topaz btn-icon mdi-account"
+                                          style="display: inline-block; border: 1px solid white;"> My Account </span>
+                                </a>
+                            </li>
+                            <li class="navbar-navigation-root-item rd-navbar--has-dropdown rd-navbar-submenu"
+                                style="margin-left: -58px;">
+                                <a class="navbar-navigation-root-link" style="display: inline-block; " href="/about_us">
+                                    <span class="product-btn btn topaz btn-icon mdi-note-outline"
+                                          style="display: inline-block; border: 1px solid white;"> About </span>
+                                </a><span class="rd-navbar-submenu-toggle"></span>
+                                <ul class="navbar-navigation-dropdown rd-navbar-dropdown">
+                                    <li class="navbar-navigation-back">
+                                        <button class="navbar-navigation-back-btn">Back</button>
+                                    </li>
+                                    <li class="navbar-navigation-dropdown-item">
+                                        <a class="navbar-navigation-dropdown-link" href="/about_us">About Us</a>
+                                    </li>
+                                    <li class="navbar-navigation-dropdown-item">
+                                        <a class="navbar-navigation-dropdown-link" href="/feedback">Github</a>
+                                    </li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </div>
+
+                </div>
+            </div>
+        </nav>
+    </header>
+
+      <!-- Archive-->
+      <section class="section section-md ">
+
+        <div class="container">
+          <div class="text-block text-block-1">
+            <h1>All Products</h1>
+          </div>
+          <div class="row row-40 row-content flex-md-row-reverse">
+            <div class="col-md-8 col-lg-9">
+              <div class="product-search">
+                <div class="product-search-inner">
+                  <div class="product-search-form form-group select-wrap" style="min-width: 228px">
+                    <select id="select_sort" class="select2" name="price" data-select2-options='{"placeholder":"Sort by: 默认排序"}' onChange="SortProduct()">
+                        {% if page_info["is_sort"] == "0" %}
+                            <option label="placeholder" value="0">Sort by: &nbsp;Default&nbsp;  </option>
+                            <option value="2">Sort by: Price Low to High</option>
+                            <option value="1">Sort by: Price High to Low</option>
+                        {% elif page_info["is_sort"] == "1" %}
+                            <option label="placeholder" value="1">Sort by: &nbsp;Price High to Low </option>
+                            <option value="2">Sort by:  Price Low to High </option>
+                            <option value="0"> -- Default&nbsp;--</option>
+
+                        {% elif page_info["is_sort"] == "2" %}
+                            <option label="placeholder" value="2">Sort by: Price Low to High</option>
+                            <option value="1">Sort by: &nbsp;Price High to Low </option>
+                            <option value="0">-- Default&nbsp;-- </option>
+{#                        <option value="0">排序: 默认排序</option>#}
+
+                        {% end %}
+
+                    </select>
+                  </div>
+                    {% if page_info["total_data"] == 0 %}
+                        <div class="product-search-results">
+                        Showing  0 results
+
+                        </div>
+                    {% else %}
+                        <div class="product-search-results">
+                          Showing {{ page_info["start"] + 1}}-{{ page_info["end"] }} of {{ page_info["total_data"] }} results
+                        </div>
+                    {% end %}
+                </div>
+              </div>
+              <div class="row row-30 row-lg-50 row-content">
+                  {% for product_info in page_info["goods_list"] %}
+                        <div class="col-xs-6 col-lg-4" name="{{ product_info["main_menu"] }}">
+                            <div class="product product-extended">
+                                  <div class="product-media">
+
+                                      <img class="product-img" src="{{ product_info["image_path"] }}" style="min-width: 260px; min-height: 260px; max-height: 260px; max-width: 260px" alt="" />
+
+                                    <div class="product-meta">
+                                      <div class="product-tags">
+                                          {% if product_info["is_discount"] and product_info["discount"] !="100" %}
+                                            <div class="tag tag-sm tag-tertiary">Sale</div>
+                                          {% end %}
+                                          {% if product_info["is_new"] %}
+                                            <div class="tag tag-sm">New</div>
+                                          {% end %}
+                                      </div>
+{#                                      <div class="product-like" onclick="MyHeart({{ product_info["goods_id"] }})">#}
+{#                                        <div class="product-like-icon icon mdi-heart"></div>#}
+{#                                      </div>#}
+                                    </div>
+                                  </div>
+
+                                <div class="product-title title-2">
+{#                                    <a href="#{{ product_info["main_menu"] }}">{{ product_info["main_menu"] }}</a>#}
+                                    <a href="/store_catalog?filter={{ product_info["main_menu"] }}">{{ product_info["main_menu"] }}</a>
+                                </div>
+                                  <div class="product-text">
+                                      <a class="link link-inherit" href="/single_product?goods_name={{ product_info["goods_name"] }}&goods_id={{ product_info["goods_id"] }}&goods_price={{ product_info["price"] }}">{{ product_info["goods_name"] }}</a>
+                                  </div>
+
+                                {% if product_info["is_discount"] and product_info["discount"] !="100" %}
+{#                                    <span name="price_ori" class="h4" style="display: inline-block; text-decoration-line: line-through;"></span>#}
+                                    <div class="product-price" style="height: 28px">
+                                         <span  style="color: #264555; text-decoration-line: line-through; font-size: 22px;"> ¥ {{ product_info["price"] }}</span>
+                                         <span name="price" style="margin-left: 2%"> ¥ {{ get_discount_price(product_info["price"], product_info["discount"]) }}</span>
+                                    </div>
+                                {% else %}
+                                    <div name="price" class="product-price" style="height: 28px">¥ {{ product_info["price"] }}</div>
+
+                                {% end %}
+
+
+                                <a class="product-btn btn btn-block btn-dark" href="/pay?goods_name={{ product_info["goods_name"] }}&goods_id={{ product_info["goods_id"] }}&goods_price={{ product_info["price"] }}"
+                                   onclick="return CheckIsBought({{ product_info["goods_id"] }})">
+                                    <span class="btn-icon mdi-cart"></span>
+                                    <span>Buy now</span>
+                                </a>
+                                </div>
+                        </div>
+                  {% end %}
+              </div>
+            </div>
+
+              <div class="col-md-4 col-lg-3">
+              <div class="widget" >
+{#                  Product Categories#}
+{#                  onChange="FilterProduct()"#}
+
+                <div class="widget-title h5" style="font-weight: 600; font-size: 1.28rem;">Categories filter</div>
+                <div class="widget-body" >
+                    <div class="custom-control custom-checkbox" onChange="FilterProduct()">
+                        <input class="custom-control-input" type="radio" id="All"  name="cartFilter1" checked="true">
+                        <label class="custom-control-label" for="All">
+                            <span class="custom-control-text topaz_text" style="font-size: 1.08rem;font-weight: 500; ">All Products</span>
+                            <span class="custom-control-count">{{ page_info["total"] }}</span>
+                        </label>
+                    </div>
+                    {% if goods_count_list["Actor"] > 0 %}
+                        <div class="custom-control custom-checkbox"  onChange="FilterProduct()">
+                                <input class="custom-control-input" type="radio" id="Actor" name="cartFilter1" >
+                            <label class="custom-control-label" for="Actor">
+                                <span class="custom-control-text topaz_text" style=" font-size: 1.08rem;font-weight: 500;">Actor</span>
+                                <span class="custom-control-count">{{ goods_count_list["Actor"]  }}</span>
+                            </label>
+                        </div>
+                    {% end %}
+
+                    {% if goods_count_list["Scene"] > 0 %}
+                        <div class="custom-control custom-checkbox" onChange="FilterProduct()">
+                           <input class="custom-control-input" type="radio" id="Scene" name="cartFilter1" >
+                           <label class="custom-control-label" for="Scene">
+                               <span class="custom-control-text topaz_text" style="  font-size: 1.08rem;font-weight: 500;">Scenes</span>
+                               <span class="custom-control-count">{{ goods_count_list["Scene"] }}</span>
+                           </label>
+                        </div>
+                    {% end %}
+
+                    {% if goods_count_list["Action"] > 0 %}
+                        <div class="custom-control custom-checkbox" onChange="FilterProduct()">
+                            <input class="custom-control-input" type="radio" id="Action" name="cartFilter1" >
+                            <label class="custom-control-label" for="Action">
+                                <span class="custom-control-text" style="  font-size: 1.08rem;font-weight: 500;">Action</span>
+                                <span class="custom-control-count">{{ goods_count_list["Action"] }}</span>
+                            </label>
+                        </div>
+                    {% end %}
+
+                    {% if goods_count_list["Shot"] > 0 %}
+                        <div class="custom-control custom-checkbox" onChange="FilterProduct()">
+                            <input class="custom-control-input" type="radio" id="Shot" name="cartFilter1" >
+                            <label class="custom-control-label" for="Shot">
+                                <span class="custom-control-text" style="  font-size: 1.08rem;font-weight: 500;">Shot</span>
+                                <span class="custom-control-count">{{ goods_count_list["Shot"] }}</span>
+                            </label>
+                        </div>
+                    {% end %}
+
+                    {% if goods_count_list["Clothes"] > 0  %}
+                        <div class="custom-control custom-checkbox" onChange="FilterProduct()">
+                            <input class="custom-control-input" type="radio" id="Clothes" name="cartFilter1" >
+                            <label class="custom-control-label" for="Clothes">
+                                <span class="custom-control-text topaz_text" style="  font-size: 1.08rem;font-weight: 500;">Clothing</span>
+                                <span class="custom-control-count">{{ goods_count_list["Clothes"] }}</span>
+                            </label>
+                        </div>
+                    {% end %}
+
+                    {% if goods_count_list["Feature"] > 0  %}
+                        <div class="custom-control custom-checkbox" onChange="FilterProduct()">
+                            <input class="custom-control-input" type="radio" id="Feature" name="cartFilter1" >
+                            <label class="custom-control-label" for="Feature">
+                                <span class="custom-control-text topaz_text" style="  font-size: 1.08rem;font-weight: 500;">Feature</span>
+                                <span class="custom-control-count">{{ goods_count_list["Feature"] }}</span>
+                            </label>
+                        </div>
+                    {% end %}
+
+
+                    {% if goods_count_list["Others"] > 0  %}
+                        <div class="custom-control custom-checkbox" >
+                            <input class="custom-control-input" type="radio" id="Others" name="cartFilter1" >
+                            <label class="custom-control-label" for="Others">
+                                <span class="custom-control-text" style="font-size: 1.08rem;font-weight: 500;">Others</span>
+                                <span class="custom-control-count">{{ goods_count_list["Others"] }}</span>
+                            </label>
+                        </div>
+                    {% end %}
+                </div>
+{#                  <div class="rd-form-btn text-right" style="margin-top: 2.8%">#}
+{#                      <button class="btn btn-lg" onclick="FilterProduct()" style="min-width: 10px; padding: 0.18rem 0.6875rem;font-size: 0.98rem;" type="submit">确认</button>#}
+{#                  </div>#}
+              </div>
+
+              <div class="widget" style="margin-top: 6.2%">
+{#                <div class="widget-title h5" style="font-weight: 600; font-size: 1.28rem;">我的收藏</div>#}
+{#                  {% if len(myheart_list) == 0 %}#}
+{#                    <div class="widget-body"> 您的收藏夹为空 </div>#}
+{##}
+{#                  <div class="widget-body">No products in the cart.</div>#}
+{#                  {% else %}#}
+{#                    <table class="table table-1" style="margin-top: 6%">#}
+{#                  <tbody>#}
+{##}
+{#                  {% for product_info in myheart_list %}#}
+{#                    <tr>#}
+{#                    <td>#}
+{#                      <div class="link link-inherit topaz_link icon mdi-delete" onclick="DeleteMyHeart({{ product_info["goods_id"] }})"></div>#}
+{##}
+{#                    </td>#}
+{#                    <td>#}
+{#                      <div style="width: 60px">#}
+{#                          <img src="{{ product_info["image_path"] }}" alt="" style="max-width: 60px; max-height: 60px; min-height: 60px; min-width: 60px">#}
+{#                      </div>#}
+{#                    </td>#}
+{#                    <td>#}
+{#                        <a class="link link-inherit" href="/single_product?goods_name={{ product_info["goods_name"] }}&goods_id={{ product_info["goods_id"] }}&goods_price={{ product_info["goods_price"] }}" style="font-size: 0.98rem;">{{ product_info["goods_name"] }}#}
+{#                        </a>#}
+{#                    </td>#}
+{##}
+{#                  </tr>#}
+{#                  {% end %}#}
+{##}
+{#                </tbody>#}
+{#                </table>#}
+{#                  <a class="comment-link" href="/my_heart"  style="float: right;font-size: 0.98rem;  margin-top: 1.2168rem">#}
+{#                      <span>查看更多</span>#}
+{#                      <span class="comment-link-icon mdi-chevron-down"></span>#}
+{##}
+{#                  </a>#}
+{#                    <a class="thumbnail-link link topazlink" href="/my_heart" style="float: right; font-size: 0.98rem; margin-top: 1.2168rem; text-decoration: underline">More <span style="display: inline-block; " class="comment-link-icon mdi-chevron-down"></span></a>#}
+{##}
+{#                  {% end %}#}
+              </div>
+
+            </div>
+
+          </div>
+        </div>
+          <ul class="pag pag-light justify-content-center">
+
+
+                {# 上一页 #}
+                {% if page_info["current_page"] - 1 > 0 %}
+                    <li class="pag-item ">
+                       <a class="pag-link pag-link-prev" href="/store_catalog?page={{ subtract(page_info["current_page"], 1) }}&sort={{ page_info["is_sort"] }}&filter={{ page_info["filter_str"] }}">
+                           <span class="pag-icon mdi-chevron-left novi-icon"></span>
+                           <span>Prev</span>
+                       </a>
+                    </li>
+                {% elif page_info["current_page"] - 1 == 0 %}
+                    <li class="pag-item disabled">
+                       <a class="pag-link pag-link-prev" href="/store_catalog?page={{ subtract(page_info["current_page"], 1) }}&sort={{ page_info["is_sort"] }}&filter={{ page_info["filter_str"] }}">
+                           <span class="pag-icon mdi-chevron-left novi-icon"></span>
+                           <span>Prev</span>
+                       </a>
+                    </li>
+                {% end %}
+
+
+                {#  Page part #}
+{#                {% if page_info["total_page"] > 5 %}#}
+                    {% if page_info["current_page"] - 2 >= 0 %}
+                        {% if page_info["current_page"] + 1  == page_info["total_page"]  %}
+                            {% if subtract(page_info["current_page"], 3) > 0 %}
+                                <li class="pag-item ">
+                                   <a class="pag-link" href="/store_catalog?page={{ subtract(page_info["current_page"], 3) }}&sort={{ page_info["is_sort"] }}&filter={{ page_info["filter_str"] }}">
+                                       {{ subtract(page_info["current_page"], 3) }}
+                                   </a>
+                                </li>
+                            {% end %}
+
+                        {% elif page_info["current_page"]  == page_info["total_page"] %}
+                            {% if subtract(page_info["current_page"], 4) > 0 %}
+                                <li class="pag-item ">
+                                   <a class="pag-link" href="/store_catalog?page={{ subtract(page_info["current_page"], 4) }}&sort={{ page_info["is_sort"] }}&filter={{ page_info["filter_str"] }}">
+                                       {{ subtract(page_info["current_page"], 4) }}
+                                   </a>
+                                </li>
+                            {% end %}
+                            {% if subtract(page_info["current_page"], 3) > 0 %}
+                                <li class="pag-item ">
+                                    <a class="pag-link" href="/store_catalog?page={{ subtract(page_info["current_page"], 3) }}&sort={{ page_info["is_sort"] }}&filter={{ page_info["filter_str"] }}">
+                                        {{ subtract(page_info["current_page"], 3) }}
+                                    </a>
+                                 </li>
+                            {% end %}
+
+                        {% end %}
+
+                        {% if page_info["current_page"] > 2 %}
+                            <li class="pag-item ">
+                               <a class="pag-link" href="/store_catalog?page={{ subtract(page_info["current_page"], 2) }}&sort={{ page_info["is_sort"] }}&filter={{ page_info["filter_str"] }}">
+                                   {{ subtract(page_info["current_page"], 2) }}
+                               </a>
+                            </li>
+                        {% end %}
+
+                        <li class="pag-item ">
+                           <a class="pag-link" href="/store_catalog?page={{ subtract(page_info["current_page"], 1) }}&sort={{ page_info["is_sort"] }}&filter={{ page_info["filter_str"] }}">
+                               {{ subtract(page_info["current_page"], 1) }}
+                           </a>
+                        </li>
+
+                    {% end %}
+
+                    <li class="pag-item active">
+                        <a class="pag-link" href="/store_catalog?page={{ page_info["current_page"] }}&sort={{ page_info["is_sort"] }}&filter={{ page_info["filter_str"] }}">{{ page_info["current_page"] }}</a>
+                    </li>
+
+                    {% if page_info["current_page"] + 2  <= page_info["total_page"] %}
+                        <li class="pag-item ">
+                            <a class="pag-link" href="/store_catalog?page={{ add(page_info["current_page"], 1) }}&sort={{ page_info["is_sort"] }}&filter={{ page_info["filter_str"] }}">
+                                {{ add(page_info["current_page"], 1) }}
+                            </a>
+                        </li>
+
+                        <li class="pag-item ">
+                            <a class="pag-link" href="/store_catalog?page={{ add(page_info["current_page"], 2) }}&sort={{ page_info["is_sort"] }}&filter={{ page_info["filter_str"] }}">
+                                {{ add(page_info["current_page"], 2) }}
+                            </a>
+                        </li>
+
+                    {% elif page_info["current_page"] + 1  <= page_info["total_page"] %}
+                        <li class="pag-item ">
+                            <a class="pag-link" href="/store_catalog?page={{ add(page_info["current_page"], 1) }}&sort={{ page_info["is_sort"] }}&filter={{ page_info["filter_str"] }}">
+                                {{ add(page_info["current_page"], 1) }}
+                            </a>
+                        </li>
+
+
+                    {% end %}
+
+                    {#  前面没有页数可显示, 所以用大的页数 #}
+                    {% if page_info["current_page"] < 3 %}
+                        {% if page_info["total_page"] >=  add(page_info["current_page"], 3)  %}
+                            <li class="pag-item ">
+                                <a class="pag-link" href="/store_catalog?page={{ add(page_info["current_page"], 3) }}&sort={{ page_info["is_sort"] }}&filter={{ page_info["filter_str"] }}">
+                                    {{ add(page_info["current_page"], 3) }}
+                                </a>
+                            </li>
+                        {% end %}
+
+                        {% if page_info["current_page"] < 2 %}
+                            {% if page_info["total_page"] >=  add(page_info["current_page"], 4)  %}
+                                <li class="pag-item ">
+                                    <a class="pag-link" href="/store_catalog?page={{ add(page_info["current_page"], 4) }}&sort={{ page_info["is_sort"] }}&filter={{ page_info["filter_str"] }}">
+                                        {{ add(page_info["current_page"], 4) }}
+                                    </a>
+                                </li>
+                            {% end %}
+                        {% end %}
+
+                    {% end %}
+
+{#                {% end %}#}
+
+                {# 下一页 #}
+                {% if page_info["total_page"] - page_info["current_page"] > 0 %}
+                    <li class="pag-item">
+                        <a class="pag-link pag-link-next" href="/store_catalog?page={{ add(page_info["current_page"], 1) }}&sort={{ page_info["is_sort"] }}&filter={{ page_info["filter_str"] }}">
+                            <span>Next</span>
+                            <span class="pag-icon mdi-chevron-right novi-icon"></span>
+                        </a>
+                    </li>
+                {% elif page_info["total_page"] - page_info["current_page"] == 0 %}
+                    <li class="pag-item disabled">
+                        <a class="pag-link pag-link-next" href="/store_catalog?page={{ add(page_info["current_page"], 1) }}&sort={{ page_info["is_sort"] }}&filter={{ page_info["filter_str"] }}">
+                            <span>Next</span>
+                            <span class="pag-icon mdi-chevron-right novi-icon"></span>
+                        </a>
+                    </li>
+
+                {% end %}
+
+{#                最后一页#}
+                {% if  page_info["total_page"]  > 5%}
+                    {% if page_info["total_page"] == page_info["current_page"]  %}
+                        <li class="pag-item disabled">
+                    {% else %}
+                         <li class="pag-item">
+                            <a class="pag-link pag-link-end" href="/store_catalog?page={{ page_info["total_page"] }}&sort={{ page_info["is_sort"] }}&filter={{ page_info["filter_str"] }}">
+                                <span>Last</span>
+                                <span class="pag-icon mdi-chevron-double-right novi-icon"></span>a
+                            </a>
+                        </li>
+                    {% end %}
+                {% end %}
+
+                </ul>
+      </section>
+
+
+    <section class="footer footer-dark context-dark bg-800" style="margin-top: 10%">
+        <div class="container">
+            <div class="row row-30">
+                <div class="col-sm-6 col-lg-3">
+                    <!-- Logo-->
+                    <div class="logo">
+                        <a class="logo-link" href="/">
+{#                            <img class="logo-image-default" src="/static/images/meowfile.png" alt="Airy" width="146" height="36">#}
+                            <img class="logo-image-inverse" src="/static/images/meowshop.png" alt="Meow Shop" width="146" height="36">
+                        </a>
+                    </div>
+                    <p>Meow Shop is a full-featured mall, including background management, payment, order viewing, etc. </p>
+                    <div class="social group-20">
+{#                        <a class="social-icon icon icon-md icon-link onclinic-instagram" href="#"></a>#}
+                    </div>
+            </div>
+
+                <div class="col-sm-6 col-lg-3">
+                    <h5 class="footer-title">Contacts</h5>
+                    <ul class="list list-icons">
+                        <li class="list-item">
+                            <div class="list-icon onclinic-map-marker"></div>
+                            ChaoYang, Beijing
+                        </li>
+                        <li class="list-item">
+                            <div class="list-icon onclinic-phone"></div>
+                            +8615600803270
+                        </li>
+                        <li class="list-item">
+                            <div class="list-icon onclinic-email-open"></div>
+                            topaz1668@gmail.com
+                        </li>
+
+                    </ul>
+
+                </div>
+
+                <div class="col-sm-6 col-lg-3">
+                    <h5 class="footer-title">Useful Links</h5>
+                    <ul class="list list-sm">
+                      <li class="list-item"><a href="https://topaz1618.github.io/about/">About</a></li>
+                      <li class="list-item"><a href="https://topaz1618.github.io/projects/">Projects</a></li>
+                      <li class="list-item"><a href="https://topaz1618.github.io/blog/">Blog</a></li>
+                    </ul>
+                </div>
+
+
+
+            </div>
+        </div>
+    </section>
+        <footer class="footer footer-minimal context-dark bg-900">
+        <div class="container">
+                <!-- Copyright-->
+                <p class="rights">©2021 Meow Shop</p>
+        </div>
+      </footer>
+    </div>
+    <!-- Preloader-->
+    <div class="preloader">
+      <div class="preloader-inner">
+        <div class="preloader-dot"></div>
+        <div class="preloader-dot"></div>
+        <div class="preloader-dot"></div>
+        <div class="preloader-dot"></div>
+      </div>
+    </div>
+  </body>
+</html>
+
+<script src="/static/components/base/core.min.js"></script>
+<script src="/static/components/base/script.js"></script>
+<script src="/static/js/jquery.min.js"></script>
+<script type="text/javascript">
+    var shop_header = document.getElementById("shop_header");
+    var shop_title = document.getElementById("shop_title");
+    var filter_all = document.getElementById("All");
+    var all_typ_list = document.getElementsByName("cartFilter1");
+
+    function CheckedFilter() {
+        var filter_str = window.location.href.split("filter=");
+        if (filter_str.length > 1){
+            var filter_list = filter_str[1].split("+");
+            console.log(filter_list);
+            for (let i = 0; i in filter_list; i++){
+                console.log(filter_list[i]);
+                document.getElementById(filter_list[i]).checked = true
+            }
+        }
+    }
+
+
+    // window.onload=function()
+    // {
+    //     // 页面加载后发请求
+    //     $.ajax({
+    //         url: "/test",
+    //         type: "GET",
+    //         data: {},
+    //         processData: false,
+    //         contentType: false,
+    //         success: function (response) {
+    //             console.log(response)
+    //         }
+    //     })
+    // };
+
+    function Testajax() {
+        // 页面加载时发起请求
+        var formData = new FormData();
+        formData.append("goods_id", 1);
+
+        $.ajax({
+            url: "/test",
+            type: "GET",
+            data: formData,
+            processData: false,
+            contentType: false,
+            success: function (response) {
+                console.log(response)
+            }
+        });
+    }
+
+    function DestoryOtherFilter() {
+        console.log("!!!! DestoryOtherFilter");
+
+        for (let i in all_typ_list){
+            if (all_typ_list[i].checked){
+                all_typ_list[i].checked = false;
+            }
+        }
+
+        var uri = "&filter=" + filter_all.id;    // Todo: 拼接 uri
+        var url = window.location.href;
+        if (url.indexOf("?") == "-1"){
+            url = url + "?";
+        }
+        var addr = url.split("&filter")[0] + uri;
+        window.location.href = addr;
+
+    }
+
+    function FilterProduct() {
+        var checked_id;
+        var addr = "";
+        var sort_by = "";
+
+        for (let i=0; i in all_typ_list; i++){
+            if (all_typ_list[i].checked){
+                checked_id  = "filter=" + all_typ_list[i].id
+            }
+        }
+
+        var current_url = window.location.href.split("?");
+        console.log(current_url);
+        var current_host = current_url[0];
+        var uri_str = current_url[1];
+
+        if (uri_str != undefined){
+            var uri_list = uri_str.split("&");
+            for (let num=0; num in uri_list; num++){
+                if (uri_list[num].startsWith("sort")){
+                    sort_by = uri_list[num];
+                }
+            }
+        }
+
+        if (sort_by.length == 0){
+            addr = current_host + "?" + checked_id;
+        }else{
+            addr = current_host + "?" + sort_by + "&" + checked_id
+        }
+
+        window.location.href = addr;
+        console.log("!!!", addr);
+    }
+
+    function SortProduct() {
+        var sort_selecter = document.getElementById("select_sort").value;
+        var current_page = document.getElementsByClassName("pag-item active")[0].innerText;
+        var addr;
+        if (sort_selecter){
+            var current_url = window.location.href.split("?");
+            console.log(current_url);
+            var filter = "";
+            var current_host = current_url[0];
+            var uri_str = current_url[1];
+
+            if (uri_str != undefined){
+                var uri_list = uri_str.split("&");
+                for (let num=0; num in uri_list; num++){
+                    if (uri_list[num].startsWith("filter")){
+                        filter = uri_list[num];
+                    }
+                }
+            }
+
+            if (filter.length == 0){
+                addr = current_host + "?" + "sort=" + sort_selecter;
+            }else{
+                addr = current_host + "?" + "sort=" + sort_selecter + "&" + filter
+            }
+
+            {#var addr = "http://" + window.location.host + "/store_catalog?page=" + current_page + "&sort=" + sort_selecter;#}
+            console.log("!! Addr", addr);
+            window.location.href = addr;
+
+        }
+    }
+
+    function MyHeart(goods_id) {
+        console.log("product id", goods_id);
+        const formData = new FormData();
+        formData.append("goods_id", goods_id);
+
+        $.ajax({
+            url: "/add_myheart",
+            type: "POST",
+            data: formData,
+            processData: false,
+            contentType: false,
+            success: function (response) {
+                var error_code = response["error_code"];
+                if (error_code == "1000"){
+                    alert("收藏成功");
+                    // Todo: 如果不足三个手动加上去
+                    {#window.location.reload();#}
+                    return;
+                }
+                else if(error_code == "7006"){
+                    alert("已收藏");
+                }
+            }
+        });
+    }
+
+    function DeleteMyHeart(goods_id) {
+        console.log("product id", goods_id);
+        const formData = new FormData();
+        formData.append("goods_id", goods_id);
+
+        $.ajax({
+            url: "/delete_myheart",
+            type: "POST",
+            data: formData,
+            processData: false,
+            contentType: false,
+            success: function (response) {
+                var error_code = response["error_code"];
+                if (error_code == "1000"){
+                    alert("取消收藏成功");
+                    window.location.reload()
+                    return;
+                }
+                else if(error_code == "7007"){
+                    alert("收藏项不存在");
+                }
+            }
+        });
+
+
+    }
+
+    function CheckIsBought(goods_id) {
+        console.log("product id", goods_id);
+        const formData = new FormData();
+        formData.append("goods_id", goods_id);
+
+        $.ajax({
+            url: "/check_is_bought",
+            type: "POST",
+            data: formData,
+            processData: false,
+            contentType: false,
+            success: function (response) {
+                var msg = response["msg"];
+                if (msg != true){
+                    return true;
+                }
+
+                var uri = "/notify_purchased?info=商品已购买&btn=store&goods_id=" + goods_id;
+
+                var protocol = window.location.href.split(window.location.host)[0];
+                window.location.href = protocol + window.location.host +  uri;
+
+                return false;
+            }
+        });
+
+    }
+
+
+    // For listen Page width change
+    var option = {
+        attributes: true,
+        attributeFilter: ['class']
+    };
+
+    var mutationObserver = new MutationObserver(function (mutations) {
+        if (shop_header.className.indexOf('rd-navbar-fixed') != -1){
+            shop_title.style.display = "None";
+        }else{
+            shop_title.style.display = "Block";
+        }
+    });
+
+    mutationObserver.observe(shop_header, option);
+
+    CheckedFilter();
+    {#Testajax();#}
+
+
+</script>

@@ -1,0 +1,962 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Meow Shop</title>
+    {#    <meta charset="utf-8">#}
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta property="og:title" content="Template Monster Admin Template">
+    <meta property="og:description"
+          content="brevis, barbatus clabulares aliquando convertam de dexter, peritus capio. devatio clemens habitio est.">
+    <link rel="stylesheet" href="/static/components/base/base.css">
+    <style>
+        .btn.topaz {
+        {#border-top-left-radius: 32px !important;#} border-top-right-radius: 60px;
+            border-bottom-right-radius: 60px;
+            border-bottom-left-radius: 60px;
+        }
+
+        .btn.topaz:hover {
+        {#background-color: #1c54e2;#}{#color: #1c54e2;#}
+        }
+
+        .custom-control-text.topaz_text {
+            color: #6c757d;
+        }
+
+
+    </style>
+
+
+</head>
+<body>
+<div class="page">
+    <!--RD Navbar-->
+
+{# Header  #}
+    <header class="section rd-navbar-wrap rd-navbar-wrap-transparent">
+        <nav id="shop_header" class="rd-navbar rd-navbar-solid rd-navbar-transparent"
+             data-rd-navbar='{"responsive":{"1200":{"stickUpOffset":"164px"}}}'>
+            <div class="navbar-section navbar-non-stuck">
+                <div class="navbar-panel">
+                    <button class="navbar-switch mdi-menu novi-icon"
+                            data-multi-switch='{"targets":".rd-navbar","scope":".rd-navbar","isolate":"[data-multi-switch]"}'></button>
+                    <div class="navbar-logo">
+                        <a class="navbar-navigation-root-link" href="/backend"
+                           style="width: 160%; font-size: 22px; font-weight: 500; margin-top: -4%;"> Shop 后台管理 </a>
+                    </div>
+                </div>
+                <div class="navbar-container">
+                    <div class="navbar-cell flex-grow-1">
+                        <div class="navbar-info">
+                            <div class="list list-icons-2">
+                                <div class="list-item">
+                                    <li class="navbar-navigation-root-item">
+                                        <a id="shop_title" class="navbar-navigation-root-link" href="/backend"
+                                           style="font-size: 28px; font-weight: 500;"> Shop 后台管理 </a>
+                                    </li>
+                                </div>
+                            </div>
+                            <div class="navbar-logo navbar-fullwidth-logo">
+                                <a class="navbar-logo-link" href="index.html">
+                                </a>
+                            </div>
+                            <div class="text-block text-block-2 d-md-flex align-items-center justify-content-center">
+                                <div class="list list-icons-2">
+                                    <div class="list-item">
+                                        <a class="navbar-navigation-root-link" style="display: inline-block; " href="/user_info">
+                                            <span id="username" class="mdi-account" style="display: inline-block"> {{ username }} </span>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                    <div class="navbar-cell">
+                        <div class="navbar-subpanel">
+                            <div class="navbar-subpanel-item">
+                                <button class="navbar-button navbar-info-button mdi-dots-vertical novi-icon"
+                                        data-multi-switch='{"targets":".rd-navbar","scope":".rd-navbar","class":"navbar-info-active","isolate":"[data-multi-switch]"}'></button>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="navbar-section">
+                <div class="navbar-container navbar-sidebar" style="margin-top: 1%">
+                    <div class="navbar-cell flex-grow-1" style="border-bottom: 1px solid #dde0e9;">
+                        <ul class="navbar-navigation rd-navbar-nav" style="margin-left: 58px">
+                            <li class="navbar-navigation-root-item active" style="margin-left: -58px;">
+                                <a class="navbar-navigation-root-link" style="display: inline-block; " href="/backend">
+                                    <span class="product-btn btn topaz btn-icon mdi-shopping"
+                                          style="display: inline-block; border: 1px solid white;"> Home </span>
+                                </a>
+                            </li>
+                            <li class="navbar-navigation-root-item" style="margin-left: -58px;">
+                                <a class="navbar-navigation-root-link" style="display: inline-block; "
+                                   href="/menu_items">
+                                    <span class="product-btn btn topaz btn-icon mdi-menu"
+                                          style="display: inline-block; border: 1px solid white;">  目录管理</span>
+                                </a>
+                            </li>
+
+                            <li class="navbar-navigation-root-item rd-navbar--has-dropdown rd-navbar-submenu" style="margin-left: -58px;">
+                                <a class="navbar-navigation-root-link" style="display: inline-block; " href="/status">
+                                    <span class="product-btn btn topaz btn-icon mdi-account-box"  style="display: inline-block; border: 1px solid white;"> 用户管理 </span>
+                                </a><span class="rd-navbar-submenu-toggle"></span>
+                                <ul class="navbar-navigation-dropdown rd-navbar-dropdown">
+                                    <li class="navbar-navigation-back">
+                                        <button class="navbar-navigation-back-btn">Back</button>
+                                    </li>
+                                    <li class="navbar-navigation-dropdown-item">
+                                        <a class="navbar-navigation-dropdown-link" href="/renewal_member">
+                                            <span class=" mdi-cake" style="display: inline-block; "> Shop 高级会员申请  </span>
+                                        </a>
+
+                                    </li>
+
+                                    <li class="navbar-navigation-dropdown-item">
+                                        <a class="navbar-navigation-dropdown-link" href="/status">
+                                            <span class=" mdi-account-star" style="display: inline-block; "> 用户注册 & 访问状态  </span>
+                                        </a>
+                                    </li>
+
+                                    <li class="navbar-navigation-dropdown-item">
+                                        <a class="navbar-navigation-dropdown-link" href="/add_internal_user">
+                                            <span class=" mdi-account-plus" style="display: inline-block; "> 新增内部测试账号  </span>
+                                        </a>
+                                    </li>
+                                    <li class="navbar-navigation-dropdown-item">
+                                        <a class="navbar-navigation-dropdown-link" href="/internal_users">
+                                            <span class="mdi-clipboard-account" style="display: inline-block; "> 测试账号列表  </span>
+                                        </a>
+{#                                        <a class="navbar-navigation-dropdown-link" href="/manager_resources">内部测试用户查看</a>#}
+                                    </li>
+                                </ul>
+                            </li>
+
+                            <li class="navbar-navigation-root-item rd-navbar--has-dropdown rd-navbar-submenu" style="margin-left: -58px;">
+                                <a class="navbar-navigation-root-link" style="display: inline-block; " href="/goods_list">
+                                    <span class="product-btn btn topaz btn-icon mdi-cart"  style="display: inline-block; border: 1px solid white;"> 商品管理 </span>
+                                </a><span class="rd-navbar-submenu-toggle"></span>
+                                <ul class="navbar-navigation-dropdown rd-navbar-dropdown">
+                                    <li class="navbar-navigation-back">
+                                        <button class="navbar-navigation-back-btn">Back</button>
+                                    </li>
+
+
+                                    <li class="navbar-navigation-dropdown-item">
+                                        <a class="navbar-navigation-dropdown-link" href="/create_goods">
+                                            <span class="mdi-playlist-plus" style="display: inline-block; "> Shop 商品新建  </span>
+                                        </a>
+
+                                    </li>
+
+                                    <li class="navbar-navigation-dropdown-item">
+                                        <a class="navbar-navigation-dropdown-link" href="/update_goods">
+                                            <span class="mdi-auto-upload" style="display: inline-block; "> 修改商品信息 </span>
+                                        </a>
+                                    </li>
+
+                                    <li class="navbar-navigation-dropdown-item">
+                                        <a class="navbar-navigation-dropdown-link" href="/goods_list">
+                                            <span class="mdi-cart-outline" style="display: inline-block; "> 所有商品列表 </span>
+                                        </a>
+                                    </li>
+
+                                </ul>
+                            </li>
+
+
+                            <li class="navbar-navigation-root-item" style="margin-left: -58px;">
+                                <a class="navbar-navigation-root-link" style="display: inline-block; "
+                                   href="/view_orders">
+                                    <span class="product-btn btn topaz btn-icon mdi-book"
+                                          style="display: inline-block;  border: 1px solid white;"> 所有订单 </span>
+                                </a>
+                            </li>
+
+                            <li class="navbar-navigation-root-item rd-navbar--has-dropdown rd-navbar-submenu"
+                                style="margin-left: -58px;">
+                                <a class="navbar-navigation-root-link" style="display: inline-block; " href="/backend">
+                                    <span class="product-btn btn topaz btn-icon mdi-note-outline"
+                                          style="display: inline-block; border: 1px solid white;"> 资源管理 </span>
+                                </a><span class="rd-navbar-submenu-toggle"></span>
+                                <ul class="navbar-navigation-dropdown rd-navbar-dropdown">
+                                    <li class="navbar-navigation-back">
+                                        <button class="navbar-navigation-back-btn">Back</button>
+                                    </li>
+                                    <li class="navbar-navigation-dropdown-item">
+                                        <a class="navbar-navigation-dropdown-link" href="/create_guide">新建资源</a>
+                                    </li>
+
+                                    <li class="navbar-navigation-dropdown-item">
+                                        <a class="navbar-navigation-dropdown-link" href="/modify_resources">修改资源</a>
+                                    </li>
+
+                                    <li class="navbar-navigation-dropdown-item">
+                                        <a class="navbar-navigation-dropdown-link" href="/manager_resources">资源批量管理</a>
+                                    </li>
+                                    <li class="navbar-navigation-dropdown-item">
+                                        <a class="navbar-navigation-dropdown-link" href="/zip_list">压缩包资源列表</a>
+                                    </li>
+                                    <li class="navbar-navigation-dropdown-item">
+                                        <a class="navbar-navigation-dropdown-link" href="/feature_list">功能资源列表</a>
+                                    </li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </div>
+
+                </div>
+            </div>
+        </nav>
+    </header>
+
+{# Body  #}
+    <section class="section section-md bg-primary-lightest" style="">
+        <div class="container">
+            <div class="row row-40 row-content justify-content-center text-center">
+            <div class="col-md-4 col-lg-3">
+                <div id="g_menu" class="widget" style="position: fixed; top: 19%;">
+                    <div class="widget-title h5" style="font-weight: 600; font-size: 1.28rem;">目录管理类型</div>
+                    <ul class=" nav-boxed justify-content-center active" role="tablist" style="width: 200px; margin-top: 7%;">
+                        <li class="nav-item">
+                            <a id="tag0" onmousedown="ChangeTagColor(0)" class="nav-link h6 active" href="#f1"  style="font-size: 1.018rem; font-weight: 600;">修改压缩包</a>
+                        </li>
+                        <li>
+                            <a id="tag1" onmousedown="ChangeTagColor(1)" class="nav-link h6 " href="#f2" style="font-size: 1.018rem; font-weight: 600;">修改功能</a>
+                        </li>
+                    </ul>
+                    <ul class="nav nav-boxed justify-content-center active" role="tablist" style="display: none">
+                    </ul>
+                </div>
+            </div>
+
+            <div class="col-md-8 col-lg-9">
+
+                <div id="f1" class="row justify-content-center text-center" style="margin-top: 6%;">
+                <div class="col-md-6" style="min-width: 96%;">
+                    <div class="box box-form-1 section-offset-item">
+                        <div class="box-header">
+                            <h3 class="box-title"> Shop 压缩包类型资源修改 </h3>
+                        </div>
+                        <div class="box-body">
+                            <div id="form1" class="rd-form rd-mailform" data-form-output="contact-form-1" data-form-type="contact" novalidate="novalidate">
+                                <div class="row row-20 align-items-center">
+                                    <div class="col-12">
+                                        <div class="form-group">
+                                            <label class="form-label" for="product_name">
+                                                <h5 style="font-weight: 600">Step1: 填写压缩包名称 </h5>
+                                            </label>
+                                            <div class="form-control-wrap">
+                                                {% if data  == None %}
+                                                    <input id="zip_name" name="product_name" class="form-control form-control-has-validation form-control-last-child"
+                                                       onchange="GetResourceInfo(0)" type="text" placeholder="e.g. 飞天小女警" data-constraints="@Required" style=" width: 86%; display: inline-block;">
+
+                                                {% else  %}
+                                                    {% if basic_info["rtype"] == 0 %}
+{#                                                data[0]["name"] != None#}
+                                                        <input id="zip_name" name="product_name" class="form-control form-control-has-validation form-control-last-child"
+                                                       value="{{ data[0]["name"] }}" onmousedown="GetResourceInfo(0)" type="text" placeholder="e.g. 飞天小女警" data-constraints="@Required" style=" width: 86%; display: inline-block; ">
+                                                    {% else %}
+                                                        <input id="zip_name" name="product_name" class="form-control form-control-has-validation form-control-last-child"
+                                                       onchange="GetResourceInfo(0)" type="text" placeholder="e.g. 飞天小女警" data-constraints="@Required" style=" width: 86%; display: inline-block;">
+                                                    {% end %}
+                                                {% end %}
+                                                <span class="form-validation"></span>
+                                                <button id="confirm_button" onclick="GetResourceInfo(0)" class="btn btn-lg btn-primary" style="min-width: 10%; max-height: 3.1844rem; padding: 18px;font-size: 12px; margin-left: 2.8%">确认</button>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <h5 style="font-weight: 600; margin-left: 18px">STEP2: 修改压缩包信息 </h5>
+                                    <div class="col-12" style="margin-top: 1%;">
+                                        <div class="form-group">
+                                            <label class="form-label" for="is_component" style="min-width: 196px; display: block; margin-top: 5px;">是否为组件类型 </label>
+                                            <div class="custom-control custom-checkbox" style="height: 3.29rem; display: inline-block;">
+                                                <input class="custom-control-input" type="radio" id="is_component1" name="is_component" checked="checked">
+                                                <label class="custom-control-label" for="is_component1" style="margin-top: 0.8rem; margin-left: 2.22rem;">
+                                                    <span class="custom-control-text topaz_text" style=" font-size: 1.08rem;font-weight: 500;"> 是 </span>
+                                                </label>
+                                            </div>
+                                            <div class="custom-control custom-checkbox" style="height: 3.29rem; display: inline-block">
+                                                <input class="custom-control-input" type="radio" id="is_component2" name="is_component">
+                                                <label class="custom-control-label" for="is_component2" style="margin-top: 0.8rem; margin-left: 2.22rem;">
+                                                    <span class="custom-control-text topaz_text" style=" font-size: 1.08rem;font-weight: 500;"> 否 </span>
+                                                </label>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-12" style="margin-top: 1%;">
+                                        <div class="form-group">
+                                            <label class="form-label" for="is_paid" style="min-width: 196px; display: block; margin-top: 5px;">是否付费 </label>
+                                            <div class="custom-control custom-checkbox" style="height: 3.29rem; display: inline-block; ">
+                                                <input class="custom-control-input" type="radio" id="checked_1" name="is_paid" checked="checked">
+                                                <label class="custom-control-label" for="checked_1" style="margin-top: 0.8rem; margin-left: 2.22rem;">
+                                                    <span class="custom-control-text topaz_text" style=" font-size: 1.08rem;font-weight: 500;"> 是 </span>
+                                                </label>
+                                            </div>
+                                            <div class="custom-control custom-checkbox" style="height: 3.29rem; display: inline-block">
+                                                <input class="custom-control-input" type="radio" id="checked_2" name="is_paid">
+                                                <label class="custom-control-label" for="checked_2" style="margin-top: 0.8rem; margin-left: 2.22rem;">
+                                                    <span class="custom-control-text topaz_text" style=" font-size: 1.08rem;font-weight: 500;"> 否 </span>
+                                                </label>
+                                            </div>
+                                            <div class="custom-control custom-checkbox" style="height: 3.29rem; display: inline-block">
+                                                <input class="custom-control-input" type="radio" id="checked_3" name="is_paid">
+                                                <label class="custom-control-label" for="checked_3" style="margin-top: 0.8rem; margin-left: 2.22rem;">
+                                                    <span class="custom-control-text topaz_text" style=" font-size: 1.08rem;font-weight: 500;"> 会员免费 </span>
+                                                </label>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-12">
+                                        <div class="form-group">
+                                            <label class="form-label" for="price"> 当前所属类型 </label>
+                                            <div class="form-control-wrap">
+                                                <input id="zip_menu" name="menu" readonly="true" class="form-control form-control-has-validation form-control-last-child" type="text" placeholder="e.g. 女">
+                                                <span id="price_info" class="form-validation"></span>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-12" style="min-width: 98%; margin-left: 1%;">
+                                        <div class="accordion accordion-line ">
+                                            <div id="goods_info" class="accordion-item ">
+                                                <div class="accordion-head  " style="font-size: 0.75rem;font-weight: 600; padding: 0;"> 修改所属类型</div>
+                                                <div id="goods_body" class="accordion-body ">
+                                                    <div class="col-12">
+                                                        <div class="form-group">
+                                                            <div style="font-size:0.88rem; font-weight: 500; margin-top: 2%">选择所属主类型</div>
+                                                            <div class="col-12" style="margin-top: 1%;">
+                                                            <div class="form-group" onchange="CheckIfRelatedProduct()">
+                                                                <label class="form-label" for="is_discount" style="min-width: 196px; display: block; margin-top: 5px;"></label>
+                                                                <div class="custom-control custom-checkbox" style="height: 3.29rem; display: inline-block; margin-left: -1.2rem;">
+                                                                    <input class="custom-control-input" type="radio" id="menu21" value="1" name="main_menu2" checked="checked">
+                                                                    <label onclick="GetType('1', 0 )" class="custom-control-label" for="menu21" style="margin-top: 0.8rem; margin-left: 2.22rem;">
+                                                                        <span class="custom-control-text topaz_text" style=" font-size: 0.88rem; color: #264555"> 角色 </span>
+                                                                    </label>
+                                                                </div>
+                                                                <div class="custom-control custom-checkbox" style="height: 3.29rem; display: inline-block; margin-left: -1.2rem;">
+                                                                    <input class="custom-control-input" type="radio" id="menu22" value="2" name="main_menu2" >
+                                                                    <label onclick="GetType('2', 0 )" class="custom-control-label" for="menu22" style="margin-top: 0.8rem; margin-left: 2.22rem;">
+                                                                        <span class="custom-control-text topaz_text" style="font-size: 0.88rem; color: #264555"> 场景 </span>
+                                                                    </label>
+                                                                </div>
+                                                                <div class="custom-control custom-checkbox" style="height: 3.29rem; display: inline-block; margin-left: -1.2rem;">
+                                                                    <input class="custom-control-input" type="radio" id="menu23" value="3" name="main_menu2" >
+                                                                    <label onclick="GetType('3', 0 )" class="custom-control-label" for="menu23" style="margin-top: 0.8rem; margin-left: 2.22rem;">
+                                                                        <span class="custom-control-text topaz_text" style=" font-size: 0.88rem;color: #264555"> 动作 </span>
+                                                                    </label>
+                                                                </div>
+                                                                <div class="custom-control custom-checkbox" style="height: 3.29rem; display: inline-block; margin-left: -1.2rem;">
+                                                                    <input class="custom-control-input" type="radio" id="menu24" value="4" name="main_menu2" >
+                                                                    <label onclick="GetType('4', 0 )" class="custom-control-label" for="menu24" style="margin-top: 0.8rem; margin-left: 2.22rem;">
+                                                                        <span class="custom-control-text topaz_text" style="font-size: 0.88rem; color: #264555"> 镜头 </span>
+                                                                    </label>
+                                                                </div>
+                                                                <div class="custom-control custom-checkbox" style="height: 3.29rem; display: inline-block; margin-left: -1.2rem;">
+                                                                    <input class="custom-control-input" type="radio" id="menu25" value="5" name="main_menu2" >
+                                                                    <label onclick="GetType('5', 0 )" class="custom-control-label" for="menu25" style="margin-top: 0.8rem; margin-left: 2.22rem;">
+                                                                        <span class="custom-control-text topaz_text" style=" font-size: 0.88rem; color: #264555"> 衣服 </span>
+                                                                    </label>
+                                                                </div>
+                                                                <div class="custom-control custom-checkbox" style="height: 3.29rem; display: inline-block; margin-left:-1.2rem;">
+                                                                    <input class="custom-control-input" type="radio" id="menu26" value="6" name="main_menu2" >
+                                                                    <label onclick="GetType('6', 0 )" class="custom-control-label" for="menu26" style="margin-top: 0.8rem; margin-left: 2.22rem;">
+                                                                        <span class="custom-control-text topaz_text" style=" font-size: 0.88rem; color: #264555"> 其它 </span>
+                                                                    </label>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                            <div class=" h5 " style="font-size:0.88rem; font-weight: 500;margin-top: 2%;">选择所属二级目录</div>
+                                                            <div class="col-12 " style="margin-top: 2%; max-height: 22.68rem; overflow-y: auto; padding-right: 0.2rem;">
+                                                            <div class="widget">
+                                                            <div class="widget-body">
+                                                                <div class="table-responsive">
+                                                                    <table id="resource_table" class="table table-1">
+                                                                        <tbody id="resource_body" style="">
+                                                                            <tr id="td_model"  style=" text-align: left; border: 1px solid white; border-bottom: 1px solid white; padding: 0.8rem 1.6rem;">
+                                                                                <td style="text-align: left; border: 1px solid white; padding: 0.8rem 0.6rem; font-size: 0.8rem;">
+                                                                                    <div class="custom-control custom-checkbox" style="">
+                                                                                        <input class="custom-control-input" type="radio" id="Feature" name="cartFilter1" >
+                                                                                            <label class="custom-control-label" for="Feature" style="font-size: 0.88rem" >
+                                                                                                <a class="link link-inherit" href="/single_product?goods_name=测试专用商品&amp;goods_id=10&amp;goods_price=1">测试专用商品</a>
+                                                                                            </label>
+                                                                                    </div>
+                                                                                </td>
+                                                                            </tr>
+                                                                        </tbody>
+                                                                    </table>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="rd-form-btn text-left">
+                                        <button  class="btn btn-lg btn-primary" type="submit" onclick="UpdateSingleResource(0)">Submit</button>
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-output snackbar snackbar-primary" id="contact-form-1"></div>
+                    </div>
+                </div>
+                </div>
+
+                <div id="f2" class="row justify-content-center text-center" style="margin-top: 6%;">
+                <div class="col-md-6" style="min-width: 96%;">
+                    <div class="box box-form-1 section-offset-item">
+                        <div class="box-header">
+                            <h3 class="box-title"> Shop 功能类型资源修改 </h3>
+                        </div>
+                        <div class="box-body">
+                            <div id="form1" class="rd-form rd-mailform" data-form-output="contact-form-1" data-form-type="contact" novalidate="novalidate">
+                                <div class="row row-20 align-items-center">
+                                    <div class="col-12">
+                                        <div class="form-group">
+                                            <label class="form-label" for="product_name">
+                                                <h5 style="font-weight: 600">Step1: 填写功能名称 </h5>
+                                            </label>
+                                            <div class="form-control-wrap">
+                                                {% if data  == None %}
+                                                    <input id="feature_name" name="product_name" class="form-control form-control-has-validation form-control-last-child"
+                                                       onchange="GetResourceInfo(1)" type="text" placeholder="e.g. 飞天小女警" data-constraints="@Required" style=" width: 86%; display: inline-block;">
+
+                                                {% else %}
+                                                    {% if basic_info["rtype"] == 1 %}
+                                                        <input id="feature_name" name="product_name" class="form-control form-control-has-validation form-control-last-child"
+                                                       value="{{ data[0]["name"] }}" onmousedown="GetResourceInfo(1)" type="text" placeholder="e.g. 飞天小女警" data-constraints="@Required" style=" width: 86%; display: inline-block; ">
+                                                    {% else %}
+                                                    <input id="feature_name" name="product_name" class="form-control form-control-has-validation form-control-last-child"
+                                                       onchange="GetResourceInfo(1)" type="text" placeholder="e.g. 飞天小女警" data-constraints="@Required" style=" width: 86%; display: inline-block;">
+
+                                                    {% end %}
+                                                {% end %}
+                                                <span class="form-validation"></span>
+                                                <button id="fconfirm_button" onclick="GetResourceInfo(1)" class="btn btn-lg btn-primary" style="min-width: 10%; max-height: 3.1844rem; padding: 18px;font-size: 12px; margin-left: 2.8%">确认</button>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <h5 style="font-weight: 600; margin-left: 18px">STEP2: 修改功能信息 </h5>
+
+                                    <div class="col-12" style="margin-top: 1%;">
+                                        <div class="form-group">
+                                            <label class="form-label" for="is_fpaid" style="min-width: 196px; display: block; margin-top: 5px;">是否付费 </label>
+                                            <div class="custom-control custom-checkbox" style="height: 3.29rem; display: inline-block; ">
+                                                <input class="custom-control-input" type="radio" id="fchecked_1" name="is_fpaid" checked="checked">
+                                                <label class="custom-control-label" for="fchecked_1" style="margin-top: 0.8rem; margin-left: 2.22rem;">
+                                                    <span class="custom-control-text topaz_text" style=" font-size: 1.08rem;font-weight: 500;"> 是 </span>
+                                                </label>
+                                            </div>
+                                            <div class="custom-control custom-checkbox" style="height: 3.29rem; display: inline-block">
+                                                <input class="custom-control-input" type="radio" id="fchecked_2" name="is_fpaid">
+                                                <label class="custom-control-label" for="fchecked_2" style="margin-top: 0.8rem; margin-left: 2.22rem;">
+                                                    <span class="custom-control-text topaz_text" style=" font-size: 1.08rem;font-weight: 500;"> 否 </span>
+                                                </label>
+                                            </div>
+                                            <div class="custom-control custom-checkbox" style="height: 3.29rem; display: inline-block">
+                                                <input class="custom-control-input" type="radio" id="fchecked_3" name="is_fpaid">
+                                                <label class="custom-control-label" for="fchecked_3" style="margin-top: 0.8rem; margin-left: 2.22rem;">
+                                                    <span class="custom-control-text topaz_text" style=" font-size: 1.08rem;font-weight: 500;"> 会员免费 </span>
+                                                </label>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-12">
+                                        <div class="form-group">
+                                            <label class="form-label" for="price"> 当前所属角色 </label>
+                                            <div class="form-control-wrap">
+                                                <input id="feature_menu" name="menu" readonly="true" class="form-control form-control-has-validation form-control-last-child" type="text" placeholder="e.g. 女">
+                                                <span id="feature_menu_info" class="form-validation"></span>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-12" style="min-width: 98%; margin-left: 1%;">
+                                        <div class="accordion accordion-line ">
+                                            <div id="goods_info" class="accordion-item ">
+                                                <div class="accordion-head  " style="font-size: 0.75rem;font-weight: 600;    padding: 0;"> 修改所属角色</div>
+                                                <div id="goods_body" class="accordion-body ">
+                                                    <div class="col-12 " style="margin-top: 2%;max-height: 22.68rem; overflow-y: auto;padding-right: 0.2rem;">
+                                                        <div class="widget">
+                                                            <div class="widget-body">
+                                                                <div class="table-responsive">
+                                                                    <table id="resource_table1" class="table table-1">
+                                                                        <tbody id="resource_body1" style="">
+                                                                            <tr id="td_model1"  style=" text-align: left; border: 1px solid white; border-bottom: 1px solid white; padding: 0.8rem 1.6rem;">
+                                                                                <td style="text-align: left; border: 1px solid white; padding: 0.8rem 0.6rem; font-size: 0.8rem;">
+                                                                                    <div class="custom-control custom-checkbox" style="">
+                                                                                        <input class="custom-control-input" type="radio" id="Feature" name="cartFilter1">
+                                                                                            <label class="custom-control-label" for="Feature" style="font-size: 0.88rem" >
+                                                                                                <a class="link link-inherit" href="/single_product?goods_name=测试专用商品&amp;goods_id=10&amp;goods_price=1">测试专用商品</a>
+                                                                                            </label>
+                                                                                    </div>
+                                                                                </td>
+                                                                            </tr>
+                                                                        </tbody>
+                                                                    </table>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="rd-form-btn text-left">
+                                        <button  class="btn btn-lg btn-primary" type="submit" onclick="UpdateSingleResource(1)">Submit</button>
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="form-output snackbar snackbar-primary" id="contact-form-1"></div>
+                    </div>
+                </div>
+            </div>
+
+
+            </div>
+
+            </div>
+        </div>
+    </section>
+
+
+    <section class="footer footer-dark context-dark bg-800" style="margin-top: 10%">
+        <div class="container">
+            <div class="row row-30">
+
+                <div class="col-sm-6 col-lg-3">
+                    <h5 class="footer-title">联系方式</h5>
+                    <ul class="list list-icons">
+                        <li class="list-item">
+                            <div class="list-icon onclinic-map-marker"></div>
+                            北京市朝阳区五里桥一街1号非中心5号楼四层十二维度
+                        </li>
+                        <li class="list-item">
+                            <div class="list-icon onclinic-phone"></div>
+                            010-85717789
+                        </li>
+                        <li class="list-item">
+                            <div class="list-icon onclinic-email-open"></div>
+                            market@12dms.com
+                        </li>
+
+                    </ul>
+
+                </div>
+
+            </div>
+        </div>
+    </section>
+    <footer class="footer footer-minimal context-dark bg-900">
+        <div class="container">
+        </div>
+    </footer>
+</div>
+<!-- Preloader-->
+<div class="preloader">
+    <div class="preloader-inner">
+        <div class="preloader-dot"></div>
+        <div class="preloader-dot"></div>
+        <div class="preloader-dot"></div>
+        <div class="preloader-dot"></div>
+    </div>
+</div>
+
+<div class="to-top mdi-chevron-up "></div>
+</body>
+</html>
+<script src="/static/components/base/core.min.js"></script>
+<script src="/static/components/base/script.js"></script>
+<script src="/static/js/jquery.min.js"></script>
+<script type="text/javascript">
+    var shop_header = document.getElementById("shop_header");
+    var shop_title = document.getElementById("shop_title");
+
+    var check_name = document.getElementById("check_name");
+
+    var tag0 = document.getElementById("tag0");
+    var tag1 = document.getElementById("tag1");
+    var formDict = {};
+    var current_goods_id;
+    var current_resource_id;
+    var current_menu_id;
+    var is_related_product;
+    var goods_id;
+    var main_menu_id;
+
+    function CheckIfRelatedProduct() {
+        console.log("请勿修改类型");
+    }
+
+    function ChangeTagColor(num) {
+        if (num==0){
+            tag0.style.backgroundColor = "#a4bbf9";
+            tag1.style.backgroundColor = "white";
+        }else if(num==1 || num == 2){
+            tag1.style.backgroundColor = "#a4bbf9";
+            tag0.style.backgroundColor = "white";
+        }
+    }
+
+    function UpdateSingleResource(num) {
+        var name;
+        var paid_el;
+        var is_paid;
+        var menu_id;
+        var menu_el;
+        var component_el;
+        var is_component;
+
+        const formData = new FormData();
+
+        if (num == 0){
+            name = document.getElementById("zip_name").value;
+            paid_el = document.getElementsByName("is_paid");
+            menu_el = document.getElementsByName("menus");
+
+            component_el = document.getElementsByName("is_component");
+            if (component_el[0].checked == true){
+                formData.append("is_component", 1);
+            }else if (component_el[1].checked == true){
+                formData.append("is_component", 0);
+            }
+
+            if (is_related_product == true){
+                var menu_list = document.getElementsByName("main_menu2");
+                for (let i=0; i< menu_list.length; i++){
+                    if (menu_list[i].checked == true){
+                        if (menu_list[i].value != main_menu_id){
+                            formData.append("main_menu_id", menu_list[i].value);
+                        }
+                    }
+                }
+            }
+
+
+        }else if (num == 1){
+            name = document.getElementById("feature_name").value;
+            paid_el = document.getElementsByName("is_fpaid");
+            menu_el = document.getElementsByName("fmenus");
+        }
+
+        {# 0: 付费, 1: 免费, 2: 会员免费 #}
+        if (paid_el[0].checked == true){
+                is_paid = 0;
+            }else if (paid_el[1].checked == true){
+                is_paid = 1;
+            } else if (paid_el[2].checked == true){
+                is_paid = 2;
+        }
+
+        for (let i=0; i < menu_el.length; i++){
+            if (menu_el[i].checked){
+                if (menu_el[i].value != current_menu_id){
+                    menu_id = menu_el[i].value;
+                }else{
+                    menu_id = current_menu_id;
+                }
+            }
+        }
+        console.log("new data", menu_id, name, num, is_paid);
+
+        formData.append("username", "15600803270");
+        formData.append("resource_type", num);
+        formData.append("resource_id", current_resource_id);
+        formData.append("resource_name", name);
+        formData.append("menu_id", menu_id);
+        formData.append("is_paid", is_paid);
+        formData.append("is_related_product", is_related_product);
+        formData.append("current_goods_id", current_goods_id);
+
+        //var params_res = CheckParams(1);
+
+        $.ajax({
+            url: "/modify_resources",
+            type: "POST",
+            data: formData,
+            processData: false,
+            contentType: false,
+            success: function (response) {
+                var error_code = response["error_code"];
+                if (error_code == "1000") {
+                    console.log("", response["msg"]);
+                    alert("修改资源信息成功!  ")
+                }
+                else {
+                    alert(response["msg"]);
+                }
+            }
+        });
+    }
+
+    function CreateItems(data, func_num){
+        // func_num 0: zip; 1: feature
+        var resource_body;
+        var td_model;
+        var pre;
+        var input_name;
+
+        if (func_num == 0){
+            td_model = document.getElementById("td_model");
+            resource_body = document.getElementById("resource_body");
+            pre = "type_";
+            input_name = "menus"
+        }else if (func_num == 1){
+            td_model = document.getElementById("td_model1");
+            resource_body = document.getElementById("resource_body1");
+            pre = "ftype_";
+            input_name = "fmenus"
+        }
+
+        if (data.length < 1){
+            resource_body.innerText = "";
+            var t = td_model.cloneNode(true);
+            var input_ele = t.getElementsByClassName("custom-control-input")[0];
+            var name_label = t.getElementsByClassName("custom-control-label")[0];
+
+            input_ele.name = input_name;
+            input_ele.value = "无";
+            input_ele.id = "none";
+            input_ele.checked = "";
+            name_label.innerText = "无";
+            name_label.htmlFor = "none";
+            resource_body.appendChild(t);
+        }
+        else{
+            resource_body.innerText = "";
+
+            for (let i = 0; i < data.length; i++) {
+                var t = td_model.cloneNode(true);
+                var input_ele = t.getElementsByClassName("custom-control-input")[0];
+                var name_label = t.getElementsByClassName("custom-control-label")[0];
+                input_ele.name = input_name;
+                input_ele.value = data[i][1];
+                input_ele.id = pre + data[i][1];
+                name_label.innerText = data[i][0];
+                name_label.htmlFor = pre + data[i][1];
+
+                if (i == 0){
+                    input_ele.checked = "checked";
+                    console.log("first one", data[i][0]);
+                }else {
+                    input_ele.checked = "";
+                }
+                resource_body.appendChild(t);
+            }
+        }
+    }
+
+    function GetType(menu_id, func_num) {
+        const formData = new FormData();
+        formData.append("username", "15600803270");
+        formData.append("resource_type", 1);
+        formData.append("menu_id", menu_id);
+
+        $.ajax({
+            url: '/get_resource',
+            type: 'POST',
+            data: formData,
+            processData: false,
+            contentType: false,
+            success: function(res) {
+                if (res["error_code"] == "1000"){
+                    console.log("!!!", res['msg']['zip_list']);
+                    if (func_num == 0){
+                        CreateItems(res['msg']['zip_list'], func_num);
+                    } else if (func_num == 1){
+                        CreateItems(res['msg']['feature_list'], func_num);
+                    }
+                }else {
+                    alert(res["msg"]);
+                }
+            },
+        });
+    }
+
+    function GetResourceInfo(num) {
+        console.log("num", num);
+        var resource_id;
+        var resource_name;
+        var current_menu;
+        var is_paid;
+        var is_component;
+
+        var uri_str = window.location.href.split("?")[1];
+        if (uri_str != undefined){
+            var uri_list = uri_str.split("&");
+            if (uri_list.length > 1){
+                var rid_str = uri_list[1];
+                if (rid_str.split("=").length > 0){
+                    resource_id = rid_str.split("=")[1]
+                }
+            }
+        }else {
+            resource_id = null;
+        }
+
+        const formData = new FormData();
+        formData.append("resource_type", num);
+        formData.append("resource_id", resource_id);
+
+        if ( num == 0 ){
+            resource_name = document.getElementById("zip_name");
+            formData.append("resource_name", resource_name);
+            current_menu = document.getElementById("zip_menu");
+            is_paid = document.getElementsByName("is_paid");
+            is_component = document.getElementsByName("is_component");
+        }else if(num == 1){
+            resource_name = document.getElementById("feature_name");
+            formData.append("resource_name", resource_name);
+            current_menu = document.getElementById("feature_menu");
+            is_paid = document.getElementsByName("is_fpaid");
+        }
+
+       $.ajax({
+           url: "/single_resource",
+           type: "POST",
+           data: formData,
+           processData: false,
+           contentType: false,
+           success: function (response) {
+               var error_code = response["error_code"];
+               if (error_code == "1000") {
+                   var msg = response["msg"][0];
+                   console.log("!!! ", msg);
+
+                   resource_name.value = msg["name"];
+                   if (msg["main_menu"] == "Actor"){
+                       main_menu_id = 1;
+                   }else if (msg["main_menu"] == "Scene"){
+                       main_menu_id = 2;
+                   }else if (msg["main_menu"] == "Action"){
+                       main_menu_id = 3;
+                   }else if (msg["main_menu"] == "Shot"){
+                       main_menu_id = 4;
+                   }else if (msg["main_menu"] == "Clothes"){
+                       main_menu_id = 5;
+                   }else if (msg["main_menu"] == "Others"){
+                       main_menu_id = 6;
+                   }
+
+
+                   is_related_product = msg["goods_info"]["is_related_product"];
+
+
+                   // Save current menu id
+                   if (num == 0){
+                       current_menu_id = msg["secondary_menu"];
+                   }else if(num == 1){
+                       current_menu_id = msg["character"];
+                       if (is_related_product == true){
+                           goods_id = msg["goods_info"]["goods_id"];
+                       }
+                   }
+
+                   current_resource_id = msg["id"];
+
+                   // 0: 付费, 1: 免费 2: 会员付费
+                   if (msg["Authority"] == 0){
+                       is_paid[0].checked = "checked"
+                   }else if (msg["Authority"] == 1){
+                       is_paid[1].checked = "checked"
+                   } else if (msg["Authority"] == 2){
+                       is_paid[2].checked = "checked"
+                   }
+
+                   if (num == 0){
+                       current_menu.value = msg["secondary_menu"];
+                       if (msg["is_component"] == true){
+                           is_component[0].checked = "checked";
+                       }else if (msg["is_component"] == false){
+                           is_component[1].checked = "checked";
+                       }
+                   }else if (num==1){
+                       current_menu.value = msg["character"];
+                   }
+               }
+               else {
+                   if (error_code == "4004") {
+                       alert("不存在, 请检查所输名称");
+                       return false;
+                   } else {
+                       alert(response["msg"]);
+                       return  false;
+                   }
+               }
+           }
+       });
+
+       return true
+    }
+
+    GetType(1, 0);
+    GetType(1, 1);
+
+
+    if (window.location.href.split("?").length > 1){
+        var uri_str = window.location.href.split("?")[1];
+        var uri_list = uri_str.split("&");
+        if (uri_list.length > 1){
+            var rtype_str = uri_list[0];
+            var rid_str = uri_list[1];
+            if (rtype_str == "rtype=0"){
+                ChangeTagColor(0);
+                if (document.getElementById("zip_name") != ""){
+                    document.getElementById("confirm_button").click();
+                }
+
+            }else if (rtype_str == "rtype=1"){
+                ChangeTagColor(1);
+                window.location.href = window.location.href + "#f2";
+                if (document.getElementById("feature_name") != ""){
+                    document.getElementById("fconfirm_button").click();
+                }
+            }
+        }
+
+    }
+
+
+    {#var shop_phone = document.getElementById("shop_phone");#}
+    var option = {
+        attributes: true,
+        attributeFilter: ['class']
+    };
+
+
+
+    var mutationObserver = new MutationObserver(function (mutations) {
+        if (shop_header.className.indexOf('rd-navbar-fixed') != -1) {
+            shop_title.style.display = "None";
+            {#shop_phone.style.display = "Block";#}
+        } else {
+            shop_title.style.display = "Block";
+            {#shop_phone.style.display = "None";#}
+
+        }
+    });
+
+    mutationObserver.observe(shop_header, option)
+
+</script>

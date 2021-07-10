@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title> Shop </title>
+
+    <link href="static/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="static/css/modern-business.css" rel="stylesheet">
+
+    <style type="text/css">
+        li:hover{
+            color: cornflowerblue;
+        }
+
+    </style>
+
+</head>
+{#background-image: url('static/images/a.png'); background-size: 100% 100%;#}
+<body style="">
+
+
+<div style="margin-top: -56px; height: 70px; position: fixed; z-index: 999; width: 100%;">
+    <div class="card-header" style="height: 70px; background-color: white;  ">
+        <div class="collapse navbar-collapse" id="navbarResponsive">
+        </div>
+
+        <ul class="navbar-nav ml-auto">
+            <li class="breadcrumb-item active" style="width: 300px; display: inline; margin-top: 5px;">
+                <h1 class="mt-4 mb-3" style="display: inline; "> Shop</h1>
+                <small style="display: inline; font-size: 22px;">后台管理</small>
+            </li>
+
+            <li class="nav-item dropdown"
+                style="width: 50px; margin-left: 90%; display: inline; margin-top: -35px; color: #6c757d">
+                <a class="dropdown-item" style="background: none; width: 150px; color: #6c757d; font-size: 20px; text-decoration: underline" href="/backend">回到上级</a>
+            </li>
+        </ul>
+    </div>
+</div>
+
+
+    <div class="container">
+
+        <div class="row" style="margin-top: 50px; z-index: 158;">
+            <div class="col-lg-4 mb-4">
+                <div class="card h-100" style="width: 1110px; height: 280px">
+                    <h4 class="card-header" style="background-color: white; color: #4285f4;"> 所有观看文件
+{#                        <button name="confirm_select" onclick="DownloadFile()" style="display: inline-block; width: 60px; height: 30px; font-size:12px; background-color: white; margin-left: 70%; color: #545454; border: double">下载</button>#}
+                        <button name="confirm_select" onclick="DeleteFile()" style="display: inline-block; width: 60px; height: 30px; font-size:12px; background-color: white; margin-left: 74%; color: #545454; border: double">删除</button>
+                    </h4>
+                    <div class="card-body" style="height: 500px; overflow-y: scroll; overflow-x: scroll; white-space: nowrap;">
+                        <div class="panel panel-success" style="width:900px; height:80px; color: #545454; ">
+                            <div>
+                                <span style="width: 350px; display: inline-block; margin-left: 20px; font-size: 22px"> Title </span>
+                                <span style="width: 450px; display: inline-block; margin-left: 40px; font-size: 22px"> Video name </span>
+                                <span style="width: 100px; display:inline-block; margin-left: 40px; font-size: 22px"> Version </span>
+                            </div>
+                            <ul id="view_files" style="list-style: none;">
+
+                            </ul>
+
+                            <div style="padding-left: 15px;">
+
+                            </div>
+
+                        </div>
+                    </div>
+
+                </div>
+                </div>
+         </div>
+
+</div>
+
+<footer class="py-5 bg-dark" style="position: fixed; width: 100%; margin-top: 150px;background-color: #6c757d; height: 30px; color: white; line-height: 0;">
+    <div class="container">
+        <p class="m-0 text-center text-white">Copyright &copy; Website 2020</p>
+    </div>
+</footer>
+
+<script src='static/js/jquery.min.js' type="text/javascript"></script>
+<script src="static/vendor/jquery/jquery.min.js"></script>
+<script src="static/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+<script type="text/javascript">
+
+
+
+    function create_main(data) {
+        console.log(data);
+        var ul_el = document.getElementById("view_files");
+        for (let k in data) {
+            console.log("Data: ", k, data[k]["video_name"], data[k]["version"]);
+
+            var a_el = document.createElement("a");
+            var li_el = document.createElement("li");
+            var label_el = document.createElement("label");
+            var input_el = document.createElement("input");
+            var span_el = document.createElement("span");
+            var video_name_span_el = document.createElement("span");
+            var version_span_el = document.createElement("span");
+
+            li_el.style.marginTop = "10px";
+            li_el.style.marginBottom = "-5px";
+
+            a_el.style.textDecoration = "none";
+            a_el.innerText = k;
+            a_el.style.color = "#545454";
+            var protocol = window.location.href.split(window.location.host)[0];
+            a_el.href =  protocol + window.location.host + "/download/" + data[k]["video_name"];
+
+            input_el.style.marginLeft = "-25px";
+            input_el.class = "radio";
+            input_el.type = "radio";
+            input_el.name = "file_box";
+            input_el.value = data[k]["id"];
+            {#input_el.addEventListener('click', CheckIfParentClicked.bind(null, "type_" + data[i][1], prefix));#}
+
+            span_el.style.marginLeft = "6px";
+            span_el.style.display = "inline-block";
+            span_el.style.width = "350px";
+            {#span_el.innerText = k;#}
+            span_el.value = k;
+
+            video_name_span_el.innerText = data[k]["video_name"];
+            video_name_span_el.style.display = "inline-block";
+            video_name_span_el.style.width = "450px";
+            video_name_span_el.style.marginLeft = "40px";
+
+            version_span_el.innerText = data[k]["version"];
+            version_span_el.style.display = "inline-block";
+            version_span_el.style.width = "100px";
+            version_span_el.style.marginLeft = "40px";
+
+            span_el.appendChild(a_el);
+            label_el.appendChild(input_el);
+            label_el.appendChild(span_el);
+            label_el.appendChild(video_name_span_el);
+            label_el.appendChild(version_span_el);
+            li_el.appendChild(label_el);
+
+            ul_el.appendChild(li_el);
+
+        }
+    }
+
+
+    function GetType() {
+        $.ajax({
+            type: 'post',
+            url: '/get_video_list',
+            dataType: 'json',
+            data:{
+                username: "15600803270",
+            },
+
+            beforeSend: function() {
+                // Do nothing
+            },
+            success: function(res) {
+                {#console.log("error_code", res['error_code'], is_zip, is_feature);#}
+                if(res['error_code'] != 1000){
+                    console.log(">>", res["error_code"], res['msg']);
+                }else{
+                    console.log(res['msg']);
+                    create_main(res['msg']);
+
+                }
+            },
+            complete: function() {
+                // Do nothing
+            },
+            error: function() {
+                console.log('请求失败~');
+            }
+        });
+    }
+
+
+    function DeleteFile() {
+        var file_box_list = document.getElementsByName("file_box");
+
+        for (let i = 0; i < file_box_list.length; i++) {
+            var ischecked = file_box_list[i].checked;
+            if (ischecked == true){
+
+                $.ajax({
+                    type: 'post',
+                    url: '/manager_resources',
+                    dataType: 'json',
+                    data:{
+                        resource_type: 4,
+                        resource_id: file_box_list[i].value,
+                    },
+
+                    beforeSend: function() {
+                        // Do nothing
+                    },
+                    success: function(res) {
+                        console.log("!!!!!", res["error_code"]);
+                        if (res["error_code"] == "4006"){
+                            alert("删除选项使用中, 请求失败");
+
+                        }else if (res["error_code"] == "1000"){
+                            alert("删除成功");
+                        }
+
+                        window.location.reload();
+                    },
+                    complete: function() {
+                        // Do nothing
+                    },
+                    error: function() {
+                        console.log('请求失败~');
+                    }
+                });
+            }
+
+        }
+    }
+
+
+
+    GetType();
+
+
+</script>
+<script type="text/javascript" opacity='0.7' zIndex="-2" count="80" src="static/js/canvas-nest.js"></script>
+
+</body>
+
+</html>

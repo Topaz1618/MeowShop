@@ -1,0 +1,1159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Meow Shop</title>
+    {#    <meta charset="utf-8">#}
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta property="og:title" content="Template Monster Admin Template">
+    <meta property="og:description"
+          content="brevis, barbatus clabulares aliquando convertam de dexter, peritus capio. devatio clemens habitio est.">
+    <link rel="stylesheet" href="/static/components/base/base.css">
+    <style>
+        .btn.topaz {
+        {#border-top-left-radius: 32px !important;#} border-top-right-radius: 60px;
+            border-bottom-right-radius: 60px;
+            border-bottom-left-radius: 60px;
+        }
+
+        .btn.topaz:hover {
+        {#background-color: #1c54e2;#}{#color: #1c54e2;#}
+        }
+
+
+        .topaz_title1{
+            font-weight: 600;
+            margin-left: 18px;
+            font-size: 20px;
+        }
+
+        .form-label.topaz_title2{
+            font-size: 0.98rem;
+            font-weight: 600;
+            padding: 0;
+        }
+
+        .custom-control-text.topaz_text {
+            color: #6c757d;
+        }
+        ::-webkit-scrollbar-thumb:horizontal { /*水平滚动条的样式*/
+        	width: 5px;
+        	background-color: #CCCCCC;
+            {#background-color: #a4bbf9;#}
+        	-webkit-border-radius: 6px;
+        }
+        ::-webkit-scrollbar-track-piece {
+        	background-color: #fff; /*滚动条的背景颜色*/
+        	-webkit-border-radius: 0; /*滚动条的圆角宽度*/
+        }
+        ::-webkit-scrollbar {
+        	width: 10px; /*滚动条的宽度*/
+        	height: 8px; /*滚动条的高度*/
+        }
+        ::-webkit-scrollbar-thumb:vertical { /*垂直滚动条的样式*/
+        	height: 50px;
+        	background-color: #999;
+        	-webkit-border-radius: 4px;
+        	outline: 2px solid #fff;
+        	outline-offset: -2px;
+        	border: 2px solid #fff;
+        }
+
+        ::-webkit-scrollbar-thumb:hover { /*滚动条的hover样式*/
+        	height: 50px;
+        	{#background-color: #9f9f9f;#}
+            background-color:  #a4bbf9;
+        	-webkit-border-radius: 4px;
+        }
+
+
+    </style>
+
+
+</head>
+<body>
+<div class="page">
+    <!--RD Navbar-->
+
+    <header class="section rd-navbar-wrap rd-navbar-wrap-transparent">
+        <nav id="shop_header" class="rd-navbar rd-navbar-solid rd-navbar-transparent"
+             data-rd-navbar='{"responsive":{"1200":{"stickUpOffset":"164px"}}}'>
+            <div class="navbar-section navbar-non-stuck">
+                <div class="navbar-panel">
+                    <button class="navbar-switch mdi-menu novi-icon"
+                            data-multi-switch='{"targets":".rd-navbar","scope":".rd-navbar","isolate":"[data-multi-switch]"}'></button>
+                    <div class="navbar-logo">
+                        <a class="navbar-navigation-root-link" href="/backend"
+                           style="width: 160%; font-size: 22px; font-weight: 500; margin-top: -4%;"> Shop 后台管理 </a>
+                    </div>
+                </div>
+                <div class="navbar-container">
+                    <div class="navbar-cell flex-grow-1">
+                        <div class="navbar-info">
+                            <div class="list list-icons-2">
+                                <div class="list-item">
+                                    <li class="navbar-navigation-root-item">
+                                        <a id="shop_title" class="navbar-navigation-root-link" href="/backend" style="font-size: 28px; font-weight: 500;"> Shop 后台管理 </a>
+                                    </li>
+                                </div>
+                            </div>
+                            <div class="navbar-logo navbar-fullwidth-logo">
+                                <a class="navbar-logo-link" href="index.html">
+                                </a>
+                            </div>
+                            <div class="text-block text-block-2 d-md-flex align-items-center justify-content-center">
+                                <div class="list list-icons-2">
+                                    <div class="list-item">
+                                        <a class="navbar-navigation-root-link" style="display: inline-block; " href="/user_info">
+                                            <span id="username" class="mdi-account" style="display: inline-block"> {{ username }} </span>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                    <div class="navbar-cell">
+                        <div class="navbar-subpanel">
+                            <div class="navbar-subpanel-item">
+                                <button class="navbar-button navbar-info-button mdi-dots-vertical novi-icon"
+                                        data-multi-switch='{"targets":".rd-navbar","scope":".rd-navbar","class":"navbar-info-active","isolate":"[data-multi-switch]"}'></button>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="navbar-section">
+                <div class="navbar-container navbar-sidebar" style="margin-top: 1%">
+                    <div class="navbar-cell flex-grow-1" style="border-bottom: 1px solid #dde0e9;">
+                        <ul class="navbar-navigation rd-navbar-nav" style="margin-left: 58px">
+                            <li class="navbar-navigation-root-item active" style="margin-left: -58px;">
+                                <a class="navbar-navigation-root-link" style="display: inline-block; " href="/backend">
+                                    <span class="product-btn btn topaz btn-icon mdi-shopping"
+                                          style="display: inline-block; border: 1px solid white;"> Home </span>
+                                </a>
+                            </li>
+                            <li class="navbar-navigation-root-item" style="margin-left: -58px;">
+                                <a class="navbar-navigation-root-link" style="display: inline-block; "
+                                   href="/menu_items">
+                                    <span class="product-btn btn topaz btn-icon mdi-menu"
+                                          style="display: inline-block; border: 1px solid white;">  目录管理</span>
+                                </a>
+                            </li>
+
+                            <li class="navbar-navigation-root-item rd-navbar--has-dropdown rd-navbar-submenu" style="margin-left: -58px;">
+                                <a class="navbar-navigation-root-link" style="display: inline-block; " href="/status">
+                                    <span class="product-btn btn topaz btn-icon mdi-account-box"  style="display: inline-block; border: 1px solid white;"> 用户管理 </span>
+                                </a><span class="rd-navbar-submenu-toggle"></span>
+                                <ul class="navbar-navigation-dropdown rd-navbar-dropdown">
+                                    <li class="navbar-navigation-back">
+                                        <button class="navbar-navigation-back-btn">Back</button>
+                                    </li>
+                                    <li class="navbar-navigation-dropdown-item">
+                                        <a class="navbar-navigation-dropdown-link" href="/renewal_member">
+                                            <span class=" mdi-cake" style="display: inline-block; "> Shop 高级会员申请  </span>
+                                        </a>
+
+                                    </li>
+
+                                    <li class="navbar-navigation-dropdown-item">
+                                        <a class="navbar-navigation-dropdown-link" href="/status">
+                                            <span class=" mdi-account-star" style="display: inline-block; "> 用户注册 & 访问状态  </span>
+                                        </a>
+                                    </li>
+
+                                    <li class="navbar-navigation-dropdown-item">
+                                        <a class="navbar-navigation-dropdown-link" href="/add_internal_user">
+                                            <span class=" mdi-account-plus" style="display: inline-block; "> 新增内部测试账号  </span>
+                                        </a>
+                                    </li>
+                                    <li class="navbar-navigation-dropdown-item">
+                                        <a class="navbar-navigation-dropdown-link" href="/internal_users">
+                                            <span class="mdi-clipboard-account" style="display: inline-block; "> 测试账号列表  </span>
+                                        </a>
+{#                                        <a class="navbar-navigation-dropdown-link" href="/manager_resources">内部测试用户查看</a>#}
+                                    </li>
+                                </ul>
+                            </li>
+
+                            <li class="navbar-navigation-root-item rd-navbar--has-dropdown rd-navbar-submenu" style="margin-left: -58px;">
+                                <a class="navbar-navigation-root-link" style="display: inline-block; " href="/goods_list">
+                                    <span class="product-btn btn topaz btn-icon mdi-cart"  style="display: inline-block; border: 1px solid white;"> 商品管理 </span>
+                                </a><span class="rd-navbar-submenu-toggle"></span>
+                                <ul class="navbar-navigation-dropdown rd-navbar-dropdown">
+                                    <li class="navbar-navigation-back">
+                                        <button class="navbar-navigation-back-btn">Back</button>
+                                    </li>
+
+
+                                    <li class="navbar-navigation-dropdown-item">
+                                        <a class="navbar-navigation-dropdown-link" href="/create_goods">
+                                            <span class="mdi-playlist-plus" style="display: inline-block; "> Shop 商品新建  </span>
+                                        </a>
+
+                                    </li>
+
+                                    <li class="navbar-navigation-dropdown-item">
+                                        <a class="navbar-navigation-dropdown-link" href="/update_goods">
+                                            <span class="mdi-auto-upload" style="display: inline-block; "> 修改商品信息 </span>
+                                        </a>
+                                    </li>
+
+                                    <li class="navbar-navigation-dropdown-item">
+                                        <a class="navbar-navigation-dropdown-link" href="/goods_list">
+                                            <span class="mdi-cart-outline" style="display: inline-block; "> 所有商品列表 </span>
+                                        </a>
+                                    </li>
+
+                                </ul>
+                            </li>
+
+
+                            <li class="navbar-navigation-root-item" style="margin-left: -58px;">
+                                <a class="navbar-navigation-root-link" style="display: inline-block; "
+                                   href="/view_orders">
+                                    <span class="product-btn btn topaz btn-icon mdi-book"
+                                          style="display: inline-block;  border: 1px solid white;"> 所有订单 </span>
+                                </a>
+                            </li>
+
+                            <li class="navbar-navigation-root-item rd-navbar--has-dropdown rd-navbar-submenu"
+                                style="margin-left: -58px;">
+                                <a class="navbar-navigation-root-link" style="display: inline-block; " href="/backend">
+                                    <span class="product-btn btn topaz btn-icon mdi-note-outline"
+                                          style="display: inline-block; border: 1px solid white;"> 资源管理 </span>
+                                </a><span class="rd-navbar-submenu-toggle"></span>
+                                <ul class="navbar-navigation-dropdown rd-navbar-dropdown">
+                                    <li class="navbar-navigation-back">
+                                        <button class="navbar-navigation-back-btn">Back</button>
+                                    </li>
+                                    <li class="navbar-navigation-dropdown-item">
+                                        <a class="navbar-navigation-dropdown-link" href="/create_guide">新建资源</a>
+                                    </li>
+
+                                    <li class="navbar-navigation-dropdown-item">
+                                        <a class="navbar-navigation-dropdown-link" href="/modify_resources">修改资源</a>
+                                    </li>
+
+                                    <li class="navbar-navigation-dropdown-item">
+                                        <a class="navbar-navigation-dropdown-link" href="/manager_resources">资源批量管理</a>
+                                    </li>
+                                    <li class="navbar-navigation-dropdown-item">
+                                        <a class="navbar-navigation-dropdown-link" href="/zip_list">压缩包资源列表</a>
+                                    </li>
+                                    <li class="navbar-navigation-dropdown-item">
+                                        <a class="navbar-navigation-dropdown-link" href="/feature_list">功能资源列表</a>
+                                    </li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </div>
+
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <section class="section section-md bg-primary-lightest" style="">
+        <div class="container">
+            <div class="row row-40 row-content ">
+           {#  导航  #}
+            <div class="col-md-4 col-lg-3">
+                <div id="g_menu" class="widget" style=" position: fixed; top: 19%;">
+                    <div class="widget-title h5" style="font-weight: 600; font-size: 1.28rem;">商品处理类型</div>
+                    <ul class=" nav-boxed justify-content-center active" role="tablist" style=" width: 200px; margin-top: 7%;">
+                        <li class="nav-item">
+                            <a id="tag0" onmousedown="ChangeTagColor(0)" class="nav-link h6 active" href="#f1"  style="font-size: 1.018rem; font-weight: 600;">新增商品</a>
+                        </li>
+                        <li>
+                            <a id="tag1" onmousedown="ChangeTagColor(1)" class="nav-link h6 " href="#f2" style="font-size: 1.018rem; font-weight: 600;">修改商品</a>
+                        </li>
+                    </ul>
+                    <ul class="nav nav-boxed justify-content-center active" role="tablist" style="display: none">
+                    </ul>
+                </div>
+            </div>
+
+            <div class="col-md-8 col-lg-9">
+                {#  新增商品 #}
+                <div id="f1" class="row justify-content-center text-center" style="margin-top: 6%;">
+                <div class="col-md-6" style="min-width: 96%;">
+                    <div class="box box-form-1 section-offset-item">
+                        <div class="box-header">
+                            <h3 class="box-title"> Shop 新增商品</h3>
+                        </div>
+                        <div class="box-body">
+                            <div id="form1" class="rd-form rd-mailform" data-form-output="contact-form-1" data-form-type="contact" novalidate="novalidate">
+                                <div class="row row-20 align-items-center">
+                                    <div class="col-12" style="min-width: 88%; margin-left: 1%;">
+                                        <div class="accordion accordion-line ">
+                                            <div id="goods_info" class="accordion-item active">
+                                                <div class="accordion-head h5 " style="font-weight: 600;">Step1: 填写商品信息</div>
+                                                <div  class="accordion-body ">
+                                    <div class="col-12">
+                                        <div class="form-group">
+                                            <label class="form-label topaz_title2" for="cg_name" style="">* 商品名称</label>
+                                            <div class="form-control-wrap">
+                                                <input id="cg_name" name="product_name" onchange="GetProductInfo(0)" class="form-control form-control-has-validation form-control-last-child"
+                                                       type="text" placeholder="e.g. 飞天小女警" data-constraints="@Required" style=" ">
+                                                <span class="form-validation"></span>
+                                                <span id="check_name" class="form-validation btn-icon mdi-checkbox-marked-circle-outline" style="display: none; font-size: 20px; color: #1c54e2;"></span>
+                                            </div>
+
+                                        </div>
+                                        <div class="form-group">
+                                            <label class="form-label topaz_title2" for="cg_price" style="display: block">* 价格 </label>
+                                            <div class="form-control-wrap" style="display: inline-block; max-width: 30%">
+                                                <input id="cg_price" name="price" class="form-control form-control-has-validation form-control-last-child"
+                                                       onchange="CheckPrice(0)" type="text" style="width: 200px; display: inline-block;" placeholder="e.g. 1800"> &nbsp;
+                                                <span  id="cg_price_info" class="form-validation"></span>
+
+                                            </div>
+                                            <span style="font-size: 22px; display: inline-block">¥</span>
+                                        </div>
+                                        <div class="form-group">
+                                            <label class="form-label topaz_title2" for="cg_is_discount" style="min-width: 196px; display: block; margin-top: 5px;">* 打折 </label>
+                                            <div class="custom-control custom-checkbox" style="height: 3.29rem; display: inline-block; margin-left: -1%;">
+                                                <input class="custom-control-input" type="radio" id="cg_checked_1" name="cg_is_discount" >
+                                                <label class="custom-control-label" for="cg_checked_1" style="margin-top: 0.8rem; margin-left: 0.8rem;">
+                                                    <span class="custom-control-text topaz_text" style=" font-size: 1.08rem;font-weight: 500;"> 是 </span>
+                                                </label>
+                                            </div>
+                                            <div class="custom-control custom-checkbox"
+                                                 style="height: 3.29rem; display: inline-block">
+                                                <input class="custom-control-input" type="radio" id="cg_checked_2" name="cg_is_discount" checked="checked">
+                                                <label class="custom-control-label" for="cg_checked_2" style="margin-top: 0.8rem; margin-left: 2.22rem;">
+                                                    <span class="custom-control-text topaz_text" style=" font-size: 1.08rem;font-weight: 500;"> 否 </span>
+                                                </label>
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <label class="form-label topaz_title2" for="cg_discount" style="display: block;"> 折扣 </label>
+                                            <div class="form-control-wrap" style="max-width: 30%; display: inline-block;">
+                                                <input value=100 id="cg_discount" name="discount" class="form-control form-control-has-validation form-control-last-child"
+                                                       onchange="CheckDiscount(0)" style="display: inline-block; width: 200px;"  type="text" placeholder="e.g. 80">&nbsp;
+                                                <span id="cg_discount_info" class="form-validation"></span>
+                                            </div>
+                                                <span style="font-size: 22px; display: inline-block">%</span>
+
+                                        </div>
+                                    </div>
+
+                                    <div class="col-12" style="margin-top: 1%;">
+                                        <div class="form-group">
+                                            <label class="form-label topaz_title2" for="cg_short_desc"> * 商品简介 (10-50字) </label>
+                                            <div class="form-control-wrap">
+                                                <textarea id="cg_short_desc" name="short_desc" onchange="CheckDesc(0, 0)" class="form-control form-control-has-validation form-control-last-child"
+                                                           placeholder="写实 3D 角色服装 ..." data-constraints="@Required" style="min-height: 68px">
+                                                </textarea>
+{#                                                <span id="cg_short_desc_info" class="form-validation"></span>#}
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-12" style="margin-top: 1%;">
+                                        <div class="form-group">
+                                            <label class="form-label topaz_title2" for="cg_product_desc">* 详情描述 (50-300字)</label>
+                                            <div class="form-control-wrap">
+                                                 <textarea id="cg_product_desc" name="product_desc" onchange="CheckDesc(1, 0)"  class="form-control form-control-last-child"
+                                                         placeholder="简单基础款黑色短袖, 可搭配外套 ..." data-constraints="@Required" style="height: 160px;">
+                                                 </textarea>
+{#                                                <span id="cg_desc_info" class="form-validation"></span>#}
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                                </div>
+
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-12" style="min-width: 88%; margin-left: 1%;">
+                                        <div class="accordion accordion-line ">
+                                            <div class="accordion-item ">
+                                                <div class="accordion-head h5 " style="font-weight: 600;">Step2: 选择绑定资源</div>
+
+                                                <div id="goods_body" class="accordion-body ">
+{#                                                    <div class="col-12" style="margin-top: 1%; ">#}
+{#                                                        <div class="form-group">#}
+{##}
+{#                                                            <label class="form-label topaz_title2" for="cg_product_desc">* 选择绑定类型 </label>#}
+{##}
+{#                                                        </div>#}
+{##}
+{#                                                    </div>#}
+
+                                                    <div class="col-12" style="margin-top: -1.6%;  margin-left: 26px;">
+
+                                                        <div class="form-group">
+
+{#                                                            <span style=" font-size: 1.02rem;font-weight: 600; color: #264555"> * 类型 & 所有资源如下: </span>#}
+                                                            <label class="form-label" for="is_discount" style="min-width: 196px; display: block; margin-top: 5px;"> </label>
+                                                            <div class="custom-control custom-checkbox" style="height: 3.29rem; display: inline-block; margin-left: -8.4%;;">
+                                                                <input class="custom-control-input" type="radio" id="goods_type1" value="1" name="goods_type" checked="checked">
+                                                                <label onclick="GetType('0', true, false)" class="custom-control-label" for="goods_type1" style="margin-top: 0.8rem; margin-left: 2.22rem;">
+                                                                    <span class="custom-control-text topaz_text" style=" font-size: 0.98rem;font-weight: 600; color: #264555"> 压缩包 </span>
+                                                                </label>
+                                                            </div>
+                                                            <div class="custom-control custom-checkbox" style="height: 3.29rem; display: inline-block">
+                                                                <input class="custom-control-input" type="radio" id="goods_type2" name="goods_type" value="2">
+                                                                <label onclick="GetType('1', false, true)" class="custom-control-label" for="goods_type2" style="margin-top: 0.8rem; margin-left: 2.22rem;">
+                                                                    <span class="custom-control-text topaz_text" style=" font-size: 0.98rem;font-weight: 600; color:#264555;"> 功能 </span>
+                                                                </label>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+
+
+                                                 <table class="table table-1" style="margin-left: 10px; margin-top: 1%;">
+                                        <thead style="line-height: 0.67; min-width: 200px;">
+                                        <tr><th style="background-color: #a4bbf9; font-size: 1rem; text-align: left; color: white; min-width: 120px; max-width: 80%;">资源名称</th>
+                                            <th style="background-color: #a4bbf9; font-size: 1rem; text-align: left; color: white; min-width: 80px; width: 280px;">所属类型</th>
+                                        </tr>
+                                        </thead>
+                                    </table>
+
+                                                    <div class="col-12 " style=" max-height: 22.68rem; overflow-y: auto;padding-right: 0.2rem; margin-top: -2px">
+
+                                                        <div class="widget">
+                                                            <div class="widget-body">
+                                                                <div class="table-responsive">
+                                                                    <table id="resource_table" class="table table-1">
+{#                                                                        <thead style="line-height: 0.67;">#}
+{#                                                                        <tr>#}
+{#                                                                            <th style="background-color: #a4bbf9; font-size: 1rem; text-align: left; color: white;">资源名称</th>#}
+{#                                                                            <th style="background-color: #a4bbf9; font-size: 1rem; text-align: left; color: white;">所属类型</th>#}
+{#                                                                        </tr>#}
+{#                                                                        </thead>#}
+                                                                        <tbody id="resource_body" style="">
+                                                                            <tr id="td_model"  style=" text-align: left; border-top: 1px solid white; border-bottom: 1px solid white; padding: 0.8rem 1.6rem;">
+                                                                                <td style="text-align: left; border-bottom: 1px solid white; padding: 0.8rem 0.6rem; ">
+                                                                                    <div class="custom-control custom-checkbox" style="">
+                                                                                        <input class="custom-control-input" type="radio" id="Feature" name="cartFilter1">
+                                                                                            <label class="custom-control-label" for="Feature" >
+                                                                                                <a class="link link-inherit" href="/single_product?goods_name=测试专用商品&amp;goods_id=10&amp;goods_price=1">测试专用商品</a>
+                                                                                            </label>
+                                                                                    </div>
+                                                                                </td>
+                                                                                <td class="h5" style="border-bottom: 1px solid white; padding: 0.8rem 1.6rem;"> 服装 </td>
+                                                                            </tr>
+                                                                        </tbody>
+                                                                    </table>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+
+                                    <div class="col-auto" style="margin-top: 2%;">
+                                        <div class="rd-form-btn text-left">
+                                            <button class="btn btn-lg btn-primary" type="submit" onclick="CreateProduct()">Submit</button>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-12">
+                                        <div class="rd-form-meta small">
+                                            <h5 style="color: #26455561; font-weight: 500; float: left;">
+                                                <span class="list-icon onclinic-quote" style=""></span> 如何使用： 1. 输入商品名称并点击确认(页面会自动填充商品当前信息) &nbsp; &nbsp; 2. 修改所需部分, 点击提交 。
+                                            </h5>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="form-output snackbar snackbar-primary" id="contact-form-1"></div>
+                        </div>
+                    </div>
+                </div>
+                </div>
+                {#  修改商品 #}
+                <div id="f2" class="row justify-content-center text-center" style="margin-top: 6%;">
+                <div class="col-md-6" style="min-width: 96%;">
+                    <div class="box box-form-1 section-offset-item">
+                        <div class="box-header">
+                            <h3 class="box-title"> Shop 商品信息修改
+                            </h3>
+                        </div>
+                        <div class="box-body">
+                            <div id="form1" class="rd-form rd-mailform" data-form-output="contact-form-1"
+                                 data-form-type="contact" novalidate="novalidate">
+                                <div class="row row-20 align-items-center">
+                                    <div class="col-12">
+                                        <div class="form-group">
+                                            <label class="form-label" for="product_name"><h5 style="font-weight: 600">Step1: 填写商品名称 </h5></label>
+                                            <div class="form-control-wrap">
+                                                <input id="product_name" name="product_name" class="form-control form-control-has-validation form-control-last-child"
+                                                       onchange="GetProductInfo(1)" type="text" placeholder="e.g. 飞天小女警" data-constraints="@Required" style=" width: 86%; display: inline-block;">
+                                                <span class="form-validation"></span>
+                                                <button onclick="GetProductInfo(1)" class="btn btn-lg btn-primary" style="min-width: 10%; max-height: 3.1844rem; padding: 18px;font-size: 12px; margin-left: 2.8%">确认</button>
+                                            </div>
+                                        </div>
+                                    </div>
+
+
+                                    <div class="col-md-10 col-lg-8" style="min-width: 98%; margin-left: 1%;">
+                                        <div class="accordion accordion-line ">
+                                            <div id="goods_info" class="accordion-item active">
+                                                <div class="accordion-head h5 " style="font-weight: 600"> STEP2: 修改商品信息</div>
+                                                <div id="goods_body" class="accordion-body ">
+                                                    <div class="col-md-6">
+                                                        <div class="form-group">
+                                                            <label class="form-label" for="price"> 价格 </label>
+                                                            <div class="form-control-wrap">
+                                                                <input id="price" name="price" class="form-control form-control-has-validation form-control-last-child" onchange="CheckPrice(1)"  type="text" placeholder="e.g. 1800">
+                                                                <span id="price_info" class="form-validation"></span>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+
+                                                    <div class="col-md-6" style="margin-top: 1%;">
+                                                        <div class="form-group">
+                                                            <label class="form-label" for="is_discount" style="min-width: 196px; display: block; margin-top: 5px;">打折 </label>
+                                                            <div class="custom-control custom-checkbox" style="height: 3.29rem; display: inline-block; margin-left: -8.4%;;">
+                                                                <input class="custom-control-input" type="radio" id="checked_1" name="is_discount" checked="checked">
+                                                                <label class="custom-control-label" for="checked_1" style="margin-top: 0.8rem; margin-left: 2.22rem;">
+                                                                    <span class="custom-control-text topaz_text" style=" font-size: 1.08rem;font-weight: 500;"> 是 </span>
+                                                                </label>
+                                                            </div>
+                                                            <div class="custom-control custom-checkbox" style="height: 3.29rem; display: inline-block">
+                                                                <input class="custom-control-input" type="radio" id="checked_2" name="is_discount">
+                                                                <label class="custom-control-label" for="checked_2" style="margin-top: 0.8rem; margin-left: 2.22rem;">
+                                                                    <span class="custom-control-text topaz_text" style=" font-size: 1.08rem;font-weight: 500;"> 否 </span>
+                                                                </label>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-md-6">
+                                                        <div class="form-group">
+                                                            <label class="form-label" for="discount_persent">
+                                                                折扣 </label>
+                                                            <div class="form-control-wrap">
+                                                                <input id="discount" name="discount" class="form-control form-control-has-validation form-control-last-child" onchange="CheckDiscount(1)" type="text" placeholder="e.g. 80">
+                                                                <span id="discount_info" class="form-validation"></span>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+
+                                                    <div class="col-12" style="margin-top: 1%;">
+                                                        <div class="form-group">
+                                                            <label class="form-label" for="short_desc"> 商品简介 (10-50字) </label>
+                                                            <div class="form-control-wrap">
+                                                                <textarea id="short_desc" name="short_desc" onchange="CheckDesc(0, 1)" class="form-control form-control-has-validation form-control-last-child"
+                                                                        placeholder="写实 3D 角色服装 ..."  data-constraints="@Required" style="min-height: 68px"></textarea>
+                                                                <span id="short_desc_info" class="form-validation"></span>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-12" style="margin-top: 1%;">
+                                                        <div class="form-group">
+                                                            <label class="form-label" for="product_desc">详情描述 (50-300字)</label>
+                                                            <div class="form-control-wrap">
+                                                                <textarea id="product_desc" name="product_desc" onchange="CheckDesc(1, 1)" class="form-control form-control-last-child"
+                                                                         placeholder="简单基础款黑色短袖, 可搭配外套 ..." data-constraints="@Required"
+                                                                        style="height: 160px;">
+                                                                </textarea>
+                                                                <span id="desc_info" class="form-validation"></span>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-auto" style="margin-top: 2%;">
+                                                        <div class="rd-form-btn text-left">
+                                                            <button class="btn btn-lg btn-primary" type="submit" onclick="UpdateGoods()">Submit</button>
+                                                        <a class="btn btn-lg btn-primary" href="/backend"><span>Back</span></a>
+                                                        </div>
+                                                    </div>
+
+                                                </div>
+                                            </div>
+
+                                        </div>
+                                    </div>
+
+
+                                    <div class="col-12">
+                                        <div class="rd-form-meta small">
+                                            <h5 style="color: #26455561; font-weight: 500; float: left;">
+                                                <span class="list-icon onclinic-quote" style=""></span>
+                                                如何使用： 1. 输入商品名称并点击确认(页面会自动填充商品当前信息) &nbsp; &nbsp; 2. 修改所需部分, 点击提交 。
+                                            </h5>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="form-output snackbar snackbar-primary" id="contact-form-1"></div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+            </div>
+
+            </div>
+        </div>
+    </section>
+
+
+    <section class="footer footer-dark context-dark bg-800" style="margin-top: 10%">
+        <div class="container">
+            <div class="row row-30">
+
+                <div class="col-sm-6 col-lg-3">
+                    <h5 class="footer-title">联系方式</h5>
+                    <ul class="list list-icons">
+                        <li class="list-item">
+                            <div class="list-icon onclinic-map-marker"></div>
+                            北京市朝阳区五里桥一街1号非中心5号楼四层十二维度
+                        </li>
+                        <li class="list-item">
+                            <div class="list-icon onclinic-phone"></div>
+                            010-85717789
+                        </li>
+                        <li class="list-item">
+                            <div class="list-icon onclinic-email-open"></div>
+                            market@12dms.com
+                        </li>
+
+                    </ul>
+
+                </div>
+
+            </div>
+        </div>
+    </section>
+    <footer class="footer footer-minimal context-dark bg-900">
+        <div class="container">
+        </div>
+    </footer>
+</div>
+<!-- Preloader-->
+<div class="preloader">
+    <div class="preloader-inner">
+        <div class="preloader-dot"></div>
+        <div class="preloader-dot"></div>
+        <div class="preloader-dot"></div>
+        <div class="preloader-dot"></div>
+    </div>
+</div>
+
+<div class="to-top mdi-chevron-up "></div>
+</body>
+</html>
+<script src="/static/components/base/core.min.js"></script>
+<script src="/static/components/base/script.js"></script>
+<script src="/static/js/jquery.min.js"></script>
+<script type="text/javascript">
+
+    var shop_header = document.getElementById("shop_header");
+    var shop_title = document.getElementById("shop_title");
+
+    {#var goods_name = document.getElementById("product_name");#}
+    {#var price = document.getElementById("price");#}
+    var checked_1 = document.getElementById("checked_1");
+    var checked_2 = document.getElementById("checked_2");
+
+    {#var short_desc = document.getElementById("short_desc");#}
+    {#var desc = document.getElementById("product_desc");#}
+    var td_model = document.getElementById("td_model");
+    var resource_body = document.getElementById("resource_body");
+    var check_name = document.getElementById("check_name");
+    var tag0 = document.getElementById("tag0");
+    var tag1 = document.getElementById("tag1");
+    var formDict = {};
+
+    function ChangeTagColor(num) {
+        if (num==0){
+            tag0.style.backgroundColor = "#a4bbf9";
+            tag1.style.backgroundColor = "white";
+        }else if(num==1 || num == 2){
+            tag1.style.backgroundColor = "#a4bbf9";
+            tag0.style.backgroundColor = "white";
+        }
+    }
+
+    function CheckPrice(num) {
+        var money;
+        var money_info;
+        if (num==0){
+            money = document.getElementById("cg_price").value;
+            money_info = document.getElementById("cg_price_info");
+        }else if (num == 1 || num == 2 ){
+            money = document.getElementById("price").value;
+            money_info  = document.getElementById("price_info");
+        }
+
+        var reg = /(^[1-9]([0-9]+)?(\.[0-9]{1,2})?$)|(^(0){1}$)|(^[0-9]\.[0-9]([0-9])?$)/;
+        if (reg.test(money)) {
+            console.log("价格正确");
+            money_info.innerText = "";
+            return true;
+        } else {
+            money_info.innerText = "Only numbers are required";
+            return false;
+        }
+    }
+
+    function CheckDiscount(num) {
+        var discount;
+        var discount_info;
+        if (num==0){
+            discount = document.getElementById("cg_discount");
+            discount_info = document.getElementById("cg_discount_info");
+        }else if (num == 1 || num == 2){
+            discount = document.getElementById("discount");
+            discount_info  = document.getElementById("discount_info");
+
+        }
+
+        var reg = /(^[1-9]([0-9]+)?(\.[0-9]{1,2})?$)|(^(0){1}$)|(^[0-9]\.[0-9]([0-9])?$)/;
+        if (reg.test(discount.value)) {
+            if (discount.value > 100) {
+                discount_info.innerText = "Discount error";
+                return false;
+            } else {
+                discount_info.innerText = "";
+                return true;
+            }
+        } else {
+            discount_info.innerText = "Only numbers are required";
+
+            return false;
+        }
+    }
+
+    function CheckDesc(desc_type, goods_type) {
+        var res;
+        var desc;
+        var short_desc;
+        if (goods_type == 0) {
+            short_desc = document.getElementById("cg_short_desc");
+            desc = document.getElementById("cg_product_desc");
+        }else if (goods_type == 1 || goods_type == 2){
+            short_desc = document.getElementById("short_desc");
+            desc = document.getElementById("product_desc");
+        }
+        if (desc_type == 0) {
+
+            if (short_desc.value.length < 10) {
+                console.log("1short desc false");
+                res = false;
+            } else if (short_desc.value.length > 50) {
+                console.log("2short desc false");
+                res = false;
+            }
+            else {
+                console.log("short desc true");
+                res = true;
+            }
+
+        } else if (desc_type == 1) {
+            if (desc.value.length < 50) {
+                console.log("1desc false");
+                res = false;
+            }
+            else if (desc.value.length > 300) {
+                console.log("2desc false");
+                res = false;
+            }
+            else {
+                console.log("desc true");
+                res = true;
+            }
+
+        }
+        console.log("Res", res);
+        return res
+
+    }
+
+    function CheckParams(num) {
+        var desc;
+        var short_desc;
+        if (num == 0) {
+            GetProductInfo(num);
+            short_desc = document.getElementById("cg_short_desc");
+            desc = document.getElementById("cg_product_desc");
+        }else if (num == 1 || num == 2){
+            short_desc = document.getElementById("short_desc");
+            desc = document.getElementById("product_desc");
+        }
+        var price_res = CheckPrice(num);
+        var discount_res = CheckDiscount(num);
+        var desc0 = CheckDesc(0, num);
+        var desc1 = CheckDesc(1, num);
+
+
+        console.log(">>>.", price_res, discount_res, desc0, desc1);
+        if (price_res && discount_res && desc0 && desc1 ) {
+            return true
+        } else {
+            if (desc0 == false) {
+                alert("当前商品简介字数【" + short_desc.value.length + "】， 请按照规定字数修改");
+            } else if (desc1 == false) {
+                alert("当前商品详情字数: " + desc.value.length + "， 请按照规定字数修改");
+            }
+            return false
+        }
+
+    }
+
+    function CreateProduct() {
+        var check_res = CheckParams(0, );
+
+        if (check_res == false) {
+          alert("请检查参数")
+        } else{
+            var username = document.getElementById("username").innerText;
+            var goods_name = document.getElementById("cg_name").value;
+            var goods_price = document.getElementById("cg_price").value;
+            var is_discount = document.getElementsByName("cg_is_discount");
+            var discount = document.getElementById("cg_discount").value;
+            var goods_type = document.getElementsByName("goods_type");
+            var short_desc = document.getElementById("cg_short_desc").value;
+            var desc = document.getElementById("cg_product_desc").value;
+
+
+            var type_name;
+            var id_name;
+            var formData = new FormData();
+            formData.append("username", username);
+            formData.append("create_type", "3");
+            formData.append("goods_name", goods_name);
+            formData.append("goods_price", goods_price);
+            formData.append("discount", discount);
+            formData.append("short_desc", short_desc);
+            formData.append("description", desc);
+
+            if (is_discount[0].checked == true){
+                formData.append("is_discount", "1");
+            }
+            else if (is_discount[1].checked == true){
+                formData.append("is_discount", "0");
+            }
+
+            if (goods_type[0].checked == true){
+                formData.append("goods_type", "0");
+                type_name = "zip";
+                id_name = "zip_id";
+            }
+            else if(goods_type[1].checked == true){
+                formData.append("goods_type", "1");
+                type_name = "feature";
+                id_name = "feature_id";
+            }
+
+            var type_name_list = document.getElementsByName(type_name);
+            for (let i=0; i<type_name_list.length; i++){
+                if(type_name_list[i].checked == true){
+                    var confirm_res = confirm("确认使用当前资源: " + type_name_list[i].nextElementSibling.innerText + "?");
+                        if (confirm_res == false){
+                            alert("请选择商品绑定资源");
+                        }else{
+                            formData.append(id_name, type_name_list[i].value);
+                            if (check_res ){
+                $.ajax({
+                    type: "POST",
+                    url: "/backend",
+                    data: formData,
+                    async: true,
+                    cache: false,
+                    contentType: false,
+                    processData: false,
+                    timeout: 60000,
+                success: function (data) {
+                    if (data["error_code"] != "1000"){
+                        alert(data["msg"])
+                    }else{
+                        confirm("创建商品成功")
+                    }
+
+                },
+                error: function (error) {
+                    console.log("error", error)
+                },
+                });
+                window.location.reload();
+            }
+
+                        }
+
+                    {#formData.append(id_name, type_name_list[i].value);#}
+                }
+            }
+
+        }
+
+    }
+
+    function CreateItems(data, name){
+        resource_body.innerText = "";
+        for (let i = 0; i < data.length; i++) {
+            var t = td_model.cloneNode(true);
+            var input_ele = t.getElementsByClassName("custom-control-input")[0];
+            var name_label = t.getElementsByClassName("custom-control-label")[0];
+            var menu = t.getElementsByClassName("h5")[0];
+
+            {#t.style.display = "";#}
+
+            input_ele.name = name;
+            input_ele.value = data[i][1];
+            input_ele.id = "type_" + data[i][1];
+            if (i==0){
+                input_ele.checked = "checked";
+                console.log(data[i][0]);
+
+            }
+
+            name_label.innerText = data[i][0];
+            name_label.htmlFor = "type_" + data[i][1];
+            menu.innerText = data[i][2];
+            resource_body.appendChild(t);
+
+        }
+
+    }
+
+    function GetType(resource_id, is_zip, is_feature) {
+        $.ajax({
+            type: 'post',
+            url: '/get_resource',
+            dataType: 'json',
+            data: {
+                resource_type: 2,
+                secondary_menu_id: resource_id,
+            },
+            success: function (res) {
+                console.log("error_code", res['error_code'], is_zip, is_feature);
+                if (res['error_code'] != 1000) {
+                    console.log(">>", res["error_code"], res['msg']);
+                } else {
+
+                    if (is_zip) {
+                        var zip_list = res['msg']['zip_list'];
+                        console.log(zip_list);
+                        CreateItems(zip_list, "zip");
+
+
+                    }
+                    if (is_feature) {
+                        var feature_list = res['msg']['feature_list'];
+
+                        console.log(feature_list);
+                        CreateItems(feature_list, "feature")
+
+                    }
+                }
+            },
+        });
+    }
+
+
+    function GenerateFormData() {
+        const NewData = new FormData();
+        var goods_name = document.getElementById("product_name");
+        var short_desc = document.getElementById("short_desc");
+        var product_desc = document.getElementById("product_desc");
+        var price = document.getElementById("price");
+        var discount = document.getElementById("discount");
+
+        var is_discount;
+        if (document.getElementById("checked_1").checked == true){
+            is_discount = 1;
+        }else {
+            is_discount = 0;
+        }
+
+        NewData.append("goods_id", formDict["goods_id"]);
+        NewData.append("is_discount", is_discount);
+
+        if (formDict["goods_name"] != goods_name.value) {
+            NewData.append("goods_name", goods_name.value);
+        }
+
+        if (formDict["price"] != price.value) {
+            NewData.append("price", price.value);
+        }
+
+        if (formDict["discount"] != discount.value) {
+            NewData.append("discount", discount.value);
+        }
+
+        if (formDict["short_desc"] != short_desc.value) {
+            NewData.append("short_desc", short_desc.value);
+        }
+
+        if (formDict["product_desc"] != product_desc.value) {
+            NewData.append("product_desc", product_desc.value);
+        }
+        {#console.log(NewData.get('goods_id'))#}
+        {#console.log(NewData.get('goods_name'))#}
+        {#console.log(NewData.get('price'))#}
+        {#console.log(NewData.get('discount'))#}
+        {#console.log(NewData.get('short_desc'))#}
+        {#console.log(NewData.get('product_desc'))#}
+        return NewData
+
+    }
+
+
+    function UpdateGoods() {
+        console.log("!!!");
+        var params_res = CheckParams(2);
+        console.log("pa", params_res);
+        if (params_res) {
+            console.log(formDict);
+            var NewData = GenerateFormData(formDict);
+            console.log(NewData.get('goods_id'));
+            console.log(NewData.get('goods_name'));
+            console.log(NewData.get('price'));
+            console.log(NewData.get('discount'));
+            console.log(NewData.get('short_desc'));
+            console.log(NewData.get('product_desc'));
+            $.ajax({
+                url: "/update_goods",
+                type: "POST",
+                data: NewData,
+                processData: false,
+                contentType: false,
+                success: function (response) {
+                    var error_code = response["error_code"];
+                    if (error_code == "1000") {
+                        console.log("", response["msg"]);
+
+                    }
+
+                    else {
+                        if (error_code == "4004") {
+                            alert("商品不存在, 请检查所输商品名称");
+
+                        } else {
+                            alert(response["msg"]);
+                        }
+                    }
+
+                }
+            });
+
+        }else{
+            return
+        }
+    }
+
+
+    function GetProductInfo(num) {
+        var goods_name;
+        if (num==0){
+            goods_name = document.getElementById("cg_name");
+        }else if(num==1){
+            goods_name = document.getElementById("product_name");
+        }else if(num == 2){
+            goods_name = document.getElementById("product_name");
+
+        }
+        var name = goods_name.value;
+        const formData = new FormData();
+        formData.append("goods_name", name);
+
+        $.ajax({
+            url: "/single_product",
+            type: "POST",
+            data: formData,
+            processData: false,
+            contentType: false,
+            success: function (response) {
+
+                var error_code = response["error_code"];
+                if (error_code == "1000") {
+                    if (num==0 || num==2){
+                        alert("当前商品名称已存在! ");
+                        return false;
+
+                    }else if (num==1){
+                        var msg = response["msg"];
+                        for (var key in msg) {
+                            var data = msg[key];
+                            console.log(data);
+                            document.getElementById("price").value = data["price"];
+                            if (data["is_discount"] == true) {
+                                document.getElementById("checked_1").checked = "checked";
+                            } else {
+                                document.getElementById("checked_2").checked = "checked";
+                            }
+
+                            document.getElementById("discount").value = data["discount"];
+                            document.getElementById("short_desc").value = data["short_desc"];
+                            console.log(data["desc"]);
+                            document.getElementById("product_desc").value = data["desc"];
+                        }
+
+                        formDict["goods_id"] = data["goods_id"];
+                        formDict["goods_name"] = data["goods_name"];
+                        formDict["price"] = data["price"];
+                        formDict["is_discount"] = data["is_discount"];
+                        formDict["discount"] = data["discount"];
+                        formDict["short_desc"] = data["short_desc"];
+                        formDict["product_desc"] = data["desc"];
+                        return true
+                    }
+                }
+
+                else {
+                    if (error_code == "4004") {
+                        if (num==1) {
+                            alert("商品不存在, 请检查所输商品名称");
+                            return false;
+                        }else if (num==0){
+                            console.log("名称正确");
+                            check_name.style.display = "inline-block";
+                            setTimeout("check_name.style.display = \"none\";", 1200);
+                            return true
+                        }
+                    } else {
+                        alert(response["msg"]);
+                        return false;
+                    }
+                }
+
+            }
+        });
+
+
+    }
+
+
+    {#var shop_phone = document.getElementById("shop_phone");#}
+    var option = {
+        attributes: true,
+        attributeFilter: ['class']
+    };
+
+    document.addEventListener( 'scroll', function () {
+        if ( window.scrollY > 150 ) {
+            document.getElementById("g_menu").style.top = "18%"
+        }else {
+            document.getElementById("g_menu").style.top = "28%"
+        }
+    });
+
+    var mutationObserver = new MutationObserver(function (mutations) {
+        if (shop_header.className.indexOf('rd-navbar-fixed') != -1) {
+            shop_title.style.display = "None";
+            {#shop_phone.style.display = "Block";#}
+        } else {
+            shop_title.style.display = "Block";
+            {#shop_phone.style.display = "None";#}
+
+        }
+    });
+    GetType(0, true, false);
+
+    mutationObserver.observe(shop_header, option)
+
+</script>

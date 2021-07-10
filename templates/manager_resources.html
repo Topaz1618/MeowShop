@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title> Shop </title>
+
+    <link href="static/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="static/css/modern-business.css" rel="stylesheet">
+
+    <style type="text/css">
+        li:hover{
+            color: cornflowerblue;
+        }
+
+    </style>
+
+</head>
+{#background-image: url('static/images/a.png'); background-size: 100% 100%;#}
+<body style="">
+
+
+<div style="margin-top: -56px; height: 70px; position: fixed; z-index: 999; width: 100%;">
+    <div class="card-header" style="height: 70px; background-color: white;  ">
+        <div class="collapse navbar-collapse" id="navbarResponsive">
+        </div>
+
+        <ul class="navbar-nav ml-auto">
+            <li class="breadcrumb-item active" style="width: 300px; display: inline; margin-top: 5px;">
+                <h1 class="mt-4 mb-3" style="display: inline; "> Shop</h1>
+                <small style="display: inline; font-size: 22px;">后台管理</small>
+            </li>
+
+            <li class="nav-item dropdown"
+                style="width: 50px; margin-left: 90%; display: inline; margin-top: -35px; color: #6c757d">
+                <a class="dropdown-item" style="background: none; width: 150px; color: #6c757d; font-size: 20px; text-decoration: underline" href="/backend">回到上级</a>
+            </li>
+        </ul>
+    </div>
+
+</div>
+
+
+    <div class="container">
+
+        <div class="row" style="margin-top: 50px; z-index: 158;">
+            <div class="col-lg-4 mb-4">
+                <div class="card h-100" style="width: 1110px; height: 280px">
+                    <h4 class="card-header" style="background-color: white; color: #4285f4;"> 压缩包
+                        <button name="confirm_select" onclick="DeleteResource('zip', 1)" style="display: inline-block; width: 60px; height: 30px; font-size:12px; background-color: white; margin-left: 85%; color: #545454; border: double">删除</button>
+                    </h4>
+                    <div class="card-body" style="height: 240px; overflow-y: scroll; overflow-x: scroll; white-space: nowrap;">
+                        <div class="panel panel-success" style="width:900px; height:80px; color: #545454; ">
+
+                            <ul id="zip" style="list-style: none;">
+
+                            </ul>
+
+                            <div style="padding-left: 15px;">
+
+                            </div>
+
+                        </div>
+                    </div>
+
+                </div>
+                </div>
+         </div>
+
+        <div class="row" style="margin-top: 30px;">
+            <div class="col-lg-4 mb-4">
+                <div class="card h-100" style="width: 1110px; height: 280px">
+                    <h4 class="card-header" style="background-color: white; color: #4285f4;"> 功能
+                        <button name="confirm_select" onclick="DeleteResource('feature', 2)" style="display: inline-block; width: 60px; height: 30px; font-size:12px; background-color: white; margin-left: 87%; color: #545454; border: double">删除</button>
+                    </h4>
+                    <div class="card-body" style="height: 240px; overflow-y: scroll; overflow-x: scroll; white-space: nowrap;">
+                        <div class="panel panel-success" style="width:900px; height:80px; color: #545454; ">
+
+                            <ul id="feature" style="list-style: none;">
+
+                            </ul>
+
+                            <div style="padding-left: 15px;">
+
+                            </div>
+
+                        </div>
+                    </div>
+                    </div>
+                </div>
+         </div>
+
+        <div class="row" style="margin-top: 30px;">
+            <div class="col-lg-4 mb-4">
+                <div class="card h-100" style="width: 1110px; height: 280px">
+                    <h4 class="card-header" style="background-color: white; color: #4285f4;"> 商品
+                        <button name="confirm_select" onclick="DeleteResource('goods', 3)" style="display: inline-block; width: 60px; height: 30px; font-size:12px; background-color: white; margin-left: 87%; color: #545454; border: double">删除</button>
+                    </h4>
+                    <div class="card-body" style="height: 240px; overflow-y: scroll; overflow-x: scroll; white-space: nowrap;">
+                        <div class="panel panel-success" style="width:900px; height:80px; color: #545454; ">
+
+                            <ul id = "goods" style="list-style: none;">
+                            </ul>
+
+                            <div style="padding-left: 15px;">
+
+                            </div>
+
+                        </div>
+                    </div>
+                    </div>
+                </div>
+         </div>
+
+
+
+</div>
+
+<footer class="py-5 bg-dark" style="background-color: #6c757d; height: 30px; color: white; line-height: 0;">
+    <div class="container">
+        <p class="m-0 text-center text-white">Copyright &copy; Website 2020</p>
+    </div>
+</footer>
+
+<script src='static/js/jquery.min.js' type="text/javascript"></script>
+<script src="static/vendor/jquery/jquery.min.js"></script>
+<script src="static/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+<script type="text/javascript">
+
+
+    function create_type_list(ul_el, data, prefix){
+        for (let i = 0; i < data.length; i++) {
+            console.log("Data: ", data[i][0], data[i][1]);
+
+            var li_el = document.createElement("li");
+            var label_el = document.createElement("label");
+            var input_el = document.createElement("input");
+            var span_el = document.createElement("span");
+
+            li_el.style.marginTop = "10px";
+            li_el.style.marginBottom = "-5px";
+            input_el.style.marginLeft = "-25px";
+            input_el.type = "radio";
+            input_el.name = prefix;
+            input_el.id = "type_" + data[i][1];
+            input_el.value = data[i][1];
+            {#input_el.addEventListener('click', CheckIfParentClicked.bind(null, "type_" + data[i][1], prefix));#}
+
+            span_el.style.marginLeft = "6px";
+            span_el.innerText = data[i][0];
+            span_el.value = data[i][1];
+
+            label_el.appendChild(input_el);
+            label_el.appendChild(span_el);
+            li_el.appendChild(label_el);
+
+            ul_el.appendChild(li_el);
+
+        }
+    }
+
+    function create_main(data, prefix) {
+        var ul_el = document.getElementById(prefix);
+        ul_el.innerText = "";
+        create_type_list(ul_el, data, prefix)
+
+    }
+
+
+    function GetType() {
+        $.ajax({
+            type: 'post',
+            url: '/get_resource',
+            dataType: 'json',
+            data:{
+                resource_type: 0,
+            },
+
+            beforeSend: function() {
+                // Do nothing
+            },
+            success: function(res) {
+                {#console.log("error_code", res['error_code'], is_zip, is_feature);#}
+                if(res['error_code'] != 1000){
+                    console.log(">>", res["error_code"], res['msg']);
+                }else{
+                    var zip_data = res['msg']["zip_list"];
+                    var feature_data = res['msg']["feature_list"];
+                    var goods_data = res['msg']["goods_list"];
+                    create_main(zip_data, "zip");
+                    create_main(feature_data, "feature");
+                    create_main(goods_data, "goods");
+                }
+            },
+            complete: function() {
+                // Do nothing
+            },
+            error: function() {
+                console.log('请求失败~');
+            }
+        });
+    }
+
+
+    function DeleteResource(type_name, type_id) {
+        var choice_type = document.getElementsByName(type_name);
+
+        for (let i = 0; i < choice_type.length; i++) {
+            var resource_id = document.getElementsByName(type_name)[i].value;
+            var ischecked = choice_type[i].checked;
+            if (ischecked == true){
+                console.log(">>>>>", type_name, type_id, resource_id);
+
+                $.ajax({
+                    type: 'post',
+                    url: '/manager_resources',
+                    dataType: 'json',
+                    data:{
+                        resource_type: type_id,
+                        resource_id: resource_id,
+                    },
+
+                    beforeSend: function() {
+                        // Do nothing
+                    },
+                    success: function(res) {
+                        console.log("!!!!!", res["error_code"]);
+                        if (res["error_code"] == "4006"){
+                            alert("删除选项使用中, 请求失败");
+
+                        }else if (res["error_code"] == "1000"){
+                            alert("删除成功");
+                        }
+
+                        window.location.reload();
+                    },
+                    complete: function() {
+                        // Do nothing
+                    },
+                    error: function() {
+                        console.log('请求失败~');
+                    }
+                });
+            }
+
+        }
+    }
+
+
+    function GetAllResources (){
+        GetType("1", true, true);
+
+    }
+
+
+    GetAllResources();
+
+</script>
+<script type="text/javascript" opacity='0.7' zIndex="-2" count="80" src="static/js/canvas-nest.js"></script>
+
+</body>
+
+</html>

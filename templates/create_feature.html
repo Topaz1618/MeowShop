@@ -1,0 +1,668 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Meow Shop</title>
+    {#    <meta charset="utf-8">#}
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta property="og:title" content="Template Monster Admin Template">
+    <meta property="og:description"
+          content="brevis, barbatus clabulares aliquando convertam de dexter, peritus capio. devatio clemens habitio est.">
+    <link rel="stylesheet" href="/static/components/base/base.css">
+    <style>
+        .btn.topaz {
+        {#border-top-left-radius: 32px !important;#}
+            border-top-right-radius: 60px;
+            border-bottom-right-radius: 60px;
+            border-bottom-left-radius: 60px;
+        }
+
+        .btn.topaz:hover {
+        {#background-color: #1c54e2;#}{#color: #1c54e2;#}
+        }
+
+        .topaz_title1{
+            font-weight: 600;
+            margin-left: 18px;
+            font-size: 20px;
+        }
+
+        .form-label.topaz_title2{
+            font-size: 0.98rem;
+            font-weight: 600;
+            padding: 0;
+        }
+
+        .custom-control-text.topaz_text {
+            color: #6c757d;
+        }
+
+        ::-webkit-scrollbar-thumb:horizontal { /*水平滚动条的样式*/
+        	width: 5px;
+        	background-color: #CCCCCC;
+            {#background-color: #a4bbf9;#}
+        	-webkit-border-radius: 6px;
+        }
+        ::-webkit-scrollbar-track-piece {
+        	background-color: #fff; /*滚动条的背景颜色*/
+        	-webkit-border-radius: 0; /*滚动条的圆角宽度*/
+        }
+        ::-webkit-scrollbar {
+        	width: 10px; /*滚动条的宽度*/
+        	height: 8px; /*滚动条的高度*/
+        }
+        ::-webkit-scrollbar-thumb:vertical { /*垂直滚动条的样式*/
+        	height: 50px;
+        	background-color: #999;
+        	-webkit-border-radius: 4px;
+        	outline: 2px solid #fff;
+        	outline-offset: -2px;
+        	border: 2px solid #fff;
+        }
+
+        ::-webkit-scrollbar-thumb:hover { /*滚动条的hover样式*/
+        	height: 50px;
+        	{#background-color: #9f9f9f;#}
+            background-color:  #a4bbf9;
+        	-webkit-border-radius: 4px;
+        }
+
+        #modal{
+            position:absolute;
+            width:500px;
+            height:100px;
+            top:26%;
+            left:32%;
+            background-color:#fff;
+            display:none;
+            cursor:pointer;
+            z-Index:9999;
+            color: #264555;
+            font-size: 26px;
+            box-shadow: 0px 34px 40px rgba(38, 69, 85, 0.06);
+            padding: 1.18125rem 1.75rem;
+        }
+
+
+    </style>
+
+</head>
+<body>
+    <div id="modal"  style=" ">
+        <div class="title-1 text-md-center" style="font-size: 20px; margin-top: 18px ">
+            <span class="mdi-cloud-upload" style="font-size: 1.8rem;">
+            </span>
+            <span id="upload_info" style="margin-left: 2%;margin-top: -1%"> 新功能添加成功 </span>
+        </div>
+
+    </div>
+<div class="page">
+    <!--RD Navbar-->
+
+{# Header  #}
+    <header class="section rd-navbar-wrap rd-navbar-wrap-transparent">
+        <nav id="shop_header" class="rd-navbar rd-navbar-solid rd-navbar-transparent"
+             data-rd-navbar='{"responsive":{"1200":{"stickUpOffset":"164px"}}}'>
+            <div class="navbar-section navbar-non-stuck">
+                <div class="navbar-panel">
+                    <button class="navbar-switch mdi-menu novi-icon"
+                            data-multi-switch='{"targets":".rd-navbar","scope":".rd-navbar","isolate":"[data-multi-switch]"}'></button>
+                    <div class="navbar-logo">
+                        <a class="navbar-navigation-root-link" href="/backend"
+                           style="width: 160%; font-size: 22px; font-weight: 500; margin-top: -4%;"> Shop 后台管理 </a>
+                    </div>
+                </div>
+                <div class="navbar-container">
+                    <div class="navbar-cell flex-grow-1">
+                        <div class="navbar-info">
+                            <div class="list list-icons-2">
+                                <div class="list-item">
+                                    <li class="navbar-navigation-root-item">
+                                        <a id="shop_title" class="navbar-navigation-root-link" href="/backend"
+                                           style="font-size: 28px; font-weight: 500;"> Shop 后台管理 </a>
+                                    </li>
+                                </div>
+                            </div>
+                            <div class="navbar-logo navbar-fullwidth-logo">
+                                <a class="navbar-logo-link" href="index.html">
+                                </a>
+                            </div>
+                            <div class="text-block text-block-2 d-md-flex align-items-center justify-content-center">
+                                <div class="list list-icons-2">
+                                    <div class="list-item">
+                                        <a class="navbar-navigation-root-link" style="display: inline-block; " href="/user_info">
+                                            <span id="username" class="mdi-account" style="display: inline-block"> {{ username }} </span>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                    <div class="navbar-cell">
+                        <div class="navbar-subpanel">
+                            <div class="navbar-subpanel-item">
+                                <button class="navbar-button navbar-info-button mdi-dots-vertical novi-icon"
+                                        data-multi-switch='{"targets":".rd-navbar","scope":".rd-navbar","class":"navbar-info-active","isolate":"[data-multi-switch]"}'></button>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="navbar-section">
+                <div class="navbar-container navbar-sidebar" style="margin-top: 1%">
+                    <div class="navbar-cell flex-grow-1" style="border-bottom: 1px solid #dde0e9;">
+                        <ul class="navbar-navigation rd-navbar-nav" style="margin-left: 58px">
+                            <li class="navbar-navigation-root-item active" style="margin-left: -58px;">
+                                <a class="navbar-navigation-root-link" style="display: inline-block; " href="/backend">
+                                    <span class="product-btn btn topaz btn-icon mdi-shopping"
+                                          style="display: inline-block; border: 1px solid white;"> Home </span>
+                                </a>
+                            </li>
+                            <li class="navbar-navigation-root-item" style="margin-left: -58px;">
+                                <a class="navbar-navigation-root-link" style="display: inline-block; "
+                                   href="/menu_items">
+                                    <span class="product-btn btn topaz btn-icon mdi-menu"
+                                          style="display: inline-block; border: 1px solid white;">  目录管理</span>
+                                </a>
+                            </li>
+
+                            <li class="navbar-navigation-root-item rd-navbar--has-dropdown rd-navbar-submenu" style="margin-left: -58px;">
+                                <a class="navbar-navigation-root-link" style="display: inline-block; " href="/status">
+                                    <span class="product-btn btn topaz btn-icon mdi-account-box"  style="display: inline-block; border: 1px solid white;"> 用户管理 </span>
+                                </a><span class="rd-navbar-submenu-toggle"></span>
+                                <ul class="navbar-navigation-dropdown rd-navbar-dropdown">
+                                    <li class="navbar-navigation-back">
+                                        <button class="navbar-navigation-back-btn">Back</button>
+                                    </li>
+                                    <li class="navbar-navigation-dropdown-item">
+                                        <a class="navbar-navigation-dropdown-link" href="/renewal_member">
+                                            <span class=" mdi-cake" style="display: inline-block; "> Shop 高级会员申请  </span>
+                                        </a>
+
+                                    </li>
+
+                                    <li class="navbar-navigation-dropdown-item">
+                                        <a class="navbar-navigation-dropdown-link" href="/status">
+                                            <span class=" mdi-account-star" style="display: inline-block; "> 用户注册 & 访问状态  </span>
+                                        </a>
+                                    </li>
+
+                                    <li class="navbar-navigation-dropdown-item">
+                                        <a class="navbar-navigation-dropdown-link" href="/add_internal_user">
+                                            <span class=" mdi-account-plus" style="display: inline-block; "> 新增内部测试账号  </span>
+                                        </a>
+                                    </li>
+                                    <li class="navbar-navigation-dropdown-item">
+                                        <a class="navbar-navigation-dropdown-link" href="/internal_users">
+                                            <span class="mdi-clipboard-account" style="display: inline-block; "> 测试账号列表  </span>
+                                        </a>
+{#                                        <a class="navbar-navigation-dropdown-link" href="/manager_resources">内部测试用户查看</a>#}
+                                    </li>
+                                </ul>
+                            </li>
+
+                            <li class="navbar-navigation-root-item rd-navbar--has-dropdown rd-navbar-submenu" style="margin-left: -58px;">
+                                <a class="navbar-navigation-root-link" style="display: inline-block; " href="/goods_list">
+                                    <span class="product-btn btn topaz btn-icon mdi-cart"  style="display: inline-block; border: 1px solid white;"> 商品管理 </span>
+                                </a><span class="rd-navbar-submenu-toggle"></span>
+                                <ul class="navbar-navigation-dropdown rd-navbar-dropdown">
+                                    <li class="navbar-navigation-back">
+                                        <button class="navbar-navigation-back-btn">Back</button>
+                                    </li>
+
+
+                                    <li class="navbar-navigation-dropdown-item">
+                                        <a class="navbar-navigation-dropdown-link" href="/create_goods">
+                                            <span class="mdi-playlist-plus" style="display: inline-block; "> Shop 商品新建  </span>
+                                        </a>
+
+                                    </li>
+
+                                    <li class="navbar-navigation-dropdown-item">
+                                        <a class="navbar-navigation-dropdown-link" href="/update_goods">
+                                            <span class="mdi-auto-upload" style="display: inline-block; "> 修改商品信息 </span>
+                                        </a>
+                                    </li>
+
+                                    <li class="navbar-navigation-dropdown-item">
+                                        <a class="navbar-navigation-dropdown-link" href="/goods_list">
+                                            <span class="mdi-cart-outline" style="display: inline-block; "> 所有商品列表 </span>
+                                        </a>
+                                    </li>
+
+                                </ul>
+                            </li>
+
+
+                            <li class="navbar-navigation-root-item" style="margin-left: -58px;">
+                                <a class="navbar-navigation-root-link" style="display: inline-block; "
+                                   href="/view_orders">
+                                    <span class="product-btn btn topaz btn-icon mdi-book"
+                                          style="display: inline-block;  border: 1px solid white;"> 所有订单 </span>
+                                </a>
+                            </li>
+
+                            <li class="navbar-navigation-root-item rd-navbar--has-dropdown rd-navbar-submenu"
+                                style="margin-left: -58px;">
+                                <a class="navbar-navigation-root-link" style="display: inline-block; " href="/backend">
+                                    <span class="product-btn btn topaz btn-icon mdi-note-outline"
+                                          style="display: inline-block; border: 1px solid white;"> 资源管理 </span>
+                                </a><span class="rd-navbar-submenu-toggle"></span>
+                                <ul class="navbar-navigation-dropdown rd-navbar-dropdown">
+                                    <li class="navbar-navigation-back">
+                                        <button class="navbar-navigation-back-btn">Back</button>
+                                    </li>
+                                    <li class="navbar-navigation-dropdown-item">
+                                        <a class="navbar-navigation-dropdown-link" href="/create_guide">新建资源</a>
+                                    </li>
+
+                                    <li class="navbar-navigation-dropdown-item">
+                                        <a class="navbar-navigation-dropdown-link" href="/modify_resources">修改资源</a>
+                                    </li>
+
+                                    <li class="navbar-navigation-dropdown-item">
+                                        <a class="navbar-navigation-dropdown-link" href="/manager_resources">资源批量管理</a>
+                                    </li>
+                                    <li class="navbar-navigation-dropdown-item">
+                                        <a class="navbar-navigation-dropdown-link" href="/zip_list">压缩包资源列表</a>
+                                    </li>
+                                    <li class="navbar-navigation-dropdown-item">
+                                        <a class="navbar-navigation-dropdown-link" href="/feature_list">功能资源列表</a>
+                                    </li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </div>
+
+                </div>
+            </div>
+        </nav>
+    </header>
+
+{# Body  #}
+    <section class="section section-md bg-primary-lightest" style="">
+        <div class="container">
+            <div class="row row-40 row-content justify-content-center text-center">
+
+            <div class="col-md-8 col-lg-9">
+
+                <div id="f2" class="row justify-content-center text-center" style="margin-top: 6%;">
+                <div class="col-md-6" style="min-width: 96%;">
+                    <div class="box box-form-1 section-offset-item">
+                        <div class="box-header">
+                            <h3 class="box-title"> Shop 新建功能 </h3>
+                        </div>
+                        <div class="box-body">
+                            <div id="form1" class="rd-form rd-mailform" data-form-output="contact-form-1" data-form-type="contact" novalidate="novalidate">
+                                <div class="row row-20 align-items-center">
+                                    <div class="col-12">
+                                        <div class="form-group">
+                                            <label class="form-label" for="product_name">
+                                                <h5 style="font-weight: 600">Step1: 输入功能信息 </h5>
+                                            </label>
+                                            <div class="form-control-wrap" style="margin-top: 2%">
+                                                <div class="form-label topaz_title2" style=""> * 功能名称: </div>
+                                                    <input id="feature_name" name="min_value" class="form-control form-control-has-validation form-control-last-child"
+                                                       type="text" placeholder="e.g. 拍手" data-constraints="@Required" style=" display: inline-block;">
+                                                    <span class="form-validation"></span>
+                                            </div>
+                                        </div>
+                                    </div>
+
+
+                                    <div class="col-12" style="">
+                                        <div class="form-group">
+{#                                            <label class="form-label" for="is_fpaid" style="min-width: 196px; display: block; margin-top: 5px;">详情描述</label>#}
+                                            <div class="form-control-wrap" style="margin-top: 1%;">
+                                                 <div class="form-label topaz_title2" style=""> 功能描述: </div>
+                                                    <input id="feature_desc" name="min_value" class="form-control form-control-has-validation form-control-last-child"
+                                                       type="text" placeholder="e.g. 飞天小女警" data-constraints="@Required" style=" display: inline-block;">
+                                                    <span class="form-validation"></span>
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                    <div class="col-12" style="margin-top: 1%;">
+                                        <div class="form-group">
+                                            <div class="form-label topaz_title2" style=""> * 功能权限: </div>
+{#                                            <label class="form-label" for="is_fpaid" style="min-width: 196px; display: block; margin-top: 5px;"> 功能权限 </label>#}
+                                            <div class="custom-control custom-checkbox" style="height: 3.29rem; display: inline-block; ">
+                                                <input class="custom-control-input" type="radio" id="fchecked_1" name="is_fpaid" checked="checked">
+                                                <label class="custom-control-label" for="fchecked_1" style="margin-top: 0.8rem; margin-left: 2.22rem;">
+                                                    <span class="custom-control-text topaz_text" style=" font-size: 1.08rem;font-weight: 500;"> 定制用户可见 </span>
+                                                </label>
+                                            </div>
+                                            <div class="custom-control custom-checkbox" style="height: 3.29rem; display: inline-block">
+                                                <input class="custom-control-input" type="radio" id="fchecked_2" name="is_fpaid">
+                                                <label class="custom-control-label" for="fchecked_2" style="margin-top: 0.8rem; margin-left: 2.22rem;">
+                                                    <span class="custom-control-text topaz_text" style=" font-size: 1.08rem;font-weight: 500;"> 所有人可见 </span>
+                                                </label>
+                                            </div>
+                                            <div class="custom-control custom-checkbox" style="height: 3.29rem; display: inline-block">
+                                                <input class="custom-control-input" type="radio" id="fchecked_3" name="is_fpaid">
+                                                <label class="custom-control-label" for="fchecked_3" style="margin-top: 0.8rem; margin-left: 2.22rem;">
+                                                    <span class="custom-control-text topaz_text" style=" font-size: 1.08rem;font-weight: 500;"> VIP 可见 </span>
+                                                </label>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <h5 style="font-weight: 600; margin-left: 18px">STEP2:  选择所属角色 </h5>
+
+                                    <div class="col-12" style="min-width: 98%; margin-left: 1%;">
+                                        <div class="form-group" >
+                                            <div class="form-label topaz_title2" style=""> * 角色列表  </div>
+
+{#                                            <div class="accordion-head  " style="font-size: 0.75rem;font-weight: 600;    padding: 0;"> * 所有角色列表 </div>#}
+                                            <div class="widget" style="margin-top: 2%;max-height: 22.68rem; overflow-y: auto;padding-right: 0.2rem;">
+                                                <div class="widget-body">
+                                                    <div class="table-responsive">
+                                                        <table id="resource_table1" class="table table-1">
+                                                            <tbody id="resource_body1" style="">
+                                                                <tr id="td_model1"  style=" text-align: left; border: 1px solid white; border-bottom: 1px solid white; padding: 0.8rem 1.6rem;">
+                                                                    <td style="text-align: left; border: 1px solid white; padding: 0.8rem 0.6rem; font-size: 0.8rem;">
+                                                                        <div class="custom-control custom-checkbox" style="">
+                                                                            <input class="custom-control-input" type="radio" id="Feature" name="cartFilter1">
+                                                                                <label class="custom-control-label" for="Feature" style="font-size: 0.88rem" >
+                                                                                    <a class="link link-inherit" href="/single_product?goods_name=测试专用商品&amp;goods_id=10&amp;goods_price=1">测试专用商品</a>
+                                                                                </label>
+                                                                        </div>
+                                                                    </td>
+                                                                </tr>
+                                                            </tbody>
+                                                        </table>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="rd-form-btn text-left">
+                                        <button  class="btn btn-lg btn-primary" type="submit" onclick="AddResource()">Submit</button>
+                                    <a class="btn btn-lg btn-primary" href="/create_guide"><span>Back</span></a>
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="form-output snackbar snackbar-primary" id="contact-form-1"></div>
+                    </div>
+                </div>
+            </div>
+
+            </div>
+
+            </div>
+        </div>
+    </section>
+
+
+    <section class="footer footer-dark context-dark bg-800" style="margin-top: 10%">
+        <div class="container">
+            <div class="row row-30">
+
+                <div class="col-sm-6 col-lg-3">
+                    <h5 class="footer-title">联系方式</h5>
+                    <ul class="list list-icons">
+                        <li class="list-item">
+                            <div class="list-icon onclinic-map-marker"></div>
+                            北京市朝阳区五里桥一街1号非中心5号楼四层十二维度
+                        </li>
+                        <li class="list-item">
+                            <div class="list-icon onclinic-phone"></div>
+                            010-85717789
+                        </li>
+                        <li class="list-item">
+                            <div class="list-icon onclinic-email-open"></div>
+                            market@12dms.com
+                        </li>
+
+                    </ul>
+
+                </div>
+
+            </div>
+        </div>
+    </section>
+    <footer class="footer footer-minimal context-dark bg-900">
+        <div class="container">
+        </div>
+    </footer>
+</div>
+<!-- Preloader-->
+<div class="preloader">
+    <div class="preloader-inner">
+        <div class="preloader-dot"></div>
+        <div class="preloader-dot"></div>
+        <div class="preloader-dot"></div>
+        <div class="preloader-dot"></div>
+    </div>
+</div>
+
+<div class="to-top mdi-chevron-up "></div>
+</body>
+</html>
+<script src="/static/components/base/core.min.js"></script>
+<script src="/static/components/base/script.js"></script>
+<script src="/static/js/jquery.min.js"></script>
+<script type="text/javascript">
+    var shop_header = document.getElementById("shop_header");
+    var shop_title = document.getElementById("shop_title");
+
+
+    var feature_name;
+    var admin_user = "15600803270";
+
+
+    function ShowShadow(data){
+        document.getElementById("modal").innerText = data;
+        document.getElementById("modal").style.display = "block";
+    }
+
+    function HideShadow(){
+        document.getElementById("modal").style.display = "";
+    }
+
+    function CheckParams() {
+        console.log(">>>");
+        feature_name = document.getElementById("feature_name");
+        if (feature_name.value == "") {
+            alert("功能名称为空");
+            return 1;
+        }
+        var l = [];
+        var feature = document.getElementsByName("fmenus");
+        for (let i = 0; i < feature.length; i++) {
+            if (feature[i].checked == true) {
+                l.push(feature[i].value)
+            }
+        }
+        if (l.length == 0) {
+            alert("未选择所属角色");
+            return 1
+        }
+        var is_common = document.getElementsByName("is_fpaid");
+        if (is_common[0].checked == false && is_common[1].checked == false && is_common[2].checked == false) {
+            alert("未选择是否公用类型 ");
+            return 1;
+        }
+        return 0;
+
+    }
+
+
+
+    function AddResource() {
+        var res = CheckParams();
+        if (res == 0) {
+            var feature_authority;
+            var character_id;
+
+            var feature = document.getElementsByName("fmenus");
+            var is_common = document.getElementsByName("is_fpaid");
+            var feature_name = document.getElementById("feature_name").value;
+            var feature_desc = document.getElementById("feature_desc").value;
+
+            for (let i = 0; i < feature.length; i++) {
+                if (feature[i].checked == true) {
+                    character_id = feature[i].value;
+                }
+            }
+
+            if (is_common[0].checked == true) {
+                feature_authority = "0";
+            } else if (is_common[1].checked == true) {
+                feature_authority = "1";
+            } else if (is_common[2].checked == true) {
+                feature_authority = "2";
+            }
+
+            var formData = new FormData();
+            formData.append("username", admin_user);
+            formData.append("create_type", "2");
+            formData.append("feature_name", feature_name);
+            formData.append("description", feature_desc);
+            formData.append("character_id", character_id);
+            formData.append("is_common", feature_authority);
+
+            console.log("Comm", feature_name, character_id, feature_desc,feature_authority);
+            $.ajax({
+                type: "POST",
+                url: "/create_feature",
+                data: formData,
+                async: true,
+                cache: false,
+                contentType: false,
+                processData: false,
+                timeout: 60000,
+                success: function (data) {
+                    console.log("data", data);
+
+                    if (data["error_code"] == "1000"){
+                        alert("新功能添加成功");
+                        ShowShadow("新功能添加成功");
+                        setTimeout("HideShadow()", 1000);
+
+                    }else {
+                        alert("添加失败:" + data["msg"]);
+
+                        ShowShadow(data["msg"]);
+                        setTimeout("HideShadow()", 1000);
+                    }
+
+                    console.log("successful")
+                },
+                error: function (error) {
+                    console.log("error", error)
+                },
+            });
+            window.location.reload();
+        }
+    }
+
+    function CreateItems(data){
+        // func_num 0: zip; 1: feature
+        var resource_body;
+        var td_model;
+        var pre;
+        var input_name;
+
+        td_model = document.getElementById("td_model1");
+        resource_body = document.getElementById("resource_body1");
+        pre = "ftype_";
+        input_name = "fmenus";
+
+
+        if (data.length < 1){
+            resource_body.innerText = "";
+            var t = td_model.cloneNode(true);
+            var input_ele = t.getElementsByClassName("custom-control-input")[0];
+            var name_label = t.getElementsByClassName("custom-control-label")[0];
+
+            input_ele.name = input_name;
+            input_ele.value = "无";
+            input_ele.id = "none";
+            input_ele.checked = "";
+            name_label.innerText = "无";
+            name_label.htmlFor = "none";
+            resource_body.appendChild(t);
+        }
+        else{
+            resource_body.innerText = "";
+
+            for (let i = 0; i < data.length; i++) {
+                var t = td_model.cloneNode(true);
+                var input_ele = t.getElementsByClassName("custom-control-input")[0];
+                var name_label = t.getElementsByClassName("custom-control-label")[0];
+                t.id = "table0" + i;
+                input_ele.name = input_name;
+                input_ele.value = data[i][1];
+                input_ele.id = pre + data[i][1];
+                name_label.innerText = data[i][0];
+                name_label.htmlFor = pre + data[i][1];
+
+                if (i == 0){
+                    input_ele.checked = "checked";
+                    console.log("first one", data[i][0]);
+                }else {
+                    input_ele.checked = "";
+                }
+                resource_body.appendChild(t);
+            }
+        }
+    }
+
+    function GetType(menu_id, func_num) {
+        const formData = new FormData();
+        formData.append("username", "15600803270");
+        formData.append("resource_type", 1);
+        formData.append("menu_id", menu_id);
+
+        $.ajax({
+            url: '/get_resource',
+            type: 'POST',
+            data: formData,
+            processData: false,
+            contentType: false,
+            success: function(res) {
+                if (res["error_code"] == "1000"){
+                    console.log("!!!", res['msg']['zip_list']);
+                    if (func_num == 1){
+                        CreateItems(res['msg']['feature_list']);
+                    }
+                }else {
+                    alert(res["msg"]);
+                }
+            },
+        });
+    }
+
+
+    GetType(1, 1);
+
+
+    {#var shop_phone = document.getElementById("shop_phone");#}
+    var option = {
+        attributes: true,
+        attributeFilter: ['class']
+    };
+
+
+    var mutationObserver = new MutationObserver(function (mutations) {
+        if (shop_header.className.indexOf('rd-navbar-fixed') != -1) {
+            shop_title.style.display = "None";
+            {#shop_phone.style.display = "Block";#}
+        } else {
+            shop_title.style.display = "Block";
+            {#shop_phone.style.display = "None";#}
+
+        }
+    });
+
+    mutationObserver.observe(shop_header, option)
+
+</script>
