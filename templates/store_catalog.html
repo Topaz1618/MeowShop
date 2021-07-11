@@ -385,7 +385,7 @@
               </div>
 
               <div class="widget" style="margin-top: 6.2%">
-{#                <div class="widget-title h5" style="font-weight: 600; font-size: 1.28rem;">我的收藏</div>#}
+                <div class="widget-title h5" style="font-weight: 600; font-size: 1.28rem;">My favorite</div>
 {#                  {% if len(myheart_list) == 0 %}#}
 {#                    <div class="widget-body"> 您的收藏夹为空 </div>#}
 {##}
@@ -812,9 +812,14 @@
                     // Todo: 如果不足三个手动加上去
                     {#window.location.reload();#}
                     return;
+                }else if(error_code == "5000"){
+                    window.location.href = "/login"
                 }
+
                 else if(error_code == "7006"){
                     alert("Already in the favorite list");
+                }else {
+                    alert(response["msg"])
                 }
             }
         });

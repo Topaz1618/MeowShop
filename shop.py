@@ -663,14 +663,27 @@ class SingleProductHandler(BaseHandler):
 
 class AddMyHeartHandler(BaseHandler):
     """ 增加删除物品 """
-    @member_login_redirect
+
     def post(self):
         try:
             cookie_token = self.get_secure_cookie("token")
-            token = self.get_argument("Authorization", None)
-            username = get_token_user(cookie_token, token)
+            # token = self.get_argument("Authorization", None)
+
+            if cookie_token is None:
+                raise TokenError("5000")
+
+            token = cookie_token
+
+            if isinstance(token, bytes):
+                token = token.decode()
+
+            token_dic = jwt.decode(token.encode(), SECRET_KEY)
+            username = token_dic.get('phonenum')
+            print(f">> Current User: {username}")
+
             goods_id = self.get_argument("goods_id")
             add_my_heart(username, goods_id)
+            print(">")
             message = {'msg': "successful", 'error_code': '1000'}
 
         except BaseError as e:
@@ -691,17 +704,30 @@ class AddMyHeartHandler(BaseHandler):
             print(e)
             message = {'msg': "Unknow Error", 'error_code': '1010'}
 
+        print(message)
         self.write(message)
 
 
 class DeleteMyHeartHandler(BaseHandler):
     """ 删除收藏物品 """
-    @member_login_redirect
+
     def post(self):
         try:
             cookie_token = self.get_secure_cookie("token")
-            token = self.get_argument("Authorization", None)
-            username = get_token_user(cookie_token, token)
+            # token = self.get_argument("Authorization", None)
+
+            if cookie_token is None:
+                raise TokenError("5000")
+
+            token = cookie_token
+
+            if isinstance(token, bytes):
+                token = token.decode()
+
+            token_dic = jwt.decode(token.encode(), SECRET_KEY)
+            username = token_dic.get('phonenum')
+            print(f">> Current User: {username}")
+
             goods_id = self.get_argument("goods_id")
             delete_my_heart(username, goods_id)
             message = {'msg': "successful", 'error_code': '1000'}

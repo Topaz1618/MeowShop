@@ -93,30 +93,14 @@ def auth_login_redirect(func):
                 raise TokenError("5000")
 
         try:
-            if not self.request.uri.startswith("/?"):
-                uri_token = None
-            else:
-                uri_token_list = self.request.uri.strip("/?").split("=")
-                uri_token = uri_token_list[-1] if len(uri_token_list) > 1 else None
-        except:
-            raise TokenError("5009")
-
-        cookie_token = self.get_secure_cookie("token")
-
-        try:
             if token is None:
-                if uri_token is not None:
-                    print("Use uri token")
-                    self.clear_cookie("username")
-                    self.set_secure_cookie("token", uri_token, 3600)
-                    token = uri_token
+                cookie_token = self.get_secure_cookie("token")
 
-                elif cookie_token is not None:
+                if cookie_token is None:
                     print("Use cookie token")
-                    token = cookie_token
-
-                else:
                     raise TokenError("5000")
+
+                token = cookie_token
 
             if isinstance(token, bytes):
                 token = token.decode()

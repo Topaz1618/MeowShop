@@ -769,7 +769,7 @@ def get_myheart_list(uid, start=0, end=3, is_shop=False):
         if goods_obj.goods_type == GoodsType.ZIP.value:
             image_path = get_image_path(goods_obj.zip_id)
         else:
-            image_path = "static/images/shop/logo.png"
+            image_path = "static/images/shop/cat_work.png"
 
         myheart_list.append({
             "goods_id": goods_id,
@@ -798,7 +798,7 @@ def get_myitems_list(uid, start, end):
         if goods_obj.goods_type == GoodsType.ZIP.value:
             image_path = get_image_path(goods_obj.zip_id)
         else:
-            image_path = "static/images/shop/logo.png"
+            image_path = "static/images/shop/cat_work.png"
 
         myitems_list.append({
             "goods_id": goods_id,
