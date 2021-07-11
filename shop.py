@@ -729,7 +729,7 @@ class DeleteMyHeartHandler(BaseHandler):
 
 class MyHeartItemsHandler(BaseHandler):
     """ 收藏物品 API"""
-    @member_login_redirect
+    @auth_login_redirect
     def get(self):
         try:
             cookie_token = self.get_secure_cookie("token")
@@ -784,10 +784,41 @@ class MyHeartItemsHandler(BaseHandler):
             print(e)
             self.render("error_page.html", error_message="Unknow Error")
 
-    @member_login_redirect
+    @auth_login_redirect
     def post(self):
-        pass
+        try:
+            cookie_token = self.get_secure_cookie("token")
+            token = self.get_argument("Authorization", None)
+            username = get_token_user(cookie_token, token)
 
+            uid = get_user_id(username)
+            start = 0
+            end = 3
+
+            data = get_myheart_list(uid, start, end)
+            message = {'msg': data, 'error_code': '1000'}
+
+        except BaseError as e:
+            message = {'msg': e.error_msg, 'error_code': e.error_code}
+
+        except TokenError as e:
+            message = {'msg': e.error_msg, 'error_code': e.error_code}
+
+        except AuthError as e:
+            message = {'msg': e.error_msg, 'error_code': e.error_code}
+
+        except DBError as e:
+            message = {'msg': e.error_msg, 'error_code': e.error_code}
+
+        except ShopError as e:
+            print("raise error. ", e)
+            message = {'msg': e.error_msg, 'error_code': e.error_code}
+
+        except Exception as e:
+            print(e)
+            message = {'msg': "Unknow Error", 'error_code': '1010'}
+
+        self.write(message)
 
 class MyItemsHandler(BaseHandler):
     """ 获取当前用户所有物品: 购买物品, 自己上传的物品"""
@@ -845,6 +876,9 @@ class MyItemsHandler(BaseHandler):
         except Exception as e:
             print(e)
             self.render("error_page.html", error_message="Unknow Error")
+
+
+
 
 
 class AllProductsHandler(BaseHandler):
