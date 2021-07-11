@@ -56,7 +56,7 @@ class CheckIsMemberHandler(BaseHandler):
 
 class UserInfoHandler(BaseHandler):
     """ 用户信息接口 (目前只用来看会员到期日期 )"""
-    @member_login_redirect
+    @auth_login_redirect
     def get(self):
         cookie_token = self.get_secure_cookie("token")
         token = self.get_argument("Authorization", None)
@@ -65,7 +65,7 @@ class UserInfoHandler(BaseHandler):
         data = get_user_info(username)
         self.render("user_info.html", data=data, username=username)
 
-    @member_login_redirect
+    @auth_login_redirect
     def post(self):
         try:
             cookie_token = self.get_secure_cookie("token")
@@ -171,12 +171,17 @@ class PayPageHandler(BaseHandler):
 
 class PackageListHandler(BaseHandler):
     """ 套餐列表接口 """
-    @auth_login_redirect
+    # @auth_login_redirect
     def get(self):
         print(PACKAGE_LIST)
         cookie_token = self.get_secure_cookie("token")
         token = self.get_argument("Authorization", None)
-        username = get_token_user(cookie_token, token)
+
+        if cookie_token is not None:
+            username = get_token_user(cookie_token, token)
+        else:
+            username = None
+
 
         self.render("package_catalog.html", data=PACKAGE_LIST, username=username, get_discount=get_discount, get_discount_price=get_discount_price)
 
@@ -461,12 +466,19 @@ class CountGoodsHandler(BaseHandler):
 
 class StoreCatalogHandler(BaseHandler):
     """ 所有商品页面 """
-    @async_member_login_redirect
+    # @async_member_login_redirect
     async def get(self):
         try:
             cookie_token = self.get_secure_cookie("token")
             token = self.get_argument("Authorization", None)
-            username = get_token_user(cookie_token, token)
+            print("!!!! ",cookie_token)
+
+            if cookie_token is not None:
+                username = get_token_user(cookie_token, token)
+                uid = get_user_id(username)
+            else:
+                username = uid = None
+
 
             page = self.get_argument("page", None)
             is_sort = self.get_argument("sort", None)
@@ -479,22 +491,6 @@ class StoreCatalogHandler(BaseHandler):
             is_sort = is_sort if is_sort is not None else "0"
             filter_list = filter_list.split(" ") if filter_list is not None else ["All"]
 
-            # t1 = time()
-            # t3 = time()
-            # page_info = get_page_info(current_page, filter_list, is_sort)
-            # print("Step2: ", time(), time() - t3)
-            #
-            # t2 = time()
-            # goods_count_list = count_goods_type()
-            # print("Step1: ", time(), time() - t2)
-            #
-            # t4 = time()
-            # myheart_list = get_myheart_list(username, True)
-            # print("Step3: ", time(), time() - t4)
-            #
-            # print(goods_count_list, page_info, myheart_list)
-            # print("All Step1: ", time(), time() - t1)
-            uid = get_user_id(username)
 
             t0 = time()
             loop = asyncio.get_event_loop()
@@ -531,7 +527,7 @@ class StoreCatalogHandler(BaseHandler):
             print(e)
             self.render("error_page.html", error_message="Unknow Error")
 
-    @member_login_redirect
+    # @member_login_redirect
     def post(self):
         try:
             cookie_token = self.get_secure_cookie("token")
@@ -795,7 +791,7 @@ class MyHeartItemsHandler(BaseHandler):
 
 class MyItemsHandler(BaseHandler):
     """ 获取当前用户所有物品: 购买物品, 自己上传的物品"""
-    @member_login_redirect
+    @auth_login_redirect
     def get(self):
         try:
             cookie_token = self.get_secure_cookie("token")

@@ -30,15 +30,20 @@ class BaseHandler(RequestHandler):
 
 class IndexHandler(BaseHandler):
     """ 主页面 """
-    @auth_login_redirect
+    # @auth_login_redirect
     def get(self):
         try:
-            uri_token_list = self.request.uri.strip("/?").split("=")
-            uri_token = uri_token_list[-1] if len(uri_token_list) > 1 else None
-            cookie_token = self.get_secure_cookie("token")
+            token = self.get_secure_cookie("token")
 
-            if cookie_token is None:
-                self.set_secure_cookie("token", uri_token)
+            if token is not None:
+                if isinstance(token, bytes):
+                    token = token.decode()
+
+                token_dic = jwt.decode(token.encode(), SECRET_KEY)
+                username = token_dic.get('phonenum')
+            else:
+                username = None
+            print("Username", username)
 
         except BaseError as e:
             message = {'msg': e.error_msg, 'error_code': e.error_code}
@@ -50,7 +55,7 @@ class IndexHandler(BaseHandler):
             self.write({'msg': "Unknown Error", 'error_code': '1010'})
             return
 
-        self.render("main.html")
+        self.render("main.html", username=username)
 
 
 class PageErrorHandler(BaseHandler):

@@ -72,6 +72,8 @@
                                            style="font-size: 28px; font-weight: 500;"> Meow Shop </a>
                                     </li>
 
+
+
                                 </div>
                             </div>
                             <div class="navbar-logo navbar-fullwidth-logo">
@@ -80,10 +82,29 @@
                             </div>
                             <div class="text-block text-block-2 d-md-flex align-items-center justify-content-center">
                                 <div class="list list-icons-2" >
-                                    <div id="shop_phone" class="list-item" style="display: none">
-                                        <div class="list-icon icon onclinic-phone"></div>
-                                        <span class="h5"><a class="link" href="tel:#">+8615600803270</a></span>
-                                    </div>
+{#                                    <div id="shop_phone" class="list-item" style="display: none">#}
+{#                                        <div class="list-icon icon onclinic-phone"></div>#}
+{#                                        <span class="h5"><a class="link" href="tel:#">+8615600803270</a></span>#}
+{#                                    </div>#}
+
+                                    {% if username == None %}
+                                            <a class="navbar-navigation-root-link" style="display: inline-block; " href="/login">
+                                                <span id="username" class="mdi-account-outline" style="display: inline-block"> Log in </span>
+                                            </a>
+                                            <a class="navbar-navigation-root-link" style="display: inline-block; " href="/logout">
+                                                <span id="username" class="mdi-logout" style="display: inline-block"> Log out </span>
+                                            </a>
+
+                                        {% else %}
+                                            <a class="navbar-navigation-root-link" style="display: inline-block; " href="/user_info">
+                                                <span id="username" class="mdi-account" style="display: inline-block"> {{ username }} </span>
+                                            </a>
+                                            <a class="navbar-navigation-root-link" style="display: inline-block; " href="/logout">
+                                                <span id="username" class="mdi-logout" style="display: inline-block"> Log out </span>
+                                            </a>
+
+                                    {% end %}
+
                                 </div>
                             </div>
 
@@ -133,13 +154,34 @@
                                           style="display: inline-block; border: 1px solid white;"> Order List </span>
                                 </a>
                             </li>
-                            <li class="navbar-navigation-root-item" style="margin-left: -58px;">
-                                <a class="navbar-navigation-root-link" style="display: inline-block; "
-                                   href="/user_info">
-                                    <span class="product-btn btn topaz btn-icon mdi-account"
+{#                            <li class="navbar-navigation-root-item" style="margin-left: -58px;">#}
+{#                                <a class="navbar-navigation-root-link" style="display: inline-block; "#}
+{#                                   href="/user_info">#}
+{#                                    <span class="product-btn btn topaz btn-icon mdi-account"#}
+{#                                          style="display: inline-block; border: 1px solid white;"> My Account </span>#}
+{#                                </a>#}
+{#                            </li>#}
+
+
+                            <li class="navbar-navigation-root-item rd-navbar--has-dropdown rd-navbar-submenu"  style="margin-left: -58px; min-width: 248px">
+                                <a class="navbar-navigation-root-link" style="display: inline-block; " href="/user_info">
+                                    <span class="product-btn btn topaz btn-icon mdi-note-outline"
                                           style="display: inline-block; border: 1px solid white;"> My Account </span>
-                                </a>
+                                </a><span class="rd-navbar-submenu-toggle"></span>
+                                <ul class="navbar-navigation-dropdown rd-navbar-dropdown">
+                                    <li class="navbar-navigation-back">
+                                        <button class="navbar-navigation-back-btn">Back</button>
+                                    </li>
+                                    <li class="navbar-navigation-dropdown-item">
+                                        <a class="navbar-navigation-dropdown-link" href="/my_items">My Items</a>
+                                    </li>
+                                    <li class="navbar-navigation-dropdown-item">
+                                        <a class="navbar-navigation-dropdown-link" href="/user_info">Account </a>
+                                    </li>
+                                </ul>
                             </li>
+
+
                             <li class="navbar-navigation-root-item rd-navbar--has-dropdown rd-navbar-submenu"
                                 style="margin-left: -58px;">
                                 <a class="navbar-navigation-root-link" style="display: inline-block; " href="/about_us">
@@ -154,7 +196,7 @@
                                         <a class="navbar-navigation-dropdown-link" href="/about_us">About Us</a>
                                     </li>
                                     <li class="navbar-navigation-dropdown-item">
-                                        <a class="navbar-navigation-dropdown-link" href="/feedback">Github</a>
+                                        <a class="navbar-navigation-dropdown-link" href="https://github.com/Topaz1618?tab=repositories">Github</a>
                                     </li>
                                 </ul>
                             </li>
@@ -166,12 +208,15 @@
         </nav>
     </header>
 
-    <section class="section section-md " style="margin-top: -3%; min-width: 300px; overflow-x: auto; overflow-y: hidden;">
+    <section class="section section-md " style="margin-top: 0px; min-width: 300px; overflow-x: auto; overflow-y: hidden;">
         <div class="container" style=" width: 80%; max-width: 90%; min-width: 700px;">
+            <div class="text-block text-block-1">
+            <h1>All Orders List</h1>
+          </div>
             <div class="product-search" style="max-width: 103%; margin-left: 0%">
                 <div class="product-search-inner">
                     <div class="product-search-results">
-                       <span>当前订单 </span>
+                       <span>Showing</span>
                         <span id="start_product_num">{{ page_info["start"] + 1}}</span>
                         <span>-</span>
                         <span id="end_product_num">{{ page_info["end"] }}</span>
