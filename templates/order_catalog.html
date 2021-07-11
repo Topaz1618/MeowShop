@@ -284,27 +284,17 @@
 
                                     {% if data[i]["trade_state"] == "TRADE_SUCCESS" %}
                                         <li class="list-item">
-
-                                                Order payment time
-                                                <span class="icon mdi-clock"></span>:
+                                            Order payment time
+                                            <span class="icon mdi-clock"></span>:
                                             {{ data[i]["end_time"] }}
                                         </li>
                                         <li class="list-item">
-
                                                 Order close time
                                                 <span class="icon mdi-clock"></span>:
-
-                                            {{ data[i]["close_time"] }}
+                                                {{ data[i]["close_time"] }}
                                         </li>
 
                                     {% elif data[i]["trade_state"] == "WaitPayment" %}
-{#                                        <li class="list-item">#}
-{#                                            <span style="min-width: 158px; display: inline-block; ">#}
-{#                                                Order end time#}
-{#                                                <span class="icon mdi-clock"></span>:#}
-{#                                            </span>#}
-{#                                            None#}
-{#                                        </li>#}
                                         <li class="list-item">
                                             <span style="min-width: 158px; display: inline-block; ">
                                                 Order close time  <span class="icon mdi-clock"></span>:
@@ -313,17 +303,8 @@
                                         </li>
 
                                     {% else %}
-{#                                        <li class="list-item">#}
-{#                                            <span style="min-width: 158px; display: inline-block; ">#}
-{#                                                Order end time  <span class="icon mdi-clock"></span>:#}
-{#                                            </span>#}
-{#                                                {{ data[i]["end_time"] }}#}
-{#                                        </li>#}
                                         <li class="list-item">
-
-
                                                 Order close time <span class="icon mdi-clock"></span>:
-
                                                 {{ data[i]["close_time"] }}
                                         </li>
                                     {% end %}
@@ -336,10 +317,8 @@
                                             Third party trade number<span class="icon "></span>:  {{ data[i]["out_trade_no"] }}
                                         </li>
                                     {% else %}
-                                        <li class="" style="height: 28px "><span class=" "></span></li>
 
                                     {% end %}
-
 
                                 </ul>
 

@@ -11,17 +11,24 @@
 </head>
 <body>
 <div id="box"></div>
+
 <div class="cent-box">
-    <div class="cent-box-header">
+
+    <div class="cent-box-header" style="display:block; margin-left: -21%;min-width: 400px;width: 400px;">
+        <h1 style="  text-space: 2px; margin-left: -10px"> Sign in to Meow Shop </h1>
+
     </div>
-    <div class="cent-box-content">
-        <div class="form-warning"></div>
+{#    <span style="font-size: 18px; margin-bottom: 2px; display: inline-block"> Email Address </span>#}
+    <div class="form-warning" style=""></div>
+    <div class="cent-box-content" style="">
 
         <form method='POST' id="form1">
             <div id="login">
                 <div class="border-btm form-ipt">
                     <input type="text" id="phonenum" name="phonenum" maxlength="20" placeholder="Email"
                            oninput="EmailListen(this)">
+
+
                 </div>
                 <div class="form-ipt">
                     <input type="password" id="password" name="password" maxlength="21" placeholder="Password">
@@ -36,8 +43,10 @@
                 <button type="button" class="submit-btn" id="button" onclick="authLogin()">Log in</button>
             </div>
         </form>
-        <span class="change-signup" style="margin-left: -24px">New customer? <a href="/register">Start here</a></span>
-        <a href="/reset_password"><span class="forget-pwd" style="min-width: 120px;">Forgot Password?</span></a>
+        <span class="change-signup" style="margin-left: -24px; text-space: 1px">New customer?
+            <a href="/register" style="margin-left: 6px">Start here</a>
+        </span>
+      <a href="/"><span class="forget-pwd" style="min-width: 120px;">Back home</span></a>
 
     </div>
 </div>
