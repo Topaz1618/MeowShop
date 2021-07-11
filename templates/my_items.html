@@ -37,150 +37,137 @@
     <div class="page">
       <!--RD Navbar-->
 
-        <header class="section rd-navbar-wrap rd-navbar-wrap-transparent">
-        <nav id="shop_header" class="rd-navbar rd-navbar-solid rd-navbar-transparent" data-rd-navbar='{"responsive":{"1200":{"stickUpOffset":"164px"}}}'>
-          <div class="navbar-section navbar-non-stuck">
-            <div class="navbar-panel">
-              <button class="navbar-switch mdi-menu novi-icon" data-multi-switch='{"targets":".rd-navbar","scope":".rd-navbar","isolate":"[data-multi-switch]"}'></button>
-              <div class="navbar-logo">
-                    <a class="navbar-navigation-root-link" href="/" style="width: 160%; font-size: 22px; font-weight: 500; margin-top: -4%;"> Meow Shop </a>
-              </div>
-            </div>
-            <div class="navbar-container">
-              <div class="navbar-cell flex-grow-1">
-                <div class="navbar-info">
-                  <div class="list list-icons-2">
-                    <div class="list-item">
-                        <li class="navbar-navigation-root-item">
-                            <a id="shop_title" class="navbar-navigation-root-link" href="/" style="font-size: 28px; font-weight: 500;"> Meow Shop </a>
-                        </li>
-
+    <header class="section rd-navbar-wrap rd-navbar-wrap-transparent">
+        <nav id="shop_header" class="rd-navbar rd-navbar-solid rd-navbar-transparent"
+             data-rd-navbar='{"responsive":{"1200":{"stickUpOffset":"164px"}}}'>
+            <div class="navbar-section navbar-non-stuck">
+                <div class="navbar-panel">
+                    <button class="navbar-switch mdi-menu novi-icon" data-multi-switch='{"targets":".rd-navbar","scope":".rd-navbar","isolate":"[data-multi-switch]"}'></button>
+                    <div class="navbar-logo">
+                        <a class="navbar-navigation-root-link" href="/" style="width: 160%; font-size: 128%; font-weight: 500; margin-top: -4%;"> Meow Shop </a>
                     </div>
-                  </div>
-                  <div class="navbar-logo navbar-fullwidth-logo">
-                      <a class="navbar-logo-link" href="index.html">
-                      </a>
-                  </div>
-                  <div class="text-block text-block-2 d-md-flex align-items-center justify-content-center">
-                    <div class="list list-icons-2">
-                      <div class="list-item">
-                          <a class="navbar-navigation-root-link" style="display: inline-block; " href="/user_info">
-                              <span class="mdi-account" style="display: inline-block"> {{ username }}  </span>
-                          </a>
+                </div>
+                <div class="navbar-container">
+                    <div class="navbar-cell flex-grow-1">
+                        <div class="navbar-info">
+                            <div class="list list-icons-2">
+                                <div class="list-item">
+                                    <li class="navbar-navigation-root-item">
+                                        <a id="shop_title" class="navbar-navigation-root-link" href="/"
+                                           style="font-size: 28px; font-weight: 500;"> Meow Shop </a>
+                                    </li>
+
+                                </div>
+                            </div>
+                            <div class="navbar-logo navbar-fullwidth-logo">
+                                <a class="navbar-logo-link" href="index.html">
+                                </a>
+                            </div>
+                            <div class="text-block text-block-2 d-md-flex align-items-center justify-content-center">
+                                <div class="list list-icons-2" >
+                                    <div id="shop_phone" class="list-item" style="display: none">
+                                        <div class="list-icon icon onclinic-phone"></div>
+                                        <span class="h5"><a class="link" href="tel:#">+8615600803270</a></span>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
                     </div>
-                  </div>
-                </div>
+                    <div class="navbar-cell">
+                        <div class="navbar-subpanel">
+                            <div class="navbar-subpanel-item">
+                                <button class="navbar-button navbar-info-button mdi-dots-vertical novi-icon"
+                                        data-multi-switch='{"targets":".rd-navbar","scope":".rd-navbar","class":"navbar-info-active","isolate":"[data-multi-switch]"}'></button>
+                            </div>
 
+                        </div>
+                    </div>
                 </div>
-              </div>
-              <div class="navbar-cell">
-                <div class="navbar-subpanel">
-                  <div class="navbar-subpanel-item">
-                    <button class="navbar-button navbar-info-button mdi-dots-vertical novi-icon" data-multi-switch='{"targets":".rd-navbar","scope":".rd-navbar","class":"navbar-info-active","isolate":"[data-multi-switch]"}'></button>
-                  </div>
-
-                </div>
-              </div>
             </div>
-          </div>
-          <div class="navbar-section">
-            <div class="navbar-container navbar-sidebar" style="margin-top: 1%">
-              <div class="navbar-cell flex-grow-1">
-                  <ul class="navbar-navigation rd-navbar-nav" style="margin-left: 58px">
+            <div class="navbar-section">
+                <div class="navbar-container navbar-sidebar" style="margin-top: 1%">
+                    <div class="navbar-cell flex-grow-1" style="border-bottom: 1px solid #dde0e9;">
+                        <ul class="navbar-navigation rd-navbar-nav" style="margin-left: 58px">
+                            <li class="navbar-navigation-root-item active" style="margin-left: -58px">
+                                <a class="navbar-navigation-root-link" style="display: inline-block; " href="/">
+                                    <span class="product-btn btn topaz btn-icon mdi-home"
+                                          style="display: inline-block; border: 1px solid white;"> Home </span>
+                                </a>
+                            </li>
+                            <li class="navbar-navigation-root-item active" style="margin-left: -58px">
+                                <a class="navbar-navigation-root-link" style="display: inline-block; " href="/store_catalog">
+                                    <span class="product-btn btn topaz btn-icon mdi-shopping"
+                                          style="display: inline-block; border: 1px solid white;">
+                                        Store
+                                    </span>
+                                </a>
+                            </li>
 
-                    <li class="navbar-navigation-root-item" style="margin-left: -58px;">
-                        <a class="navbar-navigation-root-link" style="display: inline-block; " href="/">
-                            <span class="product-btn btn topaz btn-icon mdi-home " style="display: inline-block; border: 1px solid white;"> Home </span>
-                        </a>
-                    </li>
+                            <li class="navbar-navigation-root-item" style="margin-left: -58px;">
+                                <a class="navbar-navigation-root-link" style="display: inline-block; "
+                                   href="/package_list">
+                                    <span class="product-btn btn topaz btn-icon mdi-cake "
+                                          style="display: inline-block; border: 1px solid white;"> Membership </span>
+                                </a>
+                            </li>
+                            <li class="navbar-navigation-root-item" style="margin-left: -58px;">
+                                <a class="navbar-navigation-root-link" style="display: inline-block; "
+                                   href="/order_list">
+                                    <span class="product-btn btn topaz btn-icon mdi-book"
+                                          style="display: inline-block; border: 1px solid white;"> Order List </span>
+                                </a>
+                            </li>
+                            <li class="navbar-navigation-root-item" style="margin-left: -58px;">
+                                <a class="navbar-navigation-root-link" style="display: inline-block; "
+                                   href="/user_info">
+                                    <span class="product-btn btn topaz btn-icon mdi-account"
+                                          style="display: inline-block; border: 1px solid white;"> My Account </span>
+                                </a>
+                            </li>
+                            <li class="navbar-navigation-root-item rd-navbar--has-dropdown rd-navbar-submenu"
+                                style="margin-left: -58px;">
+                                <a class="navbar-navigation-root-link" style="display: inline-block; " href="/about_us">
+                                    <span class="product-btn btn topaz btn-icon mdi-note-outline"
+                                          style="display: inline-block; border: 1px solid white;"> About </span>
+                                </a><span class="rd-navbar-submenu-toggle"></span>
+                                <ul class="navbar-navigation-dropdown rd-navbar-dropdown">
+                                    <li class="navbar-navigation-back">
+                                        <button class="navbar-navigation-back-btn">Back</button>
+                                    </li>
+                                    <li class="navbar-navigation-dropdown-item">
+                                        <a class="navbar-navigation-dropdown-link" href="/about_us">About Us</a>
+                                    </li>
+                                    <li class="navbar-navigation-dropdown-item">
+                                        <a class="navbar-navigation-dropdown-link" href="/feedback">Github</a>
+                                    </li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </div>
 
-                      <li class="navbar-navigation-root-item" style="margin-left: -58px;">
-                        <a class="navbar-navigation-root-link" style="display: inline-block; " href="/store_catalog">
-                            <span class="product-btn btn topaz btn-icon mdi-shopping" style="display: inline-block; border: 1px solid white;"> &nbsp;Shop 商店&nbsp;&nbsp; &nbsp;</span>
-                        </a>
-                    </li>
-
-
-
-                    <li class="navbar-navigation-root-item" style="margin-left: -58px;">
-                        <a class="navbar-navigation-root-link" style="display: inline-block; " href="/package_list">
-                            <span class="product-btn btn topaz btn-icon mdi-cake " style="display: inline-block; border: 1px solid white;"> 会员套餐 </span>
-                        </a>
-                    </li>
-
-
-                      <li class="navbar-navigation-root-item" style="margin-left: -58px;">
-                          <a class="navbar-navigation-root-link" style="display: inline-block; " href="/user_info">
-                            <span class="product-btn btn topaz btn-icon mdi-account" style="display: inline-block; border: 1px solid white;"> 会员信息 </span>
-                            </a>
-                    </li>
-
-                     <li class="navbar-navigation-root-item" style="margin-left: -58px;">
-                            <a class="navbar-navigation-root-link" style="display: inline-block; " href="/my_heart">
-                                <span class="product-btn btn topaz btn-icon mdi-account-plus" style="display: inline-block; border: 1px solid white;"> 我的账户 </span>
-                            </a>
-
-                        <ul class="navbar-navigation-dropdown rd-navbar-dropdown" >
-                        <li class="navbar-navigation-back">
-                          <button class="navbar-navigation-back-btn">Back</button>
-                        </li>
-                         <li class="navbar-navigation-dropdown-item">
-                             <a class="navbar-navigation-dropdown-link" href="/order_list">我的订单</a>
-                         </li>
-                        <li class="navbar-navigation-dropdown-item">
-                            <a class="navbar-navigation-dropdown-link" href="/my_items">我的物品</a>
-                        </li>
-{#                         <li class="navbar-navigation-dropdown-item">#}
-{#                             <a class="navbar-navigation-dropdown-link" href="/my_heart">我的喜欢</a>#}
-{#                         </li>#}
-
-                      </ul>
-
-                    </li>
-
-                    <li class="navbar-navigation-root-item" style="margin-left: -58px;">
-                            <a class="navbar-navigation-root-link" style="display: inline-block; " href="/about_us">
-                                <span class="product-btn btn topaz btn-icon mdi-note-outline" style="display: inline-block; border: 1px solid white;"> 关于我们 </span>
-                            </a>
-
-                        <ul class="navbar-navigation-dropdown rd-navbar-dropdown" style="">
-                        <li class="navbar-navigation-back">
-                          <button class="navbar-navigation-back-btn">Back</button>
-                        </li>
-                        <li class="navbar-navigation-dropdown-item">
-                            <a class="navbar-navigation-dropdown-link" href="/about_us">产品介绍</a>
-                        </li>
-                         <li class="navbar-navigation-dropdown-item">
-                             <a class="navbar-navigation-dropdown-link" href="/feedback">问题反馈</a>
-                         </li>
-                      </ul>
-
-                    </li>
-                </ul>
-              </div>
-
+                </div>
             </div>
-          </div>
         </nav>
-      </header>
+    </header>
 
 <section class="section section-md  text-center">
         <div class="container">
           <div class="text-block">
               <div class="title-1"><a class="link link-inherit topaz_link" href="#">Meow Shop</a></div>
-            <h2>我的物品</h2>
+            <h2>My Items</h2>
 
           </div>
 
             <div class="container tab">
           <ul class="nav nav-line justify-content-center active" role="tablist">
-            <li class="nav-item"><a class="nav-link h6 active" data-toggle="tab" href="#navLine3-1" role="tab" aria-selected="true">我的购买</a></li>
-            <li class="nav-item"><a class="nav-link h6" data-toggle="tab" href="#navLine3-2" role="tab" aria-selected="false">我的上传</a></li>
+            <li class="nav-item"><a class="nav-link h6 active" data-toggle="tab" href="#navLine3-1" role="tab" aria-selected="true">My Items</a></li>
+            <li class="nav-item"><a class="nav-link h6" data-toggle="tab" href="#navLine3-2" role="tab" aria-selected="false">My Upload</a></li>
           </ul>
           <div class="tab-content">
             <div class="tab-pane fade active show" id="navLine3-1" role="tabpanel">
             <div class="text-block" style="float: left">
-                <h3>全部物品</h3>
+                <h3>All items</h3>
             </div>
                     <div class="product-search-results" style="float: right; margin-bottom: 2%; opacity: .5;">
                         Showing {{ page_info["start"] + 1 }}-{{ page_info["end"]  }} of {{ page_info["total_data"]  }} results
@@ -192,17 +179,17 @@
                 <table class="table table-1">
                   <thead  >
                   <tr >
-                    <th style="font-weight: 600;">已购买&nbsp;
+                    <th style="font-weight: 600;">Is Bought&nbsp;
                         <span class="icon blurb-icon linearicons-question-circle" onmousedown="ShowTag('question')"></span>
                         <span id="question_tag" style="margin-top: 11px; box-shadow: 0 14px 14px rgba(108, 117, 125, 0.1); position:absolute; display: none; background-color: #fff; font-size: 12px ">
-                           部分商品需付费后使用
+                           Including merchant holiday gifts
                         </span>
                     </th>
-                    <th style=" font-weight: 600; text-align: left;">商品图</th>
-                    <th style="font-weight: 600; text-align: left;">商品名称</th>
-                    <th style="font-weight: 600;">商品价格</th>
+                    <th style=" font-weight: 600; text-align: left;">Image</th>
+                    <th style="font-weight: 600; text-align: left;">Product Name</th>
+                    <th style="font-weight: 600;">Product Price</th>
 {#                    <th style="font-weight: 600;">商品类型</th>#}
-                    <th style="font-weight: 600;">订单详情</th>
+                    <th style="font-weight: 600;">Order Details</th>
 
                     </tr>
                   </thead>
@@ -222,13 +209,13 @@
                           </div>
                           <div style="">
                             <span id="{{ goods["goods_id"] }}_tag" style="box-shadow: 0 14px 14px rgba(108, 117, 125, 0.1); position:absolute; display: none; background-color: #fff; font-size: 12px ">
-                                {{ goods["desc"] }}
+{#                                {{ goods["desc"] }}#}
                             </span>
                           </div>
-{##}
-{#                          <a class="icon blurb-icon linearicons-text-align-right" href="#" style=" font-size: 0.82rem; position: relative; top: 32.12px;">#}
-{#                              &nbsp;查看订单#}
-{#                          </a>#}
+
+                          <a class="icon blurb-icon " href="#" style=" font-size: 0.82rem; position: relative; top: 32.12px;">
+{#                              &nbsp; View Order details#}
+                          </a>
 
                       </td>
                       <td>
@@ -247,7 +234,7 @@
 
                       <td class="h5">
                           <a class="" href="/single_order?goods_id={{  goods["goods_id"] }}" style="text-decoration: underline">
-                              &nbsp;查看订单
+                              &nbsp;View Order
                           </a>
 
                       </td>
@@ -256,10 +243,10 @@
                     <tr >
                         <td  id="{{goods["goods_id"] }}_order" align="center" colspan="4"  style="display: none">
 {#                        显示记得通过获取 = "" 而不是 none    a.style.display = ""#}
-                            <p>你好沉甸甸的多多多多多多多多多多多曾多次到成都市场的擦拭</p>
-                            <p>123</p>
-                            <p>cdcdsccd</p>
-                            <p>cdcdgghggggggggggggggggggggg</p>
+                            <p></p>
+                            <p></p>
+                            <p></p>
+                            <p></p>
 
                         </td>
                     </tr>
@@ -428,21 +415,21 @@
                 <div class="table-responsive">
 
                     <h5 style="color: #26455561; font-weight: 500">
-                        <span class="list-icon onclinic-quote" style=""></span> 用户自定义物品上传 (暂未开放)
+                        <span class="list-icon onclinic-quote" style=""></span> User-defined item upload (not yet available)
                     </h5>
                     <p style="color: #26455561; font-size: 0.88rem;">
-                        <span style="display: inline-block; ">任意问题可咨询: </span>
-                         <a class="link " href="mailto:#" style="font-size: 0.98rem;">Shop@12dms.com</a>
-                         或 <a class="link " href="/feedback" style="font-size: 0.88rem;">扫码进群</a> 反馈
+                        <span style="display: inline-block; ">Any questions consult: </span>
+                         <a class="link " href="mailto:#" style="font-size: 0.98rem;">topaz1668@gmail.com</a>
+                         or <a class="link " href="/" style="font-size: 0.88rem;">+8615600803270</a> to feedback
                     </p>
 
                     <table class="table table-1" style="margin-top: 2%">
                   <thead  >
                   <tr >
                     <th style="font-weight: 600;">STATUS</th>
-                    <th style=" font-weight: 600; text-align: left;">物品图</th>
-                    <th style="font-weight: 600; text-align: left;">物品名称</th>
-                    <th style="font-weight: 600;">物品类型</th>
+                    <th style=" font-weight: 600; text-align: left;">IMAGE</th>
+                    <th style="font-weight: 600; text-align: left;">NAME</th>
+                    <th style="font-weight: 600;">ITEM TYPE</th>
 
                     </tr>
                   </thead>
@@ -464,9 +451,9 @@
                       </td>
                       <td style="text-align: left;">
 
-                          <a class="link link-inherit" href="#navLine3-2"> 自定义物品 A (示例名称)</a>
+                          <a class="link link-inherit" href="#navLine3-2">Custom Item A (Example Name)</a>
                       </td>
-                      <td class="h5"> 其它 </td>
+                      <td class="h5"> SCENCE </td>
                     </tr>
 
 
@@ -483,29 +470,53 @@
 
 
 
-        <section class="footer footer-dark context-dark bg-800" style="margin-top: 10%">
+    <section class="footer footer-dark context-dark bg-800" style="margin-top: 10%">
         <div class="container">
             <div class="row row-30">
+                <div class="col-sm-6 col-lg-3">
+                    <!-- Logo-->
+                    <div class="logo">
+                        <a class="logo-link" href="/">
+{#                            <img class="logo-image-default" src="/static/images/meowfile.png" alt="Airy" width="146" height="36">#}
+                            <img class="logo-image-inverse" src="/static/images/meowshop.png" alt="Meow Shop" width="146" height="36">
+                        </a>
+                    </div>
+                    <p>Meow Shop is a full-featured mall, including background management, payment, order viewing, etc. </p>
+                    <div class="social group-20">
+{#                        <a class="social-icon icon icon-md icon-link onclinic-instagram" href="#"></a>#}
+                    </div>
+            </div>
 
                 <div class="col-sm-6 col-lg-3">
-                    <h5 class="footer-title">联系方式</h5>
+                    <h5 class="footer-title">Contacts</h5>
                     <ul class="list list-icons">
                         <li class="list-item">
                             <div class="list-icon onclinic-map-marker"></div>
-                            北京市朝阳区五里桥一街1号非中心5号楼四层十二维度
+                            ChaoYang, Beijing
                         </li>
                         <li class="list-item">
                             <div class="list-icon onclinic-phone"></div>
-                            010-85717789
+                            +8615600803270
                         </li>
                         <li class="list-item">
                             <div class="list-icon onclinic-email-open"></div>
-                            market@12dms.com
+                            topaz1668@gmail.com
                         </li>
 
                     </ul>
 
                 </div>
+
+                <div class="col-sm-6 col-lg-3">
+                    <h5 class="footer-title">Useful Links</h5>
+                    <ul class="list list-sm">
+                      <li class="list-item"><a href="https://topaz1618.github.io/about/">About</a></li>
+                      <li class="list-item"><a href="https://topaz1618.github.io/projects/">Projects</a></li>
+                      <li class="list-item"><a href="https://topaz1618.github.io/blog/">Blog</a></li>
+                    </ul>
+                </div>
+
+
 
             </div>
         </div>
@@ -513,7 +524,7 @@
         <footer class="footer footer-minimal context-dark bg-900">
         <div class="container">
                 <!-- Copyright-->
-                <p class="rights">Copyright &copy; 2020.Company name All rights reserved.<a target="_blank" href="http://sc.chinaz.com/moban/">&#x7F51;&#x9875;&#x6A21;&#x677F;</a></p>
+                <p class="rights">Copyright &copy; 2021. Meow Shop</p>
         </div>
       </footer>
     </div>

@@ -127,16 +127,18 @@ def get_user_list():
 
 
 def bind_custom_items(userlist, zip_id, item_type):
-    if len(userlist ) == 0:
-        return
 
     session = conn_db()
 
     if not isinstance(zip_id, int):
         zip_id = int(zip_id)
 
+    if len(userlist) == 0 or userlist is None:
+        users = ["15600803270", ]
+    else:
+        users = userlist.split(",")
 
-    users = userlist.split(",")
+
     for user in users:
         uid = get_user_id(user)
         item_obj = session.query(ShopCustomItems).filter(
@@ -144,6 +146,8 @@ def bind_custom_items(userlist, zip_id, item_type):
             ShopCustomItems.resource_id == zip_id,
             ShopCustomItems.resource_type == item_type,
         ).first()
+
+        print("!!!!!!!!!", item_obj)
 
         if item_obj is None:
             custom_item = ShopCustomItems(
@@ -189,6 +193,9 @@ def create_zip_file(parent_id, resource_name, zip_name, img_name,  is_common, is
             is_component=bool(int(is_component)),
             is_common=int(is_common),
         )
+
+        print("!!!!!")
+
         session.add(zip_file)
         session.commit()
         zip_id = zip_file.id
@@ -451,7 +458,7 @@ def create_feature(character_id, feature_name, feature_flag, description, is_com
         uid = get_user_id(username)
         feature_flag = 1 if feature_flag is None else feature_flag
         print(type(description), description)
-        print(">>>>", feature_name, character_id, feature_name, feature_flag, is_common, description)
+        print(">>>>", uid, feature_name, character_id, feature_name, feature_flag, is_common, description)
         new_feature = ShopFeatures(
             owner_id=uid,
             character_id=character_id,

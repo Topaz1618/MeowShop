@@ -263,12 +263,12 @@
                             <span class="custom-control-count">{{ page_info["total"] }}</span>
                         </label>
                     </div>
-                    {% if goods_count_list["Actor"] > 0 %}
+                    {% if goods_count_list["Character"] > 0 %}
                         <div class="custom-control custom-checkbox"  onChange="FilterProduct()">
-                                <input class="custom-control-input" type="radio" id="Actor" name="cartFilter1" >
-                            <label class="custom-control-label" for="Actor">
-                                <span class="custom-control-text topaz_text" style=" font-size: 1.08rem;font-weight: 500;">Actor</span>
-                                <span class="custom-control-count">{{ goods_count_list["Actor"]  }}</span>
+                                <input class="custom-control-input" type="radio" id="Character" name="cartFilter1" >
+                            <label class="custom-control-label" for="Character">
+                                <span class="custom-control-text topaz_text" style=" font-size: 1.08rem;font-weight: 500;">Character</span>
+                                <span class="custom-control-count">{{ goods_count_list["Character"]  }}</span>
                             </label>
                         </div>
                     {% end %}
@@ -307,7 +307,7 @@
                         <div class="custom-control custom-checkbox" onChange="FilterProduct()">
                             <input class="custom-control-input" type="radio" id="Clothes" name="cartFilter1" >
                             <label class="custom-control-label" for="Clothes">
-                                <span class="custom-control-text topaz_text" style="  font-size: 1.08rem;font-weight: 500;">Clothing</span>
+                                <span class="custom-control-text topaz_text" style="  font-size: 1.08rem;font-weight: 500;">CLOTHES</span>
                                 <span class="custom-control-count">{{ goods_count_list["Clothes"] }}</span>
                             </label>
                         </div>
@@ -533,8 +533,7 @@
                         </li>
                     {% end %}
                 {% end %}
-
-                </ul>
+            </ul>
       </section>
 
 
@@ -595,6 +594,7 @@
                 <p class="rights">©2021 Meow Shop</p>
         </div>
       </footer>
+
     </div>
     <!-- Preloader-->
     <div class="preloader">
