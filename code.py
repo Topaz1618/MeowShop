@@ -40,7 +40,7 @@ class AuthError(Exception):
             "1014": "已指定相同权限, 请勿重复设置",
             "1015": "仅允许【内部定制用户】绑定【内部定制商品】",
             "1016": "仅允许【定制用户】绑定【定制商品】",
-
+            "1017": 'Please Check Email Format.',
         }
         self.error_code = error_code
         if self.error_code in self.error_dic:

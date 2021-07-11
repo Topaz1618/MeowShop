@@ -210,7 +210,12 @@
                         {% if error_code == "5000" %}            <!-- 增加了一个判断语句 -->
                             <div class="title-1">Error User login</div>
                             <h3>The current page must be logged in to access :(</h3>
-			    <p class="d-inline-block" style="max-width:750px">The user is not logged in, please log in before accessing it.</p>
+			                 <p class="d-inline-block" style="max-width:750px">The user is not logged in, please log in before accessing it.</p>
+                            <div class="btn-group-1" style="margin-top: 6.8%">
+                            <a class="btn btn-lg btn-primary" href="/login">Log in</a>
+                            <a class="btn btn-lg btn-primary" href="/">Back</a>
+                            </div>
+
                         {% else %}
 
                             {% if error_code != "5000" and error_code != "5006" and error_code != "5007" %}            <!-- 增加了一个判断语句 -->

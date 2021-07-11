@@ -10,8 +10,7 @@ from tornado.options import define, options
 from base import IndexHandler, PageErrorHandler, GetVerisonHandler, UploadFileHandler, MergeFileHandler, DownloadZipHandler, \
     DownloadHandler, TestHandler, RecordTokenHandler, RecordUsageHandler
 
-from auth import LoginHandler, LogoutHandler,  \
-    RegisterHandler, VerifyCodeHandler, RestPasswordView
+from auth import LoginHandler, LogoutHandler, RegisterHandler, VerifyCodeHandler, RestPasswordView, CreateUserHandler
 
 from backend import StatusHandler, BackendHandler, GetResourceHandler,  CreateGoodsHanler, ManagerResources, ManagerMenuHandler,\
     GetVideoListHandler, ManagerViewFilesHandler, RenewalMemberHandler, UpdateGoodsHanler, IncreaseUserHandler, ShowInternalUsersHandler,\
@@ -43,7 +42,8 @@ if __name__ == "__main__":
     application = tornado.web.Application([
         # 用户系统
 
-        (r'/register', RegisterHandler),
+        (r'/register_verify_code', RegisterHandler),
+        (r'/register', CreateUserHandler),
         (r'/login', LoginHandler),
         (r'/logout', LogoutHandler),
         (r'/reset_password', RestPasswordView),

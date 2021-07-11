@@ -99,8 +99,11 @@ class LoginHandler(BaseHandler):
             if username is None or len(username) == 0:
                 raise AuthError("1003")
 
-            if len(re.findall("1[3|4|5|6|7|8|9][0-9]{9}", username)) == 0:
-                raise AuthError("1009")
+            # if len(re.findall("1[3|4|5|6|7|8|9][0-9]{9}", username)) == 0:
+            #     raise AuthError("1009")
+
+            if len(re.findall("[^@]+@[^@]+\.[^@]+", username)) == 0:
+                raise AuthError("1017")
 
             if password is None or len(password) == 0:
                 raise AuthError("1003")
@@ -170,16 +173,16 @@ class RegisterHandler(BaseHandler):
             username = self.get_argument('email', None)
             password1 = self.get_argument('password1', None)
             password2 = self.get_argument('password2', None)
-            # verifycode = self.get_argument('verifycode', None)
+            verifycode = self.get_argument('verifycode', None)
 
             if username is None or len(username) == 0:
                 raise AuthError("1003")
 
-            # if len(re.findall("1[3|4|5|6|7|8|9][0-9]{9}", username)) == 0:
-            #     raise AuthError("1009")
-
-            if len(re.findall("[^@]+@[^@]+\.[^@]+"), username) == 0:
+            if len(re.findall("1[3|4|5|6|7|8|9][0-9]{9}", username)) == 0:
                 raise AuthError("1009")
+            #
+            # if len(re.findall("[^@]+@[^@]+\.[^@]+"), username) == 0:
+            #     raise AuthError("1009")
 
             if password1 is None or len(password1) == 0:
                 raise AuthError("1003")
@@ -198,18 +201,18 @@ class RegisterHandler(BaseHandler):
                 raise AuthError("1005")
 
             # For verification code
-            # code_exists = session.query(ShopVerifyCode).filter(
-            #     ShopVerifyCode.phonenum == username,
-            #     ShopVerifyCode.code == verifycode
-            # ).first()
+            code_exists = session.query(ShopVerifyCode).filter(
+                ShopVerifyCode.phonenum == username,
+                ShopVerifyCode.code == verifycode
+            ).first()
 
-            # if code_exists is None:
-            #     raise AuthError("1006")
+            if code_exists is None:
+                raise AuthError("1006")
 
-            # interval_status = (1 if time() - code_exists.store_time < VERIFYCODE_TIMEOUT else 0)
-            #
-            # if not interval_status:
-            #     raise AuthError("1006")
+            interval_status = (1 if time() - code_exists.store_time < VERIFYCODE_TIMEOUT else 0)
+
+            if not interval_status:
+                raise AuthError("1006")
 
             password = hmac.new(SECRET, password1.encode(), hashlib.md5).hexdigest()
             user = ShopUser(phonenum=username, password=password, access_times=0)
@@ -275,6 +278,64 @@ class VerifyCodeHandler(BaseHandler):
             message = {'msg': "Unknow Error", 'error_code': '1010'}
 
         self.write(message)
+
+
+class CreateUserHandler(BaseHandler):
+    def get(self):
+        self.render('create_user.html')
+
+    def post(self):
+        try:
+            username = self.get_argument('username', None)
+            password1 = self.get_argument('password1', None)
+            password2 = self.get_argument('password2', None)
+
+            print(username, password1, password2)
+
+            if username is None or len(username) == 0:
+                raise AuthError("1003")
+
+            if len(re.findall("[^@]+@[^@]+\.[^@]+", username)) == 0:
+                raise AuthError("1017")
+
+            if password1 is None or len(password1) == 0:
+                raise AuthError("1003")
+
+            if password1 != password2:
+                raise AuthError("1003")
+
+            session = conn_db()
+            user_exists = session.query(ShopUser).filter(ShopUser.phonenum == username).first()
+            if user_exists is not None:
+                raise AuthError("1001")
+
+            pwd_verify = re.match(r'[A-Za-z0-9@#$%^&+=]{8,16}$', password1)
+
+            if pwd_verify is None:
+                raise AuthError("1005")
+
+            password = hmac.new(SECRET, password1.encode(), hashlib.md5).hexdigest()
+            user = ShopUser(phonenum=username, password=password, access_times=0)
+            session.add(user)
+            session.commit()
+            print("!!!!!!")
+            handsel_member(username)
+
+            message = {
+                'msg': 'register successful',
+                'error_code': '1000'
+            }
+
+        except AuthError as e:
+            print(e)
+            message = {'msg':  e.error_msg, 'error_code': e.error_code}
+
+        except Exception as e:
+            print(e)
+            message = {'msg': "Unknow Error", 'error_code': '1010'}
+
+        self.write(message)
+
 
 
 class RestPasswordView(BaseHandler):
