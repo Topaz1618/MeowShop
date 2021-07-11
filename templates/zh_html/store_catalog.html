@@ -243,11 +243,11 @@
                                 {% if product_info["is_discount"] and product_info["discount"] !="100" %}
 {#                                    <span name="price_ori" class="h4" style="display: inline-block; text-decoration-line: line-through;"></span>#}
                                     <div class="product-price" style="height: 28px">
-                                         <span  style="color: #264555; text-decoration-line: line-through; font-size: 22px;"> ¥ {{ product_info["price"] }}</span>
-                                         <span name="price" style="margin-left: 2%"> ¥ {{ get_discount_price(product_info["price"], product_info["discount"]) }}</span>
+                                         <span  style="color: #264555; text-decoration-line: line-through; font-size: 22px;"> £ {{ product_info["price"] }}</span>
+                                         <span name="price" style="margin-left: 2%"> £ {{ get_discount_price(product_info["price"], product_info["discount"]) }}</span>
                                     </div>
                                 {% else %}
-                                    <div name="price" class="product-price" style="height: 28px">¥ {{ product_info["price"] }}</div>
+                                    <div name="price" class="product-price" style="height: 28px">£ {{ product_info["price"] }}</div>
 
                                 {% end %}
 

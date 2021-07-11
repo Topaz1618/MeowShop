@@ -254,9 +254,9 @@
                                             <div class="tag tag-sm">New</div>
                                           {% end %}
                                       </div>
-{#                                      <div class="product-like" onclick="MyHeart({{ product_info["goods_id"] }})">#}
-{#                                        <div class="product-like-icon icon mdi-heart"></div>#}
-{#                                      </div>#}
+                                      <div class="product-like" onclick="MyHeart({{ product_info["goods_id"] }})">
+                                        <div class="product-like-icon icon mdi-heart"></div>
+                                      </div>
                                     </div>
                                   </div>
 
@@ -271,11 +271,11 @@
                                 {% if product_info["is_discount"] and product_info["discount"] !="100" %}
 {#                                    <span name="price_ori" class="h4" style="display: inline-block; text-decoration-line: line-through;"></span>#}
                                     <div class="product-price" style="height: 28px">
-                                         <span  style="color: #264555; text-decoration-line: line-through; font-size: 22px;"> ¥ {{ product_info["price"] }}</span>
-                                         <span name="price" style="margin-left: 2%"> ¥ {{ get_discount_price(product_info["price"], product_info["discount"]) }}</span>
+                                         <span  style="color: #264555; text-decoration-line: line-through; font-size: 22px;"> £ {{ product_info["price"] }}</span>
+                                         <span name="price" style="margin-left: 2%"> £ {{ get_discount_price(product_info["price"], product_info["discount"]) }}</span>
                                     </div>
                                 {% else %}
-                                    <div name="price" class="product-price" style="height: 28px">¥ {{ product_info["price"] }}</div>
+                                    <div name="price" class="product-price" style="height: 28px">£ {{ product_info["price"] }}</div>
 
                                 {% end %}
 
@@ -805,13 +805,13 @@
             success: function (response) {
                 var error_code = response["error_code"];
                 if (error_code == "1000"){
-                    alert("收藏成功");
+                    alert("Favorite Success");
                     // Todo: 如果不足三个手动加上去
                     {#window.location.reload();#}
                     return;
                 }
                 else if(error_code == "7006"){
-                    alert("已收藏");
+                    alert("Already in the favorite list");
                 }
             }
         });
@@ -831,12 +831,12 @@
             success: function (response) {
                 var error_code = response["error_code"];
                 if (error_code == "1000"){
-                    alert("取消收藏成功");
-                    window.location.reload()
+                    alert("Unfavorite successfully");
+                    window.location.reload();
                     return;
                 }
                 else if(error_code == "7007"){
-                    alert("收藏项不存在");
+                    alert("Favorite does not exist");
                 }
             }
         });

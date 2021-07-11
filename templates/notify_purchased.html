@@ -65,6 +65,8 @@
                                            style="font-size: 28px; font-weight: 500;"> Meow Shop </a>
                                     </li>
 
+
+
                                 </div>
                             </div>
                             <div class="navbar-logo navbar-fullwidth-logo">
@@ -73,10 +75,29 @@
                             </div>
                             <div class="text-block text-block-2 d-md-flex align-items-center justify-content-center">
                                 <div class="list list-icons-2" >
-                                    <div id="shop_phone" class="list-item" style="display: none">
-                                        <div class="list-icon icon onclinic-phone"></div>
-                                        <span class="h5"><a class="link" href="tel:#">+8615600803270</a></span>
-                                    </div>
+{#                                    <div id="shop_phone" class="list-item" style="display: none">#}
+{#                                        <div class="list-icon icon onclinic-phone"></div>#}
+{#                                        <span class="h5"><a class="link" href="tel:#">+8615600803270</a></span>#}
+{#                                    </div>#}
+
+                                    {% if username == None %}
+                                            <a class="navbar-navigation-root-link" style="display: inline-block; " href="/login">
+                                                <span id="username" class="mdi-account-outline" style="display: inline-block"> Log in </span>
+                                            </a>
+                                            <a class="navbar-navigation-root-link" style="display: inline-block; " href="/logout">
+                                                <span id="username" class="mdi-logout" style="display: inline-block"> Log out </span>
+                                            </a>
+
+                                        {% else %}
+                                            <a class="navbar-navigation-root-link" style="display: inline-block; " href="/user_info">
+                                                <span id="username" class="mdi-account" style="display: inline-block"> {{ username }} </span>
+                                            </a>
+                                            <a class="navbar-navigation-root-link" style="display: inline-block; " href="/logout">
+                                                <span id="username" class="mdi-logout" style="display: inline-block"> Log out </span>
+                                            </a>
+
+                                    {% end %}
+
                                 </div>
                             </div>
 
@@ -126,13 +147,34 @@
                                           style="display: inline-block; border: 1px solid white;"> Order List </span>
                                 </a>
                             </li>
-                            <li class="navbar-navigation-root-item" style="margin-left: -58px;">
-                                <a class="navbar-navigation-root-link" style="display: inline-block; "
-                                   href="/user_info">
-                                    <span class="product-btn btn topaz btn-icon mdi-account"
+{#                            <li class="navbar-navigation-root-item" style="margin-left: -58px;">#}
+{#                                <a class="navbar-navigation-root-link" style="display: inline-block; "#}
+{#                                   href="/user_info">#}
+{#                                    <span class="product-btn btn topaz btn-icon mdi-account"#}
+{#                                          style="display: inline-block; border: 1px solid white;"> My Account </span>#}
+{#                                </a>#}
+{#                            </li>#}
+
+
+                            <li class="navbar-navigation-root-item rd-navbar--has-dropdown rd-navbar-submenu"  style="margin-left: -58px; min-width: 248px">
+                                <a class="navbar-navigation-root-link" style="display: inline-block; " href="/user_info">
+                                    <span class="product-btn btn topaz btn-icon mdi-note-outline"
                                           style="display: inline-block; border: 1px solid white;"> My Account </span>
-                                </a>
+                                </a><span class="rd-navbar-submenu-toggle"></span>
+                                <ul class="navbar-navigation-dropdown rd-navbar-dropdown">
+                                    <li class="navbar-navigation-back">
+                                        <button class="navbar-navigation-back-btn">Back</button>
+                                    </li>
+                                    <li class="navbar-navigation-dropdown-item">
+                                        <a class="navbar-navigation-dropdown-link" href="/my_items">My Items</a>
+                                    </li>
+                                    <li class="navbar-navigation-dropdown-item">
+                                        <a class="navbar-navigation-dropdown-link" href="/user_info">Account </a>
+                                    </li>
+                                </ul>
                             </li>
+
+
                             <li class="navbar-navigation-root-item rd-navbar--has-dropdown rd-navbar-submenu"
                                 style="margin-left: -58px;">
                                 <a class="navbar-navigation-root-link" style="display: inline-block; " href="/about_us">
@@ -147,7 +189,7 @@
                                         <a class="navbar-navigation-dropdown-link" href="/about_us">About Us</a>
                                     </li>
                                     <li class="navbar-navigation-dropdown-item">
-                                        <a class="navbar-navigation-dropdown-link" href="/feedback">Github</a>
+                                        <a class="navbar-navigation-dropdown-link" href="https://github.com/Topaz1618?tab=repositories">Github</a>
                                     </li>
                                 </ul>
                             </li>
@@ -177,7 +219,7 @@
                                 <div class="product-text" style="margin-top: 1%">
                                     <a class="link link-inherit" style="text-decoration: underline" href="/single_product?goods_name={{  data[0]["goods_name"] }}&goods_id={{  data[0]["goods_id"] }}&goods_price={{  data[0]["price"] }}">{{  data[0]["goods_name"] }}</a>
                                 </div>
-                                <div name="price" class="product-price" >¥ {{ data[0]["price"] }}</div>
+                                <div name="price" class="product-price" >£ {{ data[0]["price"] }}</div>
 
 
                                 <div class="title-1 " style="margin-top: 2%">{{ error_message }}</div>

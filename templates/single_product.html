@@ -197,11 +197,11 @@
                 </div>
                   {% if data["is_discount"] and data["discount"] !="100" %}
                     <div class="product-price h4" style="height: 28px; margin-top: 2%;" >
-                        <span  style="color: #264555; text-decoration-line: line-through; font-size: 28px;"> ¥ {{ data["price"] }}</span>
-                        <span name="price" style="margin-left: 3%; font-size: 22px"> ¥ {{ get_discount_price(data["price"], data["discount"]) }}</span>
+                        <span  style="color: #264555; text-decoration-line: line-through; font-size: 28px;"> £ {{ data["price"] }}</span>
+                        <span name="price" style="margin-left: 3%; font-size: 22px"> £ {{ get_discount_price(data["price"], data["discount"]) }}</span>
                     </div>
                   {% else %}
-                        <div name="price" class="product-price h4" style=" margin-top: 2%;"> ¥ {{ data["price"] }}</div>
+                        <div name="price" class="product-price h4" style=" margin-top: 2%;"> £ {{ data["price"] }}</div>
                   {% end %}
 
                 <div class="product-text">{{ data["short_desc"] }}</div>
@@ -287,7 +287,7 @@
                     <ul class="list list-marked">
                         <li class="list-item">商品名称: {{ data["goods_name"] }}</li>
                         <li class="list-item">商品类别: {{ data["main_menu"] }}</li>
-                        <li class="list-item">价格: ¥ {{ data["price"] }}</li>
+                        <li class="list-item">价格: £ {{ data["price"] }}</li>
                     </ul>
                     <p> <a class="link link-inherit topaz_link" href="/about_us">@ Topaz 制作</a>  </p>
 

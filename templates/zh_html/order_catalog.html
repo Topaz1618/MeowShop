@@ -200,7 +200,7 @@
                             <span class="test-5" style=" display: inline-block; width: 31%; max-width: 380px; min-width: 128px; overflow-x: auto">{{ i }}</span>
                             <span style="font-size:1.02rem; display: inline-block; width: 20%; max-width: 20%; word-break: break-all">{{ data[i]["product_name"] }}</span>
                             {# <span style="display: inline-block; width: 100px">{{ data[i]["amount"] }}</span> #}
-                            <span style="display: inline-block; width: 12%; overflow: hidden !important;text-overflow: ellipsis !important;">¥ {{ data[i]["pay_amount"] }}</span>
+                            <span style="display: inline-block; width: 12%; overflow: hidden !important;text-overflow: ellipsis !important;">£ {{ data[i]["pay_amount"] }}</span>
 
                             {% if data[i]["channel"] == 0 %}
                                 <span style="display: inline-block; width: 10%">微信</span>
@@ -271,9 +271,9 @@
 
                             <div style="margin-top: 18px; overflow: hidden; text-overflow:ellipsis; white-space:nowrap; ">
                                 <div style="display: inline-block; margin-left: 31px">
-                                    <span class="icon mdi-wallet" >总价: ¥ {{ data[i]["amount"] }}</span>
-                                    <span class="icon mdi-sale" style="margin-left: 16px;">优惠: ¥ {{  data[i]["discounted_amount"] }}</span>
-                                    <span class="icon mdi-wallet" style="margin-left: 16px;">实付款: ¥ {{ data[i]["pay_amount"] }}</span>
+                                    <span class="icon mdi-wallet" >总价: £ {{ data[i]["amount"] }}</span>
+                                    <span class="icon mdi-sale" style="margin-left: 16px;">优惠: £ {{  data[i]["discounted_amount"] }}</span>
+                                    <span class="icon mdi-wallet" style="margin-left: 16px;">实付款: £ {{ data[i]["pay_amount"] }}</span>
 
                                 </div>
 

@@ -195,16 +195,16 @@
                                         {% if data[i]["Discount"] != 100  %}
                                             <div class="box-price-text h6">套餐优惠价:</div>
                                             <div class="box-price h3">
-                                                <span style="margin-left: 10px;color:#264555;font-size: 1.365rem; text-decoration: line-through;"> ¥ {{ data[i]["Money"] }} </span>
-                                                <span style="margin-left:15px;"> ¥ {{ get_discount_price(data[i]["Money"], data[i]["Discount"]) }}  </span>
-{#                                                ¥ {{ data[i]["Money"] }}#}
+                                                <span style="margin-left: 10px;color:#264555;font-size: 1.365rem; text-decoration: line-through;"> £ {{ data[i]["Money"] }} </span>
+                                                <span style="margin-left:15px;"> £ {{ get_discount_price(data[i]["Money"], data[i]["Discount"]) }}  </span>
+{#                                                £ {{ data[i]["Money"] }}#}
                                             </div>
                                         {% else %}
                                         <div class="box-price-text h6">价格:</div>
                                             <div class="box-price h3">
-                                                <span style=""> ¥ {{ data[i]["Money"] }} </span>
+                                                <span style=""> £ {{ data[i]["Money"] }} </span>
 
-{#                                                ¥ {{ data[i]["Money"] }}#}
+{#                                                £ {{ data[i]["Money"] }}#}
                                             </div>
 
                                         {% end %}
@@ -258,8 +258,8 @@
                                     <div class="box-item">
                                         <div class="box-price-text h6">套餐优惠价:</div>
                                         <div class="box-price h3">
-                                            <span style="margin-left: 10px;color:#264555;font-size: 1.365rem; text-decoration: line-through;"> ¥ {{ data[i]["Money"] }} </span>
-                                            <span style="margin-left:15px;"> ¥ 0 </span>
+                                            <span style="margin-left: 10px;color:#264555;font-size: 1.365rem; text-decoration: line-through;"> £ {{ data[i]["Money"] }} </span>
+                                            <span style="margin-left:15px;"> £ 0 </span>
 
                                         </div>
                                     </div>
