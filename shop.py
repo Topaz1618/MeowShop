@@ -10,7 +10,7 @@ from code import TokenError, AuthError, ShopError, BaseError, DBError, PayError
 from config import SECRET_KEY, PRODUCT_PAGE_LIMIT, MYHEART_PAGE_LIMIT, MYITEMS_PAGE_LIMIT, PACKAGE_LIST, PAGE_LIMIT, ZIP_LIMIT
 from shop_enum import GoodsType
 from shop_utils import auth_login_redirect, member_login_redirect, get_token_user, get_discount_price, get_discount, add_num, subtract_num, \
-    async_member_login_redirect, admin_login_redirect, producer_login_redirect
+    async_member_login_redirect, admin_login_redirect, async_auth_login_redirect,  producer_login_redirect
 from base_extensions import get_user_id
 from order_extensions import check_is_member, get_personal_items    # Todo: 待修改
 from shop_extensions import get_resource_total_counts, generate_feature_items, generate_zip_items, get_product_dict, \
@@ -92,7 +92,7 @@ class FeedbackHandler(BaseHandler):
 
 class CheckIsBoughtHandler(BaseHandler):
     """ 检查当前商品是否已经购买 """
-    @async_member_login_redirect
+    @async_auth_login_redirect
     async def post(self):
         try:
             goods_id = self.get_argument("goods_id", None)
@@ -101,6 +101,7 @@ class CheckIsBoughtHandler(BaseHandler):
             username = get_token_user(cookie_token, token)
             uid = get_user_id(username)
             is_bought = check_is_bought(uid, goods_id)
+
             message = {'msg': is_bought, 'error_code': "1000"}
 
         except BaseError as e:
@@ -120,6 +121,7 @@ class CheckIsBoughtHandler(BaseHandler):
             print(e)
             message = {'msg': "Unknow Error", 'error_code': '1010'}
 
+        print("!!!!!!!!!!!!!1", message)
         self.write(message)
 
 
@@ -134,6 +136,7 @@ class NotifyPurchasedHandler(BaseHandler):
             if goods_id is not None:
                 goods_name = get_goods_name(goods_id)
                 data = get_product_dict(goods_name)
+                print("!!!!!!", goods_id, goods_name)
                 return self.render("notify_purchased.html", error_message=info, btn=back_button, data=data)
             else:
                 return self.render("error_page.html", error_message="未知商品 ID")
@@ -142,6 +145,7 @@ class NotifyPurchasedHandler(BaseHandler):
             return self.render("error_page.html", error_message=e.error_msg)
 
         except Exception as e:
+            print("!!!!", e)
             return self.render("error_page.html", error_message="Unknow Error")
 
 

@@ -80,23 +80,12 @@
 {#                                        <span class="h5"><a class="link" href="tel:#">+8615600803270</a></span>#}
 {#                                    </div>#}
 
-                                    {% if username == None %}
-                                            <a class="navbar-navigation-root-link" style="display: inline-block; " href="/login">
-                                                <span id="username" class="mdi-account-outline" style="display: inline-block"> Log in </span>
-                                            </a>
+
                                             <a class="navbar-navigation-root-link" style="display: inline-block; " href="/logout">
                                                 <span id="username" class="mdi-logout" style="display: inline-block"> Log out </span>
                                             </a>
 
-                                        {% else %}
-                                            <a class="navbar-navigation-root-link" style="display: inline-block; " href="/user_info">
-                                                <span id="username" class="mdi-account" style="display: inline-block"> {{ username }} </span>
-                                            </a>
-                                            <a class="navbar-navigation-root-link" style="display: inline-block; " href="/logout">
-                                                <span id="username" class="mdi-logout" style="display: inline-block"> Log out </span>
-                                            </a>
 
-                                    {% end %}
 
                                 </div>
                             </div>

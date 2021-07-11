@@ -297,6 +297,44 @@ def member_login_redirect(func):
     return inner
 
 
+def async_auth_login_redirect(func):
+    def token_verification(remote_ip, token):
+        uid, register_time = common_token_verification(remote_ip, token)
+        return True
+
+    async def inner(self, *args, **kwargs):
+        cookie_token = self.get_secure_cookie("token")
+        token = self.get_argument("Authorization", None)
+        try:
+            if token is None or len(token) == 0:
+                if cookie_token is None:
+                    raise TokenError("5000")
+                else:
+                    print("Use cookie token")
+                    token = cookie_token
+
+            if isinstance(token, bytes):
+                token = token.decode()
+
+            x_real_ip = self.request.headers.get("X-Real-IP")
+            remote_ip = x_real_ip or self.request.remote_ip
+
+            token_verification(remote_ip, token)
+
+        except TokenError as e:
+            self.render("authority_error.html", error_message=e.error_msg, error_code=e.error_code)
+            return
+
+        except Exception as e:
+            print("Async member token exception >>>> ", e)
+            self.render("login.html")
+            return
+
+        await func(self, *args, **kwargs)
+    return inner
+
+
+
 def async_member_login_redirect(func):
     def token_verification(remote_ip, token):
         uid, register_time = common_token_verification(remote_ip, token)
