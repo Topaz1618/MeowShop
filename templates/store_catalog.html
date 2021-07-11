@@ -379,42 +379,32 @@
                         </div>
                     {% end %}
                 </div>
-{#                  <div class="rd-form-btn text-right" style="margin-top: 2.8%">#}
-{#                      <button class="btn btn-lg" onclick="FilterProduct()" style="min-width: 10px; padding: 0.18rem 0.6875rem;font-size: 0.98rem;" type="submit">确认</button>#}
-{#                  </div>#}
               </div>
 
-              <div class="widget" style="margin-top: 6.2%">
-                <div class="widget-title h5" style="font-weight: 600; font-size: 1.28rem;">My favorite</div>
+              <div class="widget" style="margin-top: 6.2%;     border-top: 1px solid white;">
+                <div class="widget-title h5" style="font-weight: 600; font-size: 1.28rem; ">My favorites</div>
 {#                  {% if len(myheart_list) == 0 %}#}
-{#                    <div class="widget-body"> 您的收藏夹为空 </div>#}
-{##}
-{#                  <div class="widget-body">No products in the cart.</div>#}
-{#                  {% else %}#}
-{#                    <table class="table table-1" style="margin-top: 6%">#}
-{#                  <tbody>#}
-{##}
-{#                  {% for product_info in myheart_list %}#}
-{#                    <tr>#}
-{#                    <td>#}
-{#                      <div class="link link-inherit topaz_link icon mdi-delete" onclick="DeleteMyHeart({{ product_info["goods_id"] }})"></div>#}
-{##}
-{#                    </td>#}
-{#                    <td>#}
-{#                      <div style="width: 60px">#}
-{#                          <img src="{{ product_info["image_path"] }}" alt="" style="max-width: 60px; max-height: 60px; min-height: 60px; min-width: 60px">#}
-{#                      </div>#}
-{#                    </td>#}
-{#                    <td>#}
-{#                        <a class="link link-inherit" href="/single_product?goods_name={{ product_info["goods_name"] }}&goods_id={{ product_info["goods_id"] }}&goods_price={{ product_info["goods_price"] }}" style="font-size: 0.98rem;">{{ product_info["goods_name"] }}#}
-{#                        </a>#}
-{#                    </td>#}
-{##}
-{#                  </tr>#}
-{#                  {% end %}#}
-{##}
-{#                </tbody>#}
-{#                </table>#}
+
+                    <div id="empty_heart" class="widget-body">Your favorites are empty </div>
+
+                  <table class="table table-1" style="margin-top: 6%">
+                      <tbody id="my_heart" >
+                      </tbody>
+                  </table>
+
+                  <table  id="heart_model" style="display: none">
+                    <tr >
+                        <td>
+                          <div style="width: 60px">
+                              <img tag="favorite_img"  src="/static/images/shop/1.jpg" alt="" style="max-width: 60px; max-height: 60px; min-height: 60px; min-width: 60px">
+                          </div>
+                        </td>
+                        <td>
+                            <a class="link link-inherit" href="/" style="font-size: 0.98rem;">
+                            </a>
+                        </td>
+                    </tr>
+                  </table>
 {#                  <a class="comment-link" href="/my_heart"  style="float: right;font-size: 0.98rem;  margin-top: 1.2168rem">#}
 {#                      <span>查看更多</span>#}
 {#                      <span class="comment-link-icon mdi-chevron-down"></span>#}
@@ -422,13 +412,14 @@
 {#                  </a>#}
 {#                    <a class="thumbnail-link link topazlink" href="/my_heart" style="float: right; font-size: 0.98rem; margin-top: 1.2168rem; text-decoration: underline">More <span style="display: inline-block; " class="comment-link-icon mdi-chevron-down"></span></a>#}
 {##}
-{#                  {% end %}#}
               </div>
 
             </div>
 
           </div>
         </div>
+
+
           <ul class="pag pag-light justify-content-center">
 
 
@@ -675,37 +666,42 @@
     }
 
 
-    // window.onload=function()
-    // {
-    //     // 页面加载后发请求
-    //     $.ajax({
-    //         url: "/test",
-    //         type: "GET",
-    //         data: {},
-    //         processData: false,
-    //         contentType: false,
-    //         success: function (response) {
-    //             console.log(response)
-    //         }
-    //     })
-    // };
-
-    function Testajax() {
-        // 页面加载时发起请求
-        var formData = new FormData();
-        formData.append("goods_id", 1);
-
+    function GetFavorites() {
         $.ajax({
-            url: "/test",
-            type: "GET",
-            data: formData,
+            url: "/my_heart",
+            type: "POST",
+            {#async:false,#}
             processData: false,
             contentType: false,
             success: function (response) {
-                console.log(response)
+                console.log(response["msg"]);
+                if (response["msg"].length > 0){
+                    empty_heart = document.getElementById("empty_heart");
+                    empty_heart.style.display = "none";
+
+                    var my_heart_el = document.getElementById("my_heart");
+                    var heart_model = document.getElementById("heart_model").children[0].children[0];
+                    data = response["msg"];
+                    for (let i=0; i < data.length; i++){
+                        console.log(data[i]["goods_name"]);
+                        {#var current_data = data[i];#}
+                        var new_tr = heart_model.cloneNode(true);
+                        new_tr.id = "tr_" + i;
+                        var image = new_tr.getElementsByTagName("img")[0];
+                        var a_tag = new_tr.getElementsByTagName("a")[0];
+
+                        image.src = data[i]["image_path"];
+                        a_tag.innerText = data[i]["goods_name"];
+                        a_tag.href = "/single_product?goods_name=" + data[i]["goods_name"] + "&goods_id=" + data[i]["goods_id"] + "&goods_price=" + data[i]["goods_price"];
+                        console.log(new_tr)
+                        my_heart_el.appendChild(new_tr);
+                    }
+                }
             }
         });
     }
+
+    GetFavorites();
 
     function DestoryOtherFilter() {
         console.log("!!!! DestoryOtherFilter");

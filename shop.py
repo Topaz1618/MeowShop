@@ -810,18 +810,29 @@ class MyHeartItemsHandler(BaseHandler):
             print(e)
             self.render("error_page.html", error_message="Unknow Error")
 
-    @auth_login_redirect
     def post(self):
         try:
             cookie_token = self.get_secure_cookie("token")
-            token = self.get_argument("Authorization", None)
-            username = get_token_user(cookie_token, token)
 
-            uid = get_user_id(username)
-            start = 0
-            end = 3
+            if cookie_token is None:
+                data = list()
 
-            data = get_myheart_list(uid, start, end)
+            else:
+
+                token = cookie_token
+
+                if isinstance(token, bytes):
+                    token = token.decode()
+
+                token_dic = jwt.decode(token.encode(), SECRET_KEY)
+                username = token_dic.get('phonenum')
+
+                uid = get_user_id(username)
+                start = 0
+                end = 3
+
+                data = get_myheart_list(uid, start, end)
+
             message = {'msg': data, 'error_code': '1000'}
 
         except BaseError as e:

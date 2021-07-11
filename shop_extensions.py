@@ -760,7 +760,7 @@ def get_myheart_list(uid, start=0, end=3, is_shop=False):
             ShopMyHeartItems.uid == uid,
         )[start:end]
 
-    myheart_list = []
+    myheart_list = list()
     for myheart_obj in myheart_list_obj:
         goods_id = myheart_obj.goods_id
         goods_obj = session.query(ShopGoods).filter(
