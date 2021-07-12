@@ -96,12 +96,12 @@ A shopping websites that sell virtual items made by [Topaz](https://topaz1618.gi
 ## Alipay sandbox environment
 Click to view [Alipay Sandbox Introduction](https://openhome.alipay.com/platform/appDaily.htm)
 
-1. Download
+- Download
    Use the Android mobile browser to scan the QR code sandbox wallet below
 
    <img alt="下载沙箱钱包" width="160" heigth="160" class="importGuideSubStepContentImg___Kygdb" src="https://zos.alipayobjects.com/rmsportal/CaXHDDXkdxikcZP.png">
 
-2. Log in to the Alipay sandbox APP
+- Log in to the Alipay sandbox APP
 
     Alipay sandbox default buyer account
     ```
