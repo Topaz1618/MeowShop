@@ -6,29 +6,29 @@ A shopping websites that sell virtual items made by [Topaz](https://topaz1618.gi
 
 
 # Features:
-    - User registration/login/logout
-    - Support member recharge
-    - Merchandise
-        - Merchandise discount
-        - Support favorite Product
-        - Support tags to prompt discounted products and new products
-        - Support product classification filtering
-        - Price sorting
-        - Online payments
+- User registration/login/logout
+- Support member recharge
+- Merchandise
+    - Merchandise discount
+    - Support favorite Product
+    - Support tags to prompt discounted products and new products
+    - Support product classification filtering
+    - Price sorting
+    - Online payments
 
-    - Order section
-        - Basic order information display: third-party order number, payment time, discount amount, actual payment amoun
-        - Order deletion
-        - Repay unclosed orders
-        - Timeout orders are automatically closed
+- Order section
+    - Basic order information display: third-party order number, payment time, discount amount, actual payment amoun
+    - Order deletion
+    - Repay unclosed orders
+    - Timeout orders are automatically closed
 
-    - Backstage management
-        - Product release
-        - Product modification: Price, discount, description
-        - Product deletion
+- Backstage management
+    - Product release
+    - Product modification: Price, discount, description
+    - Product deletion
 
-    - Others
-        - New users automatically gift members
+- Others
+    - New users automatically gift members
 
 
 # Environment
