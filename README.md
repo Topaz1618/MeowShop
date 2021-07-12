@@ -69,7 +69,7 @@ A shopping websites that sell virtual items made by [Topaz](https://topaz1618.gi
  DATABASE = "XXDB"
 
  DEBUG_PAY = True                               // Use Sandbox environment
- APPID = "2021000116669851"                     // App ID
+ APPID = ""                                     // App ID
  APP_NOTIFY_URL = "https://www.xx.com/update_order"   // Callback
  ALIPAY_PUBLIC_KEY = "public_key.pem"           // Public Key
  ALIPAY_PRIVATE_KEY = "private_key.pem"         // Private key
@@ -85,7 +85,7 @@ A shopping websites that sell virtual items made by [Topaz](https://topaz1618.gi
 
 - Sandbox environment web-side payment (used in this project)
 
-- Web payment in production environment,need to upload business license, only for enterprise users. Click to view [Create Company Account Application](https://opendocs.alipay.com/open/270/01didh)
+- Web payment in production environment,need to upload business license, only for enterprise users. You can click to view [Create Company Account Application](https://opendocs.alipay.com/open/270/01didh)
 
     The payment process of the production environment is the same as that of the sandbox environment, no need to modify the code, just modify the following configuration items
     ```
