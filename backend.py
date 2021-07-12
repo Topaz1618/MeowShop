@@ -27,14 +27,14 @@ class StatusHandler(BaseHandler):
 
         old_users_list = list()
         access_count_list = dict()
-        with open("user.txt", "r") as f:
-            while True:
-                data = f.readline()
-                if not data:
-                    break
-                user, access_times = data.strip("\n").split(",")
-                access_count_list[user] = access_times
-                old_users_list.append(user)
+        # with open("user.txt", "r") as f:
+        #     while True:
+        #         data = f.readline()
+        #         if not data:
+        #             break
+        #         user, access_times = data.strip("\n").split(",")
+        #         access_count_list[user] = access_times
+        #         old_users_list.append(user)
 
         register_amount, usage_amount, today_usage_amount = count_registered_user(old_users_list)
         return register_amount, usage_amount, today_usage_amount, access_count_list

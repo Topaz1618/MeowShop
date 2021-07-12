@@ -83,7 +83,7 @@
                             data-multi-switch='{"targets":".rd-navbar","scope":".rd-navbar","isolate":"[data-multi-switch]"}'></button>
                     <div class="navbar-logo">
                         <a class="navbar-navigation-root-link" href="/backend"
-                           style="width: 160%; font-size: 22px; font-weight: 500; margin-top: -4%;"> Shop 后台管理 </a>
+                           style="width: 160%; font-size: 22px; font-weight: 500; margin-top: -4%;"> Backstage Management </a>
                     </div>
                 </div>
                 <div class="navbar-container">
@@ -93,7 +93,7 @@
                                 <div class="list-item">
                                     <li class="navbar-navigation-root-item">
                                         <a id="shop_title" class="navbar-navigation-root-link" href="/backend"
-                                           style="font-size: 28px; font-weight: 500;"> Shop 后台管理 </a>
+                                           style="font-size: 28px; font-weight: 500;"> Backstage Management  </a>
                                     </li>
                                 </div>
                             </div>
@@ -107,6 +107,10 @@
                                         <a class="navbar-navigation-root-link" style="display: inline-block; " href="/user_info">
                                             <span id="username" class="mdi-account" style="display: inline-block"> {{ username }} </span>
                                         </a>
+                                        <a class="navbar-navigation-root-link" style="display: inline-block; " href="/logout">
+                                                <span id="username" class="mdi-logout" style="display: inline-block"> Log out </span>
+                                        </a>
+
                                     </div>
                                 </div>
                             </div>
@@ -128,7 +132,7 @@
                 <div class="navbar-container navbar-sidebar" style="margin-top: 1%">
                     <div class="navbar-cell flex-grow-1" style="border-bottom: 1px solid #dde0e9;">
                         <ul class="navbar-navigation rd-navbar-nav" style="margin-left: 58px">
-                            <li class="navbar-navigation-root-item active" style="margin-left: -58px;">
+                            <li class="navbar-navigation-root-item active" style="margin-left: -66px;">
                                 <a class="navbar-navigation-root-link" style="display: inline-block; " href="/backend">
                                     <span class="product-btn btn topaz btn-icon mdi-shopping"
                                           style="display: inline-block; border: 1px solid white;"> Home </span>
@@ -138,13 +142,13 @@
                                 <a class="navbar-navigation-root-link" style="display: inline-block; "
                                    href="/menu_items">
                                     <span class="product-btn btn topaz btn-icon mdi-menu"
-                                          style="display: inline-block; border: 1px solid white;">  目录管理</span>
+                                          style="display: inline-block; border: 1px solid white;"> Menu Management </span>
                                 </a>
                             </li>
 
-                            <li class="navbar-navigation-root-item rd-navbar--has-dropdown rd-navbar-submenu" style="margin-left: -58px;">
+                            <li class="navbar-navigation-root-item rd-navbar--has-dropdown rd-navbar-submenu" style="margin-left: -55px; min-width: 284px;">
                                 <a class="navbar-navigation-root-link" style="display: inline-block; " href="/status">
-                                    <span class="product-btn btn topaz btn-icon mdi-account-box"  style="display: inline-block; border: 1px solid white;"> 用户管理 </span>
+                                    <span class="product-btn btn topaz btn-icon mdi-account-box"  style="display: inline-block; border: 1px solid white;"> User Management </span>
                                 </a><span class="rd-navbar-submenu-toggle"></span>
                                 <ul class="navbar-navigation-dropdown rd-navbar-dropdown">
                                     <li class="navbar-navigation-back">
@@ -152,34 +156,34 @@
                                     </li>
                                     <li class="navbar-navigation-dropdown-item">
                                         <a class="navbar-navigation-dropdown-link" href="/renewal_member">
-                                            <span class=" mdi-cake" style="display: inline-block; "> Shop 高级会员申请  </span>
+                                            <span class=" mdi-cake" style="display: inline-block; "> Shop Member Application  </span>
                                         </a>
 
                                     </li>
 
                                     <li class="navbar-navigation-dropdown-item">
                                         <a class="navbar-navigation-dropdown-link" href="/status">
-                                            <span class=" mdi-account-star" style="display: inline-block; "> 用户注册 & 访问状态  </span>
+                                            <span class=" mdi-account-star" style="display: inline-block; "> User Registration & Access Status  </span>
                                         </a>
                                     </li>
 
                                     <li class="navbar-navigation-dropdown-item">
                                         <a class="navbar-navigation-dropdown-link" href="/add_internal_user">
-                                            <span class=" mdi-account-plus" style="display: inline-block; "> 新增内部测试账号  </span>
+                                            <span class=" mdi-account-plus" style="display: inline-block; "> Add Internal Test Account  </span>
                                         </a>
                                     </li>
                                     <li class="navbar-navigation-dropdown-item">
                                         <a class="navbar-navigation-dropdown-link" href="/internal_users">
-                                            <span class="mdi-clipboard-account" style="display: inline-block; "> 测试账号列表  </span>
+                                            <span class="mdi-clipboard-account" style="display: inline-block; "> Test Account List  </span>
                                         </a>
 {#                                        <a class="navbar-navigation-dropdown-link" href="/manager_resources">内部测试用户查看</a>#}
                                     </li>
                                 </ul>
                             </li>
 
-                            <li class="navbar-navigation-root-item rd-navbar--has-dropdown rd-navbar-submenu" style="margin-left: -58px;">
+                            <li class="navbar-navigation-root-item rd-navbar--has-dropdown rd-navbar-submenu" style="margin-left: -56px; min-width: 309px;">
                                 <a class="navbar-navigation-root-link" style="display: inline-block; " href="/goods_list">
-                                    <span class="product-btn btn topaz btn-icon mdi-cart"  style="display: inline-block; border: 1px solid white;"> 商品管理 </span>
+                                    <span class="product-btn btn topaz btn-icon mdi-cart"  style="display: inline-block; border: 1px solid white;"> Porduct Management </span>
                                 </a><span class="rd-navbar-submenu-toggle"></span>
                                 <ul class="navbar-navigation-dropdown rd-navbar-dropdown">
                                     <li class="navbar-navigation-back">
@@ -189,20 +193,20 @@
 
                                     <li class="navbar-navigation-dropdown-item">
                                         <a class="navbar-navigation-dropdown-link" href="/create_goods">
-                                            <span class="mdi-playlist-plus" style="display: inline-block; "> Shop 商品新建  </span>
+                                            <span class="mdi-playlist-plus" style="display: inline-block; "> Create New Product </span>
                                         </a>
 
                                     </li>
 
                                     <li class="navbar-navigation-dropdown-item">
                                         <a class="navbar-navigation-dropdown-link" href="/update_goods">
-                                            <span class="mdi-auto-upload" style="display: inline-block; "> 修改商品信息 </span>
+                                            <span class="mdi-auto-upload" style="display: inline-block; "> Modify Product </span>
                                         </a>
                                     </li>
 
                                     <li class="navbar-navigation-dropdown-item">
                                         <a class="navbar-navigation-dropdown-link" href="/goods_list">
-                                            <span class="mdi-cart-outline" style="display: inline-block; "> 所有商品列表 </span>
+                                            <span class="mdi-cart-outline" style="display: inline-block; "> All Products List </span>
                                         </a>
                                     </li>
 
@@ -210,40 +214,40 @@
                             </li>
 
 
-                            <li class="navbar-navigation-root-item" style="margin-left: -58px;">
-                                <a class="navbar-navigation-root-link" style="display: inline-block; "
-                                   href="/view_orders">
-                                    <span class="product-btn btn topaz btn-icon mdi-book"
-                                          style="display: inline-block;  border: 1px solid white;"> 所有订单 </span>
-                                </a>
-                            </li>
+{#                            <li class="navbar-navigation-root-item" style="margin-left: -58px;">#}
+{#                                <a class="navbar-navigation-root-link" style="display: inline-block; "#}
+{#                                   href="/view_orders">#}
+{#                                    <span class="product-btn btn topaz btn-icon mdi-book"#}
+{#                                          style="display: inline-block;  border: 1px solid white;"> All Orders List</span>#}
+{#                                </a>#}
+{#                            </li>#}
 
                             <li class="navbar-navigation-root-item rd-navbar--has-dropdown rd-navbar-submenu"
-                                style="margin-left: -58px;">
+                                style="margin-left: -58px; min-width: 320px;">
                                 <a class="navbar-navigation-root-link" style="display: inline-block; " href="/backend">
                                     <span class="product-btn btn topaz btn-icon mdi-note-outline"
-                                          style="display: inline-block; border: 1px solid white;"> 资源管理 </span>
+                                          style="display: inline-block; border: 1px solid white;"> Resource Management  </span>
                                 </a><span class="rd-navbar-submenu-toggle"></span>
                                 <ul class="navbar-navigation-dropdown rd-navbar-dropdown">
                                     <li class="navbar-navigation-back">
                                         <button class="navbar-navigation-back-btn">Back</button>
                                     </li>
                                     <li class="navbar-navigation-dropdown-item">
-                                        <a class="navbar-navigation-dropdown-link" href="/create_guide">新建资源</a>
+                                        <a class="navbar-navigation-dropdown-link" href="/create_guide">Create New Resource</a>
                                     </li>
 
                                     <li class="navbar-navigation-dropdown-item">
-                                        <a class="navbar-navigation-dropdown-link" href="/modify_resources">修改资源</a>
+                                        <a class="navbar-navigation-dropdown-link" href="/modify_resources">Modify Resource</a>
                                     </li>
 
                                     <li class="navbar-navigation-dropdown-item">
-                                        <a class="navbar-navigation-dropdown-link" href="/manager_resources">资源批量管理</a>
+                                        <a class="navbar-navigation-dropdown-link" href="/manager_resources">Resource Batch Management</a>
                                     </li>
                                     <li class="navbar-navigation-dropdown-item">
-                                        <a class="navbar-navigation-dropdown-link" href="/zip_list">压缩包资源列表</a>
+                                        <a class="navbar-navigation-dropdown-link" href="/zip_list">Compressed Package Resource List</a>
                                     </li>
                                     <li class="navbar-navigation-dropdown-item">
-                                        <a class="navbar-navigation-dropdown-link" href="/feature_list">功能资源列表</a>
+                                        <a class="navbar-navigation-dropdown-link" href="/feature_list">Function Resource List</a>
                                     </li>
                                 </ul>
                             </li>
@@ -258,8 +262,8 @@
     <section class="section section-md  text-center">
         <div class="container">
             <div class="text-block">
-                <div class="title-1"><a class="link link-inherit topaz_link" href="#">Meow Shop</a></div>
-                <h2> 商品列表 </h2>
+                <div class="title-1"><a class="link link-inherit topaz_link" href="/backend">Meow Shop Backstage</a></div>
+                <h2> All Products List </h2>
 
             </div>
 
@@ -267,7 +271,7 @@
                 <ul class="nav nav-line justify-content-center active" role="tablist">
                     <li class="nav-item">
                         <a class="nav-link h6 active" data-toggle="tab" href="#navLine3-1" role="tab"
-                           aria-selected="true">所有商品</a>
+                           aria-selected="true">Manage products</a>
                     </li>
 
                 </ul>
@@ -287,13 +291,13 @@
                             <table class="table table-1">
                                 <thead  style="background-color: #a4bbf9">
                                 <tr style="font-size: 0.88rem;">
-                                    <th class="table thead th topaz_t" style=" min-width: 128px">缩略图</th>
-                                    <th class="table thead th topaz_t" style=" ">名称</th>
-                                    <th class="table thead th topaz_t" style=" min-width: 120px">类型</th>
-                                    <th class="table thead th topaz_t" style=" min-width: 116px">是否打折</th>
-                                    <th class="table thead th topaz_t" style=" min-width: 116px">折扣</th>
-                                    <th class="table thead th topaz_t" style=" min-width: 160px">价格</th>
-                                    <th class="table thead th topaz_t" style=" min-width: 100px">管理</th>
+                                    <th class="table thead th topaz_t" style=" min-width: 128px">Image</th>
+                                    <th class="table thead th topaz_t" style=" ">Product Name</th>
+                                    <th class="table thead th topaz_t" style=" min-width: 120px">Type</th>
+                                    <th class="table thead th topaz_t" style=" min-width: 116px">Is Discount</th>
+                                    <th class="table thead th topaz_t" style=" min-width: 116px">Discount</th>
+                                    <th class="table thead th topaz_t" style=" min-width: 160px">Price</th>
+                                    <th class="table thead th topaz_t" style=" min-width: 100px">Management</th>
                                 </tr>
                                 </thead>
                                 <tbody>
@@ -309,14 +313,14 @@
                                     <td class="h6" style="min-width: 200px;">{{ goods["main_menu"] }}</td>
                                     <td class="h6">
                                         {% if goods["is_discount"] == False %}
-                                            否
+                                            No
                                         {% else %}
-                                            是
+                                            Yes
                                         {% end %}
                                     </td>
                                     <td class="h6">
                                         {% if goods["discount"] == "100" %}
-                                            无
+                                            None
                                         {% else %}
                                             {{ goods["discount"] }}%
                                         {% end %}
@@ -326,9 +330,9 @@
 
                                     <td class="h6" style=" min-width: 100px;">
 
-                                        <a href="/update_goods?goods_name={{ goods["goods_name"] }}" style="text-decoration: underline"> 修改</a>
+                                        <a href="/update_goods?goods_name={{ goods["goods_name"] }}" style="text-decoration: underline">Modify</a>
                                         <p></p>
-                                        <button onclick="DeleteResource({{ goods["goods_id"] }}, 3)" style="color: #264555; text-decoration: underline">删除</button>
+                                        <button onclick="DeleteResource({{ goods["goods_id"] }}, 3)" style="color: #264555; text-decoration: underline">Delete</button>
 {#                                        <a href="#" style="text-decoration: underline"> 删除 </a>#}
                                     </td>
 
@@ -506,26 +510,50 @@
     <section class="footer footer-dark context-dark bg-800" style="margin-top: 10%">
         <div class="container">
             <div class="row row-30">
+                <div class="col-sm-6 col-lg-3">
+                    <!-- Logo-->
+                    <div class="logo">
+                        <a class="logo-link" href="/">
+{#                            <img class="logo-image-default" src="/static/images/meowfile.png" alt="Airy" width="146" height="36">#}
+                            <img class="logo-image-inverse" src="/static/images/meowshop.png" alt="Meow Shop" width="146" height="36">
+                        </a>
+                    </div>
+                    <p>Meow Shop is a full-featured mall, including background management, payment, order viewing, etc. </p>
+                    <div class="social group-20">
+{#                        <a class="social-icon icon icon-md icon-link onclinic-instagram" href="#"></a>#}
+                    </div>
+            </div>
 
                 <div class="col-sm-6 col-lg-3">
-                    <h5 class="footer-title">联系方式</h5>
+                    <h5 class="footer-title">Contacts</h5>
                     <ul class="list list-icons">
                         <li class="list-item">
                             <div class="list-icon onclinic-map-marker"></div>
-                            北京市朝阳区五里桥一街1号非中心5号楼四层十二维度
+                            ChaoYang, Beijing
                         </li>
                         <li class="list-item">
                             <div class="list-icon onclinic-phone"></div>
-                            010-85717789
+                            +8615600803270
                         </li>
                         <li class="list-item">
                             <div class="list-icon onclinic-email-open"></div>
-                            market@12dms.com
+                            topaz1668@gmail.com
                         </li>
 
                     </ul>
 
                 </div>
+
+                <div class="col-sm-6 col-lg-3">
+                    <h5 class="footer-title">Useful Links</h5>
+                    <ul class="list list-sm">
+                      <li class="list-item"><a href="https://topaz1618.github.io/about/">About</a></li>
+                      <li class="list-item"><a href="https://topaz1618.github.io/projects/">Projects</a></li>
+                      <li class="list-item"><a href="https://topaz1618.github.io/blog/">Blog</a></li>
+                    </ul>
+                </div>
+
+
 
             </div>
         </div>
@@ -533,8 +561,7 @@
     <footer class="footer footer-minimal context-dark bg-900">
         <div class="container">
             <!-- Copyright-->
-            <p class="rights">Copyright &copy; 2020.Company name All rights reserved.<a target="_blank"
-                                                                                        href="http://sc.chinaz.com/moban/">&#x7F51;&#x9875;&#x6A21;&#x677F;</a>
+            <p class="rights">
             </p>
         </div>
     </footer>
@@ -586,7 +613,7 @@
             success: function (response) {
                 var error_code = response["error_code"];
                 if (error_code == "1000") {
-                    alert("删除成功");
+                    alert("Delete success!");
                     window.location.reload();
                     return;
                 }else if (response["error_code"] == "4006"){
