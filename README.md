@@ -85,7 +85,7 @@ A shopping websites that sell virtual items made by [Topaz](https://topaz1618.gi
 
 - Sandbox environment web-side payment (used in this project)
 
-- Web payment in production environment,need to upload business license, only for enterprise users. You can click to view [Create Company Web Payment Application](https://opendocs.alipay.com/open/270/01didh)
+- Web payment in production environment,need to upload business license, only for enterprise users. You can click to view [Create Web Payment Application](https://opendocs.alipay.com/open/270/01didh) and [Sign Web Application](https://opendocs.alipay.com/open/200/105314/)
 
     The payment process of the production environment is the same as that of the sandbox environment, no need to modify the code, just modify the following configuration items
     ```
