@@ -88,31 +88,55 @@ A shopping websites that sell virtual items made by [Topaz](https://topaz1618.gi
     python apps.py
 ```
 
+
+## 支付宝
+    - 生产环境网页端 (仅限企业用户，需提供营业许可证等)，开通点击 https://opendocs.alipay.com/open/270/01didh
+        生产环境流程相同，只需修改配置文件中以下项.
+        ```
+            DEBUG_PAY = False    // Set to false in the production environment
+            APPID = "2021000116669851" // Set APPID
+        ```
+
+    - 沙箱环境网页端 (本项目使用)
+
+
+## 沙箱环境介绍: https://openhome.alipay.com/platform/appDaily.htm
+
+1. 下载
+    使用Android手机浏览器扫描下面的二维码沙箱钱包
+    <img alt="下载沙箱钱包" class="importGuideSubStepContentImg___Kygdb" src="https://zos.alipayobjects.com/rmsportal/CaXHDDXkdxikcZP.png">
+
+2. 使用如下买家账号登录
+    买家账号：vnocjr9471@sandbox.com
+    密码：111111
+
+
+
 ## Screenshots
 
-## 【商城首页】
-<img src='static/images/upload.gif' title='MeowFile, A file management system'>
-
-## 【商城页】
-<img src='static/images/download1.gif' title='MeowFile, A file management system'>
+## 【商店】
+<img src='static/images/store.png' title='MeowShop, online shopping site'>
 
 ## 【我的收藏】
-<img src='static/images/user_list.png' width='800' title='MeowFile, A file management system'>
+<img src='static/images/my_heart.png' width='800' title='MeowShop, online shopping site'>
 
-## 【商品页】
-<img src='static/images/log.gif' title='MeowFile, A file management system'>
+## 【订单页】
+<img src='static/images/order_list.png' width='800' title='MeowShop, online shopping site'>
+
+
+## 【付款】
+<img src='static/images/pay.gif' title='MeowShop, online shopping site'>
 
 ## 【后台】
-<img src='static/images/create_user.gif' title='MeowFile, A file management system'>
+<img src='static/images/backstage.png' title='MeowShop, online shopping site'>
 
-## 【其它页面】
-Not logged in or access the wrong path）
-<img src='static/images/others.gif' title='MeowFile, A file management system'>
+<img src='static/images/backstage2.png' title='MeowShop, online shopping site'>
 
-## GIF 生成命令
-```
-    ffmpeg -i test.mp4 -s 1920x1080 -r 10 -vf scale=800:450 output.gif //  -r: specify frame rate
-```
+
+## 【所有页面浏览】
+<img src='static/images/view_store.gif' title='MeowShop, online shopping site'>
+
+
 [查看更多 ffmpeg](https://topaz1618.github.io/about)
 
 
