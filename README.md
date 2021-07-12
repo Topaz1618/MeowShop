@@ -1,41 +1,51 @@
-<img src='static/images/meowfile.png' width='400' title='MeowFile, A file management system'>
+<img src='static/img/logo.png' width='400' title='MeowShop, online shopping site'>
 
-A file sharing management system by [Topaz](https://topaz1618.github.io/about)|[Website](http://topazaws.com/)|[Blog](https://topaz1618.github.io/blog/)
+A shopping websites that sell virtual items made by [Topaz](https://topaz1618.github.io/about)|[Website](http://topazaws.com/)|[Blog](https://topaz1618.github.io/blog/)
 
-[Chinese README](https://github.com/Topaz1618/FileManageSystem/blob/master/README_CN.md)
+[Chinese README](https://github.com/Topaz1618/MeowShop/blob/master/README_CN.md)
 
 
-## Features:
-- User login/logout, password reset, authority management
-- File upload (support breakpoint upload, batch upload)
-- file download
-- Batch management of files
-- Document review process(Only for users with intranet permissions)
+# Features:
+    - User registration/login/logout
+    - Support member recharge
+    - Merchandise
+        - Merchandise discount
+        - Support favorite Product
+        - Support tags to prompt discounted products and new products
+        - Support product classification filtering
+        - Price sorting
+        - Online payments
 
-## Environment
-- Python3
-- Tornado
-- Ubuntu16.04/ Mac OS
-- Mysql
+    - Order section
+        - Basic order information display: third-party order number, payment time, discount amount, actual payment amoun
+        - Order deletion
+        - Repay unclosed orders
+        - Timeout orders are automatically closed
+
+    - Backstage management
+        - Product release
+        - Product modification: Price, discount, description
+        - Product deletion
+
+    - Others
+        - New users automatically gift members
+
+
+# Environment
+    - Python3
+    - Tornado
+    - Ubuntu16.04/ Mac OS
+    - Mysql
+
 
 ## Requirements
 - tornado >= 6.1
 - PyJWT == 1.7.1
 
-## How to pay
-    Only companies can apply for Alipay scan code payment，so I use the ALIPAY sandbox test APPID in this demo,
-    If you need to support real payment, you need to provide a business license to apply, and set the following items, then you can pay normally )
-
-
-    Or If you want to test the payment effect, you can download the sandbox version of Alipay
-
-    https://openhome.alipay.com/platform/appDaily.htm?tab=tool
-
-
 ## Installation (Ubuntu & Mac OS)
 1. Download MeowFile
 ```
-    $ git clone git@github.com:Topaz1618/MeowFile.git
+    $ git clone git@github.com:Topaz1618/MeowShop.git
 ```
 
 2. Install dependencies
@@ -56,40 +66,77 @@ A file sharing management system by [Topaz](https://topaz1618.github.io/about)|[
     PASSWORD = "123456"
     HOST = "127.0.0.1"
     PORT = "3306"
-    DATABASE = "ManageFileDB"
-```
+    DATABASE = "aaaDB"
 
+    DEBUG_PAY = True    // Open sandbox test (Set to false in the production environment)
+    APPID = "2021000116669851"  // Alipay App ID
+    APP_NOTIFY_URL = "https://www.123.com/update_order"   // Callback URL
+    ALIPAY_PUBLIC_KEY_PATH = "alipay_public_key.pem"    // Alipay Public Key
+    APP_PRIVATE_KEY_PATH = "app_private_key.pem"        // Private key
+```
 
 ## Run
 ```
     python apps.py
 ```
 
+
+## About Alipay
+    - Sandbox environment web-side payment (used in this project)
+
+    - Web payment in production environment,need to upload business license, only for enterprise users.
+        [Click to apply for company account activation](https://opendocs.alipay.com/open/270/01didh)
+
+        The payment process of the production environment is the same as that of the sandbox environment, no need to modify the code, just modify the following configuration items
+        ```
+            DEBUG_PAY = False    // Set to false in the production environment
+            APPID = "2021000116669851" // Set APPID
+        ```
+
+## Alipay sandbox environment
+[Alipay sandbox introduction](https://openhome.alipay.com/platform/appDaily.htm)
+
+
+1. Download
+   Use the Android mobile browser to scan the QR code sandbox wallet below
+   <img alt="下载沙箱钱包" width="160" heigth="160" class="importGuideSubStepContentImg___Kygdb" src="https://zos.alipayobjects.com/rmsportal/CaXHDDXkdxikcZP.png">
+
+2. Log in to the Alipay sandbox APP (Alipay sandbox default buyer account)
+```
+    Account：vnocjr9471@sandbox.com
+    Password：111111
+```
+
+
 ## Screenshots
 
-## 【Upload File】
-<img src='static/images/upload.gif' title='MeowFile, A file management system'>
+## 【商店】
+<img src='static/images/store.png'  width='800' title='MeowShop, online shopping site'>
 
-## 【Download File】
-<img src='static/images/download1.gif' title='MeowFile, A file management system'>
+## 【我的收藏】
+<img src='static/images/my_heart.png' width='800' title='MeowShop, online shopping site'>
 
-## 【User List Page】
-<img src='static/images/user_list.png' width='800' title='MeowFile, A file management system'>
+## 【订单页】
+<img src='static/images/order_list.png' width='800' title='MeowShop, online shopping site'>
 
-## 【Manage User Permissions】
-<img src='static/images/user_management.gif'   title='MeowFile, A file management system'>
 
-## 【Create User】
-<img src='static/images/create_user.gif' title='MeowFile, A file management system'>
+## 【付款】
+<img src='static/images/pay.gif'  width='800' title='MeowShop, online shopping site'>
 
-## 【Other Pages】
-（Not logged in or access the wrong path）
-<img src='static/images/others.gif' title='MeowFile, A file management system'>
+## 【后台】
+<img src='static/images/backstage.png'  width='800' title='MeowShop, online shopping site'>
 
-## GIF production command
-```
-    ffmpeg -i test.mp4 -s 1920x1080 -r 10 -vf scale=800:450 output.gif //  -r: specify frame rate
-```
+<img src='static/images/backstage2.png'  width='800' title='MeowShop, online shopping site'>
+
+
+## 【所有页面浏览】
+<img src='static/images/view_store.gif' title='MeowShop, online shopping site'>
+
+
+[查看更多 ffmpeg](https://topaz1618.github.io/about)
+
+
+[Topaz](https://topaz1618.github.io/about)|[Website](http://topazaws.com/)|[Blog](https://topaz1618.github.io/blog/)
 
 ## License
 Licensed under the MIT license

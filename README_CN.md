@@ -2,13 +2,12 @@
 
 A shopping websites that sell virtual items made by [Topaz](https://topaz1618.github.io/about)|[Website](http://topazaws.com/)|[Blog](https://topaz1618.github.io/blog/)
 
-[英文 README](https://github.com/Topaz1618/FileManageSystem/blob/master/README.md)
+[英文 README](https://github.com/Topaz1618/MeowShop/blob/master/README.md)
 
 
 # Features:
-    - 用户注册/登录/登出(原注册流程基于短信验证码，已暂时关闭)
-    - 注册自动送七天会员 (会员有机会获得免费虚拟商品)
-    - 会员充值
+    - 用户注册/登录/登出
+    - 新用户注册赠送会员
 
     - 商品
         - 收藏商品
@@ -26,17 +25,11 @@ A shopping websites that sell virtual items made by [Topaz](https://topaz1618.gi
         - 超时订单自动关闭
 
     - 后台管理
-        - 增加功能
-        - 增加
         - 商品发布
         - 商品修改(价格，折扣)
         - 商品删除
 
-    - 个人信息显示:
-        - 注册时间
-        - 用户名
-        - 退出登录
-        - 密码修改(已有功能，暂未开启)
+    - 会员充值
 
 
 # Environment
@@ -115,7 +108,7 @@ A shopping websites that sell virtual items made by [Topaz](https://topaz1618.gi
 ## Screenshots
 
 ## 【商店】
-<img src='static/images/store.png' title='MeowShop, online shopping site'>
+<img src='static/images/store.png'  width='800' title='MeowShop, online shopping site'>
 
 ## 【我的收藏】
 <img src='static/images/my_heart.png' width='800' title='MeowShop, online shopping site'>
@@ -125,12 +118,12 @@ A shopping websites that sell virtual items made by [Topaz](https://topaz1618.gi
 
 
 ## 【付款】
-<img src='static/images/pay.gif' title='MeowShop, online shopping site'>
+<img src='static/images/pay.gif'  width='800' title='MeowShop, online shopping site'>
 
 ## 【后台】
-<img src='static/images/backstage.png' title='MeowShop, online shopping site'>
+<img src='static/images/backstage.png'  width='800' title='MeowShop, online shopping site'>
 
-<img src='static/images/backstage2.png' title='MeowShop, online shopping site'>
+<img src='static/images/backstage2.png'  width='800' title='MeowShop, online shopping site'>
 
 
 ## 【所有页面浏览】
