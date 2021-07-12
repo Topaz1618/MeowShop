@@ -45,7 +45,7 @@ A shopping websites that sell virtual items made by [Topaz](https://topaz1618.gi
 ## Installation (Ubuntu & Mac OS)
 1. Download MeowFile
 ```
- $ git clone git@github.com:Topaz1618/MeowShop.git
+ git clone git@github.com:Topaz1618/MeowShop.git
 ```
 
 2. Install dependencies
@@ -83,25 +83,24 @@ A shopping websites that sell virtual items made by [Topaz](https://topaz1618.gi
 
 ## Alipay (Payment method use in Meow Shop)
 
-- Sandbox environment web-side payment (used in this project)
+- Sandbox environment web-side payment (used in this project).
 
-- Web payment in production environment,need to upload business license, only for enterprise users. You can click to view [Create Web Payment Application](https://opendocs.alipay.com/open/270/01didh) and [Sign Web Application](https://opendocs.alipay.com/open/200/105314/)
+- Web payment in production environment,need to upload business license, only for enterprise users. You can click to view [Create Web Payment Application](https://opendocs.alipay.com/open/270/01didh).
 
-    The payment process of the production environment is the same as that of the sandbox environment, no need to modify the code, just modify the following configuration items
+    The payment process of the production environment is the same as that of the sandbox environment, no need to modify the code, just modify the following configuration items.
     ```
       DEBUG_PAY = False          // Set 'DEBUG_PAY = False'  in the production environment
       APPID = "2021000116669851" // Set APPID
     ```
 
 ## Alipay sandbox environment
-Click to view [Alipay Sandbox Introduction](https://openhome.alipay.com/platform/appDaily.htm)
 
 - Download
-   Use the Android mobile browser to scan the QR code sandbox wallet below
+   Use the Android mobile browser to scan the QR code sandbox wallet below.
 
    <img alt="下载沙箱钱包" width="160" heigth="160" class="importGuideSubStepContentImg___Kygdb" src="https://zos.alipayobjects.com/rmsportal/CaXHDDXkdxikcZP.png">
 
-- Log in to the Alipay sandbox APP
+- Log in to the alipay sandbox app
 
     Alipay sandbox default buyer account
     ```
@@ -109,6 +108,8 @@ Click to view [Alipay Sandbox Introduction](https://openhome.alipay.com/platform
 
      PASSWORD： 111111
     ```
+
+Click to view [Alipay Sandbox Introduction](https://openhome.alipay.com/platform/appDaily.htm)
 
 
 
