@@ -1,6 +1,6 @@
 <img src='static/img/logo.png' width='400' title='MeowShop, online shopping site'>
 
-A shopping websites that sell virtual items made by [Topaz](https://topaz1618.github.io/about)|[Website](http://topazaws.com/)|[Blog](https://topaz1618.github.io/blog/)
+A shopping websites that sell virtual items made by [Topaz](https://topaz1618.github.io/about)([Website](http://topazaws.com/)|[Blog](https://topaz1618.github.io/blog/))
 
 [Chinese README](https://github.com/Topaz1618/MeowShop/blob/master/README_CN.md)
 
@@ -66,13 +66,13 @@ A shopping websites that sell virtual items made by [Topaz](https://topaz1618.gi
  PASSWORD = "123456"
  HOST = "127.0.0.1"
  PORT = "3306"
- DATABASE = "aaaDB"
+ DATABASE = "XXDB"
 
- DEBUG_PAY = True       // Open sandbox test
- APPID = "2021000116669851"  // App ID
- APP_NOTIFY_URL = "https://www.123.com/update_order"   // Callback
- ALIPAY_PUBLIC_KEY = "public_key.pem"    // Public Key
- ALIPAY_PRIVATE_KEY = "private_key.pem"  // Private key
+ DEBUG_PAY = True                               // Use Sandbox environment
+ APPID = "2021000116669851"                     // App ID
+ APP_NOTIFY_URL = "https://www.xx.com/update_order"   // Callback
+ ALIPAY_PUBLIC_KEY = "public_key.pem"           // Public Key
+ ALIPAY_PRIVATE_KEY = "private_key.pem"         // Private key
 ```
 
 ## Run
@@ -89,8 +89,8 @@ A shopping websites that sell virtual items made by [Topaz](https://topaz1618.gi
 
     The payment process of the production environment is the same as that of the sandbox environment, no need to modify the code, just modify the following configuration items
     ```
-        DEBUG_PAY = False    // Set to false in the production environment
-        APPID = "2021000116669851" // Set APPID
+      DEBUG_PAY = False    // Set to false in the production environment
+      APPID = "2021000116669851" // Set APPID
     ```
 
 ## Alipay sandbox environment
@@ -101,10 +101,12 @@ Click to view[Alipay sandbox introduction](https://openhome.alipay.com/platform/
 
    <img alt="下载沙箱钱包" width="160" heigth="160" class="importGuideSubStepContentImg___Kygdb" src="https://zos.alipayobjects.com/rmsportal/CaXHDDXkdxikcZP.png">
 
-2. Log in to the Alipay sandbox APP (Alipay sandbox default buyer account)
+2. Log in to the Alipay sandbox APP
+    Alipay sandbox default buyer account
     ```
-    Account：vnocjr9471@sandbox.com
-    Password：111111
+     ACCOUNT： vnocjr9471@sandbox.com
+
+     PASSWORD： 111111
     ```
 
 ## Screenshots
