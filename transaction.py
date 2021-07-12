@@ -13,7 +13,7 @@ import shop_wxpay
 from shop_alipay import AliPay
 from shop_enum import RechargeStatus, PayChannel, PayStatus
 from code import BaseError, PayError, AuthError, DBError, TokenError, ShopError
-from config import PACKAGE_LIST,  APPID, SAPPID, APP_NOTIFY_URL, RETURN_URL, ALIPAY_PUBLIC_KEY_PATH, \
+from config import PACKAGE_LIST, DEBUG_PAY,  APPID, SAPPID, APP_NOTIFY_URL, RETURN_URL, ALIPAY_PUBLIC_KEY_PATH, \
     APP_PRIVATE_KEY_PATH, ALIPAY_GATEWAY, SALIPAY_GATEWAY, PAGE_LIMIT
 from shop_utils import create_qrcode, get_code_by_str,  member_login_redirect, admin_login_redirect, auth_login_redirect, \
     get_token_user, generate_order_id, add_num, subtract_num
@@ -236,8 +236,7 @@ class ALiPayHandler(BaseHandler):
 
         out_trade_no = ''.join(random.sample(order_id, 28))
         print(">>>", product_name, product_id, product_price, is_recharge, out_trade_no)
-        debug = True
-        # debug = False
+        debug = DEBUG_PAY
 
         app_id = APPID if not debug else SAPPID
         total_amount, pay_amount, discount = get_item_discount(product_name, is_recharge)
@@ -282,7 +281,7 @@ class PayAgainHandler(BaseHandler):
         if is_recharge is not None:
             is_recharge = False if is_recharge == "False" else True
 
-        debug = True
+        debug = DEBUG_PAY
         # debug = False
 
         app_id = APPID if not debug else SAPPID

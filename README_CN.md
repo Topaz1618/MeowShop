@@ -1,17 +1,42 @@
-<img src='static/img/logo.png' width='400' title='MeowFile, A file management system'>
+<img src='static/img/logo.png' width='400' title='MeowShop, online shopping site'>
 
-A file sharing management system by [Topaz](https://topaz1618.github.io/about)|[Website](http://topazaws.com/)|[Blog](https://topaz1618.github.io/blog/)
+A shopping websites that sell virtual items made by [Topaz](https://topaz1618.github.io/about)|[Website](http://topazaws.com/)|[Blog](https://topaz1618.github.io/blog/)
 
 [英文 README](https://github.com/Topaz1618/FileManageSystem/blob/master/README.md)
 
 
 # Features:
-    - 用户登录/登出，密码重置，权限管理
-    - 文件上传(支持断点上传，批量上传)
-    - 文件下载
-    - 批量管理文件
-    - 待审核文件提醒
-    - 用户下载记录查看
+    - 用户注册/登录/登出(原注册流程基于短信验证码，已暂时关闭)
+    - 注册自动送七天会员 (会员有机会获得免费虚拟商品)
+    - 会员充值
+
+    - 商品
+        - 收藏商品
+        - 商品打折
+        - 促销商品，新上架商品展示
+        - 商品基础信息显示
+        - 商品分类过滤
+        - 商品排序
+        - 在线支付
+
+    - 订单部分
+        - 订单列表
+        - 订单基本信息显示: 第三方单号, 付款时间, 折扣金额，实际支付金额
+        - 订单删除
+        - 超时订单自动关闭
+
+    - 后台管理
+        - 增加功能
+        - 增加
+        - 商品发布
+        - 商品修改(价格，折扣)
+        - 商品删除
+
+    - 个人信息显示:
+        - 注册时间
+        - 用户名
+        - 退出登录
+        - 密码修改(已有功能，暂未开启)
 
 
 # Environment
@@ -28,7 +53,7 @@ A file sharing management system by [Topaz](https://topaz1618.github.io/about)|[
 ## Installation (Ubuntu & Mac OS)
 1. Download MeowFile
 ```
-    $ git clone git@github.com:Topaz1618/MeowFile.git
+    $ git clone git@github.com:Topaz1618/MeowShop.git
 ```
 
 2. Install dependencies
@@ -49,7 +74,13 @@ A file sharing management system by [Topaz](https://topaz1618.github.io/about)|[
     PASSWORD = "123456"
     HOST = "127.0.0.1"
     PORT = "3306"
-    DATABASE = "ManageFileDB"
+    DATABASE = "aaaDB"
+
+    DEBUG_PAY = True    // Open sandbox test (Set to false in the production environment)
+    APPID = "2021000116669851"  // Alipay App ID
+    APP_NOTIFY_URL = "https://www.123.com/update_order"   // Callback URL
+    ALIPAY_PUBLIC_KEY_PATH = "alipay_public_key.pem"    // Alipay Public Key
+    APP_PRIVATE_KEY_PATH = "app_private_key.pem"        // Private key
 ```
 
 ## Run
@@ -59,20 +90,19 @@ A file sharing management system by [Topaz](https://topaz1618.github.io/about)|[
 
 ## Screenshots
 
-## 【上传文件】
+## 【商城首页】
 <img src='static/images/upload.gif' title='MeowFile, A file management system'>
 
-## 【下载文件】
+## 【商城页】
 <img src='static/images/download1.gif' title='MeowFile, A file management system'>
 
-## 【用户列表】
+## 【我的收藏】
 <img src='static/images/user_list.png' width='800' title='MeowFile, A file management system'>
 
-## 【查看下载日志】
+## 【商品页】
 <img src='static/images/log.gif' title='MeowFile, A file management system'>
 
-
-## 【创建用户】
+## 【后台】
 <img src='static/images/create_user.gif' title='MeowFile, A file management system'>
 
 ## 【其它页面】
