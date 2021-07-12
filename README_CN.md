@@ -1,4 +1,4 @@
-<img src='static/img/logo.png' width='400' title='MeowShop, online shopping site'>
+<img src='static/img/meow_logo.png' width='400' title='MeowShop, online shopping site'>
 
 A shopping websites that sell virtual items made by [Topaz](https://topaz1618.github.io/about)|[Website](http://topazaws.com/)|[Blog](https://topaz1618.github.io/blog/)
 
