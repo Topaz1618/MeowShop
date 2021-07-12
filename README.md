@@ -89,12 +89,12 @@ A shopping websites that sell virtual items made by [Topaz](https://topaz1618.gi
 
     The payment process of the production environment is the same as that of the sandbox environment, no need to modify the code, just modify the following configuration items
     ```
-      DEBUG_PAY = False    // Set to false in the production environment
+      DEBUG_PAY = False          // Set 'DEBUG_PAY = False'  in the production environment
       APPID = "2021000116669851" // Set APPID
     ```
 
 ## Alipay sandbox environment
-Click to view[Alipay sandbox introduction](https://openhome.alipay.com/platform/appDaily.htm)
+    Click to view [Alipay Sandbox Introduction](https://openhome.alipay.com/platform/appDaily.htm)
 
 1. Download
    Use the Android mobile browser to scan the QR code sandbox wallet below
@@ -102,6 +102,7 @@ Click to view[Alipay sandbox introduction](https://openhome.alipay.com/platform/
    <img alt="下载沙箱钱包" width="160" heigth="160" class="importGuideSubStepContentImg___Kygdb" src="https://zos.alipayobjects.com/rmsportal/CaXHDDXkdxikcZP.png">
 
 2. Log in to the Alipay sandbox APP
+
     Alipay sandbox default buyer account
     ```
      ACCOUNT： vnocjr9471@sandbox.com
