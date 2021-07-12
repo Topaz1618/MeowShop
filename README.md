@@ -81,7 +81,7 @@ A shopping websites that sell virtual items made by [Topaz](https://topaz1618.gi
 ```
 
 
-## About Alipay
+## Alipay (Payment method use in Meow Shop)
 
 - Sandbox environment web-side payment (used in this project)
 
@@ -108,6 +108,8 @@ Click to view[Alipay sandbox introduction](https://openhome.alipay.com/platform/
 
      PASSWORD： 111111
     ```
+
+
 
 ## Screenshots
 
