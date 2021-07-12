@@ -361,7 +361,7 @@ class ModifyZipHandler(BaseHandler):
                 if not isinstance(is_common, int):
                     is_common = int(is_common)
 
-            print("resource tytpe", modify_type)
+            print("resource type", modify_type)
 
             if modify_type != 0:
                 raise BaseHandler("1002")

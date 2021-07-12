@@ -14,7 +14,7 @@ from shop_enum import CreateType, DeleteType, GoodsType, MemberLevel, ResourceTy
 from base_extensions import get_user_id
 from shop_extensions import generate_zip_dict, generate_feature_dict
 from order_extensions import handsel_member
-from config import TEST_USER, SECRET
+from config import TEST_USER, SECRET, ADMIN_USER
 
 from shop_utils import ts_to_string, string_to_ts
 from code import AuthError, PayError, DBError, TokenError, BaseError, PersonalItemError, ShopError
@@ -134,7 +134,7 @@ def bind_custom_items(userlist, zip_id, item_type):
         zip_id = int(zip_id)
 
     if len(userlist) == 0 or userlist is None:
-        users = ["15600803270", ]
+        users = [ADMIN_USER, ]
     else:
         users = userlist.split(",")
 
