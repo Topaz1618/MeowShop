@@ -32,10 +32,10 @@ A shopping websites that sell virtual items made by [Topaz](https://topaz1618.gi
 
 
 # Environment
-    - Python3
-    - Tornado
-    - Ubuntu16.04/ Mac OS
-    - Mysql
+- Python3
+- Tornado
+- Ubuntu16.04/ Mac OS
+- Mysql
 
 
 ## Requirements
@@ -45,34 +45,34 @@ A shopping websites that sell virtual items made by [Topaz](https://topaz1618.gi
 ## Installation (Ubuntu & Mac OS)
 1. Download MeowFile
 ```
-    $ git clone git@github.com:Topaz1618/MeowShop.git
+ $ git clone git@github.com:Topaz1618/MeowShop.git
 ```
 
 2. Install dependencies
 ```
-    pip install -r requirements.txt
+ pip install -r requirements.txt
 ```
 
 3. Create database & Generate admin user
 ```
-    python models.py
+ python models.py
 ```
 
 4. Modify configuration
 ```
-    $ cd MeowFile
-    $ vim config.py
-    USERNAME = "root"
-    PASSWORD = "123456"
-    HOST = "127.0.0.1"
-    PORT = "3306"
-    DATABASE = "aaaDB"
+ $ cd MeowFile
+ $ vim config.py
+ USERNAME = "root"
+ PASSWORD = "123456"
+ HOST = "127.0.0.1"
+ PORT = "3306"
+ DATABASE = "aaaDB"
 
-    DEBUG_PAY = True    // Open sandbox test (Set to false in the production environment)
-    APPID = "2021000116669851"  // Alipay App ID
-    APP_NOTIFY_URL = "https://www.123.com/update_order"   // Callback URL
-    ALIPAY_PUBLIC_KEY_PATH = "alipay_public_key.pem"    // Alipay Public Key
-    APP_PRIVATE_KEY_PATH = "app_private_key.pem"        // Private key
+ DEBUG_PAY = True       // Open sandbox test
+ APPID = "2021000116669851"  // Alipay App ID
+ APP_NOTIFY_URL = "https://www.123.com/update_order"   // Callback URL
+ ALIPAY_PUBLIC_KEY_PATH = "alipay_public_key.pem"    // Alipay Public Key
+ APP_PRIVATE_KEY_PATH = "app_private_key.pem"        // Private key
 ```
 
 ## Run
@@ -82,23 +82,24 @@ A shopping websites that sell virtual items made by [Topaz](https://topaz1618.gi
 
 
 ## About Alipay
-    - Sandbox environment web-side payment (used in this project)
 
-    - Web payment in production environment,need to upload business license, only for enterprise users.
-        [Click to apply for company account activation](https://opendocs.alipay.com/open/270/01didh)
+- Sandbox environment web-side payment (used in this project)
 
-        The payment process of the production environment is the same as that of the sandbox environment, no need to modify the code, just modify the following configuration items
-        ```
-            DEBUG_PAY = False    // Set to false in the production environment
-            APPID = "2021000116669851" // Set APPID
-        ```
+- Web payment in production environment,need to upload business license, only for enterprise users. Click to view [Create Company Account Application](https://opendocs.alipay.com/open/270/01didh)
+
+    The payment process of the production environment is the same as that of the sandbox environment, no need to modify the code, just modify the following configuration items
+    ```
+        DEBUG_PAY = False    // Set to false in the production environment
+        APPID = "2021000116669851" // Set APPID
+    ```
 
 ## Alipay sandbox environment
-[Alipay sandbox introduction](https://openhome.alipay.com/platform/appDaily.htm)
+    Click to view[Alipay sandbox introduction](https://openhome.alipay.com/platform/appDaily.htm)
 
 
 1. Download
    Use the Android mobile browser to scan the QR code sandbox wallet below
+
    <img alt="下载沙箱钱包" width="160" heigth="160" class="importGuideSubStepContentImg___Kygdb" src="https://zos.alipayobjects.com/rmsportal/CaXHDDXkdxikcZP.png">
 
 2. Log in to the Alipay sandbox APP (Alipay sandbox default buyer account)
