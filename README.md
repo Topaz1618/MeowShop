@@ -96,7 +96,7 @@ A shopping websites that sell virtual items made by [Topaz](https://topaz1618.gi
 ## Alipay sandbox environment
 
 - Download
-   Use the Android mobile browser to scan the QR code sandbox wallet below.
+   Use the Android mobile to scan the QR code sandbox wallet below.
 
    <img alt="下载沙箱钱包" width="160" heigth="160" class="importGuideSubStepContentImg___Kygdb" src="https://zos.alipayobjects.com/rmsportal/CaXHDDXkdxikcZP.png">
 
@@ -109,28 +109,22 @@ A shopping websites that sell virtual items made by [Topaz](https://topaz1618.gi
      PASSWORD： 111111
     ```
 
-Click to view [Alipay Sandbox Introduction](https://openhome.alipay.com/platform/appDaily.htm)
+Click to view [Alipay Sandbox](https://openhome.alipay.com/platform/appDaily.htm)
 
 
 
 ## Screenshots
 
-## 【商店】
-<img src='static/images/store.png'  width='800' title='MeowShop, online shopping site'>
+## 【Store】
+<img src='static/images/store.gif'  width='800' title='MeowShop, online shopping site'>
 
-## 【我的收藏】
-<img src='static/images/my_heart.png' width='800' title='MeowShop, online shopping site'>
-
-## 【订单页】
-<img src='static/images/order_list.png' width='800' title='MeowShop, online shopping site'>
-
-
-## 【付款】
+## 【Payment】
 <img src='static/images/pay.gif'  width='800' title='MeowShop, online shopping site'>
 
-## 【后台】
+## 【Backstage1】
 <img src='static/images/backstage.png'  width='800' title='MeowShop, online shopping site'>
 
+## 【Backstage2】
 <img src='static/images/backstage2.png'  width='800' title='MeowShop, online shopping site'>
 
 
@@ -141,7 +135,7 @@ Click to view [Alipay Sandbox Introduction](https://openhome.alipay.com/platform
 [查看更多 ffmpeg](https://topaz1618.github.io/about)
 
 
-[Topaz](https://topaz1618.github.io/about)|[Website](http://topazaws.com/)|[Blog](https://topaz1618.github.io/blog/)
+[Topaz](https://topaz1618.github.io/about)([Website](http://topazaws.com/)|[Blog](https://topaz1618.github.io/blog/)
 
 ## License
 Licensed under the MIT license
