@@ -69,15 +69,15 @@ A shopping websites that sell virtual items made by [Topaz](https://topaz1618.gi
  DATABASE = "aaaDB"
 
  DEBUG_PAY = True       // Open sandbox test
- APPID = "2021000116669851"  // Alipay App ID
- APP_NOTIFY_URL = "https://www.123.com/update_order"   // Callback URL
- ALIPAY_PUBLIC_KEY_PATH = "alipay_public_key.pem"    // Alipay Public Key
- APP_PRIVATE_KEY_PATH = "app_private_key.pem"        // Private key
+ APPID = "2021000116669851"  // App ID
+ APP_NOTIFY_URL = "https://www.123.com/update_order"   // Callback
+ ALIPAY_PUBLIC_KEY = "public_key.pem"    // Public Key
+ ALIPAY_PRIVATE_KEY = "private_key.pem"  // Private key
 ```
 
 ## Run
 ```
-    python apps.py
+ python apps.py
 ```
 
 
@@ -94,8 +94,7 @@ A shopping websites that sell virtual items made by [Topaz](https://topaz1618.gi
     ```
 
 ## Alipay sandbox environment
-    Click to view[Alipay sandbox introduction](https://openhome.alipay.com/platform/appDaily.htm)
-
+Click to view[Alipay sandbox introduction](https://openhome.alipay.com/platform/appDaily.htm)
 
 1. Download
    Use the Android mobile browser to scan the QR code sandbox wallet below
@@ -103,11 +102,10 @@ A shopping websites that sell virtual items made by [Topaz](https://topaz1618.gi
    <img alt="下载沙箱钱包" width="160" heigth="160" class="importGuideSubStepContentImg___Kygdb" src="https://zos.alipayobjects.com/rmsportal/CaXHDDXkdxikcZP.png">
 
 2. Log in to the Alipay sandbox APP (Alipay sandbox default buyer account)
-```
+    ```
     Account：vnocjr9471@sandbox.com
     Password：111111
-```
-
+    ```
 
 ## Screenshots
 
