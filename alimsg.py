@@ -8,8 +8,8 @@ acs_client = AcsClient(ACCESS_KEY_ID, ACCESS_KEY_SECRET, REGION)
 
 def send_sms_format(business_id, phonenum, code):
     params = "{\"number\":\"%d\"}" % code
-    sk = u"十二维度"  # u"mycard萌卡"
-    code = "SMS_75820182"  # "SMS_75885044"
+    sk = u"My shop"  # u"mycard萌卡"
+    code = "SMS_1234"
     return send_sms(business_id, phonenum, sk.encode('utf-8'), code, params)
 
 
@@ -40,8 +40,8 @@ def Shop_send_sms(sign_name, template_code, template_param=None):
 
 def Shop_send_sms_format(phonenum):
     params = "{\"name\":\"%s\"}" % phonenum
-    sk = u"十二维度"  # u"mycard萌卡"
-    code = "SMS_204297810"  # know nothing about this: "SMS_75885044" #saibo: SMS_204297810 # ori:SMS_75820182
+    sk = u"Meow Shop"  # u"mycard萌卡"
+    code = "SMS_1234"
 
     for i in range(3):
         Shop_send_sms(sk.encode('utf-8'), code, params)
