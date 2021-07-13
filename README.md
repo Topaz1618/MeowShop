@@ -121,9 +121,6 @@ Click to view [Alipay Sandbox](https://openhome.alipay.com/platform/appDaily.htm
 ## 【Store2】
 <img src='static/images/store22.gif'  width='800' title='MeowShop, online shopping site'>
 
-## 【Store3】
-<img src='static/images/already_bought.png'  width='800' title='MeowShop, online shopping site'>
-
 ## 【Payment】
 <img src='static/images/pay.gif'  width='800' title='MeowShop, online shopping site'>
 
