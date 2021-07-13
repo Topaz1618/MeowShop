@@ -115,8 +115,11 @@ Click to view [Alipay Sandbox](https://openhome.alipay.com/platform/appDaily.htm
 
 ## Screenshots
 
-## 【Store】
-<img src='static/images/store.gif'  width='800' title='MeowShop, online shopping site'>
+## 【Store1】
+<img src='static/images/store1.png'  width='800' title='MeowShop, online shopping site'>
+
+## 【Store2】
+<img src='static/images/store22.png'  width='800' title='MeowShop, online shopping site'>
 
 ## 【Payment】
 <img src='static/images/pay.gif'  width='800' title='MeowShop, online shopping site'>
@@ -127,15 +130,6 @@ Click to view [Alipay Sandbox](https://openhome.alipay.com/platform/appDaily.htm
 ## 【Backstage2】
 <img src='static/images/backstage2.png'  width='800' title='MeowShop, online shopping site'>
 
-
-## 【所有页面浏览】
-<img src='static/images/view_store.gif' title='MeowShop, online shopping site'>
-
-
-[查看更多 ffmpeg](https://topaz1618.github.io/about)
-
-
-[Topaz](https://topaz1618.github.io/about)([Website](http://topazaws.com/)|[Blog](https://topaz1618.github.io/blog/)
 
 ## License
 Licensed under the MIT license
