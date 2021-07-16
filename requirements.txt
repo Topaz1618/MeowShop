@@ -5,3 +5,17 @@ scp==0.13.4
 paramiko==2.7.2
 psutil==5.7.2
 PyJWT==1.7.1
+aiofiles
+pymysql
+redis
+qrcode
+pycrypto
+aio_msgpack_rpc
+msgpack_numpy
+aliyun-python-sdk-slb
+aliyun-python-sdk-core
+aliyunsdkcore
+xmltodict
+dicttoxml
+dateutil
+python-dateutil
